@@ -1,0 +1,21 @@
+# Tajomstvá – NIKDY necommitovať
+.streamlit/secrets.toml
+.env
+*.env
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+.ipynb_checkpoints/
+
+# Surové stiahnuté dáta
+data/raw/*
+!data/raw/.gitkeep
+
+# Systémové súbory
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
