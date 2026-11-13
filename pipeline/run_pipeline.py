@@ -1,25 +1,39 @@
-"""Spustí celý dátový pipeline: python -m pipeline.run_pipeline"""
+"""Spustí celý dátový pipeline jedným príkazom:
 
-from pipeline import match_cz_sk, normalize, risk_score, sources_cz, sources_eu, sources_sk
+    python -m pipeline.run_pipeline              # stiahne dáta a všetko prepočíta
+    python -m pipeline.run_pipeline --bez-stahovania   # len prepočíta z už stiahnutých dát
+
+Poradie: sťahovanie (+ manifest) -> spojenie dát -> párovanie CZ–SK -> KIQ2 -> wiki
+"""
+
+import sys
+
+from pipeline import kiq2_posun, manifest, match_cz_sk, normalize, sources_cz, sources_sk, wiki
 
 
-def main() -> None:
-    print("1/4 Sťahujem dáta…")
-    sources_cz.download_all()
-    sources_sk.download_all()
-    sources_eu.download_all()
+def main(stahovat: bool = True) -> None:
+    if stahovat:
+        print("1/5 Sťahujem dáta (ČR, SR)…")
+        sources_cz.download_all()
+        sources_sk.download_all()
+    else:
+        print("1/5 Sťahovanie preskočené, doplním len manifest…")
+        manifest.doplnit_existujuce()
 
-    print("2/4 Čistím a zjednocujem…")
+    print("\n2/5 Spájam dáta…")
     normalize.run()
 
-    print("3/4 Párujem lieky CZ <-> SK…")
+    print("\n3/5 Párujem látky ČR a SR…")
     match_cz_sk.run()
 
-    print("4/4 Počítam skóre rizika…")
-    risk_score.run()
+    print("\n4/5 KIQ2 – časový posun…")
+    kiq2_posun.run()
 
-    print("Hotovo.")
+    print("\n5/5 Generujem wiki…")
+    wiki.run()
+
+    print("\nPipeline hotový.")
 
 
 if __name__ == "__main__":
-    main()
+    main(stahovat="--bez-stahovania" not in sys.argv)

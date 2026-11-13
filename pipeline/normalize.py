@@ -61,7 +61,7 @@ def build_lieky() -> pd.DataFrame:
     nazvy = _cz_drzitelia()
     cz = pd.DataFrame({
         "krajina": "CZ",
-        "kod": dlp["KOD_SUKL"].str.strip(),
+        "kod": dlp["KOD_SUKL"].str.strip().str.zfill(7),  # DIS-13 píše kódy bez núl na začiatku
         "nazov": dlp["NAZEV"].str.strip(),
         "doplnok": dlp["DOPLNEK"].str.strip(),
         "atc": dlp["ATC_WHO"].str.strip(),
@@ -105,7 +105,7 @@ def build_hlasenia(lieky: pd.DataFrame) -> pd.DataFrame:
     mr = sources_cz.load_hlasenia()
     cz = pd.DataFrame({
         "krajina": "CZ",
-        "kod": mr["KOD_SUKL"].str.strip(),
+        "kod": mr["KOD_SUKL"].str.strip().str.zfill(7),
         "nazov": mr["NAZEV"].str.strip(),
         "doplnok": mr["DOPLNEK"].str.strip(),
         "atc_hlasenie": mr["ATC"].str.strip(),
@@ -217,7 +217,7 @@ def build_dodavky() -> pd.DataFrame:
         if col not in tab:
             tab[col] = 0
     tab["mesiac"] = pd.to_datetime(tab["obdobie"].str.replace(".", "-", regex=False) + "-01", errors="coerce")
-    tab["kod"] = tab["kod"].str.strip()
+    tab["kod"] = tab["kod"].str.strip().str.zfill(7)  # v DIS-13 chýbajú nuly na začiatku kódu
     return tab.drop(columns=["obdobie"])
 
 

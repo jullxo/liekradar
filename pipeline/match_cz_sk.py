@@ -85,7 +85,7 @@ def run() -> None:
     print(f"Účinných látok (ATC7) v oboch krajinách: {_n(len(pary))}")
     print("\nLátky s najviac výpadkami na Slovensku od 15. 4. 2019:")
     print(pary.sort_values("vypadky_SK", ascending=False).head(10).to_string(index=False))
-    prvy_pohlad_kiq2()
+    # Presnejšia analýza KIQ2 je v pipeline.kiq2_posun (prvy_pohlad_kiq2 ostáva len pre porovnanie).
 
 
 if __name__ == "__main__":

@@ -1,0 +1,225 @@
+# 00 Mapa firiem
+
+Držitelia registrácie s aspoň 3 výpadkami od 15. 4. 2019, zoradení podľa počtu výpadkov. Generované z dát, neupravovať ručne.
+
+- [[Zentiva, k.s., Praha]] – 1967 výpadkov
+- [[Teva B.V]] – 1683 výpadkov
+- [[Sandoz s.r.o., Praha]] – 1576 výpadkov
+- [[KRKA, d.d., Novo mesto]] – 978 výpadkov
+- [[Fresenius Kabi s.r.o]] – 929 výpadkov
+- [[B.Braun Melsungen AG]] – 786 výpadkov
+- [[MEDOCHEMIE IBERIA, S.A., Lisabon]] – 756 výpadkov
+- [[VIATRIS LIMITED, Dublin]] – 658 výpadkov
+- [[ratiopharm GmbH]] – 544 výpadkov
+- [[Egis Pharmaceuticals PLC, Budapešť]] – 394 výpadkov
+- [[Mylan Ireland Limited, Dublin]] – 382 výpadkov
+- [[Sanofi Winthrop Industrie]] – 371 výpadkov
+- [[STADA Arzneimittel AG]] – 368 výpadkov
+- [[GlaxoSmithKline Trading Services Limited, Dublin]] – 346 výpadkov
+- [[Accord Healthcare S.L.U., Barcelona]] – 336 výpadkov
+- [[BAYER CORPORATION, MYERSTOWN, PENNSYLVANIA]] – 332 výpadkov
+- [[Actavis Group PTC ehf., Hafnarfjördur]] – 326 výpadkov
+- [[Pfizer Europe MA EEIG]] – 292 výpadkov
+- [[Glenmark Pharmaceuticals s.r.o]] – 269 výpadkov
+- [[MERCK SHARP & DOHME LTD., NEW JERSEY]] – 237 výpadkov
+- [[Lek Pharmaceuticals d.d., Ljubljana]] – 231 výpadkov
+- [[Gedeon Richter Plc., Budapešť]] – 205 výpadkov
+- [[Angelini Pharma Česká republika s.r.o., Brno]] – 198 výpadkov
+- [[G.L. Pharma GmbH]] – 190 výpadkov
+- [[Novartis Europharm Limited]] – 190 výpadkov
+- [[Haleon Czech Republic s.r.o]] – 182 výpadkov
+- [[Hexal AG, Holzkirchen]] – 174 výpadkov
+- [[Opella Healthcare Czech s.r.o., Praha]] – 156 výpadkov
+- [[CSL Behring GmbH]] – 143 výpadkov
+- [[Berlin-Chemie AG]] – 138 výpadkov
+- [[Vipharm S.A., Ożarów Mazowiecki]] – 138 výpadkov
+- [[N.V. Organon, Oss]] – 136 výpadkov
+- [[PIERRE FABRE MEDICAMENT, Lavaur]] – 136 výpadkov
+- [[Takeda Pharma AS, Vallensbaek Strand]] – 129 výpadkov
+- [[BAXTER HEALTHCARE CORP., HYLAND DIV., GLENDALE, CA]] – 128 výpadkov
+- [[PRO.MED.CS Praha a.s]] – 126 výpadkov
+- [[Curium Netherlands B.V., Petten]] – 125 výpadkov
+- [[Neuraxpharm Bohemia s.r.o., Praha]] – 125 výpadkov
+- [[CHEPLAPHARM Arzneimittel GmbH]] – 123 výpadkov
+- [[BB Pharma a.s]] – 108 výpadkov
+- [[Laboratoires Thea, Clermont-Ferrand]] – 104 výpadkov
+- [[Les Laboratoires Servier, Suresnes cedex]] – 100 výpadkov
+- [[EBEWE Pharma Ges.m.b.H Nfg.KG, Unterach]] – 96 výpadkov
+- [[Desitin Arzneimittel GmbH, Hamburg]] – 96 výpadkov
+- [[Instituto Grifols, S.A]] – 91 výpadkov
+- [[Menarini International Operations Luxembourg S.A., Luxembourg]] – 89 výpadkov
+- [[THE UPJOHN COMPANY]] – 83 výpadkov
+- [[Aspen Pharma Trading Limited, Dublin]] – 82 výpadkov
+- [[IBSA Slovakia s.r.o]] – 79 výpadkov
+- [[Bausch Health Ireland Limited, Dublin]] – 77 výpadkov
+- [[Olikla s.r.o., Kostelec nad Černými Lesy]] – 75 výpadkov
+- [[OMEGA PHARMA a.s]] – 75 výpadkov
+- [[IMUNA PHARM, a.s]] – 66 výpadkov
+- [[AS Kalceks, Riga]] – 65 výpadkov
+- [[BOEHRINGER INGELHEIM ITALIA S.P.A,  REGGELLOFIRENZE]] – 65 výpadkov
+- [[MEDREG s.r.o., Praha]] – 64 výpadkov
+- [[Orion Corporation, Espoo]] – 63 výpadkov
+- [[Janssen-Cilag International NV]] – 62 výpadkov
+- [[Baxalta Innovations GmbH, Vídeň]] – 62 výpadkov
+- [[Ferring-Léčiva, a.s., Jesenice u Prahy]] – 62 výpadkov
+- [[Dr. Falk Pharma GmbH, Freiburg]] – 61 výpadkov
+- [[Reckitt Benckiser (Czech Republic), spol. s r.o., Praha]] – 60 výpadkov
+- [[+pharma arzneimittel gmbh, Graz]] – 59 výpadkov
+- [[Guerbet,  Roissy CdG Cedex]] – 58 výpadkov
+- [[Novo Nordisk AS]] – 56 výpadkov
+- [[Heaton k.s., Praha]] – 50 výpadkov
+- [[BELUPO lijekovi i kozmetika, d.d., Koprivnica]] – 48 výpadkov
+- [[Herbacos Recordati s.r.o., Pardubice]] – 48 výpadkov
+- [[Grünenthal GmbH]] – 44 výpadkov
+- [[Pharmaselect International Beteiligungs GmbH]] – 44 výpadkov
+- [[GE Healthcare AS]] – 44 výpadkov
+- [[ARDEZ Pharma, spol. s r.o., Kosoř]] – 43 výpadkov
+- [[Mundipharma Gesellschaft m.b.H., Vídeň]] – 43 výpadkov
+- [[ÚJV Řež a.s., Husinec - Řež]] – 42 výpadkov
+- [[Glaxo Group Limited, Brentford]] – 39 výpadkov
+- [[CANDE s.r.o]] – 39 výpadkov
+- [[Chiesi Farmaceutici S.p.A]] – 38 výpadkov
+- [[URSAPHARM Arzneimittel GmbH, Saarbrücken]] – 38 výpadkov
+- [[CIS bio international, Gif-sur-Yvette Cedex]] – 37 výpadkov
+- [[Octapharma (IP) SPRL]] – 36 výpadkov
+- [[medac Gesellschaft für klinische Spezialpräparate m.b.H]] – 36 výpadkov
+- [[UNIMED PHARMA, spol. s r.o]] – 35 výpadkov
+- [[AS GRINDEKS]] – 35 výpadkov
+- [[Dr. Gerhard Mann Chem.-pharm. Fabrik GmbH]] – 33 výpadkov
+- [[TS Pharma s.r.o]] – 33 výpadkov
+- [[Phoenix Labs Unlimited Company]] – 30 výpadkov
+- [[Eli Lilly Nederland B.V., Utrecht]] – 30 výpadkov
+- [[Ewopharma International, s.r.o., Bratislava]] – 29 výpadkov
+- [[Santen OY, Tampere]] – 29 výpadkov
+- [[Noridem Enterprises Limited, Nikosia]] – 28 výpadkov
+- [[Wörwag Pharma GmbH & Co. KG]] – 28 výpadkov
+- [[Grifols Deutschland GmbH, Frankfurt]] – 28 výpadkov
+- [[Roche Registration GmbH, Grenzach-Wyhlen]] – 27 výpadkov
+- [[Biosimilar Collaborations Ireland Limited]] – 26 výpadkov
+- [[Istituto Gentili S.r.l., Milano]] – 26 výpadkov
+- [[Mucos Pharma GmbH & Co.KG., Berlín]] – 25 výpadkov
+- [[H. Lundbeck AS, Valby]] – 25 výpadkov
+- [[Stallergenes, Antony]] – 25 výpadkov
+- [[Aliud Pharma GmbH, Laichingen]] – 25 výpadkov
+- [[Bristol-Myers Squibb Pharma EEIG]] – 25 výpadkov
+- [[pharmaand GmbH, Vienna]] – 24 výpadkov
+- [[AstraZeneca AB, Södertälje]] – 23 výpadkov
+- [[ALLERGY THERAPEUTICS IBERICA, SL, Barcelona]] – 23 výpadkov
+- [[Exeltis Magyarország Kft., Budapest]] – 23 výpadkov
+- [[Aristo Pharma GmbH, Berlin]] – 22 výpadkov
+- [[Laboratori Guidotti S.p.A., La Vettola, (Pisa)]] – 22 výpadkov
+- [[Adamed Pharma S.A., Czosnów]] – 21 výpadkov
+- [[Zaklady Farmaceutyczne Polpharma SA, Starogard Gdański]] – 21 výpadkov
+- [[Novatin Limited, Mgarr]] – 20 výpadkov
+- [[FARMAK INTERNATIONAL Sp.z.o.o., Varšava]] – 19 výpadkov
+- [[Cipla Europe NV, Antverpy]] – 18 výpadkov
+- [[Daiichi Sankyo Europe GmbH, Mnichov]] – 18 výpadkov
+- [[Hikma Farmaceutica (Portugal) S.A]] – 17 výpadkov
+- [[NOUCOR HEALTH, S.A]] – 17 výpadkov
+- [[Atnahs Pharma Netherlands B.V., Amsterdam]] – 17 výpadkov
+- [[RadioMedic s.r.o., Husinec-Řež]] – 16 výpadkov
+- [[McNeil AB]] – 15 výpadkov
+- [[ARDEAPHARMA, a.s., Ševětín]] – 15 výpadkov
+- [[Tillotts Pharma GmbH, Rheinfelden]] – 15 výpadkov
+- [[Alfasigma S.p.A]] – 15 výpadkov
+- [[AbbVie Deutschland GmbH & Co. KG]] – 14 výpadkov
+- [[Johnson & Johnson, s.r.o]] – 14 výpadkov
+- [[LEO Pharma AS]] – 14 výpadkov
+- [[PHARMAGEN CZ s.r.o., Praha]] – 14 výpadkov
+- [[ANPHARM Przedsiebiorstwo Farmaceutyczne S.A]] – 13 výpadkov
+- [[Dompé farmaceutici S.p.A., Milano]] – 12 výpadkov
+- [[POLICHEM SA, Luxembourg]] – 12 výpadkov
+- [[Piramal Critical Care B.V., Voorschoten]] – 12 výpadkov
+- [[Otsuka Pharmaceutical Netherlands B.V., Amsterdam]] – 12 výpadkov
+- [[hameln pharma gmbh]] – 12 výpadkov
+- [[Indivior Europe Limited, Dublin]] – 12 výpadkov
+- [[BIOCODEX, Gentilly]] – 12 výpadkov
+- [[BIOMIN, a.s]] – 11 výpadkov
+- [[RECORDATI Ireland Limited, Ringaskiddy Co. Cork]] – 11 výpadkov
+- [[AXONIA, a.s]] – 11 výpadkov
+- [[Warszawskie Zaklady Farmaceutyczne Polfa S.A., Varšava]] – 11 výpadkov
+- [[Stragen Nordic AS, Slangerup]] – 11 výpadkov
+- [[Almirall, S.A., Barcelona]] – 10 výpadkov
+- [[Karo Healthcare AB, Stockholm]] – 10 výpadkov
+- [[Immedica Pharma AB, Stockholm]] – 10 výpadkov
+- [[Astellas Pharma Europe B.V., Leiden]] – 10 výpadkov
+- [[Basilea Pharmaceutica Deutschland GmbH, Lörrach]] – 9 výpadkov
+- [[Biomedica, spol. s r.o., Praha]] – 9 výpadkov
+- [[Bracco Imaging Deutschland GmbH]] – 9 výpadkov
+- [[INN-FARM d.o.o., Ljubljana]] – 9 výpadkov
+- [[P&G Health Germany GmbH, Schwalbach am Taunus]] – 9 výpadkov
+- [[Pharmathen S.A]] – 9 výpadkov
+- [[Quintesence s.r.o., Praha]] – 9 výpadkov
+- [[Theramex Ireland Limited]] – 9 výpadkov
+- [[EVER-Valinject GmbH, Unterach am Attersee]] – 9 výpadkov
+- [[LABORATORIES BESINS INTERNATIONAL]] – 8 výpadkov
+- [[Covis Pharma Europe B.V]] – 8 výpadkov
+- [[Merz Pharmaceuticals GmbH]] – 8 výpadkov
+- [[Blue Bio Pharmaceuticals Limited, Dublin]] – 8 výpadkov
+- [[Cooper Consumer Health B.V., Diemen]] – 8 výpadkov
+- [[Dr. Max Pharma s.r.o., Praha]] – 8 výpadkov
+- [[ESTEVE Pharmaceuticals GmbH, Berlín]] – 8 výpadkov
+- [[SERB S.A., Brusel]] – 8 výpadkov
+- [[Vitabalans Oy]] – 8 výpadkov
+- [[G.V.Pharma, a.s]] – 8 výpadkov
+- [[VUAB Pharma a.s., Roztoky]] – 8 výpadkov
+- [[BIODRUG s.r.o]] – 7 výpadkov
+- [[Dr. August Wolff GmbH & Co. KG Arzneimittel, Bielefeld]] – 7 výpadkov
+- [[Corza Medical GmbH, Düsseldorf]] – 7 výpadkov
+- [[Ennogen Healthcare (Europe) Limited, Dublin]] – 7 výpadkov
+- [[Techdow Pharma Netherlands B.V., Amsterdam]] – 7 výpadkov
+- [[Norgine B.V., Amsterdam]] – 6 výpadkov
+- [[Laboratorios Liconsa, S.A., Madrid]] – 6 výpadkov
+- [[Incyte Biosciences Distribution B.V]] – 6 výpadkov
+- [[GALDERMA INTERNATIONAL]] – 6 výpadkov
+- [[Celltrion Healthcare Hungary Kft., Budapest]] – 6 výpadkov
+- [[Laboratoire Français du Fractionnement et des Biotechnologies, Puteaux]] – 6 výpadkov
+- [[Bioprojet Europe Limited, Dublin 5]] – 6 výpadkov
+- [[bene-Arzneimittel GmbH, Mnichov]] – 6 výpadkov
+- [[Auxilto Healthcare s.r.o., Praha]] – 6 výpadkov
+- [[AMDIPHARM LIMITED, Dublin]] – 6 výpadkov
+- [[A. Menarini Industrie Farmaceutiche Riunite S.r.l., Florencie]] – 6 výpadkov
+- [[I-GEN, LDA, Caparica]] – 6 výpadkov
+- [[Orpha-Devel Handels und Vertriebs GmbH, Purkersdorf]] – 5 výpadkov
+- [[Tillomed Malta Ltd., Birkirkara]] – 5 výpadkov
+- [[TAD Pharma GmbH]] – 5 výpadkov
+- [[Helsinn Birex Pharmaceuticals Ltd., Dublin]] – 5 výpadkov
+- [[Heyl Chemisch-pharmazeutische Fabrik GmbH & Co. KG, Berlín]] – 5 výpadkov
+- [[Cassella-med GmbH & Co. KG]] – 5 výpadkov
+- [[BRADEX S.A., Kryoneri]] – 5 výpadkov
+- [[AUXpharma s.r.o., Praha]] – 5 výpadkov
+- [[ADVANZ PHARMA Limited, Dublin]] – 5 výpadkov
+- [[easyMed s.r.o., Praha 10]] – 5 výpadkov
+- [[OMEDICAMED, UNIPESSOAL LDA]] – 5 výpadkov
+- [[Nordic Group B.V]] – 5 výpadkov
+- [[Xantis Pharma Limited, Nicosia]] – 5 výpadkov
+- [[Telix Innovations, Herstal]] – 4 výpadkov
+- [[PharmaSwiss Česká republika s.r.o]] – 4 výpadkov
+- [[ViiV Healthcare BV, Amersfoort]] – 4 výpadkov
+- [[Valneva Sweden AB, Stockholm]] – 4 výpadkov
+- [[Fidia Farmaceutici S.p.A., Abano Terme (PD)]] – 4 výpadkov
+- [[Gebro Pharma GmbH, Fieberbrunn]] – 4 výpadkov
+- [[Ardeypharm GmbH Pharmazeutische Fabrik]] – 4 výpadkov
+- [[GALMED a.s., Ostrava]] – 4 výpadkov
+- [[UCB s.r.o., Praha]] – 4 výpadkov
+- [[Hennig Arzneimittel GmbH & Co. KG, Flörsheim am Main]] – 4 výpadkov
+- [[Infectopharm Arzneimittel und Consilium GmbH, Heppenheim]] – 4 výpadkov
+- [[Alkaloid - INT d.o.o., Ljubljana - Črnuče]] – 3 výpadkov
+- [[BioQ Pharma B.V., Amsterdam]] – 3 výpadkov
+- [[Bavarian Nordic AS]] – 3 výpadkov
+- [[ETHYX PHARMACEUTICALS, Montrouge]] – 3 výpadkov
+- [[DYNTEC spol. s r.o., Terezín]] – 3 výpadkov
+- [[Divapharma GmbH, Berlin]] – 3 výpadkov
+- [[Mayoly Pharma France, Rueil-Malmaison]] – 3 výpadkov
+- [[Hisamitsu Italia S.r.l., Milano]] – 3 výpadkov
+- [[GSK Vaccines S.r.L, Siena]] – 3 výpadkov
+- [[Megafyt Pharma s.r.o., Vrané nad Vltavou]] – 3 výpadkov
+- [[IBIGEN, S.r.l., Aprilia]] – 3 výpadkov
+- [[Medi-Radiopharma Kft., Érd]] – 3 výpadkov
+- [[Samsung Bioepis NL B.V., Delft]] – 3 výpadkov
+- [[Pharmaceutical Innovation Services S.L., MADRID]] – 3 výpadkov
+- [[Pierrel S.p.A]] – 3 výpadkov
+- [[UCB Pharma S.A]] – 3 výpadkov
+- [[Trommsdorff GmbH & Co. KG, Alsdorf]] – 3 výpadkov
+- [[SPA-Societa Prodotti  Antibiotici S.p.A., Milano]] – 3 výpadkov
+- [[WALMARK, a.s., Třinec]] – 3 výpadkov
