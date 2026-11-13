@@ -1,0 +1,16 @@
+{
+  "SK": {
+    "vahy": {
+      "ina_krajina_ta_ista_firma": 0.064,
+      "ina_krajina_ta_ista_latka": 0.031,
+      "doma_ta_ista_latka": 0.057,
+      "historia_lieku": 0.569,
+      "spolahlivost_firmy": 0.279
+    },
+    "popis": "v1 (váhy z logistickej regresie, spätný test od 2024-07: top 100 presnosť 13,6 %, lift 55,7×)",
+    "presnost_top": 0.1362962962962963,
+    "lift_top": 55.73741763134462,
+    "auc": 0.7992798776655662,
+    "overenie_od": "2024-07-15"
+  }
+}

@@ -8,9 +8,10 @@ Zásada: čísla počíta kód, nie jazykový model. Každý výsledok nesie zdr
     detail_latky(atc)                          prehľad látky v ČR a SR
     posun_latky(atc)                           KIQ2: vlny výpadkov látky v ČR a SR a ich časový posun
     nahrady(krajina, kod)                      KIQ3: náhrady za liek
-    konkurenti(atc_prefix, krajina)            KIQ4: výrobcovia v skupine, ich výpadky a zisky počas výpadkov iných
+    konkurenti(atc_prefix, krajina)            KIQ4: výrobcovia v skupine, ich výpadky a zmena podielu počas výpadkov iných
     trhove_medzery(krajina, n=10)              KIQ5: látky s dlhým výpadkom a málo dodávateľmi
-    top_rizikove(krajina, atc_prefix, n, k_datumu)   KIQ1: lieky s najvyšším rizikom výpadku (verzia v0)
+    top_rizikove(krajina, atc_prefix, n, k_datumu)   KIQ1: lieky s najvyšším rizikom výpadku
+    signaly_rizika(krajina, k_datumu)          KIQ1: signály pre všetky lieky (pre spätný test)
 
 Ukážka v termináli:
     python -m pipeline.analytika J01CR02
@@ -23,6 +24,8 @@ import sys
 import unicodedata
 from functools import lru_cache
 from pathlib import Path
+
+import json
 
 import numpy as np
 import pandas as pd
@@ -87,6 +90,7 @@ def _prazdna(df: pd.DataFrame) -> pd.DataFrame:
     return df.iloc[0:0]
 
 
+@lru_cache(maxsize=None)
 def firma_kluc(nazov) -> str:
     """Zjednotí názov držiteľa registrácie medzi krajinami.
 
@@ -145,8 +149,11 @@ def nazov_atc(atc: str) -> str:
 
 
 def _posledne_mesiace(k_datumu: pd.Timestamp, pocet: int) -> list:
-    """Posledných `pocet` mesiacov s dátami o dodávkach, ktoré boli známe k danému dátumu."""
-    mesiace = sorted(m for m in _tab("dodavky")["mesiac"].dropna().unique() if m <= k_datumu)
+    """Posledných `pocet` celých mesiacov s dátami o dodávkach, ktoré boli známe k danému dátumu.
+    Mesiac berieme až po jeho skončení (SÚKL ho zverejní v nasledujúcom mesiaci)."""
+    k_datumu = pd.Timestamp(k_datumu)
+    mesiace = sorted(m for m in _tab("dodavky")["mesiac"].dropna().unique()
+                     if pd.Timestamp(m) + pd.DateOffset(months=1) <= k_datumu)
     return mesiace[-pocet:]
 
 
@@ -528,7 +535,7 @@ def trhove_medzery(krajina: str, n: int = 10, max_dni: int = MEDZERA_MAX_DNI) ->
 
 
 # ---------------------------------------------------------------------------
-# KIQ1: riziko výpadku (verzia v0)
+# KIQ1: riziko výpadku
 # ---------------------------------------------------------------------------
 
 VAHY_V0 = {
@@ -538,18 +545,24 @@ VAHY_V0 = {
     "historia_lieku": 0.20,
     "spolahlivost_firmy": 0.10,
 }
+SIGNALY_CZ = ["pokles_dodavok", "podiel_vyvozu"]  # len ČR, z dodávok DIS-13
+VAHY_SUBOR = Path(__file__).with_name("vahy_kiq1.json")  # váhy v1 zo spätného testu (pipeline.kiq1_spatny_test)
 
 
-def top_rizikove(krajina: str, atc_prefix: str | None = None, n: int = 10, k_datumu=None,
-                 zoskupit: bool = True) -> pd.DataFrame:
-    """Lieky bez nahláseného výpadku s najvyšším rizikom, že výpadok príde (KIQ1).
+def _vahy(krajina: str) -> tuple[dict, str]:
+    """Váhy signálov: v1 zo spätného testu, ak existujú a boli lepšie ako v0, inak v0."""
+    try:
+        data = json.loads(VAHY_SUBOR.read_text(encoding="utf-8"))
+        v1 = data[krajina]
+        return v1["vahy"], v1["popis"]
+    except (OSError, KeyError, ValueError):
+        return VAHY_V0, "v0 (odhadnuté váhy, bez spätného testu)"
 
-    VERZIA v0: váhy signálov sú zatiaľ odhadnuté, presnosť overí spätný test.
-    `k_datumu` umožňuje spočítať riziko tak, ako by vyzeralo k minulému dátumu (pre spätný test).
-    Používa len informácie, ktoré boli k tomu dátumu známe.
-    `zoskupit=True`: jeden riadok na výrobcu a látku (najrizikovejšie balenie, ostatné kódy
-    v `dalsie_kody`). Spätný test volá `zoskupit=False` a hodnotí každé balenie zvlášť.
-    """
+
+def signaly_rizika(krajina: str, k_datumu=None, atc_prefix: str | None = None) -> pd.DataFrame:
+    """Všetky lieky, ktoré k dátumu nie sú vo výpadku, zrušené ani nemajú ohlásený výpadok,
+    a pri každom hodnoty signálov 0–1. Používa len to, čo bolo k dátumu známe:
+    hlásenia podané najneskôr v ten deň a dodávky za mesiace, ktoré už boli zverejnené."""
     krajina = krajina.strip().upper()
     t = pd.Timestamp(k_datumu or _dnes()).normalize()
     okno_od = t - pd.Timedelta(days=SIGNAL_OKNO_DNI)
@@ -563,19 +576,22 @@ def top_rizikove(krajina: str, atc_prefix: str | None = None, n: int = 10, k_dat
     # vylúčime lieky, ktoré k dátumu t už sú vo výpadku, zrušené alebo majú ohlásený výpadok
     stav = stav_liekov(t)
     stav = stav[stav["krajina"] == krajina].set_index("kod")
-    l = l[~l["kod"].map(stav["stav"]).isin(["vo výpadku", "zrušené"])]
-    l = l[l["kod"].map(stav["ohlaseny_vypadok_od"]).isna()]
+    vylucene = stav.index[stav["stav"].isin(["vo výpadku", "zrušené"]) | stav["ohlaseny_vypadok_od"].notna()]
+    l = l[~l["kod"].isin(set(vylucene))]
+    mesiace = _posledne_mesiace(t, 4) if krajina == "CZ" else []
     if krajina == "CZ":  # len lieky, ktoré sa naozaj dodávajú
-        dodane = _dodavky_za_mesiace(_posledne_mesiace(t, 3))
-        if not dodane.empty:
-            l = l[l["kod"].map(dodane).fillna(0) > 0]
+        if len(mesiace) < 4:
+            return pd.DataFrame()
+        dodane = _dodavky_za_mesiace(mesiace[-3:])
+        l = l[l["kod"].map(dodane).fillna(0) > 0]
     if l.empty:
         return pd.DataFrame()
 
     ep = _tab("epizody")
-    ep = ep[(ep["zaciatok"] <= t) & ep["atc"].notna()].copy()
+    znamy = ep["datum_hlasenia"].isna() | (ep["datum_hlasenia"] <= t)
+    ep = ep[znamy & ep["atc"].notna()].copy()
     ep["firma"] = ep["drzitel"].map(firma_kluc)
-    nedavne = ep[ep["zaciatok"] > okno_od]
+    nedavne = ep[ep["zaciatok"] > okno_od]  # aj ohlásené do budúcna, ak hlásenie už bolo podané
     druha = nedavne[nedavne["krajina"] == DRUHA[krajina]]
     doma = nedavne[nedavne["krajina"] == krajina]
 
@@ -583,37 +599,76 @@ def top_rizikove(krajina: str, atc_prefix: str | None = None, n: int = 10, k_dat
     latka_firma_druha = set(zip(druha["atc"], druha["firma"]))
     doma_kody = doma.groupby("atc")["kod"].apply(set).to_dict()
 
-    historia = ep[(ep["krajina"] == krajina) & (ep["zaciatok"] > t - pd.Timedelta(days=3 * 365))].groupby("kod").size()
-    rok = ep[(ep["krajina"] == krajina) & (ep["zaciatok"] > t - pd.Timedelta(days=365))]
+    minule = ep[(ep["krajina"] == krajina) & (ep["zaciatok"] <= t)]
+    historia = minule[minule["zaciatok"] > t - pd.Timedelta(days=3 * 365)].groupby("kod").size()
+    rok = minule[minule["zaciatok"] > t - pd.Timedelta(days=365)]
     vypadky_firmy = rok.groupby("firma").size()
     balenia_firmy = lieky[lieky["krajina"] == krajina]["drzitel"].map(firma_kluc).value_counts()
     miera_firmy = (vypadky_firmy / balenia_firmy).reindex(l["firma"]).fillna(0).values
 
-    signaly = pd.DataFrame(index=l.index)
-    signaly["ina_krajina_ta_ista_firma"] = [(a, f) in latka_firma_druha for a, f in zip(l["atc"], l["firma"])]
-    signaly["ina_krajina_ta_ista_latka"] = l["atc"].isin(latky_druha).values
-    signaly["doma_ta_ista_latka"] = [len(doma_kody.get(a, set()) - {k}) > 0 for a, k in zip(l["atc"], l["kod"])]
-    signaly["historia_lieku"] = (l["kod"].map(historia).fillna(0).clip(upper=3) / 3).values
-    signaly["spolahlivost_firmy"] = np.clip(miera_firmy / 0.2, 0, 1)
+    l["ina_krajina_ta_ista_firma"] = [float((a, f) in latka_firma_druha) for a, f in zip(l["atc"], l["firma"])]
+    l["ina_krajina_ta_ista_latka"] = l["atc"].isin(latky_druha).astype(float).values
+    l["doma_ta_ista_latka"] = [float(len(doma_kody.get(a, set()) - {k}) > 0) for a, k in zip(l["atc"], l["kod"])]
+    l["historia_lieku"] = (l["kod"].map(historia).fillna(0).clip(upper=3) / 3).values
+    l["spolahlivost_firmy"] = np.clip(miera_firmy / 0.2, 0, 1)
 
-    skore = sum(signaly[s].astype(float) * v for s, v in VAHY_V0.items()) * 100
-    l["skore"] = skore.round(0).astype(int)
+    if krajina == "CZ":
+        dod = _tab("dodavky")
+        dod = dod[dod["mesiac"].isin(mesiace)]
+        lekarne = dod.pivot_table(index="kod", columns="mesiac", values="baleni_lekarne", aggfunc="sum", fill_value=0)
+        lekarne = lekarne.reindex(columns=mesiace, fill_value=0)
+        posledny, predtym = lekarne[mesiace[-1]], lekarne[mesiace[:-1]].mean(axis=1)
+        pokles = (1 - posledny / predtym.where(predtym > 0)).clip(0, 1).fillna(0)
+        vyvoz = dod[dod["mesiac"].isin(mesiace[-3:])].groupby("kod")[["baleni_lekarne", "baleni_vyvoz"]].sum()
+        podiel = (vyvoz["baleni_vyvoz"] / vyvoz.sum(axis=1).where(lambda s: s > 0)).fillna(0)
+        l["pokles_dodavok"] = l["kod"].map(pokles).fillna(0).values
+        l["podiel_vyvozu"] = (l["kod"].map(podiel).fillna(0) / 0.3).clip(0, 1).values
 
+    l["k_datumu"] = t
+    return l
+
+
+def skore_rizika(signaly: pd.DataFrame, vahy: dict) -> pd.Series:
+    """Vážený súčet signálov prepočítaný na 0–100 (100 = všetky signály naplno)."""
+    spolu = sum(vahy.values()) or 1
+    return (sum(signaly[s].astype(float) * v for s, v in vahy.items() if s in signaly) / spolu * 100)
+
+
+def top_rizikove(krajina: str, atc_prefix: str | None = None, n: int = 10, k_datumu=None,
+                 zoskupit: bool = True) -> pd.DataFrame:
+    """Lieky bez nahláseného výpadku s najvyšším rizikom, že výpadok príde (KIQ1).
+
+    Skóre 0–100 je vážený súčet signálov. Váhy sú v1 zo spätného testu (súbor vahy_kiq1.json),
+    ak ešte neexistuje, odhadnuté v0. Skóre NIE JE pravdepodobnosť.
+    `k_datumu` umožňuje spočítať riziko tak, ako by vyzeralo k minulému dátumu.
+    `zoskupit=True`: jeden riadok na výrobcu a látku (najrizikovejšie balenie, ostatné kódy
+    v `dalsie_kody`).
+    """
+    krajina = krajina.strip().upper()
+    l = signaly_rizika(krajina, k_datumu, atc_prefix)
+    if l.empty:
+        return pd.DataFrame()
+    t = l["k_datumu"].iloc[0]
+    vahy, verzia = _vahy(krajina)
+    l["skore"] = skore_rizika(l, vahy).round(0).astype(int)
+
+    druha = DRUHA[krajina]
     popis = {
-        "ina_krajina_ta_ista_firma": f"rovnaký výrobca nahlásil výpadok tejto látky v {DRUHA[krajina]} za posledných {SIGNAL_OKNO_DNI} dní {ZDROJ[(DRUHA[krajina], 'hlasenia')]}",
-        "ina_krajina_ta_ista_latka": f"látka má výpadok v {DRUHA[krajina]} za posledných {SIGNAL_OKNO_DNI} dní {ZDROJ[(DRUHA[krajina], 'hlasenia')]}",
+        "ina_krajina_ta_ista_firma": f"rovnaký výrobca nahlásil výpadok tejto látky v {druha} za posledných {SIGNAL_OKNO_DNI} dní {ZDROJ[(druha, 'hlasenia')]}",
+        "ina_krajina_ta_ista_latka": f"látka má výpadok v {druha} za posledných {SIGNAL_OKNO_DNI} dní {ZDROJ[(druha, 'hlasenia')]}",
         "doma_ta_ista_latka": f"iné lieky s touto látkou majú v {krajina} nový výpadok {ZDROJ[(krajina, 'hlasenia')]}",
         "historia_lieku": f"liek mal v posledných 3 rokoch výpadky {ZDROJ[(krajina, 'hlasenia')]}",
         "spolahlivost_firmy": f"výrobca mal za posledný rok veľa výpadkov {ZDROJ[(krajina, 'hlasenia')]}",
+        "pokles_dodavok": f"dodávky do lekární v poslednom mesiaci klesli oproti predchádzajúcim 3 mesiacom {ZDROJ[('CZ', 'dodavky')]}",
+        "podiel_vyvozu": f"veľká časť dodávok ide do zahraničia {ZDROJ[('CZ', 'dodavky')]}",
     }
-    l["dovody"] = [
-        "; ".join(popis[s] for s in VAHY_V0 if signaly.loc[i, s] > 0) for i in l.index
-    ]
+    pouzite = [s for s, v in vahy.items() if v > 0 and s in l]
+    l["dovody"] = ["; ".join(popis[s] for s in pouzite if r[s] > 0) for _, r in l[pouzite].iterrows()]
     l = l[l["skore"] > 0].sort_values(["skore", "kod"], ascending=[False, True])
     stlpce = ["kod", "nazov", "doplnok", "atc", "drzitel", "skore", "dovody"]
     if zoskupit:
         skupina = l["atc"] + "|" + l["firma"]
-        ostatne = l.groupby(skupina)["kod"].agg(lambda s: list(s)[1:11])
+        ostatne = l.groupby(skupina)["kod"].agg(lambda s: ", ".join(map(str, list(s)[1:11])))
         l = l[~skupina.duplicated()].copy()
         l["dalsie_kody"] = (l["atc"] + "|" + l["firma"]).map(ostatne)
         stlpce.append("dalsie_kody")
@@ -621,7 +676,7 @@ def top_rizikove(krajina: str, atc_prefix: str | None = None, n: int = 10, k_dat
     vysledok = l[stlpce].reset_index(drop=True)
     vysledok.insert(4, "latka", vysledok["atc"].map(nazov_atc))
     vysledok["k_datumu"] = _datum(t)
-    vysledok["verzia_modelu"] = "v0 (odhadnuté váhy, bez spätného testu)"
+    vysledok["verzia_modelu"] = verzia
     return vysledok
 
 
