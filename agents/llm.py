@@ -5,9 +5,12 @@
 - Bezplatná úroveň Gemini: 15 požiadaviek za minútu a 500 za deň. Obmedzovač drží najviac
   15 volaní za 60 s v rámci procesu a najviac MAX_VOLANI_NA_OTAZKU volaní na jednu otázku.
 - Pri chybe 429 počká (podľa odpovede servera, najviac 60 s) a skúsi to raz znova.
-  Pri 503 (model dočasne preťažený) počká 15 s a tiež skúsi raz znova.
+  Pri 503 (model dočasne preťažený) počká 15 s a tiež skúsi raz znova. Ak aj potom vráti 503,
+  prepne sa na záložný model GEMINI_MODEL_FALLBACK (predvolene gemini-3.1-flash-lite) a ten
+  používa až do konca otázky. Ktorý model krok spravil, je v `posledny_model`.
 - LIEKRADAR_FAKE_LLM=1: namiesto Gemini vráti pevné odpovede, ktoré pripraví každý agent sám.
-  Graf sa tak dá otestovať bez kľúča a bez míňania limitu.
+  Graf sa tak dá otestovať bez kľúča a bez míňania limitu. LIEKRADAR_FAKE_503=n navyše simuluje,
+  že od n-tého volania je hlavný model preťažený (test záložného modelu).
 """
 
 from __future__ import annotations
@@ -25,6 +28,7 @@ LIMIT_ZA_MINUTU = 15
 CAKANIE_PRI_429_MAX_S = 60
 CAKANIE_PRI_503_S = 15
 PREDVOLENY_MODEL = "gemini-3.5-flash-lite"
+PREDVOLENY_ZALOZNY_MODEL = "gemini-3.1-flash-lite"
 
 _casy_volani: deque = deque()  # časy volaní za poslednú minútu (spoločné pre všetky otázky v procese)
 _zamok = threading.Lock()
@@ -56,6 +60,12 @@ def nazov_modelu() -> str:
     if je_fake():
         return "fake-llm (LIEKRADAR_FAKE_LLM=1)"
     return _nastavenie("GEMINI_MODEL") or PREDVOLENY_MODEL
+
+
+def nazov_zalozneho_modelu() -> str:
+    if je_fake():
+        return "fake-llm-zalozny"
+    return _nastavenie("GEMINI_MODEL_FALLBACK") or PREDVOLENY_ZALOZNY_MODEL
 
 
 def _pockaj_na_slot() -> None:
@@ -96,10 +106,15 @@ class LLM:
 
     def __init__(self) -> None:
         self.fake = je_fake()
-        self.model = nazov_modelu()
+        self.model = nazov_modelu()                 # hlavný model
+        self.zalozny_model = nazov_zalozneho_modelu()
+        self.aktivny_model = self.model             # po 503 sa prepne na záložný (do konca otázky)
+        self.posledny_model = self.model            # model, ktorý spravil (alebo skúšal) posledné volanie
+        self.pouzite_modely: list[str] = []         # modely, ktoré úspešne odpovedali, v poradí
         self.pocet_volani = 0    # úspešné volania (rozpočet MAX_VOLANI_NA_OTAZKU)
         self.pocet_pokusov = 0   # všetky požiadavky na Gemini vrátane opakovaní po 429/503
-        self._klient = None
+        self._fake_503_od = int(os.environ.get("LIEKRADAR_FAKE_503", "0") or 0) if self.fake else 0
+        self._klienti: dict = {}
         self._kluc: str | None = None
         if not self.fake:
             self._kluc = _nastavenie("GEMINI_API_KEY")
@@ -109,11 +124,24 @@ class LLM:
 
     # -- verejné metódy -----------------------------------------------------------------
 
+    def _fake_volanie(self):
+        """Režim LIEKRADAR_FAKE_LLM: započíta volanie, prípadne simuluje 503 a prepnutie na záložný model."""
+        if self._fake_503_od and self.pocet_volani + 1 >= self._fake_503_od and self.aktivny_model == self.model:
+            self.pocet_pokusov += 2  # hlavný model: pokus + opakovanie, oba 503
+            self.aktivny_model = self.zalozny_model
+        self.pocet_volani += 1
+        self.pocet_pokusov += 1
+        self._zaznamenaj_model(self.aktivny_model)
+
+    def _zaznamenaj_model(self, model: str) -> None:
+        self.posledny_model = model
+        if model not in self.pouzite_modely:
+            self.pouzite_modely.append(model)
+
     def text(self, system: str, vstup: str, fake: str) -> str:
         """Voľný text (markdown). `fake` je odpoveď pre režim LIEKRADAR_FAKE_LLM."""
         if self.fake:
-            self.pocet_volani += 1
-            self.pocet_pokusov += 1
+            self._fake_volanie()
             return fake
         odpoved = self._zavolaj(lambda klient: klient.invoke(self._spravy(system, vstup)))
         return (odpoved.text or "").strip()
@@ -121,8 +149,7 @@ class LLM:
     def strukturovane(self, system: str, vstup: str, schema: type[BaseModel], fake: BaseModel) -> BaseModel:
         """Štruktúrovaný výstup podľa Pydantic schémy."""
         if self.fake:
-            self.pocet_volani += 1
-            self.pocet_pokusov += 1
+            self._fake_volanie()
             return fake
         odpoved = self._zavolaj(
             lambda klient: klient.with_structured_output(schema).invoke(self._spravy(system, vstup)))
@@ -138,14 +165,14 @@ class LLM:
 
         return [SystemMessage(content=system), HumanMessage(content=vstup)]
 
-    def _klient_gemini(self):
-        if self._klient is None:
+    def _klient_gemini(self, model: str):
+        if model not in self._klienti:
             from langchain_google_genai import ChatGoogleGenerativeAI
 
-            # max_retries=1 = jeden pokus; opakovanie pri 429 riadime sami, aby sa limit neminul potichu
-            self._klient = ChatGoogleGenerativeAI(model=self.model, google_api_key=self._kluc,
-                                                  max_retries=1, timeout=120)
-        return self._klient
+            # max_retries=1 = jeden pokus; opakovanie pri 429/503 riadime sami, aby sa limit neminul potichu
+            self._klienti[model] = ChatGoogleGenerativeAI(model=model, google_api_key=self._kluc,
+                                                          max_retries=1, timeout=120)
+        return self._klienti[model]
 
     def _bez_kluca(self, text: str) -> str:
         if self._kluc:
@@ -155,14 +182,29 @@ class LLM:
     def _zavolaj(self, volanie):
         if self.pocet_volani >= MAX_VOLANI_NA_OTAZKU:
             raise LLMChyba(f"Prekročený rozpočet {MAX_VOLANI_NA_OTAZKU} volaní modelu na jednu otázku.")
-        klient = self._klient_gemini()
+        while True:
+            model = self.aktivny_model
+            try:
+                odpoved = self._skus_model(model, volanie)
+            except _Pretazeny:
+                if model != self.zalozny_model:  # hlavný model je preťažený -> záložný do konca otázky
+                    self.aktivny_model = self.zalozny_model
+                    continue
+                raise LLMChyba(f"Modely {self.model} aj {self.zalozny_model} sú teraz preťažené (Google vrátil "
+                               "503). Skúste to o niekoľko minút.") from None
+            self.pocet_volani += 1  # rozpočet otázky počíta úspešné volania, opakovania po 429/503 navyše
+            self._zaznamenaj_model(model)
+            return odpoved
+
+    def _skus_model(self, model: str, volanie):
+        """Jeden model: pokus a pri 429/503 jedno opakovanie. Pri trvalom 503 vyhodí _Pretazeny."""
+        klient = self._klient_gemini(model)
         for pokus in (1, 2):
             _pockaj_na_slot()
             self.pocet_pokusov += 1
+            self.posledny_model = model
             try:
-                odpoved = volanie(klient)
-                self.pocet_volani += 1  # rozpočet otázky počíta úspešné volania, opakovanie po 429/503 navyše
-                return odpoved
+                return volanie(klient)
             except Exception as chyba:  # noqa: BLE001 – chybu prekladáme na zrozumiteľnú správu
                 if _je_429(chyba) and pokus == 1:
                     time.sleep(_cakanie_z_chyby(chyba))
@@ -174,8 +216,11 @@ class LLM:
                     raise LLMChyba("Gemini odmietol požiadavku pre limit bezplatnej úrovne (15 požiadaviek za "
                                    "minútu, 500 za deň). Skúste to o minútu, prípadne zajtra.") from None
                 if _je_pretazeny(chyba):
-                    raise LLMChyba(f"Model {self.model} je teraz preťažený (Google vrátil 503). "
-                                   "Skúste to o niekoľko minút.") from None
+                    raise _Pretazeny() from None
                 popis = self._bez_kluca(str(chyba))[:300]
-                raise LLMChyba(f"Volanie modelu {self.model} zlyhalo ({type(chyba).__name__}): {popis}") from None
-        raise LLMChyba("Volanie modelu zlyhalo.")
+                raise LLMChyba(f"Volanie modelu {model} zlyhalo ({type(chyba).__name__}): {popis}") from None
+        raise LLMChyba(f"Volanie modelu {model} zlyhalo.")
+
+
+class _Pretazeny(Exception):
+    """Model vrátil 503 aj po opakovaní."""

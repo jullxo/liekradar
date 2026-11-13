@@ -26,7 +26,7 @@ def main() -> int:
     print(vysledok["brief"] or "(správa nevznikla)")
     print("\n=== Case Log ===")
     print("\n".join(vysledok["case_log"]))
-    print(f"\nModel: {vysledok['model']} · volaní modelu: {vysledok['volania_llm']} "
+    print(f"\nModely: {', '.join(vysledok.get('modely') or [vysledok['model']])} · volaní modelu: {vysledok['volania_llm']} "
           f"(požiadaviek vrátane opakovaní: {vysledok.get('poziadavky_llm', vysledok['volania_llm'])})")
     for druh, cesta in vysledok["subory"].items():
         print(f"Uložené ({druh}): {cesta}")

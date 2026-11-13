@@ -85,8 +85,31 @@ def posun_latky(atc: str) -> dict:
 
 
 def nahrady(krajina: str, kod: str, n: int = 15) -> dict:
-    """KIQ3: náhrady za liek (kód SÚKL/ŠÚKL) v tej istej krajine."""
-    return tabulka_na_json(analytika.nahrady(krajina, kod, n))
+    """KIQ3: náhrady za liek (kód SÚKL/ŠÚKL) v tej istej krajine.
+
+    Navyše k výsledku pipeline: `povodny_liek` (názov, forma a sila pôvodného lieku z registra)
+    a pri každom zázname `rovnaka_forma` (forma kandidáta == forma pôvodného lieku). Výsledok
+    analytika.nahrady sa nemení; je to len vyhľadanie v registri a porovnanie dvoch textov.
+    """
+    vysledok = tabulka_na_json(analytika.nahrady(krajina, kod, n))
+    povodny = _povodny_liek(krajina, kod)
+    if povodny:
+        vysledok["povodny_liek"] = povodny
+        for z in vysledok["zaznamy"]:
+            z["rovnaka_forma"] = z.get("forma") == povodny["forma"]
+    return vysledok
+
+
+def _povodny_liek(krajina: str, kod: str) -> dict | None:
+    """Pôvodný liek z registra (tabuľka lieky z pipeline), ku ktorému hľadáme náhrady."""
+    krajina, kod = krajina.strip().upper(), str(kod).strip()
+    lieky = analytika._tab("lieky")
+    riadok = lieky[(lieky["krajina"] == krajina) & (lieky["kod"] == kod)]
+    if riadok.empty:
+        return None
+    r = riadok.iloc[0]
+    return {"kod": kod, "nazov": _hodnota(r["nazov"]), "doplnok": _hodnota(r["doplnok"]), "forma": _hodnota(r["forma"]),
+            "sila": _hodnota(r["sila"]), "zdroj": analytika.ZDROJ[(krajina, "lieky")]}
 
 
 def konkurenti(atc_prefix: str, krajina: str) -> dict:
