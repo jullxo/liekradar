@@ -4,6 +4,6 @@ pyarrow
 duckdb
 requests
 openpyxl
-scikit-learn
+scikit-learn==1.9.1
 langgraph
 langchain-google-genai
