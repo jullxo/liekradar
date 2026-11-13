@@ -638,19 +638,31 @@ def top_rizikove(krajina: str, atc_prefix: str | None = None, n: int = 10, k_dat
                  zoskupit: bool = True) -> pd.DataFrame:
     """Lieky bez nahláseného výpadku s najvyšším rizikom, že výpadok príde (KIQ1).
 
-    Skóre 0–100 je vážený súčet signálov. Váhy sú v1 zo spätného testu (súbor vahy_kiq1.json),
-    ak ešte neexistuje, odhadnuté v0. Skóre NIE JE pravdepodobnosť.
+    Model: ak existuje pipeline/model_kiq1_<krajina>.joblib (v2, strojové učenie z pipeline.kiq1_ml),
+    skóre 0–100 je percentil rizika medzi liekmi krajiny. Inak je skóre vážený súčet signálov
+    s váhami v1 (vahy_kiq1.json) alebo odhadnutými v0. Skóre NIE JE pravdepodobnosť.
     `k_datumu` umožňuje spočítať riziko tak, ako by vyzeralo k minulému dátumu.
     `zoskupit=True`: jeden riadok na výrobcu a látku (najrizikovejšie balenie, ostatné kódy
     v `dalsie_kody`).
     """
     krajina = krajina.strip().upper()
-    l = signaly_rizika(krajina, k_datumu, atc_prefix)
+    from pipeline import kiq1_ml  # tu, nie hore: kiq1_ml importuje analytiku
+    balik = kiq1_ml.nacitaj_model(krajina)
+    vahy, verzia = _vahy(krajina)
+
+    # ML model (v2) hodnotí lieky voči celej krajine, preto počíta všetky a filtruje až potom
+    l = signaly_rizika(krajina, k_datumu, None if balik else atc_prefix)
     if l.empty:
         return pd.DataFrame()
     t = l["k_datumu"].iloc[0]
-    vahy, verzia = _vahy(krajina)
-    l["skore"] = skore_rizika(l, vahy).round(0).astype(int)
+    if balik:
+        l = kiq1_ml.skoruj(balik, l)
+        verzia = balik["popis"]
+        if atc_prefix:
+            l = l[l["atc"].str.startswith(atc_prefix.strip().upper())]
+        vahy = {s: 1.0 for s in VAHY_V0} | ({"podiel_vyvozu": 1.0} if krajina == "CZ" else {})
+    else:
+        l["skore"] = skore_rizika(l, vahy).round(0).astype(int)
 
     druha = DRUHA[krajina]
     popis = {
@@ -664,6 +676,12 @@ def top_rizikove(krajina: str, atc_prefix: str | None = None, n: int = 10, k_dat
     }
     pouzite = [s for s, v in vahy.items() if v > 0 and s in l]
     l["dovody"] = ["; ".join(popis[s] for s in pouzite if r[s] > 0) for _, r in l[pouzite].iterrows()]
+    if balik:  # ďalšie dôvody, ktoré pozná len model v2
+        jediny = l["vyrobcov_latky"] == 1
+        l.loc[jediny, "dovody"] += f"; látku má v {krajina} registrovanú len jeden výrobca {ZDROJ[(krajina, 'lieky')]}"
+        inj = l["injekcia"] == 1
+        l.loc[inj, "dovody"] += f"; injekčná alebo infúzna forma {ZDROJ[(krajina, 'lieky')]}"
+        l["dovody"] = l["dovody"].str.lstrip("; ")
     l = l[l["skore"] > 0].sort_values(["skore", "kod"], ascending=[False, True])
     stlpce = ["kod", "nazov", "doplnok", "atc", "drzitel", "skore", "dovody"]
     if zoskupit:
