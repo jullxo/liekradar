@@ -1,0 +1,26 @@
+# Vzhľad aplikácie LiekRadar – farby a písmo podľa prezentácie
+[theme]
+base = "light"
+primaryColor = "#24578f"
+backgroundColor = "#ffffff"
+secondaryBackgroundColor = "#f3f6fa"
+textColor = "#1d2b3f"
+linkColor = "#24578f"
+borderColor = "#dce8f4"
+showWidgetBorder = true
+baseRadius = "0.75rem"
+font = "Montserrat:https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap"
+headingFontWeights = [700, 700, 700, 600, 600, 600]
+dataframeHeaderBackgroundColor = "#eef4fa"
+chartCategoricalColors = ["#24578f", "#8fb3dc", "#5b86b8", "#c3d6ec"]
+
+[theme.sidebar]
+backgroundColor = "#24578f"
+secondaryBackgroundColor = "#1d4878"
+textColor = "#ffffff"
+primaryColor = "#ffffff"
+borderColor = "#3d6da3"
+font = "Montserrat:https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap"
+
+[client]
+toolbarMode = "minimal"
