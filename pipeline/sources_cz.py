@@ -23,6 +23,8 @@ from urllib.parse import urljoin
 import pandas as pd
 import requests
 
+from pipeline import manifest
+
 RAW_DIR = Path("data/raw/cz")
 HLASENIA_DIR = RAW_DIR / "hlasenia"
 
@@ -66,6 +68,8 @@ def download_hlasenia() -> Path:
     with zipfile.ZipFile(io.BytesIO(response.content)) as archive:
         archive.extractall(HLASENIA_DIR)
         print(f"Rozbalené súbory: {archive.namelist()}")
+    for subor in HLASENIA_DIR.glob("mr_hlaseni.csv"):
+        manifest.zaznamenaj("cz_hlasenia", subor, url)
     return HLASENIA_DIR
 
 
@@ -146,6 +150,7 @@ def download_dlp() -> Path:
     main = [p for p in DLP_DIR.rglob("*.csv") if p.name.lower().startswith("dlp_lecivepripravky")]
     if not main:
         raise FileNotFoundError(f"V DLP chýba dlp_lecivepripravky.csv, súbory: {names[:20]}")
+    manifest.zaznamenaj("cz_dlp", main[0], url)
     df = pd.read_csv(main[0], sep=";", encoding="cp1250", dtype=str)
     df.to_parquet(DLP_FILE, index=False)
     print(f"Uložené do {DLP_FILE}")
@@ -221,6 +226,7 @@ def download_dis13() -> Path:
                 continue
             response.raise_for_status()
             local.write_bytes(response.content)
+            manifest.zaznamenaj("cz_dis13", local, url)
             time.sleep(1)
         if name.lower().endswith(".zip"):
             with zipfile.ZipFile(local) as archive:
