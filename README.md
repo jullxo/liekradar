@@ -1,56 +1,104 @@
 # LiekRadar
 
-Multiagentný systém na včasné varovanie pred výpadkami liekov v Českej a Slovenskej republike.
+**Včasné varovanie pred výpadkami liekov v Česku a na Slovensku.**
+
+🔗 **Aplikácia online: <https://liekradar.streamlit.app>**
+
+LiekRadar je multiagentný systém pre competitive intelligence. Z verejných dát liekových úradov SÚKL (ČR)
+a ŠÚKL (SR) predpovedá, ktorým liekom hrozí výpadok, navrhuje náhrady a ukazuje medzery na trhu.
+Pomáha nákupcom lekárenských sietí a výrobcom a distribútorom generík.
+
 Tímový projekt v predmete 4IT529 Competitive Intelligence (VŠE, ZS 2026).
 
-## Čo systém robí
+## Čo aplikácia vie
 
-- Zbiera verejné dáta SÚKL (CZ), ŠÚKL (SK) a EMA (EÚ).
-- Páruje lieky medzi krajinami cez ATC kód, účinnú látku, silu a liekovú formu.
-- Počíta skóre rizika výpadku pre každý liek v CZ a SK.
-- Multiagentný systém (LangGraph + Gemini) odpovedá na otázky výrobcov generík a lekárenských sietí.
-- Výsledky zobrazuje webová aplikácia v Streamlite.
+| Časť | Otázka, na ktorú odpovedá |
+|---|---|
+| Hroziace výpadky | Ktorým liekom hrozí výpadok v najbližších 8 týždňoch a prečo? (KIQ1) |
+| Látka a náhrady | Prichádzajú výpadky v ČR a SR naraz? Čím nahradiť chýbajúci liek? (KIQ2, KIQ3) |
+| Trh a konkurencia | Kde na trhu chýba dodávateľ? Ako spoľahlivo dodávajú konkurenti? (KIQ4, KIQ5) |
+| Opýtajte sa AI | Otázka vlastnými slovami → 5 AI agentov → stručná správa so zdrojmi a kontrolou faktov |
+| Zdroje a presnosť | Odkiaľ sú dáta (Admiralty, SHA-256) a ako presné sú predpovede (spätný test) |
 
-## Štruktúra
+Rozhranie je v slovenčine, češtine a angličtine.
+
+**Overenie:** V spätnom teste malo zo 100 liekov s najvyšším skóre výpadok do 8 týždňov 19,5 % v ČR
+(náhodný liek 2,8 %, teda asi 7× viac) a 13,6 % v SR. Podrobnosti sú v `vault/metodika/`.
+
+## Architektúra
 
 ```
-app.py                  Streamlit aplikácia (vstupný bod)
-pipeline/               sťahovanie, čistenie, párovanie dát a skóre rizika
-  sources_cz.py         zdroje SÚKL
-  sources_sk.py         zdroje ŠÚKL a MZ SR
-  sources_eu.py         zdroje EMA
-  normalize.py          čistenie a zjednotenie formátov
-  match_cz_sk.py        párovanie liekov CZ <-> SK
-  risk_score.py         skóre rizika výpadku
-  run_pipeline.py       spustí celý pipeline
-agents/                 multiagentný systém
-  graph.py              LangGraph: orchestrátor -> zber -> analytik -> reportér
-  tools.py              nástroje, ktoré agenti volajú (dotazy do dát)
-data/raw/               stiahnuté surové dáta (nie sú v gite)
-data/processed/         spracované dáta pre aplikáciu
-docs/                   dokumentácia architektúry
+Verejné dáta SÚKL + ŠÚKL ─▶ pipeline/ (sťahovanie, manifest, čistenie, párovanie ČR–SR, modely)
+                                  │
+                                  ▼
+                       data/processed/*.parquet
+                                  │
+                       pipeline/analytika.py  (nástroje KIQ1–KIQ5, čísla počíta kód)
+                          │                         │
+                          ▼                         ▼
+                agents/ (LangGraph + Gemini)   app.py (Streamlit)
+          orchestrátor → zber → analytik → reportér → kritik
+```
+
+Podrobná dokumentácia (agenti, roly, externé dáta, komunikácia, bezpečnosť): [`docs/architektura.md`](docs/architektura.md).
+
+## Štruktúra repozitára
+
+```
+app.py                     webová aplikácia (Streamlit)
+pipeline/
+  sources_cz.py            sťahovanie dát SÚKL (hlásenia, DLP, DIS-13)
+  sources_sk.py            sťahovanie dát ŠÚKL (register API, hlásenia)
+  manifest.py              záznam zdrojov: čas UTC, SHA-256, Admiralty
+  normalize.py             zjednotenie formátov, výpadky od začiatku po koniec
+  match_cz_sk.py           párovanie látok ČR ↔ SR (ATC)
+  kiq2_posun.py            časový posun výpadkov ČR ↔ SR
+  analytika.py             nástroje KIQ1–KIQ5 pre aplikáciu aj agentov
+  kiq1_spatny_test.py      spätný test modelu rizika, logistická regresia
+  kiq1_ml.py               model strojového učenia (gradient boosting)
+  kontrola_parov.py        ručná kontrola párovania
+  wiki.py                  generátor poznámok pre Obsidian
+  run_pipeline.py          spustí celý dátový pipeline
+agents/
+  graph.py                 multiagentný systém v LangGraph
+  tools.py                 nástroje, ktoré agenti volajú
+  llm.py                   pripojenie na Gemini, limity, záložný model
+  kontrola_cisel.py        kontrola čísel v správe proti dátam
+data/processed/            spracované dáta pre aplikáciu
+vault/                     Obsidian: pravidlá agentov, wiki, správy, Case Logy, metodika, manifest zdrojov
+docs/architektura.md       dokumentácia architektúry
 ```
 
 ## Spustenie lokálne
 
 ```bash
 python -m venv .venv
-source .venv/bin/activate        # Windows: .venv\Scripts\activate
+source .venv/bin/activate          # Windows: .venv\Scripts\activate
 pip install -r requirements.txt
 
 cp .streamlit/secrets.toml.example .streamlit/secrets.toml
-# do .streamlit/secrets.toml vlož svoj GEMINI_API_KEY
+# do .streamlit/secrets.toml vlož svoj GEMINI_API_KEY (len pre časť Opýtajte sa AI)
 
-python -m pipeline.run_pipeline  # stiahne a spracuje dáta
-streamlit run app.py             # spustí aplikáciu
+streamlit run app.py               # aplikácia nad dátami v data/processed
+python -m pipeline.run_pipeline    # (voliteľné) stiahne a prepočíta čerstvé dáta
 ```
+
+## Zdroje dát
+
+| ID | Zdroj | Admiralty |
+|---|---|---|
+| E001 | SÚKL – hlásenia o prerušení a obnovení dodávok (ČR) | A2 |
+| E002 | SÚKL – databáza liekov DLP (ČR) | A1 |
+| E003 | SÚKL – DIS-13 dodávky distribútorov (ČR) | A2 |
+| E004 | ŠÚKL – register liekov, API (SR) | A1 |
+| E005 | ŠÚKL – hlásenia o prerušení a obnovení dodávok (SR) | A2 |
 
 ## Bezpečnosť
 
-- API kľúč patrí **iba** do `.streamlit/secrets.toml` (lokálne) a do Secrets v Streamlit Cloude.
-- `.streamlit/secrets.toml` je v `.gitignore`. Nikdy ho necommitujte.
-- Projekt pracuje len s verejnými dátami, bez osobných údajov.
-- Ak kľúč unikne, v Google AI Studio vytvorte nový a starý vypnite.
+- API kľúč patrí **iba** do `.streamlit/secrets.toml` (lokálne, je v `.gitignore`) a do Secrets v Streamlit Cloude.
+  Model sa volá na serveri, kľúč sa nedostane do prehliadača.
+- Projekt pracuje len s verejnými dátami o liekoch a firmách, bez osobných údajov.
+- LiekRadar neposkytuje lekárske odporúčania; zámenu inej účinnej látky môže urobiť len lekár.
 
 ## Tím
 
