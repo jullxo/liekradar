@@ -14,6 +14,9 @@ venv/
 data/raw/*
 !data/raw/.gitkeep
 
+# Spracované dáta idú na GitHub (potrebuje ich online appka), okrem veľkého súboru spätného testu
+data/processed/kiq1_spatny_test.parquet
+
 # Systémové súbory
 .DS_Store
 Thumbs.db

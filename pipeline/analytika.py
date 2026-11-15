@@ -123,8 +123,27 @@ def nazov_firmy(kluc: str) -> str:
     return _firma_mapa().get(kluc, kluc)
 
 
+NAZVY_ATC_FILE = PROCESSED / "atc_nazvy.parquet"
+
+
 @lru_cache(maxsize=None)
 def _nazvy_atc() -> dict:
+    """Názvy ATC kódov. Online (bez data/raw) sa čítajú z data/processed/atc_nazvy.parquet,
+    lokálne sa zostavia zo surových dát a do toho súboru sa uložia."""
+    nazvy_raw = _nazvy_atc_zo_surovych()
+    if nazvy_raw:
+        try:
+            pd.DataFrame({"atc": list(nazvy_raw), "nazov": list(nazvy_raw.values())}).to_parquet(NAZVY_ATC_FILE, index=False)
+        except OSError:
+            pass
+        return nazvy_raw
+    if NAZVY_ATC_FILE.exists():
+        tab = pd.read_parquet(NAZVY_ATC_FILE)
+        return dict(zip(tab["atc"], tab["nazov"]))
+    return {}
+
+
+def _nazvy_atc_zo_surovych() -> dict:
     """Názvy ATC kódov: z českého číselníka DLP, inak zo slovenského registra (anglicky)."""
     nazvy: dict = {}
     sk = RAW / "sk" / "register.parquet"
