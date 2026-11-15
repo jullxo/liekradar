@@ -91,6 +91,13 @@ def index_dat(data: dict) -> dict:
             p = v.get("povodny_liek")
             if p:
                 lieky.setdefault(str(p["kod"]), f"{p.get('nazov') or ''} {p.get('doplnok') or ''}")
+        elif nastroj == "nahrady_za_latku":  # bez doplnku: balenie pri týchto kódoch nekontrolujeme
+            for r in zaznamy + (v.get("vo_vypadku") or []):
+                kod = str(r.get("kod"))
+                lieky.setdefault(kod, None)
+                nazov_kod.setdefault(kod, r.get("nazov") or "")
+                for dalsi in r.get("dalsie_kody") or []:
+                    lieky.setdefault(str(dalsi), None)
         elif nastroj == "detail_latky":
             for info in (v.get("krajiny") or {}).values():
                 for r in (info.get("teraz_vo_vypadku") or []) + (info.get("ohlasene_vypadky") or []):
