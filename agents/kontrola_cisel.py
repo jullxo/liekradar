@@ -92,7 +92,7 @@ def index_dat(data: dict) -> dict:
             if p:
                 lieky.setdefault(str(p["kod"]), f"{p.get('nazov') or ''} {p.get('doplnok') or ''}")
         elif nastroj == "nahrady_za_latku":  # bez doplnku: balenie pri týchto kódoch nekontrolujeme
-            for r in zaznamy + (v.get("vo_vypadku") or []):
+            for r in zaznamy + (v.get("ine_balenia_toho_isteho") or []) + (v.get("vo_vypadku") or []):
                 kod = str(r.get("kod"))
                 lieky.setdefault(kod, None)
                 nazov_kod.setdefault(kod, r.get("nazov") or "")

@@ -4,12 +4,13 @@ Graf kopíruje cyklus competitive intelligence:
 
     orchestrátor (plánovanie, LLM) -> zber (bez LLM) -> analytik (analýza, LLM)
         -> reportér (šírenie, LLM) -> kritik (kontrola v kóde + LLM)
-                                        └─ neschválené -> reportér (najviac 1 oprava)
+                                        ├─ neschválené -> reportér (najviac 1 oprava)
+                                        └─ po oprave zostali len cudzie znaky -> korektúra (LLM, len slová)
 
 Systémový prompt každého agenta = vault/AGENTS.md + krátky popis jeho roly.
 Čísla počítajú len nástroje z agents.tools (obaly nad pipeline.analytika), nie model.
-Na jednu otázku najviac 6 volaní modelu: orchestrátor, analytik, reportér, kritik
-a pri oprave ešte reportér a kritik.
+Na jednu otázku najviac 7 volaní modelu: orchestrátor, analytik, reportér, kritik,
+pri oprave ešte reportér a kritik a nakoniec prípadne jazyková korektúra.
 
 Použitie:
     from agents.graph import spusti
@@ -19,6 +20,7 @@ Použitie:
 from __future__ import annotations
 
 import csv
+import os
 import datetime as dt
 import json
 import operator
@@ -121,6 +123,15 @@ class Plan(BaseModel):
     atc_prefix: Optional[str] = Field(None, description="ATC prefix z otázky, napr. J01; inak null")
     zdovodnenie: str = Field(description="1–2 vety, prečo tieto KIQ a nástroje")
     volania: list[Volanie] = Field(description=f"najviac {MAX_VOLANI_NASTROJOV} volaní nástrojov")
+
+
+class Oprava(BaseModel):
+    chybne: str = Field(description="slovo presne tak, ako je v správe")
+    opravene: str = Field(description="spisovný slovenský tvar toho istého slova")
+
+
+class Korektura(BaseModel):
+    opravy: list[Oprava] = Field(default_factory=list)
 
 
 class Posudok(BaseModel):
@@ -456,7 +467,8 @@ _NA_SLOVENSKE = {"ś": "s", "ł": "l", "ń": "ň", "ż": "ž", "ą": "a", "ę": 
 
 def navrh_slovensky(slovo: str) -> str:
     """Návrh opravy slova s cudzími znakmi: „możność“ -> „možnosť“, „być“ -> „byť“ (len návrh)."""
-    s = re.sub(r"ść", "sť", slovo)
+    s = re.sub(r"ąc", "úc", slovo)              # prebiehające -> prebiehajúce (príčastie -úci/-úca/-úce)
+    s = re.sub(r"ść", "sť", s)
     s = re.sub(r"ć\b", "ť", s)          # koncové ć zodpovedá slovenskému ť (możność, być)
     s = s.replace("ć", "č").replace("Ć", "Č")
     return "".join(_NA_SLOVENSKE.get(c, c) for c in s)
@@ -487,7 +499,8 @@ def kandidati_nahrad(data: dict) -> list[dict]:
             povodne = v.get("vo_vypadku") or []
         else:
             continue
-        zaznamy = v.get("zaznamy", [])
+        zaznamy = v.get("zaznamy", []) + [dict(r, ine_balenie_toho_isteho=True)
+                                          for r in v.get("ine_balenia_toho_isteho") or []]
         # nahrady_za_latku bez liekov vo výpadku: rovnaka_forma je None (nie je s čím porovnať) -> ako rovnaká
         zaznamy = [dict(r, rovnaka_forma=True) if r.get("rovnaka_forma") is None else r for r in zaznamy]
         nazvy_povodnych = [str(p.get("nazov") or "") for p in povodne]
@@ -511,6 +524,7 @@ def kandidati_nahrad(data: dict) -> list[dict]:
             vysledok.append({"kod": str(r["kod"]), "nazov": nazov, "sila": r.get("sila"), "forma": r.get("forma"),
                              "rovnaka_forma": bool(r.get("rovnaka_forma")),
                              "ine_balenie": bool(r.get("ine_balenie_toho_isteho")),
+                             "skupina": (r.get("za_lieky") or [povodny["nazov"]])[0],
                              "je_povodny_nazov": _bez_medzier(nazov) in {_bez_medzier(n) for n in nazvy_povodnych},
                              "povodna_forma": povodny["forma"], "povodny": povodny["nazov"],
                              "povodny_popis": ", ".join(r.get("za_lieky") or [])
@@ -533,6 +547,54 @@ def nahrady_inej_formy(data: dict) -> list[dict]:
 
 MAX_NAHRAD = 5
 _POPIS_BALENIA = re.compile(r"\((?:fľ|fl|blis|strip|vre|amp|liek\.?\s*skl|vak|tuba|tub)\b", re.IGNORECASE)
+
+
+def je_jazykovy_problem(problem: str) -> bool:
+    """Problém z kontroly v kóde o znakoch, ktoré v slovenčine nie sú (rieši ho korektúra)."""
+    return problem.startswith(("Znak „", "Znaky „"))
+
+
+def je_namietka_k_jazyku(problem: str, slova: list[str]) -> bool:
+    """Námietka LLM kritika k jazyku / cudzím slovám, ktoré už našiel kód (rieši ich korektúra)."""
+    p = problem.lower()
+    return (any(s.lower() in p for s in slova) or bool(_CUDZIE_ZNAKY.search(problem))
+            or bool(re.search(r"pravopis|jazyk|poľ|po česky|česk\w* tvar|preklep|cudz\w* (slov|znak)", p)))
+
+
+def cudzie_slova(brief: str) -> list[tuple[str, str]]:
+    """(slovo s cudzími znakmi, veta, v ktorej je) – každé slovo raz."""
+    vysledok, videne = [], set()
+    for riadok in brief.splitlines():
+        for veta in _vety(riadok):
+            for m in _CUDZIE_SLOVO.finditer(veta):
+                if m.group(0) not in videne:
+                    videne.add(m.group(0))
+                    vysledok.append((m.group(0), veta))
+    return vysledok
+
+
+def pouzi_korekturu(brief: str, opravy: list[dict]) -> str:
+    """Nahradí len chybné slová (celé slová), veľké začiatočné písmeno zachová. Zvyšok správy sa nemení."""
+    for o in opravy:
+        nove = o["opravene"]
+        def nahrada(m, nove=nove):
+            return nove[:1].upper() + nove[1:] if m.group(0)[:1].isupper() else nove
+        brief = re.sub(rf"(?<!\w){re.escape(o['chybne'])}(?!\w)", nahrada, brief)
+    return brief
+
+
+def platne_opravy(korektura: Korektura, slova: list[str]) -> tuple[list[dict], list[str]]:
+    """Prijme len opravy hľadaných slov: neprázdne, bez cudzích znakov, najviac 3 slová, bez markdownu."""
+    prijate, odmietnute = [], []
+    for o in korektura.opravy:
+        chybne, opravene = o.chybne.strip(), o.opravene.strip()
+        if chybne not in slova:
+            odmietnute.append(f"{chybne} (nebolo v zozname)")
+        elif not opravene or _CUDZIE_ZNAKY.search(opravene) or len(opravene.split()) > 3 or re.search(r"[*_`#\[\]]", opravene):
+            odmietnute.append(f"{chybne} → {opravene!r} (neplatná oprava)")
+        elif chybne not in {p["chybne"] for p in prijate}:
+            prijate.append({"chybne": chybne, "opravene": opravene})
+    return prijate, odmietnute
 
 
 def je_namietka_ku_krajine_citacie(problem: str) -> bool:
@@ -648,10 +710,14 @@ def kontrola_v_kode(brief: str, data: dict, manifest: dict) -> tuple[list[str], 
             continue
         # kandidát s rovnakým názvom ako pôvodný liek (iná veľkosť balenia) neznamená, že riadok je o náhradách
         spomenute = [k for k in kandidati if not k["je_povodny_nazov"] and _spomina(r, k)]
-        nazvy = {_bez_medzier(k["nazov"]) for k in spomenute if k["rovnaka_forma"]}
-        if len(nazvy) > MAX_NAHRAD:
-            problemy.append(f"Riadok vymenúva {len(nazvy)} náhrad – uveď najviac {MAX_NAHRAD} (názov + sila): "
-                            f"„{_riadok(r, 90)}“")
+        po_skupinach: dict[str, set] = {}
+        for k in spomenute:
+            if k["rovnaka_forma"] and not k["ine_balenie"]:
+                po_skupinach.setdefault(k["skupina"], set()).add(_bez_medzier(k["nazov"]))
+        for skupina, nazvy in po_skupinach.items():
+            if len(nazvy) > MAX_NAHRAD:
+                problemy.append(f"Riadok vymenúva {len(nazvy)} náhrad za {skupina} – uveď najviac {MAX_NAHRAD} na "
+                                f"jeden liek vo výpadku (názov + sila): „{_riadok(r, 90)}“")
         if spomenute or "náhrad" in r.lower():
             nazvy_vsetky = [_bez_medzier(k["nazov"]) for k in kandidati]
             balenia = [m.group(0) for m in _BALENIE_NAHRADY.finditer(r)
@@ -674,7 +740,9 @@ def kontrola_v_kode(brief: str, data: dict, manifest: dict) -> tuple[list[str], 
                 zoznam = _zoznam_nahrad(veta)
                 zle = [m for m in vzor.finditer(zoznam)
                        if not re.match(r"[\s*_]*(\([^)]*\)\s*)?(je|sú|bol\w*)?\s*(vo\s+výpadku|chýb)",
-                                       zoznam[m.end():])]
+                                       zoznam[m.end():])
+                       # „za Amoksiklav 625 mg …“, „za tablety Amoksiklav 625 mg …“ = liek vo výpadku, nie náhrada
+                       and not re.search(r"\bza(?:\s+[^\W\d]+){0,2}[\s*_]*$", zoznam[:m.start()], re.IGNORECASE)]
                 if zle:
                     problemy.append(f"{kandidat['nazov']} je iné balenie toho istého lieku, ktorý je vo výpadku – nie "
                                     f"je to náhrada; napíš ho ako „iné balenie toho istého lieku“ a medzi náhradami "
@@ -806,6 +874,15 @@ def _vysledky_nahrad(stav: Stav) -> list[tuple[str, dict, str]]:
 def _fake_odpoved(stav: Stav) -> str:
     """Prvá veta BLUF: priama odpoveď (pri náhradách ich zoznam, inak najrizikovejšie lieky)."""
     for za, v, _ in _vysledky_nahrad(stav):
+        skupiny: dict[str, list[str]] = {}
+        for r in v.get("zaznamy", []):  # nahrady_za_latku: náhrady za každý liek vo výpadku zvlášť
+            if r.get("za_lieky") and r.get("rovnaka_forma") is not False and not r.get("ine_balenie_toho_isteho"):
+                zoznam = skupiny.setdefault(r["za_lieky"][0], [])
+                if len(zoznam) < MAX_NAHRAD and _nazov_a_sila(r) not in zoznam:
+                    zoznam.append(_nazov_a_sila(r))
+        if len(skupiny) > 1:
+            casti = [f"za {liek} {', '.join(nahrady)}" for liek, nahrady in skupiny.items()]
+            return f"Na Slovensku sa dodávajú tieto náhrady s rovnakou látkou a formou – {'; '.join(casti)}."
         if _fake_nahrady_zoznam(v, True):
             return f"Za {za} sa dodávajú tieto náhrady s rovnakou látkou a formou: {', '.join(_fake_nahrady_zoznam(v, True))}."
     top = next((z["vysledok"] for z in stav.get("data", {}).values()
@@ -823,7 +900,8 @@ def _fake_nahrady(stav: Stav) -> list[str]:
             riadky.append(f"- **Fakt:** Náhrady za {za} s rovnakou formou: {', '.join(rovnake)} {zdroj}")
         if ine:
             riadky.append(f"- **Fakt:** Iná forma, len po posúdení lekárom: {', '.join(ine)} {zdroj}")
-        balenia = list(dict.fromkeys(_nazov_a_sila(r) for r in v.get("zaznamy", []) if r.get("ine_balenie_toho_isteho")))
+        balenia = list(dict.fromkeys(_nazov_a_sila(r) for r in v.get("zaznamy", []) + (v.get("ine_balenia_toho_isteho") or [])
+                                     if r.get("ine_balenie_toho_isteho")))
         if balenia:
             riadky.append(f"- **Fakt:** Dodáva sa aj iné balenie toho istého lieku: {', '.join(balenia)} {zdroj}")
     return riadky
@@ -870,7 +948,8 @@ def _fake_brief(stav: Stav, oprava: bool) -> str:
         "- Predpokladáme, že hlásenia sú úplné. Pri náhradách: zámenu inej látky môže urobiť len lekár.",
         "",
         "## Indicators to watch",
-        "- Nové hlásenia o prerušení dodávok rovnakého výrobcu v druhej krajine.",
+        "- Nové hlásenia o prerušení dodávok rovnakého výrobcu v druhej krajine."
+        + (" Sledujte aj prebiehające výpadky v ČR." if oprava and os.environ.get("LIEKRADAR_FAKE_KOREKTURA") else ""),
         "",
         "## Sources and method annex",
         "- [E004, A1] ŠÚKL – register liekov; [E005, A2] ŠÚKL – hlásenia o dodávkach.",
@@ -932,8 +1011,9 @@ PRAVIDLO_KRAJINY = """- Citácie podľa krajiny – zdroj musí patriť krajine,
   druhej (napr. hovorí len o SR a cituje len E001–E003). Fakt so zmiešanými citáciami (české aj slovenské,
   napr. „výpadok v ČR [E001, A2] a historické výpadky [E005, A2]“) je v poriadku. BLUF, Key judgements
   a úsudky spájajú dáta z oboch krajín – tam môžu byť české aj slovenské zdroje spolu.
-- Píš spisovne po slovensky, bez znakov z iných jazykov (nie ś, ć, ł, ń, ż, ą, ę, ő, ű – napr. „možnosť“,
-  nie „możność“).
+- JAZYK: píš spisovne po slovensky, nie po poľsky ani po česky. Žiadne ą, ę, ł, ś, ż, ć, ń, ő, ű
+  (napr. „prebiehajúce“, nie „prebiehające“; „možnosť“, nie „możność“) ani české tvary ako „Úsudek“,
+  „výpadek“, „zjištění“, „léčivo“ (správne „Úsudok“, „výpadok“, „zistenie“, „liečivo“).
 - Označenia KIQ1–KIQ5 do textu nepíš; napíš tému (riziko výpadku, časový posun ČR–SR, náhrady, konkurenti,
   trhové medzery)."""
 
@@ -972,6 +1052,11 @@ Pravidlá:
   • otázka na náhrady: „Na Slovensku sa dodávajú tieto náhrady s rovnakou látkou a formou: MEDOCLAV 625 mg,
     Penlac 875 mg/125 mg, MEGAMOX 625 forte. Že budú dostupné aj v najbližších týždňoch, je pravdepodobné
     (istota: stredná).“
+  • náhrady, keď je vo výpadku viac liekov alebo foriem (`vo_vypadku` má viac položiek, napr. tablety aj
+    suspenzia): BLUF uvedie náhrady pre KAŽDÝ z nich zvlášť, najviac 5 na jeden liek vo výpadku, napr.
+    „Za tablety Amoksiklav 625 mg sa dodávajú MEDOCLAV 625 mg, MEGAMOX 625 forte a MEDOCLAV 1 g; za suspenziu
+    Amoksiklav 2x457 mg/5 ml MEDOCLAV FORTE 312,5 mg a MEGAMOX DUO.“ Ktorá náhrada patrí ku ktorému lieku,
+    je v poli `za_lieky`.
   • otázka na konkurentov alebo trhové medzery: najprv vymenuj firmy alebo látky, v 2. vete odhad s PHIA.
 - Key judgements: 2–4 odrážky, každá s výrazom z mierky PHIA a istotou (nízka/stredná).
 - Discussion: odrážky „- **Fakt:** … [ID, Admiralty]“ a „- **Úsudok:** …“ oddelene; úsudok začína „Odhadujeme…“
@@ -992,6 +1077,11 @@ Pravidlá:
 - AI use statement: napíš len nadpis a vetu „Doplní systém po kontrole kritikom.“ – agentov, modely,
   kolá opravy a výsledok kontroly doplní kód.
 - Vráť len markdown správy, bez úvodu a bez ``` blokov."""
+
+ROLA_KOREKTURA = """Si jazykový korektor slovenských textov. Dostaneš slová, ktoré obsahujú znaky, ktoré v slovenčine nie sú
+(ą, ę, ł, ś, ż, ć, ń, ő, ű), a vetu, v ktorej sú. Pre každé vráť spisovný slovenský tvar toho istého slova
+v rovnakom páde, čísle a rode (napr. prebiehające → prebiehajúce, możność → možnosť). Nič iné nemeň
+a neprekladaj celé vety."""
 
 ROLA_KRITIK = f"""Si **kritik** (kontrola kvality, Lint podľa AGENTS.md). Posúď správu BLUF:
 1. Tvrdenia o faktoch majú citáciu a ich čísla sa dajú nájsť vo výsledkoch nástrojov.
@@ -1191,6 +1281,12 @@ def vytvor_graf(llm: LLM):
                     problemy_llm = [p for p in problemy_llm if p not in odlozene]
                     upozornenia += [f"LLM kritik (neblokuje, krajinu citácií kontroluje kód): {p}" for p in odlozene]
                     llm_schvalil = llm_schvalil or not problemy_llm
+                slova = [s for s, _ in cudzie_slova(brief)]
+                jazykove = [p for p in problemy_llm if slova and je_namietka_k_jazyku(p, slova)]
+                if jazykove:  # cudzie slová našiel kód, opraví ich korektúra – nie sú dôvod na prepisovanie správy
+                    problemy_llm = [p for p in problemy_llm if p not in jazykove]
+                    upozornenia += [f"LLM kritik (jazyk, rieši korektúra): {p}" for p in jazykove]
+                    llm_schvalil = llm_schvalil or not problemy_llm
                 if llm_schvalil:  # schválené = žiadne blokujúce problémy od modelu
                     upozornenia += problemy_llm
                     problemy_llm = []
@@ -1205,25 +1301,62 @@ def vytvor_graf(llm: LLM):
             log.append(_zaznam("kritik", nastroj_llm(), "správa", "vynechané – vyčerpaný rozpočet volaní"))
         schvalene = not problemy_kod and llm_schvalil
         pocet_oprav = stav.get("pocet_oprav", 0)
+        len_jazyk = bool(problemy_kod) and all(je_jazykovy_problem(p) for p in problemy_kod) and llm_schvalil
         if schvalene:
             verdikt = "schválené"
         elif pocet_oprav < MAX_OPRAV:
             verdikt = "vrátené reportérovi na opravu"
+        elif len_jazyk and llm.pocet_volani < MAX_VOLANI_NA_OTAZKU:
+            verdikt = "zostali len cudzie znaky – nasleduje jazyková korektúra"
         else:
             verdikt = "neschválené ani po oprave – správa sa uloží s poznámkou"
         kritika = {"schvalene": schvalene, "problemy_kod": problemy_kod, "problemy_llm": problemy_llm,
-                   "upozornenia": upozornenia, "kolo": pocet_oprav + 1}
+                   "upozornenia": upozornenia, "kolo": pocet_oprav + 1, "len_jazyk": len_jazyk}
         detail = "; ".join((problemy_kod + problemy_llm)[:3])
         return {"kritika": kritika, "case_log": log,
                 "priebeh": [f"Kritik (kontrola): {verdikt} – {len(problemy_kod)} problémov v kóde, "
                             f"{len(problemy_llm)} od LLM{poznamka}" + (f". {detail}" if detail else "")]}
 
     def po_kritikovi(stav: Stav) -> str:
-        if stav.get("chyba"):
+        kritika = stav["kritika"] if not stav.get("chyba") else {"schvalene": True}
+        if kritika["schvalene"]:
             return END
-        if not stav["kritika"]["schvalene"] and stav.get("pocet_oprav", 0) < MAX_OPRAV:
+        if stav.get("pocet_oprav", 0) < MAX_OPRAV:
             return "reporter"
+        if kritika.get("len_jazyk") and llm.pocet_volani < MAX_VOLANI_NA_OTAZKU:
+            return "korektura"
         return END
+
+    def korektura(stav: Stav) -> dict:
+        """Po oprave zostali len slová s cudzími znakmi: krátke LLM volanie vráti ich slovenské tvary,
+        kód ich nahradí v texte (nie prepis celej správy) a spustí znova len kontrolu v kóde."""
+        brief, kritika = stav.get("brief", ""), dict(stav["kritika"])
+        najdene = cudzie_slova(brief)
+        slova = [s for s, _ in najdene]
+        vstup = ("Oprav tieto slová na spisovné slovenské tvary. Vráť len opravy slov, nie celé vety.\n"
+                 + "\n".join(f"- slovo: {s} | veta: {_riadok(v, 200)}" for s, v in najdene))
+        fake = Korektura(opravy=[Oprava(chybne=s, opravene=navrh_slovensky(s)) for s in slova])
+        try:
+            vystup = llm.strukturovane(ROLA_KOREKTURA, vstup, Korektura, fake=fake)
+        except LLMChyba as e:
+            return {"case_log": [_zaznam("korektúra", nastroj_llm(), f"{len(slova)} slov: {', '.join(slova)}",
+                                         f"CHYBA: {e} – správa zostáva neschválená")],
+                    "priebeh": [f"Korektúra (jazyk): zlyhala – {e}"]}
+        opravy, odmietnute = platne_opravy(vystup, slova)
+        novy = pouzi_korekturu(brief, opravy)
+        problemy_kod, upozornenia = kontrola_v_kode(novy, stav.get("data", {}), manifest)
+        schvalene = not problemy_kod and not kritika.get("problemy_llm")
+        kritika.update({"schvalene": schvalene, "problemy_kod": problemy_kod,
+                        "upozornenia": kritika.get("upozornenia", []) + upozornenia, "korektura": opravy,
+                        "len_jazyk": False})
+        zoznam = "; ".join(f"{o['chybne']} → {o['opravene']}" for o in opravy) or "žiadne"
+        log = [_zaznam("korektúra", nastroj_llm(), f"{len(slova)} slov s kontextom vety: {', '.join(slova)}",
+                       f"opravy: {zoznam}" + (f" · odmietnuté: {'; '.join(odmietnute)}" if odmietnute else "")),
+               _zaznam("korektúra", "kontrola v kóde", f"správa po korektúre {len(novy)} znakov",
+                       f"{len(problemy_kod)} problémov" + (f": {problemy_kod[0]}" if problemy_kod else ""))]
+        return {"brief": novy, "kritika": kritika, "case_log": log,
+                "priebeh": [f"Korektúra (jazyk): {zoznam} · kontrola v kóde: {len(problemy_kod)} problémov – "
+                            + ("schválené" if schvalene else "neschválené")]}
 
     def dalej(cielovy: str) -> Callable[[Stav], str]:
         return lambda stav: END if stav.get("chyba") else cielovy
@@ -1231,14 +1364,15 @@ def vytvor_graf(llm: LLM):
     g = StateGraph(Stav)
     for nazov, uzol in [("orchestrator", so_zaloznym(orchestrator)), ("zber", zber),
                         ("analytik", so_zaloznym(analytik)), ("reporter", so_zaloznym(reporter)),
-                        ("kritik", so_zaloznym(kritik))]:
+                        ("kritik", so_zaloznym(kritik)), ("korektura", so_zaloznym(korektura))]:
         g.add_node(nazov, uzol)
     g.add_edge(START, "orchestrator")
     g.add_conditional_edges("orchestrator", dalej("zber"), ["zber", END])
     g.add_edge("zber", "analytik")
     g.add_conditional_edges("analytik", dalej("reporter"), ["reporter", END])
     g.add_conditional_edges("reporter", dalej("kritik"), ["kritik", END])
-    g.add_conditional_edges("kritik", po_kritikovi, ["reporter", END])
+    g.add_conditional_edges("kritik", po_kritikovi, ["reporter", "korektura", END])
+    g.add_edge("korektura", END)
     return g.compile()
 
 
@@ -1317,9 +1451,12 @@ def ai_use_statement(stav: dict, llm: LLM, nazov: str) -> str:
     zber = [z["nastroj"] for z in log if z["agent"] == "zber" and not z["vysledok"].startswith("vynechané")]
     nastroje = ", ".join(f"{n} ×{zber.count(n)}" if zber.count(n) > 1 else n for n in dict.fromkeys(zber))
     zalozny = llm.zalozny_model in llm.pouzite_modely
+    korektura_popis = "; ".join(f"{o['chybne']} → {o['opravene']}" for o in kritika.get("korektura") or [])
     temy = ", ".join(KIQ_TEMA.get(k, k) for k in (stav.get("plan") or {}).get("kiq", [])) or "–"
     if not kritika:
         vysledok = "kritik neprebehol"
+    elif kritika.get("schvalene") and kritika.get("korektura"):
+        vysledok = f"schválené po jazykovej korektúre v {kritika.get('kolo')}. kole (kontrola v kóde aj LLM)"
     elif kritika.get("schvalene"):
         vysledok = f"schválené v {kritika.get('kolo')}. kole (kontrola v kóde aj LLM)"
     else:
@@ -1336,7 +1473,9 @@ def ai_use_statement(stav: dict, llm: LLM, nazov: str) -> str:
         f"  4. Reportér – správa BLUF" + (", raz opravená podľa kritika" if pocet_oprav else "")
         + f" (LLM {model('reportér')}).",
         f"  5. Kritik – kontrola v kóde (sekcie, citácie podľa manifestu, mierka PHIA, čísla proti nástrojom, "
-        f"náhrady) a LLM ({model('kritik')}).",
+        f"náhrady) a LLM ({model('kritik')})"
+        + (f"; jazyková korektúra slov s cudzími znakmi ({korektura_popis}, LLM {model('korektúra')})"
+           if korektura_popis else "") + ".",
         f"- **Kolá opravy:** {pocet_oprav} (najviac {MAX_OPRAV}).",
         f"- **Výsledok kontroly:** {vysledok}.",
         f"- **Volania modelu:** {llm.pocet_volani} (požiadaviek na Gemini vrátane opakovaní {llm.pocet_pokusov}).",

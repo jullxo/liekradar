@@ -120,11 +120,11 @@ def nahrady_za_latku(krajina: str, atc: str, n: int = 5) -> dict:
     Z detail_latky(atc) vezme lieky, ktoré sú v krajine teraz vo výpadku, a pre každý zavolá
     analytika.nahrady. Výsledky spojí a ten istý liek (názov + sila + forma) uvedie raz. Vráti len
     dodávané lieky (analytika.nahrady vyraďuje lieky vo výpadku a zrušené), zoradené: odporučil
-    ŠÚKL/SÚKL, rovnaká sila, rovnaká forma ako liek vo výpadku, bez ohláseného výpadku; pri viacerých
-    liekoch vo výpadku sa náhrady vyberajú striedavo za každý z nich.
+    ŠÚKL/SÚKL, rovnaká sila, rovnaká forma ako liek vo výpadku, bez ohláseného výpadku. `n` platí na KAŽDÝ
+    liek vo výpadku (spolu najviac MAX_RIADKOV záznamov, pri viacerých liekoch sa berú striedavo).
     `rovnaka_forma` platí voči liekom vo výpadku v `za_lieky` (tie s rovnakou formou, ak také sú).
     `ine_balenie_toho_isteho`: rovnaký názov a sila ako liek vo výpadku, len iný kód – nie je to náhrada,
-    ale iné balenie toho istého lieku. Limit `n` platí pre skutočné náhrady, iné balenia sa pridajú za ne. Ak v krajine nie je nič vo výpadku,
+    ale iné balenie toho istého lieku; také sú v samostatnom zozname `ine_balenia_toho_isteho`, nie v `zaznamy`. Ak v krajine nie je nič vo výpadku,
     vráti dodávané lieky tej istej látky (`rovnaka_forma` je vtedy None – nie je s čím porovnať).
     """
     krajina, atc = krajina.strip().upper(), atc.strip().upper()
@@ -188,21 +188,24 @@ def nahrady_za_latku(krajina: str, atc: str, n: int = 5) -> dict:
         "vo_vypadku": [{k: p[k] for k in ("kod", "nazov", "sila", "forma")} for p in povodne],
         "pocet_vo_vypadku": info.get("pocet_teraz_vo_vypadku", 0),
         "riadkov_spolu": len(poradie), "spolocne": {"zdroj": " ".join(zdroje)},
-        "zaznamy": (_striedavo([z for z in poradie if not z["ine_balenie_toho_isteho"]], min(n, MAX_RIADKOV))
-                    + [z for z in poradie if z["ine_balenie_toho_isteho"]])[:MAX_RIADKOV],
+        "zaznamy": _po_lieku([z for z in poradie if not z["ine_balenie_toho_isteho"]], n, MAX_RIADKOV),
+        "ine_balenia_toho_isteho": [z for z in poradie if z["ine_balenie_toho_isteho"]][:len(povodne) or 1],
     }
 
 
-def _striedavo(zoradene: list[dict], n: int) -> list[dict]:
-    """Prvých n náhrad, striedavo za každý liek vo výpadku (prvý v `za_lieky`), aby napr. suspenzia
-    nezostala bez náhrady len preto, že tablety majú rovnakú silu. V rámci lieku platí poradie zoradené."""
+def _po_lieku(zoradene: list[dict], n: int, spolu: int) -> list[dict]:
+    """Najviac n náhrad za KAŽDÝ liek vo výpadku (prvý v `za_lieky`) a najviac `spolu` záznamov celkom.
+    Ak sa všetko nezmestí, berie sa striedavo, aby žiadny liek vo výpadku (napr. suspenzia) nezostal bez
+    náhrady. V rámci lieku platí poradie zoradené."""
     skupiny: dict[str, list[dict]] = {}
     for z in zoradene:
-        skupiny.setdefault((z.get("za_lieky") or [""])[0], []).append(z)
+        skupina = skupiny.setdefault((z.get("za_lieky") or [""])[0], [])
+        if len(skupina) < n:
+            skupina.append(z)
     vyber: list[dict] = []
-    while len(vyber) < n and any(skupiny.values()):
+    while len(vyber) < spolu and any(skupiny.values()):
         for zoznam in skupiny.values():
-            if zoznam and len(vyber) < n:
+            if zoznam and len(vyber) < spolu:
                 vyber.append(zoznam.pop(0))
     return sorted(vyber, key=zoradene.index)
 
