@@ -7,3 +7,4 @@ openpyxl
 scikit-learn==1.9.1
 langgraph
 langchain-google-genai
+fpdf2

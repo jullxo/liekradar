@@ -214,12 +214,20 @@ TEXTY = {
                "AI analytik není připojen: chybí API klíč (GEMINI_API_KEY v souboru .streamlit/secrets.toml).",
                "The AI analyst is not connected: the API key is missing (GEMINI_API_KEY in .streamlit/secrets.toml)."),
     "a_otazka": ("Vaša otázka", "Váš dotaz", "Your question"),
-    "a_priklad_lekaren": ("Ktoré antibiotiká na Slovensku hrozí, že budú v najbližších týždňoch chýbať, a čím ich nahradiť?",
-                          "Která antibiotika na Slovensku hrozí, že budou v příštích týdnech chybět, a čím je nahradit?",
-                          "Which antibiotics in Slovakia are likely to run short in the coming weeks, and what can replace them?"),
-    "a_priklad_vyrobca": ("Kde v Česku vzniká po výpadkoch konkurencie príležitosť pre generikum?",
-                          "Kde v Česku vzniká po výpadcích konkurence příležitost pro generikum?",
-                          "Where in Czechia do competitor shortages create an opportunity for a generic?"),
+    "a_placeholder": ("Napr. Ktoré lieky na tlak môžu v Česku chýbať tento mesiac?",
+                      "Např. Které léky na tlak mohou v Česku chybět tento měsíc?",
+                      "E.g. Which blood pressure drugs may run short in Czechia this month?"),
+    "a_prazdna": ("Najprv napíšte otázku alebo vyberte jeden z príkladov.",
+                  "Nejdřív napište dotaz nebo vyberte jeden z příkladů.", "Type a question first or pick one of the examples."),
+    "a_skuste": ("Alebo vyberte príklad", "Nebo vyberte příklad", "Or pick an example"),
+    "a_pdf": ("Stiahnuť správu (PDF)", "Stáhnout zprávu (PDF)", "Download report (PDF)"),
+    "a_pdf_pata": ("LiekRadar · Správu pripravil jazykový model z údajov SÚKL a ŠÚKL; pred dôležitým rozhodnutím ju overte. "
+                   "Neposkytuje lekárske odporúčania, zámenu inej účinnej látky môže urobiť len lekár.",
+                   "LiekRadar · Zprávu připravil jazykový model z dat SÚKL a ŠÚKL; před důležitým rozhodnutím ji ověřte. "
+                   "Neposkytuje lékařská doporučení, záměnu jiné účinné látky může provést pouze lékař.",
+                   "LiekRadar · Written by a language model from SÚKL and ŠÚKL data; verify before important decisions. "
+                   "Not medical advice; only a physician can switch to a different active substance."),
+    "a_strana": ("Strana", "Strana", "Page"),
     "a_spustit": ("Spustiť analýzu", "Spustit analýzu", "Run analysis"),
     "a_bezi": ("AI agenti pracujú…", "AI agenti pracují…", "AI agents at work…"),
     "a_hotovo": ("Analýza je hotová", "Analýza je hotová", "Analysis complete"),
@@ -239,7 +247,6 @@ TEXTY = {
     "a_predpoklady": ("Predpoklady a čo nevieme", "Předpoklady a co nevíme", "Assumptions and gaps"),
     "a_zdroje": ("Zdroje", "Zdroje", "Sources"),
     "a_vznik": ("Ako táto odpoveď vznikla", "Jak tato odpověď vznikla", "How this answer was made"),
-    "a_stiahnut": ("Stiahnuť celú správu", "Stáhnout celou zprávu", "Download full report"),
     "a_fakt": ("Fakt:", "Fakt:", "Fact:"),
     "a_odhad": ("Náš odhad:", "Náš odhad:", "Our assessment:"),
     "a_chyba": ("AI analytik narazil na problém: {e}", "AI analytik narazil na problém: {e}", "The AI analyst ran into a problem: {e}"),
@@ -353,6 +360,31 @@ def dovody_html(text: str) -> str:
             casti.append(preloz_dovod(jadro) + (f' <span class="lr-cit">{citacia}</span>' if citacia else ""))
     return " · ".join(casti)
 
+
+PRIKLADY = {
+    "lekaren": {
+        "sk": ["Čím nahradiť amoxicilín s kyselinou klavulánovou, ak chýba na Slovensku?",
+               "Ktorým antibiotikám v Česku hrozí v najbližších týždňoch výpadok?",
+               "Ktoré lieky na srdce a tlak chýbajú teraz v Česku aj na Slovensku?"],
+        "cs": ["Čím nahradit amoxicilin s kyselinou klavulanovou, když chybí na Slovensku?",
+               "Kterým antibiotikům v Česku hrozí v příštích týdnech výpadek?",
+               "Které léky na srdce a tlak teď chybí v Česku i na Slovensku?"],
+        "en": ["What can replace amoxicillin with clavulanic acid if it is short in Slovakia?",
+               "Which antibiotics in Czechia are at risk of a shortage in the coming weeks?",
+               "Which heart and blood pressure drugs are short in both Czechia and Slovakia right now?"],
+    },
+    "vyrobca": {
+        "sk": ["Kde v Česku chýba dodávateľ a ktorá látka je príležitosťou pre generikum?",
+               "Ktorí výrobcovia antibiotík mali na Slovensku za posledný rok najviac výpadkov?",
+               "Kto získal podiel na trhu, keď v Česku chýbali lieky na cukrovku?"],
+        "cs": ["Kde v Česku chybí dodavatel a která látka je příležitostí pro generikum?",
+               "Kteří výrobci antibiotik měli na Slovensku za poslední rok nejvíc výpadků?",
+               "Kdo získal podíl na trhu, když v Česku chyběly léky na cukrovku?"],
+        "en": ["Where in Czechia is a supplier missing, and which substance is an opportunity for a generic?",
+               "Which antibiotic manufacturers had the most shortages in Slovakia in the past year?",
+               "Who gained market share when diabetes drugs were short in Czechia?"],
+    },
+}
 
 SEKCIE_SPRAVY = {"bottom line up front": "bluf", "key judgements": "zistenia", "key judgments": "zistenia",
                  "discussion": "podklady", "alternative explanations": "alternativy",
@@ -601,6 +633,18 @@ def datum_dat() -> str:
         return "?"
 
 
+def pdf_spravy(otazka: str, nadpis: str, casti: dict, schvalene: bool, pocet_problemov: int) -> bytes:
+    from pdf_sprava import vytvor_pdf
+    casti_ludsky = {k: ludsky_text(v) for k, v in casti.items()}
+    nazvy = {"bluf": t("a_odpoved"), "zistenia": t("a_zistenia"), "podklady": t("a_podklady"),
+             "sledovat": t("a_sledovat"), "alternativy": t("a_alternativy"), "predpoklady": t("a_predpoklady"),
+             "zdroje": t("a_zdroje"), "ai": t("a_vznik")}
+    return vytvor_pdf(nadpis, casti_ludsky, otazka=otazka, schvalene=schvalene,
+                      kontrola=t("a_ok") if schvalene else t("a_nok", n=pocet_problemov or "?"),
+                      nazvy=nazvy, pata=t("a_pdf_pata"), podtitul=t("brand_sub"),
+                      popis_otazky=t("a_otazka"), strana=t("a_strana"))
+
+
 def kratky_nazov_suboru(text: str) -> str:
     import unicodedata
     text = unicodedata.normalize("NFKD", text).encode("ascii", "ignore").decode().lower()
@@ -748,7 +792,7 @@ def cast_latka() -> None:
         if info["ohlasene_vypadky"]:  # žlté upozornenie, každý liek na vlastnom riadku
             riadky = "\n".join(f"- **{o['nazov']}** ({o['kod']}) – {t('c_od').lower()} {o['od']}"
                                for o in info["ohlasene_vypadky"])
-            st.warning(f"**{t('n_ohlasene')}**\n\n{riadky}")
+            st.warning(f"**{t('n_ohlasene')}**\n\n{riadky}", icon="⚠️")
         if not info["teraz_vo_vypadku"]:
             st.success(t("n_nic"))
             continue
@@ -824,17 +868,31 @@ def cast_ai() -> None:
         return
     if t("a_jazyk"):
         st.caption(t("a_jazyk"))
-    otazka = st.text_area(t("a_otazka"), value=t(f"a_priklad_{persona}"), height=90)
-    if not st.button(t("a_spustit"), type="primary"):
+    kluc_prikladu = f"priklad_{persona}_{jazyk()}"
+
+    def _pouzi_priklad() -> None:
+        if st.session_state.get(kluc_prikladu):
+            st.session_state["otazka"] = st.session_state[kluc_prikladu]
+
+    otazka = st.text_area(t("a_otazka"), key="otazka", placeholder=t("a_placeholder"), height=90)
+    st.pills(t("a_skuste"), PRIKLADY[persona][jazyk()], key=kluc_prikladu, on_change=_pouzi_priklad)
+    spustit = st.button(t("a_spustit"), type="primary")
+    if spustit and not otazka.strip():
+        st.info(t("a_prazdna"))
+    elif spustit:
+        with st.status(t("a_bezi"), expanded=True) as stav:
+            vysledok = spusti(otazka.strip(), persona, pri_kroku=lambda riadok: stav.write(riadok))
+            zlyhalo = bool(vysledok.get("chyba")) and not vysledok.get("brief")
+            stav.update(label=t("a_zlyhalo") if zlyhalo else t("a_hotovo"),
+                        state="error" if zlyhalo else "complete", expanded=False)
+        # výsledok si pamätáme, aby nezmizol po stiahnutí PDF alebo zmene jazyka
+        st.session_state["ai_vysledok"] = {"otazka": otazka.strip(), "vysledok": vysledok}
+    ulozene = st.session_state.get("ai_vysledok")
+    if not ulozene:
         return
-    with st.status(t("a_bezi"), expanded=True) as stav:
-        vysledok = spusti(otazka, persona, pri_kroku=lambda riadok: stav.write(riadok))
-        chyba = vysledok.get("chyba")
-        zlyhalo = bool(chyba) and not vysledok.get("brief")
-        stav.update(label=t("a_zlyhalo") if zlyhalo else t("a_hotovo"),
-                    state="error" if zlyhalo else "complete", expanded=False)
-    if zlyhalo:
-        st.error(t("a_chyba", e=chyba))
+    otazka, vysledok = ulozene["otazka"], ulozene["vysledok"]
+    if vysledok.get("chyba") and not vysledok.get("brief"):
+        st.error(t("a_chyba", e=vysledok["chyba"]))
         return
     brief = vysledok.get("brief", "")
     nadpis, casti = rozdel_spravu(brief)
@@ -869,8 +927,9 @@ def cast_ai() -> None:
         modely_ai = ", ".join(vysledok.get("modely") or []) or vysledok.get("model", "")
         st.caption(t("a_model", m=modely_ai, n=vysledok.get("volania_llm", "?")))
     if brief:
-        st.download_button(t("a_stiahnut"), brief, file_name=f"liekradar-{kratky_nazov_suboru(otazka)}.md",
-                           mime="text/markdown")
+        st.download_button(t("a_pdf"), data=pdf_spravy(otazka, nadpis, casti, bool(vysledok.get("schvalene")), len(problemy)),
+                           file_name=f"liekradar-{kratky_nazov_suboru(otazka)}.pdf", mime="application/pdf",
+                           type="primary", icon=":material/download:", on_click="ignore")
     poznamka(t("a_overte") + " " + t("upozornenie"))
 
 
