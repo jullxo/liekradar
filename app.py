@@ -249,10 +249,11 @@ TEXTY = {
     "a_vznik": ("Ako táto odpoveď vznikla", "Jak tato odpověď vznikla", "How this answer was made"),
     "a_fakt": ("Fakt:", "Fakt:", "Fact:"),
     "a_odhad": ("Náš odhad:", "Náš odhad:", "Our assessment:"),
+    "a_upozornenie": ("Upozornenie:", "Upozornění:", "Important:"),
     "a_chyba": ("AI analytik narazil na problém: {e}", "AI analytik narazil na problém: {e}", "The AI analyst ran into a problem: {e}"),
     "a_model": ("Jazykový model: {m} · volaní modelu: {n}", "Jazykový model: {m} · volání modelu: {n}",
                 "Language model: {m} · model calls: {n}"),
-    "a_jazyk": ("", "AI analytik zatím odpovídá slovensky.", "The AI analyst currently answers in Slovak."),
+    "a_jazyk": ("", "", ""),
     "a_overte": ("Správu pripravil jazykový model z údajov LiekRadaru. Pred dôležitým rozhodnutím ju overte.",
                  "Zprávu připravil jazykový model z dat LiekRadaru. Před důležitým rozhodnutím ji ověřte.",
                  "This report was written by a language model from LiekRadar data. Verify it before important decisions."),
@@ -410,6 +411,7 @@ def rozdel_spravu(brief: str) -> tuple[str, dict]:
 def ludsky_text(text: str) -> str:
     """Označenia Fakt / Úsudok z kurzu nahradí slovami pre zákazníka."""
     text = re.sub(r"\*\*Úsudok:\*\*|\bÚsudok:", f"**{t('a_odhad')}**", text)
+    text = re.sub(r"\*\*Upozornenie:\*\*|\bUpozornenie:", f"**{t('a_upozornenie')}**", text)
     return re.sub(r"\*\*Fakt:\*\*|\bFakt:", f"**{t('a_fakt')}**", text)
 
 
@@ -881,7 +883,7 @@ def cast_ai() -> None:
         st.info(t("a_prazdna"))
     elif spustit:
         with st.status(t("a_bezi"), expanded=True) as stav:
-            vysledok = spusti(otazka.strip(), persona, pri_kroku=lambda riadok: stav.write(riadok))
+            vysledok = spusti(otazka.strip(), persona, pri_kroku=lambda riadok: stav.write(riadok), jazyk=jazyk())
             zlyhalo = bool(vysledok.get("chyba")) and not vysledok.get("brief")
             stav.update(label=t("a_zlyhalo") if zlyhalo else t("a_hotovo"),
                         state="error" if zlyhalo else "complete", expanded=False)

@@ -23,7 +23,7 @@ from collections import deque
 
 from pydantic import BaseModel
 
-MAX_VOLANI_NA_OTAZKU = 7  # orchestrátor, analytik, reportér, kritik, oprava (reportér + kritik), korektúra
+MAX_VOLANI_NA_OTAZKU = 9  # orchestrátor, analytik, reportér, kritik, oprava (reportér + kritik), korektúra, preklad, dopreklad
 LIMIT_ZA_MINUTU = 15
 CAKANIE_PRI_429_MAX_S = 60
 CAKANIE_PRI_503_S = 15

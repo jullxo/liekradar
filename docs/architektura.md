@@ -124,50 +124,64 @@ Multiagentný systém je graf v LangGraph (`agents/graph.py`) s modelom Gemini
 (`langchain-google-genai`, model z `GEMINI_MODEL`, teraz `gemini-3.5-flash-lite`). Poradie agentov
 kopíruje cyklus CI. Systémový prompt každého agenta tvorí celý `vault/AGENTS.md` (pravidlá, citácie,
 mierka PHIA, červené čiary, formát BLUF) a krátky popis jeho roly. Čísla počítajú len nástroje nad
-`pipeline.analytika`, model ich iba vyberá a interpretuje.
+`pipeline.analytika`, model ich iba vyberá a interpretuje. Agenti pracujú a kritik kontroluje po slovensky;
+do češtiny alebo angličtiny sa preloží až schválená správa.
 
-| Agent | Fáza CI | Rola | Nástroje a dáta |
+| Agent / krok | Fáza CI | Rola | Nástroje a dáta |
 | --- | --- | --- | --- |
-| Orchestrátor (LLM) | Plánovanie | Z otázky a persony (výrobca / lekáreň) vyberie KIQ, krajiny, ATC prefix a najviac 6 volaní nástrojov. Výstup je štruktúrovaný (Pydantic), kód ho overí: povolené sú len nástroje zo zoznamu a platné ATC kódy a kódy liekov. | Zoznam nástrojov, otázka, persona |
-| Zber (bez LLM) | Zber | Zavolá nástroje podľa plánu. Hodnotu `z_top_rizikove` nahradí dvoma najrizikovejšími liekmi z KIQ1, takže sa dá pokračovať náhradami alebo posunom. Výsledok prevedie na JSON (najviac 10 riadkov) a citácie zachová. Pri náhradách doplní pôvodný liek z registra a pri každom kandidátovi príznak, či má rovnakú liekovú formu. | `top_rizikove` (KIQ1), `detail_latky`, `posun_latky` (KIQ2), `nahrady` (KIQ3), `konkurenti` (KIQ4), `trhove_medzery` (KIQ5) nad `data/processed/*.parquet` |
-| Analytik (LLM) | Analýza | Z výsledkov nástrojov spraví zistenia, fakty `[ID, Admiralty]` a úsudky (Odhadujeme… / Pravdepodobne…, mierka PHIA) oddelene. Pomenuje aj medzery v dátach. | JSON z nástrojov |
-| Reportér (LLM) | Šírenie | Napíše správu BLUF po slovensky podľa sekcie 8 AGENTS.md pre zvolenú personu. Prvá veta BLUF má výraz PHIA a istotu. Ako náhrady uvádza len lieky s rovnakou liekovou formou, upozornenie o lekárovi píše ako samostatný riadok. Po vrátení od kritika správu opraví (najviac 1-krát). | Zistenia analytika, JSON z nástrojov, `vault/manifest_zdrojov.csv` |
-| Kritik (kód + LLM) | Kontrola kvality (Lint) | Kód overí sekcie BLUF, citácie podľa manifestu (ID aj známka Admiralty, aj v zlúčenom tvare), citáciu pri každom fakte, začiatok úsudkov, výrazy PHIA v kľúčových úsudkoch aj v prvej vete BLUF, strop istoty bez nezávislého potvrdenia (najviac „pravdepodobné“, istota stredná), zakázané slová, skóre bez percent, náhrady inej liekovej formy a samostatné upozornenie o lekárovi. Overí aj čísla proti nástrojom (`agents/kontrola_cisel.py`): skóre lieku, kód lieku a jeho balenie, vlny a dni posunu. LLM posúdi obsah a či správa odpovedá na otázku. Pri probléme vráti správu reportérovi s presným rozdielom („v správe X, v dátach Y“). | Správa, JSON z nástrojov, manifest |
+| Orchestrátor (LLM) | Plánovanie | Najprv **kontrola rozsahu**: LiekRadar je pre nákupcov lekárenských sietí a výrobcov, nie pre pacientov. Otázku pacienta o vlastnom lieku, náhrade alebo dávkovaní zachytí poistka v kóde (`agents/rozsah.py`, vzory SK/CZ/EN) ešte pred volaním modelu, alebo ju orchestrátor označí rozsahom „pacient“. Graf vtedy hneď skončí s pevným textom (lekár, lekárnik, 155/112) bez nástrojov a bez ďalších volaní modelu. Inak určí jazyk otázky (sk/cs/en; má prednosť pred jazykom appky) a z otázky a persony vyberie KIQ, krajiny, ATC prefix a najviac 6 volaní nástrojov. Výstup je štruktúrovaný (Pydantic), kód ho overí: povolené sú len nástroje zo zoznamu a platné ATC kódy a kódy liekov. Pri otázke na náhrady za látku kód doplní `nahrady_za_latku`. | Zoznam nástrojov, otázka, persona |
+| Zber (bez LLM) | Zber | Zavolá nástroje podľa plánu. Hodnotu `z_top_rizikove` nahradí dvoma najrizikovejšími liekmi z KIQ1. Výsledok prevedie na JSON (najviac 10 riadkov) a citácie zachová. Pri náhradách doplní pôvodný liek z registra, príznak rovnakej liekovej formy a iné balenie toho istého lieku. | `top_rizikove` (KIQ1), `detail_latky`, `posun_latky` (KIQ2), `nahrady`, `nahrady_za_latku` (KIQ3), `konkurenti` (KIQ4), `trhove_medzery` (KIQ5) nad `data/processed/*.parquet` |
+| Analytik (LLM) | Analýza | Z výsledkov nástrojov spraví zistenia po slovensky: fakty `[ID, Admiralty]` a úsudky (Odhadujeme… / výraz z mierky PHIA) oddelene. Pomenuje aj medzery v dátach. | JSON z nástrojov |
+| Reportér (LLM) | Šírenie | Napíše správu BLUF po slovensky podľa sekcie 8 AGENTS.md pre zvolenú personu. Prvá veta BLUF priamo odpovedá na otázku, výraz PHIA a istota sú v 1. alebo 2. vete. Náhrady uvádza ako názov + sila, najviac 5 na každý liek vo výpadku a len s rovnakou liekovou formou. Upozornenie o lekárovi píše ako samostatný riadok. Po vrátení od kritika správu opraví (najviac 1-krát). | Zistenia analytika, JSON z nástrojov, `vault/manifest_zdrojov.csv` |
+| Kritik (kód + LLM) | Kontrola kvality (Lint) | Kód overí sekcie BLUF, citácie podľa manifestu (ID, známka Admiralty, krajina zdroja), citáciu pri každom fakte, začiatok úsudkov, výrazy PHIA a istotu, strop istoty bez nezávislého potvrdenia, zakázané slová, skóre bez percent, náhrady (forma, počet, iné balenie, bez balení), povolené označenia riadkov, slovenčinu bez cudzích znakov a bez KIQ. Overí aj čísla proti nástrojom (`agents/kontrola_cisel.py`): skóre lieku, kód lieku a jeho balenie, vlny a dni posunu. LLM posúdi obsah a či správa odpovedá na otázku. Pri probléme vráti správu reportérovi s presným rozdielom („v správe X, v dátach Y“). | Správa, JSON z nástrojov, manifest |
+| Korektúra (LLM, krok kritika) | Kontrola kvality | Ak po oprave zostanú len slová s cudzími znakmi (napr. „prebiehające“), jedno krátke volanie vráti ich slovenské tvary. Kód nahradí len tieto slová a znova spustí kontrolu v kóde. | Chybné slová a ich vety |
+| Preklad (LLM + kód) | Šírenie | Ak jazyk odpovede nie je slovenčina, preloží schválenú správu (`agents/preklad.py`). Nadpisy `##` a označenia **Fakt:**, **Úsudok:**, **Upozornenie:** nechá po slovensky (appka ich prekladá sama), výrazy PHIA a istotu preloží podľa pevnej tabuľky. Kód potom overí, že nadpisy, označenia, citácie, čísla, kódy a názvy liekov sú rovnaké ako v slovenskej verzii. Pri nezhode (alebo ak správa neprešla kontrolou) vráti slovenskú verziu s poznámkou v jazyku používateľa. | Schválená slovenská správa, JSON z nástrojov |
 | Človek (analytik tímu) | Spätná väzba | Prečíta správu a Case Log a po overení nastaví `verified: true`. | `vault/reports/`, `vault/cases/` |
 
 ```mermaid
 flowchart LR
-    U([Otázka + persona]) --> O[Orchestrátor<br/>plánovanie · LLM]
-    O -->|plán: KIQ, krajiny,<br/>volania nástrojov| Z[Zber<br/>bez LLM]
+    U([Otázka + persona + jazyk appky]) --> O{Orchestrátor<br/>kontrola rozsahu · plánovanie · LLM}
+    O -->|otázka pacienta| P([Pevný text: lekár, lekárnik, 155/112<br/>bez nástrojov, len Case Log])
+    O -->|plán: KIQ, krajiny, jazyk,<br/>volania nástrojov| Z[Zber<br/>bez LLM]
     Z -->|volá| T[(agents/tools.py<br/>pipeline.analytika<br/>data/processed)]
     T -->|JSON + citácie| Z
     Z -->|data| A[Analytik<br/>analýza · LLM]
     A -->|Fact / Inference| R[Reportér<br/>šírenie · LLM]
-    R -->|správa BLUF| K{Kritik<br/>kód + LLM}
+    R -->|správa BLUF po slovensky| K{Kritik<br/>kód + LLM}
     K -->|neschválené,<br/>najviac 1 oprava| R
-    K -->|schválené / po oprave| S[(vault/reports/<br/>vault/cases/)]
+    K -->|po oprave len cudzie znaky| KO[Korektúra<br/>LLM, len slová]
+    K -->|schválené, jazyk cs / en| PR[Preklad<br/>LLM + kontrola zhody v kóde]
+    KO --> PR
+    K -->|schválené, jazyk sk| S[(vault/reports/<br/>vault/cases/)]
+    KO --> S
+    PR --> S
     S --> H([Človek: verified: true])
 ```
 
-**Stav grafu:** `otazka`, `persona`, `plan`, `data`, `analyza`, `brief`, `kritika`, `pocet_oprav`,
+**Stav grafu:** `otazka`, `persona`, `rozsah` (ok / pacient), `jazyk_appky`, `jazyk` (jazyk odpovede), `plan`,
+`data`, `analyza`, `brief` (slovenská správa), `kritika`, `pocet_oprav`, `brief_preklad`, `preklad`,
 `priebeh` (kroky agentov pre aplikáciu), `case_log` (čas UTC, agent, nástroj, vstup, výsledok v jednom riadku).
 
-**Výstup:** `agents.graph.spusti(otazka, persona)` vráti pre Streamlit `brief`, `priebeh`, `case_log`,
-`subory` (cesty k správe a Case Logu), `plan`, `kritika`, `schvalene` a `chyba`. Správa sa uloží do
-`vault/reports/<YYYY-MM-DD>-<krátky-názov>.md` a Case Log do `vault/cases/<YYYY-MM-DD>-<krátky-názov>.md`,
-obe s `verified: false`. Sekciu *AI use statement* napíše po kritikovi kód podľa Case Logu: všetkých
-5 agentov, modely pri každom kroku, počet kôl opravy, výsledok kontroly a počet volaní modelu.
-Ukážka: `.venv/bin/python -m agents.demo`.
+**Výstup:** `agents.graph.spusti(otazka, persona, jazyk=None)` vráti pre Streamlit `brief` (v jazyku
+odpovede), `priebeh`, `case_log`, `subory`, `plan`, `kritika`, `schvalene`, `jazyk`, `rozsah`, `preklad`
+a `chyba`. Slovenská správa sa uloží do `vault/reports/<YYYY-MM-DD>-<krátky-názov>.md`, preklad do
+`…-cs.md` alebo `…-en.md` a Case Log do `vault/cases/<YYYY-MM-DD>-<krátky-názov>.md`, všetko
+s `verified: false`. Pri otázke pacienta sa ukladá len Case Log. Sekciu *AI use statement* napíše po
+kritikovi kód podľa Case Logu v jazyku odpovede: všetkých 5 agentov, modely pri každom kroku, korektúru,
+preklad, počet kôl opravy, výsledok kontroly a počet volaní modelu.
+Ukážka: `.venv/bin/python -m agents.demo "otázka" persona jazyk`.
 
 **Limity bezplatnej úrovne Gemini (15 požiadaviek za minútu, 500 za deň):** jedna otázka potrebuje
-4 volania modelu (orchestrátor, analytik, reportér, kritik), s opravou 6. `agents/llm.py` drží najviac
-15 volaní za minútu a 6 úspešných volaní na otázku. Pri chybe 429 počká podľa odpovede servera,
+4 volania modelu (orchestrátor, analytik, reportér, kritik), s opravou 6, s korektúrou 7 a s prekladom
+najviac 8. Otázka pacienta zachytená v kóde nepotrebuje žiadne volanie. `agents/llm.py` drží najviac
+15 volaní za minútu a 8 úspešných volaní na otázku. Pri chybe 429 počká podľa odpovede servera,
 pri 503 15 s, a skúsi to raz znova. Ak hlavný model vráti 503 aj po opakovaní, prepne sa na záložný
 model `GEMINI_MODEL_FALLBACK` (predvolene `gemini-3.1-flash-lite`) a ten použije do konca otázky.
 Case Log pri každom kroku uvádza model, ktorý krok spravil. Ak zlyhá aj záložný model, systém vráti
 zrozumiteľnú chybu. Kľúč sa číta zo `st.secrets` alebo z premennej prostredia a nikam sa nezapisuje.
 `LIEKRADAR_FAKE_LLM=1` vráti pevné odpovede, takže sa graf dá otestovať bez kľúča.
-`LIEKRADAR_FAKE_503=n` navyše nasimuluje preťaženie hlavného modelu od n-tého volania.
+`LIEKRADAR_FAKE_503=n` navyše nasimuluje preťaženie hlavného modelu od n-tého volania,
+`LIEKRADAR_FAKE_KOREKTURA=1` cudzie slovo po oprave a `LIEKRADAR_FAKE_PREKLAD_CHYBA=1` nezhodu v preklade.
 
 ## Bezpečnosť a etika
 
