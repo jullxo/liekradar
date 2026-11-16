@@ -1,11 +1,15 @@
 """Preklad schválenej správy do češtiny alebo angličtiny a kontrola zhody s originálom.
 
-Agenti pracujú a kritik kontroluje po slovensky. Až schválenú správu preloží krok „preklad“ (1 LLM volanie).
-- Nadpisy sekcií ## a označenia **Fakt:**, **Úsudok:**, **Upozornenie:** zostávajú presne po slovensky
-  (appka ich takto hľadá a sama prekladá).
-- Výrazy z mierky PHIA a istota sa prekladajú podľa pevnej tabuľky.
-- Kód po preklade overí, že nadpisy, označenia, citácie [ID, Admiralty], čísla, kódy liekov a názvy liekov
-  sú rovnaké ako v slovenskej verzii. Ak nie, použije sa slovenská verzia s poznámkou.
+Agenti pracujú a kritik kontroluje po slovensky. Až schválenú správu preloží krok „preklad“.
+1. Pred prekladom kód nahradí všetko, čo sa nesmie meniť, značkami ⟦0⟧, ⟦1⟧, …: nadpisy ## sekcií, označenia
+   **Fakt:** / **Úsudok:** / **Upozornenie:**, citácie [ID, Admiralty], kódy liekov, názvy liekov z výsledkov
+   nástrojov (celé, aj „prášok na perorálnu suspenziu“), názvy zdrojov a istotu (tá má hodnotu už v cieľovom
+   jazyku: „jistota: střední“, „confidence: moderate“ – nahradí ju kód, nie model). Sekcia AI use statement
+   sa neprekladá, doplní ju kód.
+2. Model dostane text so značkami a pokyn značky nemeniť ani nevynechať (1 LLM volanie).
+3. Kód skontroluje každý riadok: rovnaké značky, čísla, citácie a kódy, nič po slovensky. Zlé riadky preloží
+   jedno cielené volanie znova zo slovenského originálu. Potom kód vráti pôvodné hodnoty značiek a overí
+   zhodu celej správy. Ak to nepomôže, použije sa slovenská verzia s poznámkou.
 """
 
 from __future__ import annotations
@@ -13,6 +17,7 @@ from __future__ import annotations
 import os
 import re
 from collections import Counter
+from dataclasses import dataclass, field
 
 from agents.kontrola_cisel import _kody_v_riadku
 
@@ -72,102 +77,267 @@ POZNAMKY = {
 }
 
 
-def rola_prekladu(jazyk: str) -> str:
-    """Systémový prompt prekladateľa (krátky, bez celého AGENTS.md – správa už je skontrolovaná)."""
-    tabulka = "\n".join(f"  | {sk} | {cil} |" for sk, cil in [
+def _tabulka_phia(jazyk: str) -> str:
+    return "\n".join(f"  | {sk} | {cil} |" for sk, cil in [
         ("zanedbateľná pravdepodobnosť", PHIA_TABULKA[jazyk][0][1]), ("veľmi nepravdepodobné", PHIA_TABULKA[jazyk][1][1]),
         ("nepravdepodobné", PHIA_TABULKA[jazyk][4][1]), ("reálna možnosť", PHIA_TABULKA[jazyk][5][1]),
         ("pravdepodobné", PHIA_TABULKA[jazyk][6][1]), ("veľmi pravdepodobné", PHIA_TABULKA[jazyk][2][1]),
         ("takmer isté", PHIA_TABULKA[jazyk][3][1])])
-    ist = ISTOTA_TABULKA[jazyk]
+
+
+PRAVIDLA_ZNACIEK = """Text obsahuje značky ⟦0⟧, ⟦1⟧, ⟦2⟧, … – zastupujú nadpisy, označenia riadkov, citácie, kódy, názvy liekov
+a zdrojov a istotu. KAŽDÚ značku prepíš presne v tvare ⟦číslo⟧, presne raz a v tom istom riadku, kde je
+v origináli. Značky neprekladaj, nemeň, nevynechávaj, nespájaj a nepridávaj nové. Riadok, ktorý obsahuje
+len značky (napr. „⟦3⟧“), nechaj presne tak. Všetok ostatný text prelož CELÝ – v preklade nesmie zostať
+slovenské slovo. Čísla a sily (625 mg, 156,25 mg/5 ml) prepíš bez zmeny."""
+
+
+def rola_prekladu(jazyk: str) -> str:
+    """Systémový prompt prekladateľa (krátky, bez celého AGENTS.md – správa už je skontrolovaná)."""
     priklad = PRIKLAD_RIADKU[jazyk]
     return f"""Si prekladateľ správ LiekRadaru. Prelož správu zo slovenčiny do {NAZVY_JAZYKOV[jazyk]}.
-Správu už skontroloval kritik – nič nepridávaj, nevynechávaj a neopravuj, ale PRELOŽ CELÝ TEXT KAŽDÉHO RIADKU:
-nadpis „# “, BLUF, všetky odrážky Key judgements, celé riadky Fakt, Úsudok a Upozornenie (aj text za
-označením), Alternative explanations, Key assumptions, Indicators a vysvetľujúci text v Sources and method annex.
-V preklade nesmie zostať ani jeden slovenský riadok či slovo (napr. „sú“, „liek“, „výpadok“, „pre“, „istota“).
-Bez zmeny ostáva LEN:
-- nadpisy sekcií začínajúce „## “ (napr. „## Bottom line up front“, „## Key judgements“, „## Discussion“),
-- samotné označenia **Fakt:**, **Úsudok:**, **Upozornenie:** na začiatku riadku – text ZA nimi prelož,
-- citácie [ID, Admiralty] (napr. [E004, A1] [E005, A2]), všetky čísla, sily (625 mg, 156,25 mg/5 ml),
-  kódy liekov, ATC kódy a skratky liekových foriem (TBL FLM, PLU POR),
-- oficiálne názvy liekov (napr. MEDOCLAV 625 mg, Amoksiklav 625 mg) a zdrojov (napr. „ŠÚKL – register
-  liekov (API)“) – neprekladaj ich a neskloňuj.
+Správu už skontroloval kritik – nič nepridávaj, nevynechávaj a neopravuj.
+{PRAVIDLA_ZNACIEK}
 Príklad:
   slovensky: {priklad[0]}
   preklad:   {priklad[1]}
 Výrazy z mierky pravdepodobnosti PHIA prelož LEN podľa tejto tabuľky (v správnom tvare vety):
   | slovensky | preklad |
   |---|---|
-{tabulka}
-Istotu prelož ako „{ist['istota']}: {ist['nízka']}“ / „{ist['istota']}: {ist['stredná']}“ / „{ist['istota']}: {ist['vysoká']}“
-(slovensky „istota: nízka / stredná / vysoká“; slovo „istota“ v preklade nesmie zostať).
-Zachovaj markdown (odrážky, **tučné**, *kurzívu*) a poradie aj počet riadkov. Vráť len preloženú správu,
+{_tabulka_phia(jazyk)}
+Zachovaj odrážky, markdown, poradie aj počet riadkov (aj prázdne riadky). Vráť len preložený text,
 bez úvodu a bez ``` blokov."""
 
 
 PRIKLAD_RIADKU = {
-    "cs": ("- **Fakt:** Na slovenskom trhu sú hlásené výpadky liekov Amoksiklav 625 mg (TBL FLM) [E004, A1] [E005, A2].",
-           "- **Fakt:** Na slovenském trhu jsou hlášeny výpadky léčiv Amoksiklav 625 mg (TBL FLM) [E004, A1] [E005, A2]."),
-    "en": ("- **Fakt:** Na slovenskom trhu sú hlásené výpadky liekov Amoksiklav 625 mg (TBL FLM) [E004, A1] [E005, A2].",
-           "- **Fakt:** Shortages of Amoksiklav 625 mg (TBL FLM) are reported on the Slovak market [E004, A1] [E005, A2]."),
+    "cs": ("- ⟦7⟧ Na slovenskom trhu sú hlásené výpadky ⟦8⟧ a ⟦9⟧ ⟦10⟧ ⟦11⟧.",
+           "- ⟦7⟧ Na slovenském trhu jsou hlášeny výpadky ⟦8⟧ a ⟦9⟧ ⟦10⟧ ⟦11⟧."),
+    "en": ("- ⟦7⟧ Na slovenskom trhu sú hlásené výpadky ⟦8⟧ a ⟦9⟧ ⟦10⟧ ⟦11⟧.",
+           "- ⟦7⟧ Shortages of ⟦8⟧ and ⟦9⟧ are reported on the Slovak market ⟦10⟧ ⟦11⟧."),
 }
 
+
 def rola_doprekladu(jazyk: str) -> str:
-    ist = ISTOTA_TABULKA[jazyk]
-    phia = "; ".join(f"{sk} → {cil}" for sk, cil in [
-        ("zanedbateľná pravdepodobnosť", PHIA_TABULKA[jazyk][0][1]), ("veľmi nepravdepodobné", PHIA_TABULKA[jazyk][1][1]),
-        ("nepravdepodobné", PHIA_TABULKA[jazyk][4][1]), ("reálna možnosť", PHIA_TABULKA[jazyk][5][1]),
-        ("pravdepodobné", PHIA_TABULKA[jazyk][6][1]), ("veľmi pravdepodobné", PHIA_TABULKA[jazyk][2][1]),
-        ("takmer isté", PHIA_TABULKA[jazyk][3][1])])
-    return (f"""Si prekladateľ správ LiekRadaru. Dostaneš riadky správy (s číslom riadku), ktoré pri preklade do
-{NAZVY_JAZYKOV[jazyk]} zostali celé alebo čiastočne po slovensky. Pre každý vráť CELÝ riadok preložený do
-{NAZVY_JAZYKOV[jazyk]} v jednom riadku. Bez zmeny nechaj len odrážku „- “, označenie **Fakt:** / **Úsudok:** /
-**Upozornenie:** na začiatku (text za ním prelož), citácie [ID, Admiralty], čísla, sily, kódy, skratky
-liekových foriem a oficiálne názvy liekov a zdrojov. Výrazy PHIA: {phia}. Istota: „{ist['istota']}: {ist['nízka']} /
-{ist['stredná']} / {ist['vysoká']}“ (slovo „istota“ nesmie zostať). Vráť len opravy uvedených riadkov.""")
+    return f"""Si prekladateľ správ LiekRadaru. Dostaneš slovenské riadky správy (s číslom riadku), ktorých prvý
+preklad do {NAZVY_JAZYKOV[jazyk]} neprešiel kontrolou (pri každom je dôvod). Každý riadok prelož znova CELÝ
+do {NAZVY_JAZYKOV[jazyk]} a vráť ho v jednom riadku pod tým istým číslom.
+{PRAVIDLA_ZNACIEK}
+Výrazy PHIA prelož podľa tabuľky:
+{_tabulka_phia(jazyk)}
+Vráť len preklady uvedených riadkov."""
 
 
-def fake_preklad(brief: str, jazyk: str, data: dict | None = None, riadky: set[int] | None = None) -> str:
-    """Preklad pre režim LIEKRADAR_FAKE_LLM. Každý preložený riadok nahradí zástupným textom v cieľovom jazyku
-    a ponechá len to, čo sa prekladať nesmie (odrážka, označenie, názvy liekov, čísla, citácie, výraz PHIA
-    a istota podľa tabuľky). Nadpisy ## a sekcia AI use statement ostanú. `riadky` = prekladať len tieto.
-    LIEKRADAR_FAKE_PREKLAD_NEUPLNY=1 nechá riadky Fakt po slovensky (dopreklad ich preloží),
-    =2 ich nechá po slovensky aj pri doprekladu; LIEKRADAR_FAKE_PREKLAD_CHYBA=1 zmení jedno číslo."""
+# ---------------------------------------------------------------------------
+# Značky ⟦n⟧: čo sa nesmie prekladať
+# ---------------------------------------------------------------------------
+
+ZNACKA = re.compile(r"⟦(\d+)⟧")
+_LEN_ZNACKY = re.compile(r"^[\s\-*+.,;:()]*(?:⟦\d+⟧[\s\-*+.,;:()]*)+$")
+_ISTOTA_SLOVO = re.compile(r"\b[Ii]stota\b")
+_ISTOTA_UROVEN = re.compile(r"\b(nízka|stredná|vysoká)\b")
+_ZDROJ_V_PRILOHE = re.compile(r"[ŠS]ÚKL\s*[–-]\s*[^\[\n;(]*[^\[\n;(\s]")
+
+
+@dataclass
+class Maska:
+    """Slovenská správa so značkami (len časť pred AI use statement) a hodnoty značiek."""
+    riadky: list[str]
+    hodnoty: dict[int, str]
+    chvost: list[str] = field(default_factory=list)  # AI use statement a ďalej – neprekladá sa
+    jazyk: str = "cs"
+
+    @property
+    def text(self) -> str:
+        return "\n".join(self.riadky)
+
+    @staticmethod
+    def znacky(riadok: str) -> Counter:
+        return Counter(ZNACKA.findall(riadok))
+
+    def odmaskuj(self, riadok: str) -> str:
+        return ZNACKA.sub(lambda m: self.hodnoty.get(int(m.group(1)), m.group(0)), riadok)
+
+
+def maskuj(brief: str, jazyk: str, data: dict | None = None, manifest: dict | None = None) -> Maska:
+    """Nahradí v slovenskej správe všetko, čo sa nesmie prekladať, značkami ⟦n⟧."""
     from agents.graph import _SKUPINA
     nazvy = sorted(nazvy_liekov(data or {}), key=len, reverse=True)
-    vypln = {"cs": "Přeložený text", "en": "Translated text"}[jazyk]
-    neuplny = os.environ.get("LIEKRADAR_FAKE_PREKLAD_NEUPLNY", "")
-    vysledok, sekcia = [], ""
-    for i, riadok in enumerate(brief.splitlines()):
+    zdroje = sorted({z["zdroj"] for z in (manifest or {}).values() if z.get("zdroj")}, key=len, reverse=True)
+    ist = ISTOTA_TABULKA[jazyk]
+    hodnoty: dict[int, str] = {}
+    riadky_out: list[str] = []
+    riadky = brief.splitlines()
+    sekcia = ""
+    for k, riadok in enumerate(riadky):
         if riadok.startswith("## "):
             sekcia = riadok.lower()
-        if (not riadok.strip() or riadok.startswith("## ") or "ai use" in sekcia
-                or (riadky is not None and i not in riadky)):
-            vysledok.append(riadok)
+            if "ai use" in sekcia:
+                return Maska(riadky_out, hodnoty, riadky[k:], jazyk)
+        useky: list[tuple[int, int, str]] = []
+
+        def pridaj(zac: int, kon: int, hodnota: str) -> None:
+            if zac < kon and not any(zac < b and a < kon for a, b, _ in useky):
+                useky.append((zac, kon, hodnota))
+
+        if riadok.startswith("## "):
+            pridaj(0, len(riadok), riadok)
+        for oznacenie in OZNACENIA:
+            for m in re.finditer(re.escape(oznacenie), riadok):
+                pridaj(m.start(), m.end(), oznacenie)
+        for m in _SKUPINA.finditer(riadok):
+            pridaj(m.start(), m.end(), m.group(0))
+        for m in re.finditer(r"`[^`\n]+`", riadok):
+            pridaj(m.start(), m.end(), m.group(0))
+        for n in nazvy:
+            for m in re.finditer(_vzor_nazvu(n), riadok, flags=re.IGNORECASE):
+                pridaj(m.start(), m.end(), m.group(0))
+        for n in zdroje:
+            for m in re.finditer(_vzor_nazvu(n), riadok):
+                pridaj(m.start(), m.end(), m.group(0))
+        if "sources and method" in sekcia:
+            for m in _ZDROJ_V_PRILOHE.finditer(riadok):
+                pridaj(m.start(), m.end(), m.group(0))
+        for pozicia, kod in _kody_v_riadku(riadok):
+            pridaj(pozicia, pozicia + len(kod), kod)
+        for m in _ISTOTA_SLOVO.finditer(riadok):  # istota sa prekladá v kóde podľa pevnej tabuľky
+            slovo = ist["istota"]
+            pridaj(m.start(), m.end(), slovo[:1].upper() + slovo[1:] if m.group(0)[0].isupper() else slovo)
+            uroven = _ISTOTA_UROVEN.search(riadok, m.end(), min(len(riadok), m.end() + 40))
+            if uroven:
+                pridaj(uroven.start(), uroven.end(), ist[uroven.group(1)])
+        novy, posledny = [], 0
+        for zac, kon, hodnota in sorted(useky):
+            cislo = len(hodnoty)
+            hodnoty[cislo] = hodnota
+            novy.append(riadok[posledny:zac] + f"⟦{cislo}⟧")
+            posledny = kon
+        riadky_out.append("".join(novy) + riadok[posledny:])
+    return Maska(riadky_out, hodnoty, [], jazyk)
+
+
+def _slovenske_slova(text: str, jazyk: str) -> list[str]:
+    """Slovenské znaky a slová v texte (bez značiek)."""
+    text = ZNACKA.sub(" ", text)
+    najdene = sorted({m.group(0) for m in re.finditer(_SK_ZNAKY[jazyk], text)})
+    slova = re.findall(r"[^\W\d_]+", text.lower())
+    najdene += sorted({s for s in slova if s in _SK_SLOVA[jazyk]})
+    if jazyk == "cs":  # slovenská koncovka -ej (perorálnej, liekovej); česky nie, okrem -dej (výdej, prodej)
+        najdene += sorted({s for s in slova if re.fullmatch(r"\w{3,}[^d\W]ej", s)})
+    return najdene
+
+
+def zly_riadok(maska: Maska, i: int, preklad: str) -> str | None:
+    """Dôvod, prečo preložený riadok i (so značkami) neprešiel kontrolou, alebo None."""
+    povodny = maska.riadky[i]
+    if not preklad.strip():
+        return "prázdny riadok"
+    rozdiel = _rozdiel(maska.znacky(povodny), maska.znacky(preklad)).replace("v preklade", "")
+    if rozdiel:
+        return f"značky:{rozdiel}"
+    if _LEN_ZNACKY.match(povodny) and preklad.strip() != povodny.strip():
+        return "riadok len so značkami sa zmenil"
+    sk, pr = maska.odmaskuj(povodny), maska.odmaskuj(preklad)
+    for nazov, funkcia in [("čísla", _cisla), ("citácie", _citacie), ("kódy liekov", _kody)]:
+        rozdiel = _rozdiel(funkcia(sk), funkcia(pr))
+        if rozdiel:
+            return f"{nazov}: {rozdiel}"
+    zostalo = _slovenske_slova(preklad, maska.jazyk)
+    if zostalo:
+        return f"zostalo po slovensky: {', '.join(zostalo[:6])}"
+    return None
+
+
+def over_preklad(maska: Maska, preklad: str) -> tuple[list[str], dict[int, str]]:
+    """Zarovná preklad s originálom po riadkoch. Vracia (preložené riadky so značkami, zlé riadky {i: dôvod}).
+    Ak sa zmenil počet neprázdnych riadkov, sú zlé všetky riadky (preložia sa znova po jednom)."""
+    neprazdne = [i for i, r in enumerate(maska.riadky) if r.strip()]
+    prelozene = [r for r in preklad.splitlines() if r.strip()]
+    riadky = list(maska.riadky)
+    if len(prelozene) != len(neprazdne):
+        return riadky, {i: f"počet riadkov sa zmenil ({len(neprazdne)} → {len(prelozene)})" for i in neprazdne}
+    zle = {}
+    for i, r in zip(neprazdne, prelozene):
+        riadky[i] = r
+        dovod = zly_riadok(maska, i, r)
+        if dovod:
+            zle[i] = dovod
+    return riadky, zle
+
+
+def dopreklad_vstup(maska: Maska, zle: dict[int, str]) -> str:
+    return "Prelož znova tieto riadky (slovenský originál so značkami):\n" + "\n".join(
+        f"- riadok {i}: {maska.riadky[i]}\n  dôvod: {dovod}" for i, dovod in sorted(zle.items()))
+
+
+def pouzi_dopreklad(maska: Maska, riadky: list[str], zle: dict[int, str], opravy) -> tuple[list[str], dict[int, str]]:
+    """Vymení zlé riadky za dopreklad, ak prejde kontrolou; ostatné ostanú zlé (s novým dôvodom)."""
+    riadky, zostava = list(riadky), dict(zle)
+    for o in opravy.opravy:
+        if o.riadok not in zostava:
             continue
-        if "**Fakt:**" in riadok and ((neuplny == "1" and riadky is None) or neuplny == "2"):
-            vysledok.append(riadok)  # simulácia: model nechal riadok Fakt po slovensky
-            continue
-        m = re.match(r"^(\s*(?:[-*+]\s+)?(?:\*\*(?:Fakt|Úsudok|Upozornenie):\*\*\s*)?|#\s+)", riadok)
-        zaciatok = m.group(1) if m else ""
-        zachovat, bez = [], riadok
-        for n in nazvy:  # od najdlhších; každý výskyt zvlášť, aby počty názvov a čísel sedeli
-            vyskyty = len(re.findall(_vzor_nazvu(n), bez, flags=re.IGNORECASE))
-            if vyskyty:
-                zachovat += [n] * vyskyty
-                bez = re.sub(_vzor_nazvu(n), " ", bez, flags=re.IGNORECASE)
-        cisla = re.findall(r"(?<![\w])\d+(?:[.,]\d+)?", _SKUPINA.sub(" ", bez))
-        phia = next((cil for vzor, cil in PHIA_TABULKA[jazyk] if re.search(vzor, riadok, re.IGNORECASE)), "")
-        istota = next((f"{ISTOTA_TABULKA[jazyk]['istota']}: {ISTOTA_TABULKA[jazyk][u]}"
-                       for u in ("nízka", "stredná", "vysoká") if re.search(rf"istot\w*\W+{u}", riadok)), "")
-        casti = [vypln] + zachovat + cisla + [x for x in (phia, istota) if x] + _SKUPINA.findall(riadok)
-        casti = [f"[{c}]" if c in _SKUPINA.findall(riadok) else c for c in casti]
-        vysledok.append(zaciatok + " ".join(casti) + ".")
-    text = "\n".join(vysledok)
-    if os.environ.get("LIEKRADAR_FAKE_PREKLAD_CHYBA") and riadky is None:
-        text = re.sub(r"(?<![\w])(\d{2})(?![\w])", lambda m: str(int(m.group(1)) + 1), text, count=1)
+        text = re.sub(r"\s*\n\s*", " ", o.text or "").rstrip()
+        if maska.riadky[o.riadok].startswith("- ") and not text.lstrip().startswith(("- ", "* ")):
+            text = "- " + text.lstrip()
+        dovod = zly_riadok(maska, o.riadok, text)
+        if dovod:
+            zostava[o.riadok] = f"aj po doprekladu – {dovod}"
+        else:
+            riadky[o.riadok] = text
+            del zostava[o.riadok]
+    return riadky, zostava
+
+
+def zloz(maska: Maska, riadky: list[str]) -> str:
+    """Preložené riadky s pôvodnými hodnotami značiek + neprekladaná sekcia AI use statement."""
+    return "\n".join([maska.odmaskuj(r) for r in riadky] + maska.chvost)
+
+
+# ---------------------------------------------------------------------------
+# Pevný preklad pre režim LIEKRADAR_FAKE_LLM (nad textom so značkami)
+# ---------------------------------------------------------------------------
+
+def _fake_riadok(maska: Maska, i: int, dopreklad: bool) -> str:
+    """Zástupný preklad riadku: ponechá odrážku, značky, čísla a výraz PHIA, zvyšok nahradí výplňou.
+    LIEKRADAR_FAKE_PREKLAD_NEUPLNY=1 nechá riadky Fakt po slovensky (=2 aj pri doprekladu),
+    LIEKRADAR_FAKE_PREKLAD_ZNACKA=1 vynechá značku v prvom riadku s citáciou (=2 aj pri doprekladu),
+    LIEKRADAR_FAKE_PREKLAD_CHYBA=1 zmení číslo v prvom riadku s dvojciferným číslom (len prvý preklad)."""
+    riadok = maska.riadky[i]
+    if not riadok.strip() or _LEN_ZNACKY.match(riadok):
+        return riadok
+    neuplny = os.environ.get("LIEKRADAR_FAKE_PREKLAD_NEUPLNY", "")
+    hodnoty = [maska.hodnoty[int(c)] for c in ZNACKA.findall(riadok)]
+    if "**Fakt:**" in hodnoty and (neuplny == "2" or (neuplny == "1" and not dopreklad)):
+        return riadok  # simulácia: model nechal riadok po slovensky
+    zaciatok = re.match(r"^\s*(?:[-*+]\s+|#\s+)?(?:⟦\d+⟧\s*)?", riadok).group(0)
+    if zaciatok.strip() and ZNACKA.search(zaciatok) and maska.hodnoty[int(ZNACKA.search(zaciatok).group(1))] \
+            not in OZNACENIA:
+        zaciatok = re.match(r"^\s*(?:[-*+]\s+|#\s+)?", riadok).group(0)
+    znacky = ZNACKA.findall(riadok[len(zaciatok):])
+    cisla = re.findall(r"(?<![\w⟦])\d+(?:[.,]\d+)?(?![⟧\d])", ZNACKA.sub(" ", riadok))
+    phia = next((cil for vzor, cil in PHIA_TABULKA[maska.jazyk] if re.search(vzor, riadok, re.IGNORECASE)), "")
+    vypln = {"cs": "Přeložený text", "en": "Translated text"}[maska.jazyk]
+    casti = [vypln] + [f"⟦{c}⟧" for c in znacky] + cisla + ([phia] if phia else [])
+    znacka = os.environ.get("LIEKRADAR_FAKE_PREKLAD_ZNACKA", "")
+    prvy_s_citaciou = next((k for k, r in enumerate(maska.riadky)
+                            if any(maska.hodnoty[int(c)].startswith("[E") for c in ZNACKA.findall(r))), None)
+    if i == prvy_s_citaciou and (znacka == "2" or (znacka == "1" and not dopreklad)):
+        casti = [c for c in casti if c != f"⟦{znacky[-1]}⟧"]  # simulácia: model vynechal značku
+    text = zaciatok + " ".join(casti) + "."
+    if os.environ.get("LIEKRADAR_FAKE_PREKLAD_CHYBA") and not dopreklad and cisla:
+        prvy = next((k for k, r in enumerate(maska.riadky) if re.search(r"(?<![\w⟦])\d{2}(?![⟧\d])",
+                                                                    ZNACKA.sub(" ", r))), None)
+        if i == prvy:
+            text = re.sub(r"(?<![\w⟦])(\d{2})(?![⟧\d])", lambda m: str(int(m.group(1)) + 1), text, count=1)
     return text
+
+
+def fake_preklad(maska: Maska) -> str:
+    return "\n".join(_fake_riadok(maska, i, False) for i in range(len(maska.riadky)))
+
+
+def fake_dopreklad(maska: Maska, zle: dict[int, str]):
+    from agents.korektura import OpravaRiadku, OpravyRiadkov
+    return OpravyRiadkov(opravy=[OpravaRiadku(riadok=i, text=_fake_riadok(maska, i, True)) for i in sorted(zle)])
 
 
 def _vzor_nazvu(nazov: str) -> str:
@@ -296,19 +466,6 @@ def slovenske_riadky(preklad: str, jazyk: str, data: dict | None = None,
         if najdene:
             vysledok.append((i, riadok, najdene))
     return vysledok
-
-
-def dopreklad_vstup(nepreložene: list[tuple[int, str, list[str]]]) -> str:
-    return "Prelož celé tieto riadky:\n" + "\n".join(
-        f"- riadok {i}: {r}\n  (zostalo po slovensky: {', '.join(n)})" for i, r, n in nepreložene)
-
-
-def fake_dopreklad(preklad: str, nepreložene: list[tuple[int, str, list[str]]], jazyk: str, data: dict):
-    """Pevný dopreklad pre režim LIEKRADAR_FAKE_LLM: riadky preloží rovnako ako fake_preklad."""
-    from agents.korektura import OpravaRiadku, OpravyRiadkov
-    riadky = preklad.splitlines()
-    novy = fake_preklad(preklad, jazyk, data, riadky={i for i, _, _ in nepreložene}).splitlines()
-    return OpravyRiadkov(opravy=[OpravaRiadku(riadok=i, text=novy[i]) for i, _, _ in nepreložene if i < len(riadky)])
 
 
 def upozornenia_phia(sk: str, preklad: str, jazyk: str) -> list[str]:

@@ -1404,61 +1404,66 @@ def vytvor_graf(llm: LLM):
                     "case_log": [_zaznam("preklad", nastroj_llm(), f"jazyk {jazyk}", "vynechaný – vyčerpaný "
                                          "rozpočet volaní, zobrazí sa slovenská verzia")],
                     "priebeh": [f"Preklad ({jazyk}): vynechaný – vyčerpaný rozpočet volaní"]}
+        data = stav.get("data", {})
+        # 1. všetko, čo sa nesmie meniť, nahradí kód značkami ⟦n⟧ (istota má hodnotu už v cieľovom jazyku)
+        maska = prekl.maskuj(brief, jazyk, data, manifest)
         try:
-            text = prekl.ocisti(llm.text(prekl.rola_prekladu(jazyk), brief,
-                                         fake=prekl.fake_preklad(brief, jazyk, stav.get("data", {}))))
+            text = prekl.ocisti(llm.text(prekl.rola_prekladu(jazyk), maska.text, fake=prekl.fake_preklad(maska)))
         except LLMChyba as e:
             return {"preklad": {"jazyk": jazyk, "stav": "vynechany", "chyba": str(e)},
                     "case_log": [_zaznam("preklad", nastroj_llm(), f"jazyk {jazyk}", f"CHYBA: {e} – zostáva "
                                          "slovenská verzia")],
                     "priebeh": [f"Preklad ({jazyk}): zlyhal – {e}"]}
-        data = stav.get("data", {})
-        rozdiely = prekl.kontrola_prekladu(brief, text, data)
-        nepreložene = [] if rozdiely else prekl.slovenske_riadky(text, jazyk, data, manifest)
-        log = [_zaznam("preklad", nastroj_llm(), f"schválená správa {len(brief)} znakov → {jazyk}",
-                       f"preklad {len(text)} znakov"),
-               _zaznam("preklad", "kontrola v kóde", "nadpisy, označenia, citácie, čísla, kódy, názvy liekov, úplnosť",
-                       "zhoda" if not rozdiely and not nepreložene else
-                       f"NEZHODA – použitá slovenská verzia: {'; '.join(rozdiely)}" if rozdiely else
-                       f"po slovensky zostalo {len(nepreložene)} riadkov: "
-                       + "; ".join(f"riadok {i} ({', '.join(n[:4])})" for i, _, n in nepreložene))]
+        # 2. kontrola každého riadku: značky, čísla, citácie, kódy, nič po slovensky
+        riadky, zle = prekl.over_preklad(maska, text)
+
+        def zle_text(z: dict) -> str:
+            return "; ".join(f"riadok {i}: {d}" for i, d in sorted(z.items())[:6]) + (" …" if len(z) > 6 else "")
+
+        log = [_zaznam("preklad", nastroj_llm(), f"schválená správa so značkami ({len(maska.hodnoty)} značiek, "
+                       f"{sum(1 for r in maska.riadky if r.strip())} riadkov) → {jazyk}", f"preklad {len(text)} znakov"),
+               _zaznam("preklad", "kontrola v kóde", "značky, čísla, citácie, kódy, úplnosť po riadkoch",
+                       "všetky riadky v poriadku" if not zle else f"{len(zle)} zlých riadkov: {zle_text(zle)}")]
         doprelozene = 0
-        if nepreložene and llm.pocet_volani < MAX_VOLANI_NA_OTAZKU:
-            # cielený dopreklad: len riadky, ktoré zostali po slovensky; kód ich vymení a skontroluje znova
-            ciele = [{"i": i, "riadok": r, "typy": ["preklad"]} for i, r, _ in nepreložene]
+        if zle and llm.pocet_volani < MAX_VOLANI_NA_OTAZKU:
+            # 3. cielený dopreklad zlých riadkov zo slovenského originálu so značkami
+            pred = len(zle)
             try:
-                opravy = llm.strukturovane(prekl.rola_doprekladu(jazyk), prekl.dopreklad_vstup(nepreložene),
-                                           kor.OpravyRiadkov, fake=prekl.fake_dopreklad(text, nepreložene, jazyk, data))
-                text, prijate, odmietnute = kor.pouzi_opravy(text, ciele, opravy)
-                doprelozene = len(prijate)
-                rozdiely = prekl.kontrola_prekladu(brief, text, data)
-                nepreložene = prekl.slovenske_riadky(text, jazyk, data, manifest)
-                log += [_zaznam("preklad", nastroj_llm(), f"dopreklad {len(ciele)} riadkov",
-                                f"vymenené {len(prijate)}" + (f" · odmietnuté: {'; '.join(odmietnute)}" if odmietnute else "")),
-                        _zaznam("preklad", "kontrola v kóde", "preklad po doprekladu",
-                                "zhoda" if not rozdiely and not nepreložene else
-                                f"NEZHODA: {'; '.join(rozdiely + [f'po slovensky zostalo {len(nepreložene)} riadkov'] if nepreložene else rozdiely)}")]
+                opravy = llm.strukturovane(prekl.rola_doprekladu(jazyk), prekl.dopreklad_vstup(maska, zle),
+                                           kor.OpravyRiadkov, fake=prekl.fake_dopreklad(maska, zle))
+                riadky, zle = prekl.pouzi_dopreklad(maska, riadky, zle, opravy)
+                doprelozene = pred - len(zle)
+                log += [_zaznam("preklad", nastroj_llm(), f"dopreklad {pred} riadkov", f"prijaté {doprelozene}"),
+                        _zaznam("preklad", "kontrola v kóde", "riadky po doprekladu",
+                                "všetky riadky v poriadku" if not zle else f"stále zlé: {zle_text(zle)}")]
             except LLMChyba as e:
-                log.append(_zaznam("preklad", nastroj_llm(), f"dopreklad {len(ciele)} riadkov", f"CHYBA: {e}"))
-        elif nepreložene:
+                log.append(_zaznam("preklad", nastroj_llm(), f"dopreklad {pred} riadkov", f"CHYBA: {e}"))
+        elif zle:
             log.append(_zaznam("preklad", nastroj_llm(), "dopreklad", "vynechaný – vyčerpaný rozpočet volaní"))
-        if nepreložene and not rozdiely:
-            rozdiely = [f"Neúplný preklad: po slovensky zostalo {len(nepreložene)} riadkov "
-                        f"(napr. riadok {nepreložene[0][0]}: {', '.join(nepreložene[0][2][:4])})."]
+        # 4. pôvodné hodnoty značiek späť a kontrola zhody celej správy so slovenskou verziou
+        text = prekl.zloz(maska, riadky)
+        rozdiely = ([f"Po doprekladu zostalo {len(zle)} zlých riadkov ({zle_text(zle)})."] if zle
+                    else prekl.kontrola_prekladu(brief, text, data))
+        if not zle:
+            nepreložene = prekl.slovenske_riadky(text, jazyk, data, manifest)
+            if nepreložene:
+                rozdiely.append(f"Neúplný preklad: po slovensky zostalo {len(nepreložene)} riadkov.")
+            log.append(_zaznam("preklad", "kontrola v kóde", "celá správa po vrátení značiek",
+                               "zhoda" if not rozdiely else f"NEZHODA: {'; '.join(rozdiely)}"))
         upozornenia = prekl.upozornenia_phia(brief, text, jazyk)
         if upozornenia:
             log.append(_zaznam("preklad", "kontrola v kóde", "výrazy PHIA v preklade", "; ".join(upozornenia)))
         if rozdiely:
             return {"preklad": {"jazyk": jazyk, "stav": "vratene_sk", "rozdiely": rozdiely, "upozornenia": upozornenia},
                     "case_log": log,
-                    "priebeh": [f"Preklad ({jazyk}): nezhoda so slovenskou verziou ({rozdiely[0]}) – zobrazí sa "
+                    "priebeh": [f"Preklad ({jazyk}): neprešiel kontrolou ({_riadok(rozdiely[0], 140)}) – zobrazí sa "
                                 "slovenská verzia s poznámkou"]}
         return {"brief_preklad": text, "preklad": {"jazyk": jazyk, "stav": "ok", "upozornenia": upozornenia,
                                                    "doprelozene": doprelozene},
                 "case_log": log,
                 "priebeh": [f"Preklad ({jazyk}): hotový" + (f" po doprekladu {doprelozene} riadkov" if doprelozene else "")
-                            + " – citácie, čísla, kódy a názvy liekov sa zhodujú so slovenskou verziou, nič nezostalo "
-                            "po slovensky"]}
+                            + " – značky, citácie, čísla, kódy a názvy liekov sa zhodujú so slovenskou verziou, nič "
+                            "nezostalo po slovensky"]}
 
     def korektura(stav: Stav) -> dict:
         """Po oprave zostali len problémy jednotlivých riadkov: jedno LLM volanie vráti náhradné riadky,

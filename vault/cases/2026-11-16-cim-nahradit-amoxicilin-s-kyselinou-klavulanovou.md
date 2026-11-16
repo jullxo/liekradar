@@ -2,11 +2,11 @@
 typ: case-log
 otazka: "Čím nahradit amoxicilin s kyselinou klavulanovou, když chybí na Slovensku?"
 persona: lekaren
-zaciatok_utc: 2026-11-16T10:44:05Z
-koniec_utc: 2026-11-16T10:44:28Z
+zaciatok_utc: 2026-11-16T11:24:14Z
+koniec_utc: 2026-11-16T11:24:53Z
 model: gemini-3.5-flash-lite
-volania_modelu: 7
-poziadavky_na_model: 7
+volania_modelu: 8
+poziadavky_na_model: 8
 sprava: "[[reports/2026-11-16-cim-nahradit-amoxicilin-s-kyselinou-klavulanovou]]"
 verified: false
 ---
@@ -14,27 +14,30 @@ verified: false
 # Case Log – Čím nahradit amoxicilin s kyselinou klavulanovou, když chybí na Slovensku?
 
 ## Plán (orchestrátor)
-- KIQ: KIQ3, KIQ1 · krajiny: SK · ATC prefix: J01CR
-- zdôvodnenie: Otázka sa pýta na náhradu za amoxicilín s kyselinou klavulánovou na Slovensku, preto volíme KIQ3 a nástroj nahrady_za_latku.
-- rozsah otázky: ok · jazyk odpovede: cs (appka: cs) · preklad: vratene_sk
+- KIQ: KIQ3 · krajiny: SK · ATC prefix: J01CR
+- zdôvodnenie: Otázka sa pýta na náhradu za amoxicilín s kyselinou klavulanovou (ATC J01CR02) na Slovensku, preto volíme nástroj nahrady_za_latku.
+- rozsah otázky: ok · jazyk odpovede: cs (appka: cs) · preklad: ok
 
 ## Kroky agentov
-- 2026-11-16T10:44:08Z · orchestrátor · LLM gemini-3.5-flash-lite · vstup: otázka: Čím nahradit amoxicilin s kyselinou klavulanovou, když chybí na Slovensku? · persona: lekaren · výsledok: KIQ KIQ3, KIQ1 · krajiny SK · volania: nahrady_za_latku(SK, J01CR02, 5), top_rizikove(SK, J01CR, 5)
-- 2026-11-16T10:44:09Z · zber · nahrady_za_latku · vstup: {"krajina":"SK","atc":"J01CR02","n":5} · výsledok: 10 z 24 riadkov · [E004, A1] [E005, A2] · 0.6 s
-- 2026-11-16T10:44:10Z · zber · top_rizikove · vstup: {"krajina":"SK","atc_prefix":"J01CR","n":5} · výsledok: 5 z 5 riadkov · [E001, A2] [E005, A2] · 1.6 s
-- 2026-11-16T10:44:13Z · analytik · LLM gemini-3.5-flash-lite · vstup: výsledky 2 volaní (7023 znakov JSON) · výsledok: 6 faktov, 1 úsudkov (1589 znakov)
-- 2026-11-16T10:44:18Z · reportér · LLM gemini-3.5-flash-lite · vstup: zistenia analytika + výsledky nástrojov · výsledok: správa BLUF, 4279 znakov
-- 2026-11-16T10:44:18Z · kritik · kontrola v kóde · vstup: správa 4279 znakov · výsledok: 3 problémov, 0 upozornení: Prvé dve vety BLUF nemajú výraz z mierky PHIA a istotu (nízka/stredná): „Na slovenskom trhu sú hlásené výpadky liekov Amoksiklav 625 mg a Amoksiklav 156,25 mg/5 ml [E004, A1] [E005, A2]. Za ta…
-- 2026-11-16T10:44:20Z · kritik · LLM gemini-3.5-flash-lite · vstup: správa + výsledky nástrojov + kontrola v kóde · výsledok: neschválené: Medzi náhradami pre Amoksiklav 156,25 mg/5 ml je nesprávne uvedený liek Amoksiklav 2x457 mg/5 ml, čo je iné balenie toho istého lieku, a nie náhrada.; Liek Amoksiklav 625 mg bol v texte pôvodne uvedený v zo…
-- 2026-11-16T10:44:23Z · reportér · LLM gemini-3.5-flash-lite · vstup: oprava podľa kritika · výsledok: správa BLUF, 4163 znakov
-- 2026-11-16T10:44:23Z · kritik · kontrola v kóde · vstup: správa 4163 znakov · výsledok: 0 problémov, 0 upozornení
-- 2026-11-16T10:44:24Z · kritik · LLM gemini-3.5-flash-lite · vstup: správa + výsledky nástrojov + kontrola v kóde · výsledok: schválené
-- 2026-11-16T10:44:28Z · preklad · LLM gemini-3.5-flash-lite · vstup: schválená správa 4163 znakov → cs · výsledok: preklad 4116 znakov
-- 2026-11-16T10:44:28Z · preklad · kontrola v kóde · vstup: nadpisy, označenia, citácie, čísla, kódy, názvy liekov, úplnosť · výsledok: NEZHODA – použitá slovenská verzia: Označenie **Upozornenie:**: v slovenskej verzii 1×, v preklade 0×.; Názvy liekov: v preklade chýba MEDOCLAV 400 mg/5 ml + 57 mg/5 ml prášok na perorálnu suspenziu.
+- 2026-11-16T11:24:21Z · orchestrátor · LLM gemini-3.5-flash-lite · vstup: otázka: Čím nahradit amoxicilin s kyselinou klavulanovou, když chybí na Slovensku? · persona: lekaren · výsledok: KIQ KIQ3 · krajiny SK · volania: nahrady_za_latku(SK, J01CR02, 5)
+- 2026-11-16T11:24:21Z · zber · nahrady_za_latku · vstup: {"krajina":"SK","atc":"J01CR02","n":5} · výsledok: 10 z 24 riadkov · [E004, A1] [E005, A2] · 0.6 s
+- 2026-11-16T11:24:28Z · analytik · LLM gemini-3.5-flash-lite · vstup: výsledky 1 volaní (4170 znakov JSON) · výsledok: 4 faktov, 1 úsudkov (2189 znakov)
+- 2026-11-16T11:24:35Z · reportér · LLM gemini-3.5-flash-lite · vstup: zistenia analytika + výsledky nástrojov · výsledok: správa BLUF, 3086 znakov
+- 2026-11-16T11:24:35Z · kritik · kontrola v kóde · vstup: správa 3086 znakov · výsledok: 0 problémov, 0 upozornení
+- 2026-11-16T11:24:38Z · kritik · LLM gemini-3.5-flash-lite · vstup: správa + výsledky nástrojov + kontrola v kóde · výsledok: neschválené: Zoznam náhrad v BLUF a v texte obsahuje viac ako 5 položiek pre perorálnu suspenziu (uvedených je 7 položiek namiesto maximálne 5).
+- 2026-11-16T11:24:43Z · reportér · LLM gemini-3.5-flash-lite · vstup: oprava podľa kritika · výsledok: správa BLUF, 2951 znakov
+- 2026-11-16T11:24:43Z · kritik · kontrola v kóde · vstup: správa 2951 znakov · výsledok: 1 problémov, 0 upozornení: Znaky „ś, ć“ v slovenčine nie sú: „Dostupność“ – oprav napr. na „Dostupnosť“.
+- 2026-11-16T11:24:44Z · kritik · LLM gemini-3.5-flash-lite · vstup: správa + výsledky nástrojov + kontrola v kóde · výsledok: schválené
+- 2026-11-16T11:24:47Z · korektúra · LLM gemini-3.5-flash-lite · vstup: 1 riadkov s problémom: riadok 28: jazyk · výsledok: vymenené: riadok 28 (jazyk): „- Dostupność a objemy dodávok náhradných liekov MEDOCLAV a MEGAMOX v …“ → „- Dostupnosť a objemy dodávok náhradných liekov MEDOCLAV a MEGAMOX v distribučnej sieti.“
+- 2026-11-16T11:24:47Z · korektúra · kontrola v kóde · vstup: správa po korektúre 2951 znakov · výsledok: 0 problémov
+- 2026-11-16T11:24:53Z · preklad · LLM gemini-3.5-flash-lite · vstup: schválená správa so značkami (54 značiek, 27 riadkov) → cs · výsledok: preklad 2194 znakov
+- 2026-11-16T11:24:53Z · preklad · kontrola v kóde · vstup: značky, čísla, citácie, kódy, úplnosť po riadkoch · výsledok: všetky riadky v poriadku
+- 2026-11-16T11:24:53Z · preklad · kontrola v kóde · vstup: celá správa po vrátení značiek · výsledok: zhoda
 
 
 ## Kritik
 - výsledok: schválené (kolo 2, opráv 1)
+- upozornenie: LLM kritik (jazyk, rieši korektúra): V texte sa nachádzajú zakázané znaky v slove „Dostupność“ v sekcii Indicators to watch.
 
 
 ## Bezpečnosť
