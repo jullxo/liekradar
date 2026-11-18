@@ -17,16 +17,16 @@ Oba typy používateľov pracujú s rovnakými dátami. Líšia sa rozhodnutím,
 
 ### KIQ1: Riziko
 
-Ktoré lieky majú v ČR a SR najvyššie riziko výpadku v horizonte 4–8 týždňov, vrátane liekov, pri ktorých držiteľ registrácie výpadok ešte nenahlásil? Riziko odvodzujeme od signálov: výpadok rovnakej látky v druhej krajine, pokles dodávok, obmedzenie vývozu a počet zostávajúcich alternatív.
+Ktoré lieky majú v ČR a SR najvyššie riziko výpadku v horizonte do 8 týždňov, hoci ho držiteľ registrácie ešte nenahlásil? Riziko odvodzujeme zo signálov: výpadok tej istej látky u toho istého výrobcu v druhej krajine, nové výpadky látky doma, história výpadkov lieku a výrobcu, v ČR aj pokles dodávok a podiel vývozu.
 
 | Pole | Hodnota |
 | --- | --- |
 | Pre koho | Obaja |
 | Rozhodnutie | Čo sledovať a predzásobiť |
-| Horizont | 4–8 týždňov |
-| Indikátory | Výpadok rovnakej látky v druhej krajine, pokles dodávok, obmedzenie vývozu, počet zostávajúcich alternatív |
-| Zdroje ČR | Hlásenia SÚKL, DIS-13, zoznam obmedzeného vývozu |
-| Zdroje SR | Hlásenia ŠÚKL, oznámenia o vývoze |
+| Horizont | do 8 týždňov |
+| Indikátory | Výpadok tej istej látky u toho istého výrobcu v druhej krajine, nové výpadky látky doma, história výpadkov lieku a výrobcu, pokles dodávok a podiel vývozu (ČR) |
+| Zdroje ČR | Hlásenia SÚKL [E001], databáza liekov DLP [E002], DIS-13 [E003] |
+| Zdroje SR | Hlásenia ŠÚKL [E005], register ŠÚKL [E004] |
 
 ### KIQ2: Časový posun
 
@@ -36,47 +36,47 @@ Predchádzajú výpadky v ČR výpadkom tej istej látky v SR (alebo naopak), s 
 | --- | --- |
 | Pre koho | Obaja |
 | Rozhodnutie | Kedy reagovať v druhej krajine |
-| Horizont | Nie je v reporte uvedený |
+| Horizont | Súčasne (do 7 dní) alebo s posunom 8–60 dní |
 | Indikátory | Výpadky tej istej látky v ČR a SR, časový posun medzi nimi, ATC skupina |
-| Zdroje ČR | História hlásení SÚKL |
-| Zdroje SR | História hlásení ŠÚKL |
+| Zdroje ČR | História hlásení SÚKL od 15. 4. 2019 [E001] |
+| Zdroje SR | História hlásení ŠÚKL od 15. 4. 2019 [E005] |
 
 ### KIQ3: Náhrady
 
-Aké náhrady sú pre každý ohrozený liek dostupné v danej krajine? Hľadáme rovnakú účinnú látku v inej sile či forme, prípadne inú látku v rovnakej ATC skupine. Kto je ich držiteľom registrácie, aká je ich cena a úhrada a nie sú samy hlásené ako nedostupné?
+Aké náhrady sú dostupné pre liek vo výpadku v danej krajine? Hľadáme rovnakú účinnú látku v inej sile, forme či balení, prípadne inú látku v rovnakej ATC skupine (zámenu môže urobiť len lekár). Kto je ich držiteľom registrácie, odporučil ich úrad a nie sú samy vo výpadku alebo s ohláseným výpadkom?
 
 | Pole | Hodnota |
 | --- | --- |
 | Pre koho | Lekárenská sieť |
 | Rozhodnutie | Čím nahradiť |
-| Horizont | Nie je v reporte uvedený |
-| Indikátory | Rovnaká látka v inej sile alebo forme, iná látka v rovnakej ATC skupine, držiteľ registrácie, cena a úhrada, dostupnosť náhrady |
-| Zdroje ČR | Databáza liekov, ceny a úhrady SÚKL |
-| Zdroje SR | Register ŠÚKL, kategorizácia MZ SR |
+| Horizont | Aktuálny stav |
+| Indikátory | Rovnaká látka v inej sile, forme alebo balení, iná látka v rovnakej ATC skupine, držiteľ registrácie, odporúčanie úradu, dostupnosť náhrady, v ČR dodávky do lekární |
+| Zdroje ČR | Databáza liekov DLP [E002], hlásenia SÚKL [E001], DIS-13 [E003] |
+| Zdroje SR | Register ŠÚKL [E004], hlásenia ŠÚKL [E005] |
 
 ### KIQ4: Konkurenti
 
-Ktorí držitelia registrácie hlásia v sledovaných ATC skupinách najviac prerušení a zrušení dodávok (počet a dĺžka výpadkov) a ktorí konkurenti počas týchto výpadkov zvýšili dodávky náhrad?
+Ktorí držitelia registrácie hlásia v sledovaných ATC skupinách najviac prerušení a zrušení dodávok (počet a dĺžka výpadkov) a ktorí konkurenti počas týchto výpadkov zvýšili svoj podiel na dodávkach do lekární?
 
 | Pole | Hodnota |
 | --- | --- |
 | Pre koho | Výrobca |
 | Rozhodnutie | Komu veriť, kde získať podiel |
-| Horizont | Nie je v reporte uvedený |
-| Indikátory | Počet a dĺžka výpadkov podľa držiteľa registrácie, nárast dodávok náhrad počas cudzích výpadkov |
-| Zdroje ČR | Hlásenia + DIS-13 |
-| Zdroje SR | Hlásenia; dodávky [OVERIŤ dostupnosť] |
+| Horizont | Od 15. 4. 2019, posledných 12 mesiacov |
+| Indikátory | Počet a dĺžka výpadkov podľa držiteľa registrácie, podiel na dodávkach a jeho zmena počas cudzích výpadkov (p. b.) |
+| Zdroje ČR | Hlásenia SÚKL [E001] + DIS-13 [E003] |
+| Zdroje SR | Hlásenia ŠÚKL [E005]; verejné dáta o dodávkach v SR neexistujú, preto bez podielov na trhu |
 
 ### KIQ5: Príležitosť
 
-Pri ktorých liekoch je trhová medzera v ČR alebo SR dosť veľká na vstup alebo navýšenie dodávok? Za medzeru považujeme výpadok trvajúci aspoň **[DOPLNIŤ: napr. 8]** týždňov, pri ktorom náhrady s rovnakou látkou dodávajú najviac **[DOPLNIŤ: napr. 2]** držitelia registrácie alebo sú samy ohrozené.
+Pri ktorých liekoch je trhová medzera v ČR alebo SR dosť veľká na vstup alebo navýšenie dodávok? Za medzeru považujeme výpadok trvajúci aspoň **8 týždňov**, pri ktorom látku dodávajú najviac **2** ďalší výrobcovia. V ČR uvádzame aj veľkosť trhu v baleniach mesačne. Výpadky dlhšie ako 2 roky vynechávame (ide skôr o ukončený predaj).
 
 | Pole | Hodnota |
 | --- | --- |
 | Pre koho | Výrobca |
 | Rozhodnutie | Kam navýšiť dodávky |
-| Horizont | Výpadok trvajúci aspoň [DOPLNIŤ: napr. 8] týždňov |
-| Indikátory | Dĺžka výpadku, počet držiteľov registrácie dodávajúcich náhrady s rovnakou látkou |
+| Horizont | Výpadok trvajúci aspoň 8 týždňov |
+| Indikátory | Dĺžka výpadku, počet ďalších výrobcov, ktorí látku dodávajú, veľkosť trhu (ČR) |
 | Zdroje ČR | KIQ1 + KIQ3 + KIQ4 |
 | Zdroje SR | KIQ1 + KIQ3 + KIQ4 |
 
@@ -84,8 +84,10 @@ Pri ktorých liekoch je trhová medzera v ČR alebo SR dosť veľká na vstup al
 
 | KIQ | Pre koho | Rozhodnutie | Dáta ČR | Dáta SR |
 | --- | --- | --- | --- | --- |
-| **KIQ1 Riziko** | Obaja | Čo sledovať a predzásobiť | Hlásenia SÚKL, DIS-13, zoznam obmedzeného vývozu | Hlásenia ŠÚKL, oznámenia o vývoze |
+| **KIQ1 Riziko** | Obaja | Čo sledovať a predzásobiť | Hlásenia SÚKL, DLP, DIS-13 | Hlásenia ŠÚKL, register ŠÚKL |
 | **KIQ2 Časový posun** | Obaja | Kedy reagovať v druhej krajine | História hlásení SÚKL | História hlásení ŠÚKL |
-| **KIQ3 Náhrady** | Lekárenská sieť | Čím nahradiť | Databáza liekov, ceny a úhrady SÚKL | Register ŠÚKL, kategorizácia MZ SR |
-| **KIQ4 Konkurenti** | Výrobca | Komu veriť, kde získať podiel | Hlásenia + DIS-13 | Hlásenia; dodávky [OVERIŤ dostupnosť] |
+| **KIQ3 Náhrady** | Lekárenská sieť | Čím nahradiť | Databáza liekov DLP, hlásenia SÚKL, DIS-13 | Register ŠÚKL, hlásenia ŠÚKL |
+| **KIQ4 Konkurenti** | Výrobca | Komu veriť, kde získať podiel | Hlásenia + DIS-13 | Hlásenia (bez dát o dodávkach) |
 | **KIQ5 Príležitosť** | Výrobca | Kam navýšiť dodávky | KIQ1 + KIQ3 + KIQ4 | KIQ1 + KIQ3 + KIQ4 |
+
+Ceny, úhrady a zoznamy obmedzeného vývozu prototyp nepoužíva; sú uvedené v reporte ako obmedzenie a možné rozšírenie.
