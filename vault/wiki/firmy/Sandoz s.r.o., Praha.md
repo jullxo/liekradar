@@ -2,10 +2,10 @@
 typ: "firma"
 firma: "sandoz"
 aliases: ["SANDOZ FARMACEUTICA LDA, Paço de Arcos", "SANDOZ FARMACEUTICA LDA, Porto Salvo", "Sandoz GmbH", "Sandoz GmbH, Kundl", "Sandoz Pharmaceuticals d.d.", "Sandoz Pharmaceuticals d.d., Ljubljana", "Sandoz d.d.", "Sandoz s.r.o., Praha"]
-vypadky_cz_od_2019: 1207
+vypadky_cz_od_2019: 1208
 vypadky_sk_od_2019: 369
 zdroje: ["E001", "E002", "E004", "E005"]
-generovane_utc: "2026-11-13T10:06:19Z"
+generovane_utc: "2026-11-18T02:18:53Z"
 verified: false
 ---
 # Sandoz s.r.o., Praha
@@ -17,7 +17,7 @@ verified: false
 - Registrované balenia: ČR 3770 [E002, A1], SR 3162 [E004, A1]
 
 ## Facts (with sources)
-- ČR: od 15. 4. 2019 1207 výpadkov balení, za posledných 12 mesiacov 234 (to je 6.2% registrovaných balení), teraz trvá 90 [E001, A2]
+- ČR: od 15. 4. 2019 1208 výpadkov balení, za posledných 12 mesiacov 233 (to je 6.2% registrovaných balení), teraz trvá 91 [E001, A2]
 - SR: od 15. 4. 2019 369 výpadkov balení, za posledných 12 mesiacov 67 (to je 2.1% registrovaných balení), teraz trvá 41 [E005, A2]
 
 ## Relations
@@ -26,21 +26,21 @@ verified: false
 ## Timeline
 | Dátum | Krajina | Udalosť | Zdroj |
 |---|---|---|---|
+| 2026-11-13 | CZ | začiatok výpadku: SITAGLIPTIN/METFORMIN SANDOZ (0244639, [[A10BD07]]) | [E001, A2] |
 | 2026-11-10 | CZ | začiatok výpadku: PIRAMIL COMBI (0178578, [[C09BB07]]) | [E001, A2] |
-| 2026-11-09 | SK | začiatok výpadku: Doxorubicin Sandoz 2 mg/ml (sol ijf 1x5 ml/10 mg (liek.inj.skl.)) (12663, [[L01DB01]]) | [E005, A2] |
-| 2026-11-09 | SK | začiatok výpadku: Edoxaban Sandoz 60 mg (tbl flm 30x60 mg (blis.PVC/Al)) (9185E, [[B01AF03]]) | [E005, A2] |
 | 2026-11-09 | SK | začiatok výpadku: EDICIN 1 g prášok na infúzny roztok (plv ifo 1x1 g (liek.skl.)) (85599, [[J01XA01]]) | [E005, A2] |
-| 2026-11-09 | SK | začiatok výpadku: Sumatriptan Sandoz 100 mg tablety (tbl 4x100 mg (blis.Al/Al)) (96249, [[N02CC01]]) | [E005, A2] |
+| 2026-11-09 | SK | začiatok výpadku: Edoxaban Sandoz 60 mg (tbl flm 30x60 mg (blis.PVC/Al)) (9185E, [[B01AF03]]) | [E005, A2] |
+| 2026-11-09 | SK | začiatok výpadku: Doxorubicin Sandoz 2 mg/ml (sol ijf 1x5 ml/10 mg (liek.inj.skl.)) (12663, [[L01DB01]]) | [E005, A2] |
 | 2026-11-09 | SK | začiatok výpadku: Sumatriptan Sandoz 50 mg tablety (tbl 6x50 mg (blis.Al/Al)) (96168, [[N02CC01]]) | [E005, A2] |
+| 2026-11-09 | SK | začiatok výpadku: Sumatriptan Sandoz 100 mg tablety (tbl 4x100 mg (blis.Al/Al)) (96249, [[N02CC01]]) | [E005, A2] |
 | 2026-11-06 | CZ | začiatok výpadku: GABANOX (0150779, [[N02BF01]]) | [E001, A2] |
 | 2026-11-03 | CZ | začiatok výpadku: TELMISARTAN/HYDROCHLOROTHIAZID SANDOZ (0189668, [[C09DA07]]) | [E001, A2] |
-| 2026-11-02 | CZ | začiatok výpadku: METFORMIN SANDOZ (0252536, [[A10BA02]]) | [E001, A2] |
 | 2026-11-02 | CZ | začiatok výpadku: METFORMIN SANDOZ (0252538, [[A10BA02]]) | [E001, A2] |
+| 2026-11-02 | CZ | začiatok výpadku: METFORMIN SANDOZ (0252536, [[A10BA02]]) | [E001, A2] |
 | 2026-11-02 | CZ | začiatok výpadku: METFORMIN SANDOZ (0252534, [[A10BA02]]) | [E001, A2] |
 | 2026-10-30 | CZ | začiatok výpadku: TELMISARTAN/HYDROCHLOROTHIAZID SANDOZ (0189657, [[C09DA07]]) | [E001, A2] |
-| 2026-10-29 | CZ | začiatok výpadku: TYRUKO (0271960, [[L04AG03]]) | [E001, A2] |
-| 2026-10-29 | SK | začiatok výpadku: Tulip Plus 10 mg/40 mg (tbl flm 30x10 mg/40 mg (blis.OPA/Al/PVC/Al)) (8846D, [[C10BA05]]) | [E005, A2] |
-| 2026-10-29 | SK | začiatok výpadku: Febuxostat Sandoz 120 mg (tbl flm 28x120 mg (blis.Al/PVC/PE/PVDC)) (4501C, [[M04AA03]]) | [E005, A2] |
+| 2026-10-29 | SK | začiatok výpadku: Candesartan/Hydrochlorotiazid Sandoz 16 mg/12,5 mg (tbl 90x16 mg/12,5 mg (blis.Al/Al)) (87055, [[C09DA06]]) | [E005, A2] |
+| 2026-10-29 | CZ | začiatok výpadku: CASTISPIR (0140104, [[R03DC03]]) | [E001, A2] |
 
 ## Analyst notes (inference, clearly marked)
 <!-- Sem píšu agenti a analytik. Generátor túto sekciu nikdy neprepíše.

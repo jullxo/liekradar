@@ -5,7 +5,7 @@ aliases: ["EVER Neuro Pharma GmbH", "EVER Neuro Pharma GmbH, Unterach", "EVER Va
 vypadky_cz_od_2019: 8
 vypadky_sk_od_2019: 1
 zdroje: ["E001", "E002", "E004", "E005"]
-generovane_utc: "2026-11-13T10:06:19Z"
+generovane_utc: "2026-11-18T02:18:53Z"
 verified: false
 ---
 # EVER-Valinject GmbH, Unterach am Attersee
@@ -14,7 +14,7 @@ verified: false
 
 ## Identifiers
 - Názvy v registroch: EVER Neuro Pharma GmbH, EVER Neuro Pharma GmbH, Unterach, EVER Valinject GmbH, EVER-Valinject GmbH, Unterach am Attersee
-- Registrované balenia: ČR 70 [E002, A1], SR 70 [E004, A1]
+- Registrované balenia: ČR 70 [E002, A1], SR 71 [E004, A1]
 
 ## Facts (with sources)
 - ČR: od 15. 4. 2019 8 výpadkov balení, za posledných 12 mesiacov 0 (to je 0.0% registrovaných balení), teraz trvá 1 [E001, A2]

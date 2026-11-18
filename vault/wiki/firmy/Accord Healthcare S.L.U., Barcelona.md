@@ -5,7 +5,7 @@ aliases: ["ACCORD HEALTHCARE POLSKA Sp. z o.o., Varšava", "Accord Healthcare Po
 vypadky_cz_od_2019: 240
 vypadky_sk_od_2019: 96
 zdroje: ["E001", "E002", "E004", "E005"]
-generovane_utc: "2026-11-13T10:06:19Z"
+generovane_utc: "2026-11-18T02:18:53Z"
 verified: false
 ---
 # Accord Healthcare S.L.U., Barcelona
@@ -17,8 +17,8 @@ verified: false
 - Registrované balenia: ČR 1910 [E002, A1], SR 1479 [E004, A1]
 
 ## Facts (with sources)
-- ČR: od 15. 4. 2019 240 výpadkov balení, za posledných 12 mesiacov 59 (to je 3.1% registrovaných balení), teraz trvá 31 [E001, A2]
-- SR: od 15. 4. 2019 96 výpadkov balení, za posledných 12 mesiacov 16 (to je 1.1% registrovaných balení), teraz trvá 24 [E005, A2]
+- ČR: od 15. 4. 2019 240 výpadkov balení, za posledných 12 mesiacov 58 (to je 3.0% registrovaných balení), teraz trvá 30 [E001, A2]
+- SR: od 15. 4. 2019 96 výpadkov balení, za posledných 12 mesiacov 16 (to je 1.1% registrovaných balení), teraz trvá 22 [E005, A2]
 
 ## Relations
 - drží registráciu látok s výpadkami: [[N03AX18]] (21×), [[N05CD08]] (15×), [[H05BX01]] (14×), [[L01XA02]] (13×), [[L01BC02]] (11×), [[N05AH04]] (10×), [[N06BA09]] (10×), [[N06AB06]] (9×), [[L01BC05]] (8×), [[N03AX14]] (8×), [[L01CD02]] (8×), [[L01CE02]] (8×), [[L01XA03]] (7×), [[L01DB01]] (7×), [[L01BC01]] (7×), [[A10BG03]] (7×), [[L01AX03]] (6×), [[J01XX08]] (6×), [[L01CB01]] (6×), [[N06AB10]] (6×), [[L01DB03]] (6×), [[N06DA02]] (6×), [[A04AD12]] (5×), [[L01BC07]] (5×), [[L03AA02]] (5×)

@@ -3,9 +3,9 @@ typ: "firma"
 firma: "pfizer"
 aliases: ["PFIZER INC., NEW YORK", "Pfizer Europe MA EEIG", "Pfizer Europe MA EEIG, Sandwich", "Pfizer Ireland Pharmaceuticals", "Pfizer Ireland Pharmaceuticals Unlimited Company, Ringaskiddy", "Pfizer, spol. s r.o., Praha"]
 vypadky_cz_od_2019: 191
-vypadky_sk_od_2019: 101
+vypadky_sk_od_2019: 102
 zdroje: ["E001", "E002", "E004", "E005"]
-generovane_utc: "2026-11-13T10:06:19Z"
+generovane_utc: "2026-11-18T02:18:53Z"
 verified: false
 ---
 # Pfizer Europe MA EEIG
@@ -18,14 +18,15 @@ verified: false
 
 ## Facts (with sources)
 - ČR: od 15. 4. 2019 191 výpadkov balení, za posledných 12 mesiacov 14 (to je 2.1% registrovaných balení), teraz trvá 6 [E001, A2]
-- SR: od 15. 4. 2019 101 výpadkov balení, za posledných 12 mesiacov 9 (to je 1.6% registrovaných balení), teraz trvá 7 [E005, A2]
+- SR: od 15. 4. 2019 102 výpadkov balení, za posledných 12 mesiacov 10 (to je 1.8% registrovaných balení), teraz trvá 8 [E005, A2]
 
 ## Relations
-- drží registráciu látok s výpadkami: [[H02AB04]] (23×), [[H01AC01]] (20×), [[G04BD11]] (19×), [[J01FF01]] (14×), [[G02AD02]] (13×), [[J02AX06]] (11×), [[N06DA02]] (11×), [[J02AC03]] (10×), [[J02AC01]] (10×), [[G01AA10]] (9×), [[G03AA10]] (9×), [[L01DB06]] (7×), [[H01AX01]] (6×), [[N06AB06]] (6×), [[D10AF01]] (6×), [[J01CR04]] (6×), [[G02CB03]] (5×), [[L02AB02]] (5×), [[L01FG01]] (5×), [[B01AB04]] (5×), [[B02BD04]] (4×), [[H01CA02]] (4×), [[N07BA03]] (4×), [[M01AB55]] (4×), [[L02BG06]] (4×)
+- drží registráciu látok s výpadkami: [[H02AB04]] (23×), [[H01AC01]] (20×), [[G04BD11]] (19×), [[J01FF01]] (14×), [[G02AD02]] (13×), [[J02AX06]] (11×), [[N06DA02]] (11×), [[J02AC03]] (10×), [[G01AA10]] (10×), [[J02AC01]] (10×), [[G03AA10]] (9×), [[L01DB06]] (7×), [[H01AX01]] (6×), [[N06AB06]] (6×), [[D10AF01]] (6×), [[J01CR04]] (6×), [[G02CB03]] (5×), [[L02AB02]] (5×), [[L01FG01]] (5×), [[B01AB04]] (5×), [[B02BD04]] (4×), [[H01CA02]] (4×), [[N07BA03]] (4×), [[M01AB55]] (4×), [[L02BG06]] (4×)
 
 ## Timeline
 | Dátum | Krajina | Udalosť | Zdroj |
 |---|---|---|---|
+| 2026-11-17 | SK | začiatok výpadku: DALACIN V 2 % (crm vag 1x40 g (tuba PE)) (62362, [[G01AA10]]) | [E005, A2] |
 | 2026-10-13 | CZ | začiatok výpadku: DALACIN C (0100339, [[J01FF01]]) | [E001, A2] |
 | 2026-09-28 | SK | začiatok výpadku: DALACIN T 1 % dermálna emulzia (emu der 1x30 ml (fľ.PE)) (60387, [[D10AF01]]) | [E005, A2] |
 | 2026-09-21 | CZ | začiatok výpadku: MEDROL (0207527, [[H02AB04]]) | [E001, A2] |
@@ -40,7 +41,6 @@ verified: false
 | 2026-06-08 | CZ | začiatok výpadku: DALACIN (0015222, [[G01AA10]]) | [E001, A2] |
 | 2026-06-04 | CZ | začiatok výpadku: MYCOBUTIN (0103068, [[J04AB04]]) | [E001, A2] |
 | 2026-05-25 | SK | začiatok výpadku: BeneFIX 1000 IU prášok a rozpúšťadlo na injekčný roztok (plv iol 1x1000 IU+1x5 ml solv.(liek.inj.skl.+striek.napl.skl.+set inj.)) (76457, [[B02BD04]]) | [E005, A2] |
-| 2026-04-21 | CZ | začiatok výpadku: ARICEPT (0016458, [[N06DA02]]) | [E001, A2] |
 
 ## Analyst notes (inference, clearly marked)
 <!-- Sem píšu agenti a analytik. Generátor túto sekciu nikdy neprepíše.

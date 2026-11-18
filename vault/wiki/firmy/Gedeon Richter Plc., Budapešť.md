@@ -5,7 +5,7 @@ aliases: ["Gedeon Richter Plc.", "Gedeon Richter Plc., Budapešť", "Gedeon Rich
 vypadky_cz_od_2019: 139
 vypadky_sk_od_2019: 66
 zdroje: ["E001", "E002", "E004", "E005"]
-generovane_utc: "2026-11-13T10:06:19Z"
+generovane_utc: "2026-11-18T02:18:53Z"
 verified: false
 ---
 # Gedeon Richter Plc., Budapešť
@@ -14,11 +14,11 @@ verified: false
 
 ## Identifiers
 - Názvy v registroch: Gedeon Richter Plc., Gedeon Richter Plc., Budapešť, Gedeon Richter Romania S.A., Targu-Mures
-- Registrované balenia: ČR 489 [E002, A1], SR 399 [E004, A1]
+- Registrované balenia: ČR 489 [E002, A1], SR 402 [E004, A1]
 
 ## Facts (with sources)
-- ČR: od 15. 4. 2019 139 výpadkov balení, za posledných 12 mesiacov 17 (to je 3.5% registrovaných balení), teraz trvá 3 [E001, A2]
-- SR: od 15. 4. 2019 66 výpadkov balení, za posledných 12 mesiacov 12 (to je 3.0% registrovaných balení), teraz trvá 11 [E005, A2]
+- ČR: od 15. 4. 2019 139 výpadkov balení, za posledných 12 mesiacov 14 (to je 2.9% registrovaných balení), teraz trvá 3 [E001, A2]
+- SR: od 15. 4. 2019 66 výpadkov balení, za posledných 12 mesiacov 12 (to je 3.0% registrovaných balení), teraz trvá 10 [E005, A2]
 
 ## Relations
 - drží registráciu látok s výpadkami: [[N02AB03]] (17×), [[C10AA07]] (14×), [[C03DA01]] (11×), [[M01AB16]] (11×), [[N01AX03]] (11×), [[J01DD08]] (10×), [[M03AC06]] (8×), [[N05AD01]] (8×), [[G03GA05]] (7×), [[A02BA03]] (7×), [[H01CC01]] (6×), [[M05BA06]] (6×), [[N05AX12]] (6×), [[C10BX03]] (5×), [[N06AB05]] (5×), [[G03FA17]] (4×), [[C01EB15]] (4×), [[A10BD07]] (4×), [[G01AF20]] (4×), [[M03BX04]] (4×), [[H01CC54]] (4×), [[G03CA03]] (4×), [[N07CA02]] (3×), [[B01AF01]] (3×), [[G03DA04]] (3×)

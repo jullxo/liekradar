@@ -79,14 +79,14 @@ Rozcestník všetkých látok s výpadkom od 15. 4. 2019. Generované z dát, ne
 - [[A10AE06]] INSULIN DEGLUDEK – výpadky ČR 3, SR 1
 - [[A10AE54]] INSULIN GLARGIN A LIXISENATID – výpadky ČR 4, SR 0
 - [[A10AE56]] INSULIN DEGLUDEK A LIRAGLUTID – výpadky ČR 0, SR 1
-- [[A10BA02]] METFORMIN – výpadky ČR 143, SR 55
+- [[A10BA02]] METFORMIN – výpadky ČR 144, SR 55
 - [[A10BB07]] GLIPIZID – výpadky ČR 3, SR 0
 - [[A10BB08]] GLICHIDON – výpadky ČR 1, SR 4
 - [[A10BB09]] GLIKLAZID – výpadky ČR 35, SR 3
 - [[A10BB12]] GLIMEPIRID – výpadky ČR 110, SR 20
 - [[A10BD02]] METFORMIN A SULFONYLMOČOVINY – výpadky ČR 1, SR 0
 - [[A10BD05]] METFORMIN A PIOGLITAZON – výpadky ČR 1, SR 0
-- [[A10BD07]] METFORMIN A SITAGLIPTIN – výpadky ČR 83, SR 23
+- [[A10BD07]] METFORMIN A SITAGLIPTIN – výpadky ČR 84, SR 23
 - [[A10BD08]] METFORMIN A VILDAGLIPTIN – výpadky ČR 56, SR 8
 - [[A10BD09]] PIOGLITAZON A ALOGLIPTIN – výpadky ČR 1, SR 0
 - [[A10BD11]] METFORMIN A LINAGLIPTIN – výpadky ČR 9, SR 1
@@ -130,7 +130,7 @@ Rozcestník všetkých látok s výpadkom od 15. 4. 2019. Generované z dát, ne
 - [[A16AB13]] ASFOTASA ALFA – výpadky ČR 1, SR 0
 - [[A16AB15]] VELMANASA ALFA – výpadky ČR 1, SR 1
 - [[A16AB22]] AVALGLUKOSIDASA ALFA – výpadky ČR 1, SR 0
-- [[A16AX01]] KYSELINA THIOKTOVÁ – výpadky ČR 5, SR 7
+- [[A16AX01]] KYSELINA THIOKTOVÁ – výpadky ČR 5, SR 8
 - [[A16AX03]] NATRIUM-FENYLBUTYRÁT – výpadky ČR 1, SR 0
 - [[A16AX06]] MIGLUSTAT – výpadky ČR 0, SR 1
 - [[A16AX07]] SAPROPTERIN – výpadky ČR 1, SR 0
@@ -159,7 +159,7 @@ Rozcestník všetkých látok s výpadkom od 15. 4. 2019. Generované z dát, ne
 - [[B01AC30]] ANTIAGREGANCIA KROMĚ HEPARINU, KOMBINACE – výpadky ČR 5, SR 0
 - [[B01AD12]] PROTEIN C – výpadky ČR 2, SR 0
 - [[B01AE07]] DABIGATRAN-ETEXILÁT – výpadky ČR 21, SR 5
-- [[B01AF01]] RIVAROXABAN – výpadky ČR 47, SR 75
+- [[B01AF01]] RIVAROXABAN – výpadky ČR 48, SR 76
 - [[B01AF02]] APIXABAN – výpadky ČR 8, SR 7
 - [[B01AF03]] EDOXABAN – výpadky ČR 12, SR 16
 - [[B01AX05]] FONDAPARINUX – výpadky ČR 5, SR 0
@@ -191,10 +191,10 @@ Rozcestník všetkých látok s výpadkom od 15. 4. 2019. Generované z dát, ne
 - [[B05AA01]] ALBUMIN – výpadky ČR 41, SR 23
 - [[B05AA06]] ŽELATINOVÉ PŘÍPRAVKY – výpadky ČR 19, SR 7
 - [[B05AA07]] HYDROXYETHYLŠKROB – výpadky ČR 1, SR 0
-- [[B05BA01]] AMINOKYSELINY – výpadky ČR 75, SR 19
+- [[B05BA01]] AMINOKYSELINY – výpadky ČR 76, SR 19
 - [[B05BA02]] TUKOVÉ EMULZE – výpadky ČR 25, SR 9
-- [[B05BA03]] CUKRY – výpadky ČR 128, SR 38
-- [[B05BA10]] ROZTOKY PRO PARENTERÁLNÍ VÝŽIVU, KOMBINACE – výpadky ČR 198, SR 52
+- [[B05BA03]] CUKRY – výpadky ČR 129, SR 38
+- [[B05BA10]] ROZTOKY PRO PARENTERÁLNÍ VÝŽIVU, KOMBINACE – výpadky ČR 199, SR 52
 - [[B05BB01]] ELEKTROLYTY – výpadky ČR 261, SR 133
 - [[B05BB02]] ELEKTROLYTY SE SACHARIDY – výpadky ČR 37, SR 13
 - [[B05BC01]] MANNITOL – výpadky ČR 1, SR 4
@@ -244,7 +244,7 @@ Rozcestník všetkých látok s výpadkom od 15. 4. 2019. Generované z dát, ne
 - [[C02AB01]] METHYLDOPA (LEVOTOČIVÁ) – výpadky ČR 0, SR 2
 - [[C02AC05]] MOXONIDIN – výpadky ČR 53, SR 35
 - [[C02AC06]] RILMENIDIN – výpadky ČR 11, SR 9
-- [[C02CA04]] DOXAZOSIN – výpadky ČR 12, SR 4
+- [[C02CA04]] DOXAZOSIN – výpadky ČR 12, SR 5
 - [[C02CA06]] URAPIDIL – výpadky ČR 29, SR 48
 - [[C02KX01]] BOSENTAN – výpadky ČR 6, SR 0
 - [[C02KX02]] AMBRISENTAN – výpadky ČR 3, SR 2
@@ -300,18 +300,18 @@ Rozcestník všetkých látok s výpadkom od 15. 4. 2019. Generované z dát, ne
 - [[C08CA06]] NIMODIPIN – výpadky ČR 4, SR 3
 - [[C08CA08]] NITRENDIPIN – výpadky ČR 25, SR 9
 - [[C08CA09]] LACIDIPIN – výpadky ČR 1, SR 1
-- [[C08CA13]] LERKANIDIPIN – výpadky ČR 38, SR 5
+- [[C08CA13]] LERKANIDIPIN – výpadky ČR 39, SR 5
 - [[C08DA01]] VERAPAMIL – výpadky ČR 17, SR 8
 - [[C08DB01]] DILTIAZEM – výpadky ČR 1, SR 3
 - [[C08GA02]] AMLODIPIN A DIURETIKA – výpadky ČR 1, SR 0
 - [[C09AA01]] KAPTOPRIL – výpadky ČR 0, SR 1
 - [[C09AA02]] ENALAPRIL – výpadky ČR 22, SR 1
-- [[C09AA03]] LISINOPRIL – výpadky ČR 16, SR 9
+- [[C09AA03]] LISINOPRIL – výpadky ČR 16, SR 10
 - [[C09AA04]] PERINDOPRIL – výpadky ČR 59, SR 24
-- [[C09AA05]] RAMIPRIL – výpadky ČR 111, SR 18
+- [[C09AA05]] RAMIPRIL – výpadky ČR 112, SR 18
 - [[C09AA06]] CHINAPRIL – výpadky ČR 6, SR 0
 - [[C09AA08]] CILAZAPRIL – výpadky ČR 1, SR 0
-- [[C09AA10]] TRANDOLAPRIL – výpadky ČR 9, SR 26
+- [[C09AA10]] TRANDOLAPRIL – výpadky ČR 10, SR 27
 - [[C09AA15]] ZOFENOPRIL – výpadky ČR 0, SR 1
 - [[C09BA03]] LISINOPRIL A DIURETIKA – výpadky ČR 2, SR 1
 - [[C09BA04]] PERINDOPRIL A DIURETIKA – výpadky ČR 66, SR 30
@@ -325,7 +325,7 @@ Rozcestník všetkých látok s výpadkom od 15. 4. 2019. Generované z dát, ne
 - [[C09BB05]] RAMIPRIL A FELODIPIN – výpadky ČR 14, SR 0
 - [[C09BB07]] RAMIPRIL A AMLODIPIN – výpadky ČR 64, SR 16
 - [[C09BB10]] TRANDOLAPRIL A VERAPAMIL – výpadky ČR 20, SR 22
-- [[C09BX01]] PERINDOPRIL, AMLODIPIN A INDAPAMID – výpadky ČR 66, SR 44
+- [[C09BX01]] PERINDOPRIL, AMLODIPIN A INDAPAMID – výpadky ČR 67, SR 44
 - [[C09BX02]] PERINDOPRIL A BISOPROLOL – výpadky ČR 7, SR 2
 - [[C09CA01]] LOSARTAN – výpadky ČR 23, SR 17
 - [[C09CA02]] EPROSARTAN – výpadky ČR 1, SR 0
@@ -337,7 +337,7 @@ Rozcestník všetkých látok s výpadkom od 15. 4. 2019. Generované z dát, ne
 - [[C09DA01]] LOSARTAN A DIURETIKA – výpadky ČR 12, SR 7
 - [[C09DA03]] VALSARTAN A DIURETIKA – výpadky ČR 23, SR 22
 - [[C09DA04]] IRBESARTAN A DIURETIKA – výpadky ČR 17, SR 24
-- [[C09DA06]] KANDESARTAN A DIURETIKA – výpadky ČR 22, SR 7
+- [[C09DA06]] KANDESARTAN A DIURETIKA – výpadky ČR 23, SR 7
 - [[C09DA07]] TELMISARTAN A DIURETIKA – výpadky ČR 109, SR 22
 - [[C09DA08]] OLMESARTAN-MEDOXOMIL A DIURETIKA – výpadky ČR 4, SR 1
 - [[C09DB01]] VALSARTAN A AMLODIPIN – výpadky ČR 0, SR 10
@@ -382,7 +382,7 @@ Rozcestník všetkých látok s výpadkom od 15. 4. 2019. Generované z dát, ne
 - [[D01AC16]] FLUTRIMAZOL – výpadky ČR 10, SR 5
 - [[D01AC20]] IMIDAZOLOVÉ/TRIAZOLOVÉ DERIVÁTY V KOMBINACI S KORTIKOSTEROIDY – výpadky ČR 0, SR 5
 - [[D01AC60]] BIFONAZOL, KOMBINACE – výpadky ČR 4, SR 2
-- [[D01AE14]] CIKLOPIROX – výpadky ČR 6, SR 8
+- [[D01AE14]] CIKLOPIROX – výpadky ČR 7, SR 8
 - [[D01AE15]] TERBINAFIN – výpadky ČR 3, SR 1
 - [[D01AE16]] AMOROLFIN – výpadky ČR 2, SR 0
 - [[D01AE22]] NAFTIFIN – výpadky ČR 2, SR 0
@@ -436,7 +436,7 @@ Rozcestník všetkých látok s výpadkom od 15. 4. 2019. Generované z dát, ne
 - [[D10AX03]] KYSELINA AZELAOVÁ – výpadky ČR 2, SR 1
 - [[D10BA01]] ISOTRETINOIN – výpadky ČR 13, SR 5
 - [[D11AH01]] TAKROLIMUS – výpadky ČR 1, SR 0
-- [[D11AH02]] PIMEKROLIMUS – výpadky ČR 4, SR 2
+- [[D11AH02]] PIMEKROLIMUS – výpadky ČR 4, SR 3
 - [[D11AH05]] DUPILUMAB – výpadky ČR 3, SR 4
 - [[D11AH08]] ABROCITINIB – výpadky ČR 3, SR 0
 - [[D11AX01]] MINOXIDIL – výpadky ČR 3, SR 1
@@ -446,7 +446,7 @@ Rozcestník všetkých látok s výpadkom od 15. 4. 2019. Generované z dát, ne
 
 - [[G01AA01]] NYSTATIN – výpadky ČR 0, SR 1
 - [[G01AA02]] NATAMYCIN – výpadky ČR 1, SR 0
-- [[G01AA10]] KLINDAMYCIN – výpadky ČR 6, SR 3
+- [[G01AA10]] KLINDAMYCIN – výpadky ČR 6, SR 4
 - [[G01AA51]] NYSTATIN, KOMBINACE – výpadky ČR 5, SR 4
 - [[G01AC05]] DEKVALINIUM – výpadky ČR 0, SR 1
 - [[G01AF02]] KLOTRIMAZOL – výpadky ČR 21, SR 9
@@ -526,8 +526,8 @@ Rozcestník všetkých látok s výpadkom od 15. 4. 2019. Generované z dát, ne
 - [[G04BD11]] FESOTERODIN – výpadky ČR 14, SR 8
 - [[G04BD12]] MIRABEGRON – výpadky ČR 0, SR 1
 - [[G04BE01]] ALPROSTADIL – výpadky ČR 4, SR 2
-- [[G04BE03]] SILDENAFIL – výpadky ČR 63, SR 18
-- [[G04BE08]] TADALAFIL – výpadky ČR 58, SR 10
+- [[G04BE03]] SILDENAFIL – výpadky ČR 63, SR 20
+- [[G04BE08]] TADALAFIL – výpadky ČR 59, SR 10
 - [[G04BE09]] VARDENAFIL – výpadky ČR 2, SR 0
 - [[G04BE10]] AVANAFIL – výpadky ČR 12, SR 0
 - [[G04BX14]] DAPOXETIN – výpadky ČR 1, SR 1
@@ -583,7 +583,7 @@ Rozcestník všetkých látok s výpadkom od 15. 4. 2019. Generované z dát, ne
 - [[J01CA04]] AMOXICILIN – výpadky ČR 27, SR 10
 - [[J01CA08]] PIVMECILINAM – výpadky ČR 2, SR 0
 - [[J01CE01]] BENZYLPENICILIN – výpadky ČR 16, SR 0
-- [[J01CE02]] FENOXYMETHYLPENICILIN – výpadky ČR 43, SR 18
+- [[J01CE02]] FENOXYMETHYLPENICILIN – výpadky ČR 44, SR 18
 - [[J01CE08]] BENZATHIN-BENZYLPENICILIN – výpadky ČR 2, SR 0
 - [[J01CE09]] PROKAIN-BENZYLPENICILIN – výpadky ČR 8, SR 0
 - [[J01CE10]] BENZATHIN-FENOXYMETHYLPENICILIN – výpadky ČR 16, SR 0
@@ -593,12 +593,12 @@ Rozcestník všetkých látok s výpadkom od 15. 4. 2019. Generované z dát, ne
 - [[J01CR01]] AMPICILIN A INHIBITOR BETA-LAKTAMASY – výpadky ČR 6, SR 0
 - [[J01CR02]] AMOXICILIN A  INHIBITOR BETA-LAKTAMASY – výpadky ČR 107, SR 116
 - [[J01CR04]] SULTAMICILIN – výpadky ČR 4, SR 9
-- [[J01CR05]] PIPERACILIN A  INHIBITOR BETA-LAKTAMASY – výpadky ČR 21, SR 3
+- [[J01CR05]] PIPERACILIN A  INHIBITOR BETA-LAKTAMASY – výpadky ČR 22, SR 3
 - [[J01DB01]] CEFALEXIN – výpadky ČR 0, SR 3
 - [[J01DB04]] CEFAZOLIN – výpadky ČR 10, SR 11
-- [[J01DB05]] CEFADROXIL – výpadky ČR 7, SR 4
+- [[J01DB05]] CEFADROXIL – výpadky ČR 8, SR 4
 - [[J01DC02]] CEFUROXIM – výpadky ČR 96, SR 46
-- [[J01DC10]] CEFPROZIL – výpadky ČR 11, SR 4
+- [[J01DC10]] CEFPROZIL – výpadky ČR 12, SR 4
 - [[J01DD01]] CEFOTAXIM – výpadky ČR 15, SR 12
 - [[J01DD02]] CEFTAZIDIM – výpadky ČR 9, SR 2
 - [[J01DD04]] CEFTRIAXON – výpadky ČR 23, SR 6
@@ -630,7 +630,7 @@ Rozcestník všetkých látok s výpadkom od 15. 4. 2019. Generované z dát, ne
 - [[J01XA02]] TEIKOPLANIN – výpadky ČR 2, SR 0
 - [[J01XA04]] DALBAVANCIN – výpadky ČR 1, SR 1
 - [[J01XB01]] KOLISTIN – výpadky ČR 4, SR 7
-- [[J01XD01]] METRONIDAZOL – výpadky ČR 15, SR 19
+- [[J01XD01]] METRONIDAZOL – výpadky ČR 16, SR 19
 - [[J01XE01]] NITROFURANTOIN – výpadky ČR 0, SR 1
 - [[J01XX01]] FOSFOMYCIN – výpadky ČR 1, SR 0
 - [[J01XX08]] LINEZOLID – výpadky ČR 35, SR 20
@@ -681,7 +681,7 @@ Rozcestník všetkých látok s výpadkom od 15. 4. 2019. Generované z dát, ne
 - [[J05AX05]] INOSIN PRANOBEX – výpadky ČR 5, SR 22
 - [[J05AX09]] MARAVIROK – výpadky ČR 1, SR 0
 - [[J05AX18]] LETERMOVIR – výpadky ČR 1, SR 1
-- [[J06BA01]] IMUNOGLOBULINY, NORMÁLNÍ LIDSKÉ, PRO EXTRAVASKULÁRNÍ APLIKACI – výpadky ČR 40, SR 22
+- [[J06BA01]] IMUNOGLOBULINY, NORMÁLNÍ LIDSKÉ, PRO EXTRAVASKULÁRNÍ APLIKACI – výpadky ČR 40, SR 24
 - [[J06BA02]] IMUNOGLOBULINY, NORMÁLNÍ LIDSKÉ, PRO INTRAVASKULÁRNÍ APLIKACI – výpadky ČR 59, SR 169
 - [[J06BB01]] ANTI-D (RH) IMUNOGLOBULIN – výpadky ČR 1, SR 4
 - [[J06BB04]] IMUNOGLOBULIN PROTI HEPATITIDĚ B – výpadky ČR 2, SR 0
@@ -702,7 +702,7 @@ Rozcestník všetkých látok s výpadkom od 15. 4. 2019. Generované z dát, ne
 - [[J07AP03]] BŘIŠNÍ TYFUS, PURIFIKOVANÝ POLYSACHARIDOVÝ ANTIGEN – výpadky ČR 9, SR 4
 - [[J07BA01]] KLÍŠŤOVÁ ENCEFALITIDA, INAKTIVOVANÝ CELÝ VIRUS – výpadky ČR 5, SR 2
 - [[J07BA02]] JAPONSKÁ ENCEFALITIDA, INAKTIVOVANÝ CELÝ VIRUS – výpadky ČR 2, SR 1
-- [[J07BB02]] CHŘIPKA, INAKTIVOVANÁ VAKCÍNA, ŠTĚPENÝ VIRUS NEBO POVRCHOVÝ ANTIGEN – výpadky ČR 15, SR 5
+- [[J07BB02]] CHŘIPKA, INAKTIVOVANÁ VAKCÍNA, ŠTĚPENÝ VIRUS NEBO POVRCHOVÝ ANTIGEN – výpadky ČR 15, SR 6
 - [[J07BB03]] CHŘIPKA, ŽIVÝ ATENUOVANÝ VIRUS – výpadky ČR 3, SR 4
 - [[J07BC01]] HEPATITIDA B, PURIFIKOVANÝ ANTIGEN – výpadky ČR 5, SR 6
 - [[J07BC02]] HEPATITIDA A, INAKTIVOVANÝ CELÝ VIRUS – výpadky ČR 21, SR 20
@@ -749,7 +749,7 @@ Rozcestník všetkých látok s výpadkom od 15. 4. 2019. Generované z dát, ne
 - [[L01CA04]] VINORELBIN – výpadky ČR 9, SR 4
 - [[L01CA05]] VINFLUNIN – výpadky ČR 5, SR 6
 - [[L01CB01]] ETOPOSID – výpadky ČR 23, SR 4
-- [[L01CD01]] PAKLITAXEL – výpadky ČR 36, SR 7
+- [[L01CD01]] PAKLITAXEL – výpadky ČR 37, SR 7
 - [[L01CD02]] DOCETAXEL – výpadky ČR 23, SR 3
 - [[L01CD04]] KABAZITAXEL – výpadky ČR 3, SR 0
 - [[L01CE01]] TOPOTEKAN – výpadky ČR 2, SR 4
@@ -882,12 +882,12 @@ Rozcestník všetkých látok s výpadkom od 15. 4. 2019. Generované z dát, ne
 - [[L04AX04]] LENALIDOMID – výpadky ČR 23, SR 6
 - [[L04AX05]] PIRFENIDON – výpadky ČR 11, SR 0
 - [[L04AX06]] POMALIDOMID – výpadky ČR 8, SR 1
-- [[L04AX07]] DIMETHYL-FUMARÁT – výpadky ČR 13, SR 2
+- [[L04AX07]] DIMETHYL-FUMARÁT – výpadky ČR 13, SR 3
 
 ## M – Svaly a kosti
 
 - [[M01AB01]] INDOMETACIN – výpadky ČR 3, SR 1
-- [[M01AB05]] DIKLOFENAK – výpadky ČR 66, SR 19
+- [[M01AB05]] DIKLOFENAK – výpadky ČR 66, SR 21
 - [[M01AB16]] ACEKLOFENAK – výpadky ČR 8, SR 4
 - [[M01AB55]] DIKLOFENAK, KOMBINACE – výpadky ČR 0, SR 9
 - [[M01AC01]] PIROXIKAM – výpadky ČR 1, SR 1
@@ -948,7 +948,7 @@ Rozcestník všetkých látok s výpadkom od 15. 4. 2019. Generované z dát, ne
 - [[N01AB08]] SEVOFLURAN – výpadky ČR 1, SR 0
 - [[N01AH01]] FENTANYL – výpadky ČR 3, SR 0
 - [[N01AH02]] ALFENTANIL – výpadky ČR 1, SR 0
-- [[N01AH03]] SUFENTANIL – výpadky ČR 21, SR 9
+- [[N01AH03]] SUFENTANIL – výpadky ČR 22, SR 9
 - [[N01AH06]] REMIFENTANIL – výpadky ČR 12, SR 16
 - [[N01AX03]] KETAMIN – výpadky ČR 7, SR 4
 - [[N01AX07]] ETOMIDÁT – výpadky ČR 3, SR 0
@@ -972,7 +972,7 @@ Rozcestník všetkých látok s výpadkom od 15. 4. 2019. Generované z dát, ne
 - [[N02AE01]] BUPRENORFIN – výpadky ČR 39, SR 2
 - [[N02AF02]] NALBUFIN – výpadky ČR 1, SR 0
 - [[N02AJ06]] KODEIN A PARACETAMOL – výpadky ČR 11, SR 0
-- [[N02AJ13]] TRAMADOL A PARACETAMOL – výpadky ČR 51, SR 34
+- [[N02AJ13]] TRAMADOL A PARACETAMOL – výpadky ČR 52, SR 35
 - [[N02AJ14]] TRAMADOL A DEXKETOPROFEN – výpadky ČR 8, SR 1
 - [[N02AX02]] TRAMADOL – výpadky ČR 36, SR 36
 - [[N02AX06]] TAPENTADOL – výpadky ČR 20, SR 4
@@ -984,12 +984,12 @@ Rozcestník všetkých látok s výpadkom od 15. 4. 2019. Generované z dát, ne
 - [[N02BE01]] PARACETAMOL – výpadky ČR 101, SR 45
 - [[N02BE51]] PARACETAMOL, KOMBINACE KROMĚ PSYCHOLEPTIK – výpadky ČR 96, SR 48
 - [[N02BE71]] PARACETAMOL, KOMBINACE S PSYCHOLEPTIKY – výpadky ČR 0, SR 4
-- [[N02BF01]] GABAPENTIN – výpadky ČR 120, SR 36
+- [[N02BF01]] GABAPENTIN – výpadky ČR 121, SR 36
 - [[N02BF02]] PREGABALIN – výpadky ČR 230, SR 37
 - [[N02CC01]] SUMATRIPTAN – výpadky ČR 44, SR 18
 - [[N02CC03]] ZOLMITRIPTAN – výpadky ČR 1, SR 0
 - [[N02CC04]] RIZATRIPTAN – výpadky ČR 0, SR 11
-- [[N02CC06]] ELETRIPTAN – výpadky ČR 4, SR 1
+- [[N02CC06]] ELETRIPTAN – výpadky ČR 4, SR 2
 - [[N02CC07]] FROVATRIPTAN – výpadky ČR 0, SR 1
 - [[N02CD01]] ERENUMAB – výpadky ČR 1, SR 0
 - [[N02CD02]] GALKANEZUMAB – výpadky ČR 2, SR 3
@@ -1007,14 +1007,14 @@ Rozcestník všetkých látok s výpadkom od 15. 4. 2019. Generované z dát, ne
 - [[N03AG01]] KYSELINA VALPROOVÁ – výpadky ČR 78, SR 14
 - [[N03AG04]] VIGABATRIN – výpadky ČR 3, SR 1
 - [[N03AX03]] SULTIAM – výpadky ČR 6, SR 2
-- [[N03AX09]] LAMOTRIGIN – výpadky ČR 52, SR 31
-- [[N03AX11]] TOPIRAMÁT – výpadky ČR 57, SR 15
+- [[N03AX09]] LAMOTRIGIN – výpadky ČR 52, SR 32
+- [[N03AX11]] TOPIRAMÁT – výpadky ČR 57, SR 16
 - [[N03AX12]] Gabapentin – výpadky ČR 0, SR 1
 - [[N03AX14]] LEVETIRACETAM – výpadky ČR 132, SR 51
 - [[N03AX15]] ZONISAMID – výpadky ČR 22, SR 9
 - [[N03AX16]] Pregabalin – výpadky ČR 0, SR 4
 - [[N03AX17]] STIRIPENTOL – výpadky ČR 12, SR 0
-- [[N03AX18]] LAKOSAMID – výpadky ČR 77, SR 28
+- [[N03AX18]] LAKOSAMID – výpadky ČR 77, SR 29
 - [[N03AX23]] BRIVARACETAM – výpadky ČR 0, SR 2
 - [[N03AX25]] CENOBAMAT – výpadky ČR 3, SR 0
 - [[N04BA02]] LEVODOPA A INHIBITOR DEKARBOXYLASY – výpadky ČR 28, SR 5
@@ -1035,8 +1035,8 @@ Rozcestník všetkých látok s výpadkom od 15. 4. 2019. Generované z dát, ne
 - [[N05AF03]] CHLORPROTHIXEN – výpadky ČR 4, SR 5
 - [[N05AF05]] ZUKLOPENTHIXOL – výpadky ČR 0, SR 2
 - [[N05AH02]] KLOZAPIN – výpadky ČR 4, SR 5
-- [[N05AH03]] OLANZAPIN – výpadky ČR 157, SR 61
-- [[N05AH04]] KVETIAPIN – výpadky ČR 138, SR 99
+- [[N05AH03]] OLANZAPIN – výpadky ČR 158, SR 61
+- [[N05AH04]] KVETIAPIN – výpadky ČR 138, SR 101
 - [[N05AL01]] SULPIRID – výpadky ČR 11, SR 3
 - [[N05AL03]] TIAPRID – výpadky ČR 19, SR 4
 - [[N05AL05]] AMISULPRID – výpadky ČR 32, SR 10
@@ -1073,7 +1073,7 @@ Rozcestník všetkých látok s výpadkom od 15. 4. 2019. Generované z dát, ne
 - [[N06AB05]] PAROXETIN – výpadky ČR 40, SR 19
 - [[N06AB06]] SERTRALIN – výpadky ČR 81, SR 11
 - [[N06AB08]] FLUVOXAMIN – výpadky ČR 13, SR 8
-- [[N06AB10]] ESCITALOPRAM – výpadky ČR 88, SR 26
+- [[N06AB10]] ESCITALOPRAM – výpadky ČR 89, SR 26
 - [[N06AG02]] MOKLOBEMID – výpadky ČR 3, SR 0
 - [[N06AX03]] MIANSERIN – výpadky ČR 6, SR 3
 - [[N06AX05]] TRAZODON – výpadky ČR 21, SR 0
@@ -1089,7 +1089,7 @@ Rozcestník všetkých látok s výpadkom od 15. 4. 2019. Generované z dát, ne
 - [[N06BA07]] MODAFINIL – výpadky ČR 4, SR 0
 - [[N06BA09]] ATOMOXETIN – výpadky ČR 212, SR 37
 - [[N06BA12]] LISDEXAMFETAMIN – výpadky ČR 1, SR 1
-- [[N06BX03]] PIRACETAM – výpadky ČR 16, SR 4
+- [[N06BX03]] PIRACETAM – výpadky ČR 16, SR 5
 - [[N06BX18]] VINPOCETIN – výpadky ČR 0, SR 2
 - [[N06DA02]] DONEPEZIL – výpadky ČR 73, SR 32
 - [[N06DA03]] RIVASTIGMIN – výpadky ČR 4, SR 18
@@ -1103,7 +1103,7 @@ Rozcestník všetkých látok s výpadkom od 15. 4. 2019. Generované z dát, ne
 - [[N07BA03]] VARENIKLIN – výpadky ČR 7, SR 2
 - [[N07BA04]] CYTISINIKLIN – výpadky ČR 0, SR 1
 - [[N07BB01]] DISULFIRAM – výpadky ČR 2, SR 0
-- [[N07BB03]] AKAMPROSÁT – výpadky ČR 1, SR 6
+- [[N07BB03]] AKAMPROSÁT – výpadky ČR 1, SR 7
 - [[N07BB04]] NALTREXON – výpadky ČR 1, SR 0
 - [[N07BC01]] BUPRENORFIN – výpadky ČR 14, SR 0
 - [[N07BC51]] BUPRENORFIN, KOMBINACE – výpadky ČR 11, SR 2
@@ -1153,7 +1153,7 @@ Rozcestník všetkých látok s výpadkom od 15. 4. 2019. Generované z dát, ne
 - [[R03AC12]] SALMETEROL – výpadky ČR 3, SR 3
 - [[R03AC13]] FORMOTEROL – výpadky ČR 12, SR 10
 - [[R03AK06]] SALMETEROL A FLUTIKASON – výpadky ČR 63, SR 28
-- [[R03AK07]] FORMOTEROL A BUDESONID – výpadky ČR 9, SR 6
+- [[R03AK07]] FORMOTEROL A BUDESONID – výpadky ČR 9, SR 7
 - [[R03AK08]] FORMOTEROL A BEKLOMETASON – výpadky ČR 2, SR 12
 - [[R03AK11]] FORMOTEROL A FLUTIKASON – výpadky ČR 4, SR 1
 - [[R03AK14]] INDAKATEROL A MOMETASON – výpadky ČR 3, SR 1

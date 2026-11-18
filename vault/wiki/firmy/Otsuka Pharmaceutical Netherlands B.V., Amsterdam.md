@@ -5,7 +5,7 @@ aliases: ["Otsuka Novel Products GmbH", "Otsuka Pharmaceutical Netherlands B.V."
 vypadky_cz_od_2019: 5
 vypadky_sk_od_2019: 7
 zdroje: ["E001", "E002", "E004", "E005"]
-generovane_utc: "2026-11-13T10:06:19Z"
+generovane_utc: "2026-11-18T02:18:53Z"
 verified: false
 ---
 # Otsuka Pharmaceutical Netherlands B.V., Amsterdam
@@ -26,20 +26,20 @@ verified: false
 ## Timeline
 | Dátum | Krajina | Udalosť | Zdroj |
 |---|---|---|---|
-| 2026-11-01 | SK | začiatok výpadku: Abilify Maintena 400 mg prášok a disperzné prostredie na injekčnú suspenziu s predĺženým
+| 2026-11-01 | SK | začiatok výpadku: Abilify Maintena 400 mg prášok a disperzné prostredie na injekčnú suspenziu s predĺženým
  uvoľňovaním v naplnenej injekčnej striekačke (plu igf 1x400 mg+1x1,6 ml (striek.inj.skl.napl.)) (4771B, [[N05AX12]]) | [E005, A2] |
-| 2026-11-01 | SK | začiatok výpadku: Abilify Maintena 960 mg injekčná suspenzia s predĺženým uvoľňovaním v naplnenej injekčnej
+| 2026-11-01 | SK | začiatok výpadku: Abilify Maintena 960 mg injekčná suspenzia s predĺženým uvoľňovaním v naplnenej injekčnej
  striekačke (sus iph 1x960 mg (striek.inj.napl + 2 bezp.ihly)) (6077E, [[N05AX12]]) | [E005, A2] |
-| 2026-11-01 | SK | začiatok výpadku: Abilify Maintena 400 mg prášok a disperzné prostredie na injekčnú suspenziu s predĺženým
+| 2026-11-01 | SK | začiatok výpadku: Abilify Maintena 400 mg prášok a disperzné prostredie na injekčnú suspenziu s predĺženým
  uvoľňovaním (plu igf 1x400 mg+1x2 ml+samost.bal.(liek.inj.skl.)) (8419A, [[N05AX12]]) | [E005, A2] |
 | 2026-04-22 | CZ | začiatok výpadku: RXULTI (0255609, [[N05AX16]]) | [E001, A2] |
-| 2025-11-21 | SK | začiatok výpadku: Abilify Maintena 400 mg prášok a disperzné prostredie na injekčnú suspenziu s predĺženým
+| 2025-11-21 | SK | začiatok výpadku: Abilify Maintena 400 mg prášok a disperzné prostredie na injekčnú suspenziu s predĺženým
  uvoľňovaním v naplnenej injekčnej striekačke (plu igf 1x400 mg+1x1,6 ml (striek.inj.skl.napl.)) (4771B, [[N05AX12]]) | [E005, A2] |
-| 2025-11-21 | SK | začiatok výpadku: Abilify Maintena 400 mg prášok a disperzné prostredie na injekčnú suspenziu s predĺženým
+| 2025-11-21 | SK | začiatok výpadku: Abilify Maintena 400 mg prášok a disperzné prostredie na injekčnú suspenziu s predĺženým
  uvoľňovaním (plu igf 1x400 mg+1x2 ml+samost.bal.(liek.inj.skl.)) (8419A, [[N05AX12]]) | [E005, A2] |
-| 2025-11-13 | SK | začiatok výpadku: Abilify Maintena 400 mg prášok a disperzné prostredie na injekčnú suspenziu s predĺženým
+| 2025-11-13 | SK | začiatok výpadku: Abilify Maintena 400 mg prášok a disperzné prostredie na injekčnú suspenziu s predĺženým
  uvoľňovaním v naplnenej injekčnej striekačke (plu igf 1x400 mg+1x1,6 ml (striek.inj.skl.napl.)) (4771B, [[N05AX12]]) | [E005, A2] |
-| 2025-11-13 | SK | začiatok výpadku: Abilify Maintena 400 mg prášok a disperzné prostredie na injekčnú suspenziu s predĺženým
+| 2025-11-13 | SK | začiatok výpadku: Abilify Maintena 400 mg prášok a disperzné prostredie na injekčnú suspenziu s predĺženým
  uvoľňovaním (plu igf 1x400 mg+1x2 ml+samost.bal.(liek.inj.skl.)) (8419A, [[N05AX12]]) | [E005, A2] |
 | 2023-09-18 | CZ | začiatok výpadku: ABILIFY (0028164, [[N05AX12]]) | [E001, A2] |
 | 2022-11-14 | CZ | začiatok výpadku: ABILIFY MAINTENA (0194643, [[N05AX12]]) | [E001, A2] |

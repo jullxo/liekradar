@@ -5,7 +5,7 @@ aliases: ["Pharmaselect International Beteiligungs GmbH", "Pharmaselect Internat
 vypadky_cz_od_2019: 21
 vypadky_sk_od_2019: 23
 zdroje: ["E001", "E002", "E004", "E005"]
-generovane_utc: "2026-11-13T10:06:19Z"
+generovane_utc: "2026-11-18T02:18:53Z"
 verified: false
 ---
 # Pharmaselect International Beteiligungs GmbH
@@ -17,7 +17,7 @@ verified: false
 - Registrované balenia: ČR 34 [E002, A1], SR 58 [E004, A1]
 
 ## Facts (with sources)
-- ČR: od 15. 4. 2019 21 výpadkov balení, za posledných 12 mesiacov 2 (to je 5.9% registrovaných balení), teraz trvá 1 [E001, A2]
+- ČR: od 15. 4. 2019 21 výpadkov balení, za posledných 12 mesiacov 1 (to je 2.9% registrovaných balení), teraz trvá 1 [E001, A2]
 - SR: od 15. 4. 2019 23 výpadkov balení, za posledných 12 mesiacov 3 (to je 5.2% registrovaných balení), teraz trvá 5 [E005, A2]
 
 ## Relations

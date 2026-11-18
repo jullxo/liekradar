@@ -5,7 +5,7 @@ aliases: ["Opella Healthcare Austria GmbH, Wien", "Opella Healthcare Czech s.r.o
 vypadky_cz_od_2019: 105
 vypadky_sk_od_2019: 51
 zdroje: ["E001", "E002", "E004", "E005"]
-generovane_utc: "2026-11-13T10:06:19Z"
+generovane_utc: "2026-11-18T02:18:53Z"
 verified: false
 ---
 # Opella Healthcare Czech s.r.o., Praha
@@ -17,7 +17,7 @@ verified: false
 - Registrované balenia: ČR 140 [E002, A1], SR 117 [E004, A1]
 
 ## Facts (with sources)
-- ČR: od 15. 4. 2019 105 výpadkov balení, za posledných 12 mesiacov 18 (to je 12.9% registrovaných balení), teraz trvá 5 [E001, A2]
+- ČR: od 15. 4. 2019 105 výpadkov balení, za posledných 12 mesiacov 18 (to je 12.9% registrovaných balení), teraz trvá 4 [E001, A2]
 - SR: od 15. 4. 2019 51 výpadkov balení, za posledných 12 mesiacov 5 (to je 4.3% registrovaných balení), teraz trvá 4 [E005, A2]
 
 ## Relations

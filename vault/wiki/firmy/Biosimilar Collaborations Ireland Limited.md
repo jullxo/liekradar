@@ -5,7 +5,7 @@ aliases: ["Biosimilar Collaborations Ireland Limited", "Biosimilar Collaboration
 vypadky_cz_od_2019: 9
 vypadky_sk_od_2019: 17
 zdroje: ["E001", "E002", "E004", "E005"]
-generovane_utc: "2026-11-13T10:06:19Z"
+generovane_utc: "2026-11-18T02:18:53Z"
 verified: false
 ---
 # Biosimilar Collaborations Ireland Limited
@@ -18,7 +18,7 @@ verified: false
 
 ## Facts (with sources)
 - ČR: od 15. 4. 2019 9 výpadkov balení, za posledných 12 mesiacov 4 (to je 5.3% registrovaných balení), teraz trvá 0 [E001, A2]
-- SR: od 15. 4. 2019 17 výpadkov balení, za posledných 12 mesiacov 8 (to je 10.3% registrovaných balení), teraz trvá 5 [E005, A2]
+- SR: od 15. 4. 2019 17 výpadkov balení, za posledných 12 mesiacov 8 (to je 10.3% registrovaných balení), teraz trvá 3 [E005, A2]
 
 ## Relations
 - drží registráciu látok s výpadkami: [[A10AE04]] (6×), [[L04AB04]] (4×), [[L04AB01]] (3×), [[L01FG01]] (3×), [[L01XC07]] (3×), [[M05BX04]] (2×), [[L03AA13]] (2×), [[L01FD01]] (1×), [[L01XC03]] (1×), [[S01LA05]] (1×)

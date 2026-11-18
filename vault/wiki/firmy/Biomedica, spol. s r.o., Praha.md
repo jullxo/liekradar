@@ -5,7 +5,7 @@ aliases: ["BIOMEDICA  spol. s r.o.", "Biomedica, spol. s r.o., Praha"]
 vypadky_cz_od_2019: 7
 vypadky_sk_od_2019: 2
 zdroje: ["E001", "E002", "E004", "E005"]
-generovane_utc: "2026-11-13T10:06:19Z"
+generovane_utc: "2026-11-18T02:18:53Z"
 verified: false
 ---
 # Biomedica, spol. s r.o., Praha
@@ -17,7 +17,7 @@ verified: false
 - Registrované balenia: ČR 15 [E002, A1], SR 7 [E004, A1]
 
 ## Facts (with sources)
-- ČR: od 15. 4. 2019 7 výpadkov balení, za posledných 12 mesiacov 3 (to je 20.0% registrovaných balení), teraz trvá 3 [E001, A2]
+- ČR: od 15. 4. 2019 7 výpadkov balení, za posledných 12 mesiacov 2 (to je 13.3% registrovaných balení), teraz trvá 3 [E001, A2]
 - SR: od 15. 4. 2019 2 výpadkov balení, za posledných 12 mesiacov 0 (to je 0.0% registrovaných balení), teraz trvá 0 [E005, A2]
 
 ## Relations
