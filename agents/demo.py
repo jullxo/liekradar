@@ -3,8 +3,9 @@
     .venv/bin/python -m agents.demo                       # naostro s Gemini
     LIEKRADAR_FAKE_LLM=1 .venv/bin/python -m agents.demo  # bez kľúča, pevné odpovede
 
-Voliteľne vlastná otázka a persona:
+Voliteľne vlastná otázka, persona a jazyk appky (sk / cs / en; jazyk otázky má prednosť):
     .venv/bin/python -m agents.demo "Kde sú trhové medzery v ČR?" vyrobca
+    .venv/bin/python -m agents.demo "Které léky budou v Česku chybět?" lekaren cs
 """
 
 import sys
@@ -18,16 +19,26 @@ PERSONA = "lekaren"
 def main() -> int:
     otazka = sys.argv[1] if len(sys.argv) > 1 else OTAZKA
     persona = sys.argv[2] if len(sys.argv) > 2 else PERSONA
-    print(f"Otázka: {otazka}\nPersona: {persona}\n")
+    jazyk = sys.argv[3] if len(sys.argv) > 3 else None
+    print(f"Otázka: {otazka}\nPersona: {persona}\nJazyk appky: {jazyk or '–'}\n")
     print("=== Priebeh ===")
-    vysledok = spusti(otazka, persona, pri_kroku=print)
+    vysledok = spusti(otazka, persona, pri_kroku=print, jazyk=jazyk)
 
-    print(f"\n=== Správa ({'schválená kritikom' if vysledok['schvalene'] else 'NESCHVÁLENÁ kritikom'}) ===")
+    if vysledok.get("rozsah", "ok") != "ok":
+        stav = "pevná odpoveď (mimo rozsah)"
+    else:
+        stav = "schválená kritikom" if vysledok["schvalene"] else "NESCHVÁLENÁ kritikom"
+    print(f"\n=== Správa ({stav}) ===")
     print(vysledok["brief"] or "(správa nevznikla)")
     print("\n=== Case Log ===")
     print("\n".join(vysledok["case_log"]))
     print(f"\nModely: {', '.join(vysledok.get('modely') or [vysledok['model']])} · volaní modelu: {vysledok['volania_llm']} "
           f"(požiadaviek vrátane opakovaní: {vysledok.get('poziadavky_llm', vysledok['volania_llm'])})")
+    preklad = vysledok.get("preklad") or {}
+    print(f"Rozsah: {vysledok.get('rozsah')} · jazyk odpovede: {vysledok.get('jazyk')}"
+          + (f" · preklad: {preklad.get('stav')}" if preklad else ""))
+    for rozdiel in preklad.get("rozdiely", []):
+        print(f"  rozdiel v preklade: {rozdiel}")
     for druh, cesta in vysledok["subory"].items():
         print(f"Uložené ({druh}): {cesta}")
     if vysledok["chyba"]:
