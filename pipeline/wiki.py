@@ -79,12 +79,20 @@ def _frontmatter(polia: dict) -> str:
     return "\n".join(riadky)
 
 
+def _bez_casu(text: str) -> str:
+    return re.sub(r"^generovane_utc:.*$", "", text, flags=re.M)
+
+
 def _zapis(cesta: Path, frontmatter: dict, telo: str) -> None:
+    """Zapíše poznámku, ale len ak sa zmenil obsah (nie iba čas generovania).
+    Vďaka tomu automatická denná obnova dát nemení na GitHube stovky poznámok bez dôvodu."""
     poznamky, verified = _zachovane(cesta)
     frontmatter["verified"] = verified == "true"
+    novy = _frontmatter(frontmatter) + "\n" + telo.rstrip() + "\n\n" + poznamky.rstrip() + "\n"
+    if cesta.exists() and _bez_casu(cesta.read_text(encoding="utf-8")) == _bez_casu(novy):
+        return
     cesta.parent.mkdir(parents=True, exist_ok=True)
-    cesta.write_text(_frontmatter(frontmatter) + "\n" + telo.rstrip() + "\n\n" + poznamky.rstrip() + "\n",
-                     encoding="utf-8")
+    cesta.write_text(novy, encoding="utf-8")
 
 
 def _cislo(x) -> str:

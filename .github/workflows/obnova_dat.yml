@@ -1,0 +1,62 @@
+# Automatická obnova dát LiekRadaru
+#
+# Každé ráno stiahne čerstvé dáta SÚKL a ŠÚKL, prepočíta ich (pipeline.run_pipeline) a zmeny nahrá
+# do repozitára. Streamlit Cloud po novom commite aplikáciu sám aktualizuje.
+# Ak sťahovanie zlyhá (napr. úrad má výpadok webu), nič sa nenahrá a aplikácia ostane na včerajších dátach.
+# Ručné spustenie: záložka Actions → Obnova dát → Run workflow.
+
+name: Obnova dát
+
+on:
+  schedule:
+    - cron: "17 4 * * *"   # každý deň 4:17 UTC (5:17 v zime v Bratislave a Prahe)
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: obnova-dat
+  cancel-in-progress: false
+
+jobs:
+  obnova:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - name: Stiahnuť repozitár
+        uses: actions/checkout@v4
+
+      - name: Pripraviť Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+          cache: pip
+
+      - name: Nainštalovať knižnice
+        run: pip install -r requirements.txt
+
+      # Surové dáta (najmä mesačné súbory DIS-13) si pamätáme medzi behmi, aby sa sťahovali len nové mesiace.
+      - name: Obnoviť uložené surové dáta
+        uses: actions/cache@v4
+        with:
+          path: data/raw
+          key: surove-data-${{ github.run_id }}
+          restore-keys: surove-data-
+
+      - name: Stiahnuť a prepočítať dáta
+        run: python -m pipeline.run_pipeline
+
+      - name: Nahrať zmeny do repozitára
+        run: |
+          git config user.name "LiekRadar (automatická obnova)"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/processed vault/manifest_zdrojov.csv vault/wiki
+          if git diff --cached --quiet; then
+            echo "Dáta sa od posledného behu nezmenili." >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+          git commit -m "Automatická obnova dát $(date -u +%Y-%m-%d)"
+          git pull --rebase
+          git push
+          echo "Nahrané nové dáta: $(git diff --stat HEAD~1 HEAD | tail -1)" >> "$GITHUB_STEP_SUMMARY"
