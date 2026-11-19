@@ -5,7 +5,7 @@ aliases: ["RECORDATI Ireland Limited, Ringaskiddy Co. Cork", "Recordati Industri
 vypadky_cz_od_2019: 2
 vypadky_sk_od_2019: 9
 zdroje: ["E001", "E002", "E004", "E005"]
-generovane_utc: "2026-11-13T10:06:19Z"
+generovane_utc: "2026-11-19T05:22:20Z"
 verified: false
 ---
 # RECORDATI Ireland Limited, Ringaskiddy Co. Cork
@@ -18,7 +18,7 @@ verified: false
 
 ## Facts (with sources)
 - ČR: od 15. 4. 2019 2 výpadkov balení, za posledných 12 mesiacov 0 (to je 0.0% registrovaných balení), teraz trvá 0 [E001, A2]
-- SR: od 15. 4. 2019 9 výpadkov balení, za posledných 12 mesiacov 1 (to je 1.0% registrovaných balení), teraz trvá 1 [E005, A2]
+- SR: od 15. 4. 2019 9 výpadkov balení, za posledných 12 mesiacov 0 (to je 0.0% registrovaných balení), teraz trvá 1 [E005, A2]
 
 ## Relations
 - drží registráciu látok s výpadkami: [[C07AB02]] (5×), [[L02AE02]] (3×), [[G04CA04]] (2×), [[G01AF12]] (1×)

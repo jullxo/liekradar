@@ -5,7 +5,7 @@ aliases: ["Neuraxpharm Bohemia s.r.o.", "Neuraxpharm Bohemia s.r.o., Praha", "Ne
 vypadky_cz_od_2019: 83
 vypadky_sk_od_2019: 43
 zdroje: ["E001", "E002", "E004", "E005"]
-generovane_utc: "2026-11-18T02:18:53Z"
+generovane_utc: "2026-11-19T05:22:20Z"
 verified: false
 ---
 # Neuraxpharm Bohemia s.r.o., Praha
@@ -18,7 +18,7 @@ verified: false
 
 ## Facts (with sources)
 - ČR: od 15. 4. 2019 83 výpadkov balení, za posledných 12 mesiacov 16 (to je 3.0% registrovaných balení), teraz trvá 13 [E001, A2]
-- SR: od 15. 4. 2019 43 výpadkov balení, za posledných 12 mesiacov 16 (to je 4.6% registrovaných balení), teraz trvá 10 [E005, A2]
+- SR: od 15. 4. 2019 43 výpadkov balení, za posledných 12 mesiacov 16 (to je 4.6% registrovaných balení), teraz trvá 9 [E005, A2]
 
 ## Relations
 - drží registráciu látok s výpadkami: [[N05CD08]] (18×), [[N05AH04]] (17×), [[N06BA04]] (15×), [[N05AX12]] (8×), [[N06AX12]] (8×), [[N02AA55]] (8×), [[N03AX15]] (8×), [[N04BC04]] (7×), [[N03AX18]] (6×), [[N05AL03]] (6×), [[N02BF02]] (6×), [[N03AX16]] (4×), [[G04BD08]] (3×), [[N05CF02]] (3×), [[N06DX01]] (3×), [[N06AX05]] (2×), [[N03AX09]] (2×), [[G04BE03]] (1×), [[N05AX08]] (1×)

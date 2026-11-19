@@ -5,7 +5,7 @@ aliases: ["BB Pharma a.s.", "BB Pharma a.s., Praha"]
 vypadky_cz_od_2019: 90
 vypadky_sk_od_2019: 18
 zdroje: ["E001", "E002", "E004", "E005"]
-generovane_utc: "2026-11-13T10:06:19Z"
+generovane_utc: "2026-11-19T05:22:20Z"
 verified: false
 ---
 # BB Pharma a.s
@@ -17,7 +17,7 @@ verified: false
 - Registrované balenia: ČR 68 [E002, A1], SR 84 [E004, A1]
 
 ## Facts (with sources)
-- ČR: od 15. 4. 2019 90 výpadkov balení, za posledných 12 mesiacov 7 (to je 10.3% registrovaných balení), teraz trvá 3 [E001, A2]
+- ČR: od 15. 4. 2019 90 výpadkov balení, za posledných 12 mesiacov 7 (to je 10.3% registrovaných balení), teraz trvá 1 [E001, A2]
 - SR: od 15. 4. 2019 18 výpadkov balení, za posledných 12 mesiacov 2 (to je 2.4% registrovaných balení), teraz trvá 3 [E005, A2]
 
 ## Relations

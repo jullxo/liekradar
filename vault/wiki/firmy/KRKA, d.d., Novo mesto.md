@@ -5,7 +5,7 @@ aliases: ["KRKA, d.d., Novo mesto", "Krka, d.d., Novo mesto, Novo mesto"]
 vypadky_cz_od_2019: 326
 vypadky_sk_od_2019: 655
 zdroje: ["E001", "E002", "E004", "E005"]
-generovane_utc: "2026-11-18T02:18:53Z"
+generovane_utc: "2026-11-19T05:22:20Z"
 verified: false
 ---
 # KRKA, d.d., Novo mesto
@@ -17,8 +17,8 @@ verified: false
 - Registrované balenia: ČR 4934 [E002, A1], SR 5106 [E004, A1]
 
 ## Facts (with sources)
-- ČR: od 15. 4. 2019 326 výpadkov balení, za posledných 12 mesiacov 91 (to je 1.8% registrovaných balení), teraz trvá 14 [E001, A2]
-- SR: od 15. 4. 2019 655 výpadkov balení, za posledných 12 mesiacov 100 (to je 2.0% registrovaných balení), teraz trvá 27 [E005, A2]
+- ČR: od 15. 4. 2019 326 výpadkov balení, za posledných 12 mesiacov 91 (to je 1.8% registrovaných balení), teraz trvá 13 [E001, A2]
+- SR: od 15. 4. 2019 655 výpadkov balení, za posledných 12 mesiacov 100 (to je 2.0% registrovaných balení), teraz trvá 23 [E005, A2]
 
 ## Relations
 - drží registráciu látok s výpadkami: [[N05AH04]] (42×), [[R06AX27]] (32×), [[N02AJ13]] (31×), [[C07AG02]] (30×), [[N04BC05]] (29×), [[C10AA05]] (28×), [[N06AB10]] (27×), [[N05AH03]] (24×), [[C09BB04]] (23×), [[A02BC02]] (23×), [[N06DA02]] (20×), [[R03DC03]] (20×), [[N06AX16]] (19×), [[C07AB07]] (17×), [[C09DA07]] (16×), [[C09DB04]] (15×), [[A02BC05]] (14×), [[N06AX11]] (14×), [[C05CA03]] (13×), [[N06DX01]] (13×), [[N05AX12]] (13×), [[C09CA06]] (13×), [[J01FA09]] (12×), [[J01MA02]] (12×), [[C09DX01]] (12×)

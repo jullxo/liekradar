@@ -5,7 +5,7 @@ aliases: ["Incyte Biosciences Distribution B.V.", "Incyte Biosciences Distributi
 vypadky_cz_od_2019: 3
 vypadky_sk_od_2019: 3
 zdroje: ["E001", "E002", "E004", "E005"]
-generovane_utc: "2026-11-13T10:06:19Z"
+generovane_utc: "2026-11-19T05:22:20Z"
 verified: false
 ---
 # Incyte Biosciences Distribution B.V
@@ -18,7 +18,7 @@ verified: false
 
 ## Facts (with sources)
 - ČR: od 15. 4. 2019 3 výpadkov balení, za posledných 12 mesiacov 1 (to je 5.9% registrovaných balení), teraz trvá 0 [E001, A2]
-- SR: od 15. 4. 2019 3 výpadkov balení, za posledných 12 mesiacov 0 (to je 0.0% registrovaných balení), teraz trvá 2 [E005, A2]
+- SR: od 15. 4. 2019 3 výpadkov balení, za posledných 12 mesiacov 0 (to je 0.0% registrovaných balení), teraz trvá 1 [E005, A2]
 
 ## Relations
 - drží registráciu látok s výpadkami: [[L01EA05]] (5×), [[L01FF10]] (1×)

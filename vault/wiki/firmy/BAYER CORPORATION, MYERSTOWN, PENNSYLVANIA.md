@@ -5,7 +5,7 @@ aliases: ["BAYER CORPORATION, MYERSTOWN, PENNSYLVANIA", "BAYER s.r.o., Praha", "
 vypadky_cz_od_2019: 252
 vypadky_sk_od_2019: 80
 zdroje: ["E001", "E002", "E004", "E005"]
-generovane_utc: "2026-11-13T10:06:19Z"
+generovane_utc: "2026-11-19T05:22:20Z"
 verified: false
 ---
 # BAYER CORPORATION, MYERSTOWN, PENNSYLVANIA
@@ -17,7 +17,7 @@ verified: false
 - Registrované balenia: ČR 478 [E002, A1], SR 384 [E004, A1]
 
 ## Facts (with sources)
-- ČR: od 15. 4. 2019 252 výpadkov balení, za posledných 12 mesiacov 34 (to je 7.1% registrovaných balení), teraz trvá 9 [E001, A2]
+- ČR: od 15. 4. 2019 252 výpadkov balení, za posledných 12 mesiacov 34 (to je 7.1% registrovaných balení), teraz trvá 7 [E001, A2]
 - SR: od 15. 4. 2019 80 výpadkov balení, za posledných 12 mesiacov 14 (to je 3.6% registrovaných balení), teraz trvá 7 [E005, A2]
 
 ## Relations

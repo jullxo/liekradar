@@ -3,9 +3,9 @@ typ: "firma"
 firma: "almirall"
 aliases: ["Almirall Hermal GmbH", "Almirall Hermal GmbH, Reinbek", "Almirall, S.A.", "Almirall, S.A., Barcelona"]
 vypadky_cz_od_2019: 8
-vypadky_sk_od_2019: 2
+vypadky_sk_od_2019: 3
 zdroje: ["E001", "E002", "E004", "E005"]
-generovane_utc: "2026-11-13T10:06:19Z"
+generovane_utc: "2026-11-19T05:22:20Z"
 verified: false
 ---
 # Almirall, S.A., Barcelona
@@ -18,10 +18,10 @@ verified: false
 
 ## Facts (with sources)
 - ČR: od 15. 4. 2019 8 výpadkov balení, za posledných 12 mesiacov 4 (to je 3.5% registrovaných balení), teraz trvá 1 [E001, A2]
-- SR: od 15. 4. 2019 2 výpadkov balení, za posledných 12 mesiacov 1 (to je 0.9% registrovaných balení), teraz trvá 0 [E005, A2]
+- SR: od 15. 4. 2019 3 výpadkov balení, za posledných 12 mesiacov 1 (to je 0.9% registrovaných balení), teraz trvá 1 [E005, A2]
 
 ## Relations
-- drží registráciu látok s výpadkami: [[D10AF02]] (3×), [[D10AD51]] (2×), [[D05AX04]] (1×), [[D10AE01]] (1×), [[D10AF52]] (1×), [[D10BA01]] (1×), [[L04AX07]] (1×)
+- drží registráciu látok s výpadkami: [[D10AF02]] (3×), [[D10AD51]] (2×), [[D05AX04]] (1×), [[D10AE01]] (1×), [[D10AF52]] (1×), [[D10BA01]] (1×), [[L01BC52]] (1×), [[L04AX07]] (1×)
 
 ## Timeline
 | Dátum | Krajina | Udalosť | Zdroj |
@@ -31,6 +31,7 @@ verified: false
 | 2026-04-10 | SK | začiatok výpadku: Aknemycin Plus (sol der 1x25 ml (fľ.skl.hnedá)) (33163, [[D10AF52]]) | [E005, A2] |
 | 2026-02-19 | CZ | začiatok výpadku: AKNEMYCIN PLUS (0030902, [[D10AD51]]) | [E001, A2] |
 | 2026-02-19 | CZ | začiatok výpadku: AKNEMYCIN (0097514, [[D10AF02]]) | [E001, A2] |
+| 2025-05-27 | SK | začiatok výpadku: Actikerall 5 mg/g+100 mg/g (sol der 1x25 ml (fľ.skl.hnedá)) (10467, [[L01BC52]]) | [E005, A2] |
 | 2024-11-01 | CZ | začiatok výpadku: AKNEROXID (0097511, [[D10AE01]]) | [E001, A2] |
 | 2024-08-13 | SK | začiatok výpadku: Aknemycin 2000 (ung 1x25 g (tuba Al)) (97513, [[D10AF02]]) | [E005, A2] |
 | 2023-09-20 | CZ | začiatok výpadku: CURATODERM (0056582, [[D05AX04]]) | [E001, A2] |

@@ -5,7 +5,7 @@ aliases: ["Daiichi Sankyo Europe GmbH", "Daiichi Sankyo Europe GmbH, Mnichov"]
 vypadky_cz_od_2019: 10
 vypadky_sk_od_2019: 8
 zdroje: ["E001", "E002", "E004", "E005"]
-generovane_utc: "2026-11-13T10:06:19Z"
+generovane_utc: "2026-11-19T05:22:20Z"
 verified: false
 ---
 # Daiichi Sankyo Europe GmbH, Mnichov
@@ -17,7 +17,7 @@ verified: false
 - Registrované balenia: ČR 59 [E002, A1], SR 59 [E004, A1]
 
 ## Facts (with sources)
-- ČR: od 15. 4. 2019 10 výpadkov balení, za posledných 12 mesiacov 2 (to je 3.4% registrovaných balení), teraz trvá 1 [E001, A2]
+- ČR: od 15. 4. 2019 10 výpadkov balení, za posledných 12 mesiacov 2 (to je 3.4% registrovaných balení), teraz trvá 0 [E001, A2]
 - SR: od 15. 4. 2019 8 výpadkov balení, za posledných 12 mesiacov 2 (to je 3.4% registrovaných balení), teraz trvá 0 [E005, A2]
 
 ## Relations

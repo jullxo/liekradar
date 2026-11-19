@@ -5,7 +5,7 @@ aliases: ["Mylan IRE Healthcare Limited", "Mylan IRE Healthcare Limited, Dublin"
 vypadky_cz_od_2019: 363
 vypadky_sk_od_2019: 19
 zdroje: ["E001", "E002", "E004", "E005"]
-generovane_utc: "2026-11-13T10:06:19Z"
+generovane_utc: "2026-11-19T05:22:20Z"
 verified: false
 ---
 # Mylan Ireland Limited, Dublin
@@ -18,7 +18,7 @@ verified: false
 
 ## Facts (with sources)
 - ČR: od 15. 4. 2019 363 výpadkov balení, za posledných 12 mesiacov 23 (to je 0.8% registrovaných balení), teraz trvá 16 [E001, A2]
-- SR: od 15. 4. 2019 19 výpadkov balení, za posledných 12 mesiacov 4 (to je 1.5% registrovaných balení), teraz trvá 2 [E005, A2]
+- SR: od 15. 4. 2019 19 výpadkov balení, za posledných 12 mesiacov 3 (to je 1.1% registrovaných balení), teraz trvá 2 [E005, A2]
 
 ## Relations
 - drží registráciu látok s výpadkami: [[N06DX01]] (34×), [[N05AH04]] (25×), [[A10BB12]] (21×), [[A10BA02]] (19×), [[B01AB06]] (14×), [[N06AB10]] (14×), [[G04BE08]] (13×), [[N04BC05]] (12×), [[C10AA05]] (12×), [[N05CF02]] (12×), [[N02AB03]] (11×), [[N06BA09]] (11×), [[A10BB09]] (11×), [[A10BG03]] (10×), [[N02AJ13]] (10×), [[N03AX11]] (9×), [[L04AD01]] (9×), [[J05AR03]] (8×), [[R03DC03]] (8×), [[N06DA02]] (8×), [[G04BD08]] (7×), [[N02AA55]] (7×), [[L02BG04]] (7×), [[R06AX27]] (6×), [[L04AX04]] (6×)

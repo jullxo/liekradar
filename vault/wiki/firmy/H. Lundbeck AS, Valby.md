@@ -5,7 +5,7 @@ aliases: ["H. LUNDBECK A/S", "H. Lundbeck A/S", "H. Lundbeck A/S, Valby"]
 vypadky_cz_od_2019: 19
 vypadky_sk_od_2019: 6
 zdroje: ["E001", "E002", "E004", "E005"]
-generovane_utc: "2026-11-13T10:06:19Z"
+generovane_utc: "2026-11-19T05:22:20Z"
 verified: false
 ---
 # H. Lundbeck AS, Valby
@@ -18,7 +18,7 @@ verified: false
 
 ## Facts (with sources)
 - ČR: od 15. 4. 2019 19 výpadkov balení, za posledných 12 mesiacov 4 (to je 2.5% registrovaných balení), teraz trvá 0 [E001, A2]
-- SR: od 15. 4. 2019 6 výpadkov balení, za posledných 12 mesiacov 2 (to je 1.6% registrovaných balení), teraz trvá 0 [E005, A2]
+- SR: od 15. 4. 2019 6 výpadkov balení, za posledných 12 mesiacov 1 (to je 0.8% registrovaných balení), teraz trvá 0 [E005, A2]
 
 ## Relations
 - drží registráciu látok s výpadkami: [[N06AB10]] (9×), [[N06AX26]] (5×), [[N06DX01]] (5×), [[N05AF01]] (2×), [[N05AF05]] (2×), [[N02CD05]] (1×), [[N06AB04]] (1×)
