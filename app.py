@@ -161,17 +161,17 @@ TEXTY = {
                "Kde na trhu chybí dodavatel a jak spolehlivě dodávají jednotliví výrobci.",
                "Where the market lacks a supplier and how reliably each manufacturer delivers."),
     "t_krajina": ("Krajina", "Země", "Country"),
-    "t_prefix": ("Skupina liekov na porovnanie výrobcov (ATC kód, napr. J01 alebo J01CR)",
-                 "Skupina léků pro porovnání výrobců (ATC kód, např. J01 nebo J01CR)",
-                 "Drug group for comparing manufacturers (ATC code, e.g. J01 or J01CR)"),
+    "t_prefix": ("ATC kód skupiny liekov (napr. J01 alebo J01CR)",
+                 "ATC kód skupiny léků (např. J01 nebo J01CR)",
+                 "ATC code of the drug group (e.g. J01 or J01CR)"),
     "g2_kicker": ("Príležitosti", "Příležitosti", "Opportunities"),
     "g2_title": ("Kde na trhu chýba dodávateľ", "Kde na trhu chybí dodavatel", "Where the market lacks a supplier"),
     "g2_desc": ("Látky, ktoré chýbajú aspoň 8 týždňov a dodávajú ich najviac dvaja ďalší výrobcovia. "
-                "Pre výrobcu príležitosť, pre lekáreň riziko.",
+                "Pre výrobcu príležitosť, pre lekáreň riziko. Prehľad za celý trh, všetky skupiny liekov.",
                 "Látky, které chybí alespoň 8 týdnů a dodávají je nejvýše dva další výrobci. "
-                "Pro výrobce příležitost, pro lékárnu riziko.",
+                "Pro výrobce příležitost, pro lékárnu riziko. Přehled za celý trh, všechny skupiny léků.",
                 "Substances short for at least 8 weeks with no more than two other suppliers. "
-                "An opportunity for manufacturers, a risk for pharmacies."),
+                "An opportunity for manufacturers, a risk for pharmacies. Whole market, all drug groups."),
     "g2_nic": ("Momentálne nie sú žiadne také látky.", "Momentálně nejsou žádné takové látky.", "No such substances right now."),
     "c_chybajuce": ("Chýbajúce balenia", "Chybějící balení", "Packs unavailable"),
     "c_najdlhsi": ("Najdlhší výpadok (dni)", "Nejdelší výpadek (dny)", "Longest shortage (days)"),
@@ -179,7 +179,8 @@ TEXTY = {
     "c_dodavatelia": ("Ďalší dodávatelia", "Další dodavatelé", "Other suppliers"),
     "c_trh": ("Trh (balení mesačne)", "Trh (balení měsíčně)", "Market (packs/month)"),
     "k2_kicker": ("Konkurencia", "Konkurence", "Competitors"),
-    "k2_title": ("Výrobcovia v skupine {p}", "Výrobci ve skupině {p}", "Manufacturers in group {p}"),
+    "k2_title": ("Výrobcovia v skupine liekov", "Výrobci ve skupině léků", "Manufacturers in a drug group"),
+    "k2_vysledky": ("Výsledky pre ATC kód **{p}**", "Výsledky pro ATC kód **{p}**", "Results for ATC code **{p}**"),
     "k2_desc": ("Ako spoľahlivo dodávajú a kto získava podiel na trhu, keď ostatným chýba tovar.",
                 "Jak spolehlivě dodávají a kdo získává podíl na trhu, když ostatním chybí zboží.",
                 "How reliably they deliver and who gains share when others run short."),
@@ -822,8 +823,6 @@ def cast_latka() -> None:
 def cast_trh() -> None:
     sekcia(t("t_kicker"), t("t_title"), t("t_desc"))
     krajina = st.radio(t("t_krajina"), ["CZ", "SK"], format_func=krajiny().get, horizontal=True)
-    prefix = st.text_input(t("t_prefix"), value=st.session_state["atc"][:5]).strip().upper()
-
     sekcia(t("g2_kicker"), t("g2_title"), t("g2_desc"), maly=True)
     med = medzery(krajina, 15)
     if med.empty:
@@ -836,7 +835,8 @@ def cast_trh() -> None:
         })
         st.caption(med["zdroj"].iloc[0])
 
-    sekcia(t("k2_kicker"), t("k2_title", p=prefix), t("k2_desc"), maly=True)
+    sekcia(t("k2_kicker"), t("k2_title"), t("k2_desc"), maly=True)
+    prefix = st.text_input(t("t_prefix"), value=st.session_state["atc"][:5]).strip().upper()
     if len(prefix) < 3:
         st.info(t("k2_kratky"))
         return
@@ -844,6 +844,7 @@ def cast_trh() -> None:
     if kon.empty:
         st.info(t("k2_nic"))
         return
+    st.markdown(t("k2_vysledky", p=prefix))
     stlpce = [c for c in ["nazov", "registrovane_balenia", "vypadky_od_2019", "vypadky_12m", "teraz_vo_vypadku",
                           "median_dlzky_dni", "podiel_dodavok_12m", "zmena_podielu_pb", "vypadkov_konkurencie"] if c in kon]
     st.dataframe(kon[stlpce].head(20), hide_index=True, width="stretch", column_config={
