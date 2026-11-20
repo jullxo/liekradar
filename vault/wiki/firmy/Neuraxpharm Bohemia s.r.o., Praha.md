@@ -5,7 +5,7 @@ aliases: ["Neuraxpharm Bohemia s.r.o.", "Neuraxpharm Bohemia s.r.o., Praha", "Ne
 vypadky_cz_od_2019: 83
 vypadky_sk_od_2019: 43
 zdroje: ["E001", "E002", "E004", "E005"]
-generovane_utc: "2026-11-19T05:22:20Z"
+generovane_utc: "2026-11-20T05:17:23Z"
 verified: false
 ---
 # Neuraxpharm Bohemia s.r.o., Praha
@@ -14,7 +14,7 @@ verified: false
 
 ## Identifiers
 - Názvy v registroch: Neuraxpharm Bohemia s.r.o., Neuraxpharm Bohemia s.r.o., Praha, Neuraxpharm Pharmaceuticals, S.L., Neuraxpharm Pharmaceuticals, S.L., Barcelona, neuraxpharm Arzneimittel GmbH, Langenfeld
-- Registrované balenia: ČR 540 [E002, A1], SR 348 [E004, A1]
+- Registrované balenia: ČR 540 [E002, A1], SR 349 [E004, A1]
 
 ## Facts (with sources)
 - ČR: od 15. 4. 2019 83 výpadkov balení, za posledných 12 mesiacov 16 (to je 3.0% registrovaných balení), teraz trvá 13 [E001, A2]

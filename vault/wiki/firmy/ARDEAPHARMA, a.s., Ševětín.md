@@ -5,7 +5,7 @@ aliases: ["ARDEAPHARMA, a.s., Ševětín"]
 vypadky_cz_od_2019: 15
 vypadky_sk_od_2019: 0
 zdroje: ["E001", "E002", "E004", "E005"]
-generovane_utc: "2026-11-13T10:06:19Z"
+generovane_utc: "2026-11-20T05:17:23Z"
 verified: false
 ---
 # ARDEAPHARMA, a.s., Ševětín
@@ -17,7 +17,7 @@ verified: false
 - Registrované balenia: ČR 235 [E002, A1], SR 0 [E004, A1]
 
 ## Facts (with sources)
-- ČR: od 15. 4. 2019 15 výpadkov balení, za posledných 12 mesiacov 2 (to je 0.9% registrovaných balení), teraz trvá 13 [E001, A2]
+- ČR: od 15. 4. 2019 15 výpadkov balení, za posledných 12 mesiacov 0 (to je 0.0% registrovaných balení), teraz trvá 13 [E001, A2]
 - SR: od 15. 4. 2019 0 výpadkov balení, za posledných 12 mesiacov 0 (to je 0.0% registrovaných balení), teraz trvá 0 [E005, A2]
 
 ## Relations

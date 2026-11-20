@@ -2,15 +2,15 @@
 
 Držitelia registrácie s aspoň 3 výpadkami od 15. 4. 2019, zoradení podľa počtu výpadkov. Generované z dát, neupravovať ručne.
 
-- [[Zentiva, k.s., Praha]] – 1972 výpadkov
+- [[Zentiva, k.s., Praha]] – 1973 výpadkov
 - [[Teva B.V]] – 1690 výpadkov
-- [[Sandoz s.r.o., Praha]] – 1578 výpadkov
-- [[KRKA, d.d., Novo mesto]] – 981 výpadkov
+- [[Sandoz s.r.o., Praha]] – 1582 výpadkov
+- [[KRKA, d.d., Novo mesto]] – 982 výpadkov
 - [[Fresenius Kabi s.r.o]] – 932 výpadkov
 - [[B.Braun Melsungen AG]] – 786 výpadkov
-- [[MEDOCHEMIE IBERIA, S.A., Lisabon]] – 756 výpadkov
+- [[MEDOCHEMIE IBERIA, S.A., Lisabon]] – 759 výpadkov
 - [[VIATRIS LIMITED, Dublin]] – 668 výpadkov
-- [[ratiopharm GmbH]] – 546 výpadkov
+- [[ratiopharm GmbH]] – 547 výpadkov
 - [[Egis Pharmaceuticals PLC, Budapešť]] – 394 výpadkov
 - [[Mylan Ireland Limited, Dublin]] – 382 výpadkov
 - [[Sanofi Winthrop Industrie]] – 373 výpadkov
@@ -22,7 +22,7 @@ Držitelia registrácie s aspoň 3 výpadkami od 15. 4. 2019, zoradení podľa p
 - [[Pfizer Europe MA EEIG]] – 293 výpadkov
 - [[Glenmark Pharmaceuticals s.r.o]] – 270 výpadkov
 - [[MERCK SHARP & DOHME LTD., NEW JERSEY]] – 238 výpadkov
-- [[Lek Pharmaceuticals d.d., Ljubljana]] – 231 výpadkov
+- [[Lek Pharmaceuticals d.d., Ljubljana]] – 232 výpadkov
 - [[Gedeon Richter Plc., Budapešť]] – 205 výpadkov
 - [[Angelini Pharma Česká republika s.r.o., Brno]] – 198 výpadkov
 - [[G.L. Pharma GmbH]] – 190 výpadkov
@@ -44,7 +44,7 @@ Držitelia registrácie s aspoň 3 výpadkami od 15. 4. 2019, zoradení podľa p
 - [[BB Pharma a.s]] – 108 výpadkov
 - [[Laboratoires Thea, Clermont-Ferrand]] – 104 výpadkov
 - [[Les Laboratoires Servier, Suresnes cedex]] – 100 výpadkov
-- [[EBEWE Pharma Ges.m.b.H Nfg.KG, Unterach]] – 97 výpadkov
+- [[EBEWE Pharma Ges.m.b.H Nfg.KG, Unterach]] – 99 výpadkov
 - [[Desitin Arzneimittel GmbH, Hamburg]] – 96 výpadkov
 - [[Instituto Grifols, S.A]] – 91 výpadkov
 - [[Menarini International Operations Luxembourg S.A., Luxembourg]] – 89 výpadkov
@@ -61,8 +61,8 @@ Držitelia registrácie s aspoň 3 výpadkami od 15. 4. 2019, zoradení podľa p
 - [[Baxalta Innovations GmbH, Vídeň]] – 64 výpadkov
 - [[Orion Corporation, Espoo]] – 63 výpadkov
 - [[Janssen-Cilag International NV]] – 62 výpadkov
+- [[Dr. Falk Pharma GmbH, Freiburg]] – 62 výpadkov
 - [[Ferring-Léčiva, a.s., Jesenice u Prahy]] – 62 výpadkov
-- [[Dr. Falk Pharma GmbH, Freiburg]] – 61 výpadkov
 - [[Reckitt Benckiser (Czech Republic), spol. s r.o., Praha]] – 60 výpadkov
 - [[+pharma arzneimittel gmbh, Graz]] – 59 výpadkov
 - [[Guerbet,  Roissy CdG Cedex]] – 58 výpadkov

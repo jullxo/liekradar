@@ -5,7 +5,7 @@ aliases: ["Vipharm S.A.", "Vipharm S.A., Ożarów Mazowiecki"]
 vypadky_cz_od_2019: 59
 vypadky_sk_od_2019: 79
 zdroje: ["E001", "E002", "E004", "E005"]
-generovane_utc: "2026-11-13T10:06:19Z"
+generovane_utc: "2026-11-20T05:17:23Z"
 verified: false
 ---
 # Vipharm S.A., Ożarów Mazowiecki
@@ -18,7 +18,7 @@ verified: false
 
 ## Facts (with sources)
 - ČR: od 15. 4. 2019 59 výpadkov balení, za posledných 12 mesiacov 16 (to je 3.0% registrovaných balení), teraz trvá 8 [E001, A2]
-- SR: od 15. 4. 2019 79 výpadkov balení, za posledných 12 mesiacov 15 (to je 2.9% registrovaných balení), teraz trvá 11 [E005, A2]
+- SR: od 15. 4. 2019 79 výpadkov balení, za posledných 12 mesiacov 15 (to je 2.9% registrovaných balení), teraz trvá 9 [E005, A2]
 
 ## Relations
 - drží registráciu látok s výpadkami: [[N05AH04]] (32×), [[N05AX12]] (18×), [[N06DX01]] (8×), [[N02BF02]] (7×), [[N06DA02]] (7×), [[N06AB10]] (7×), [[A10BD08]] (6×), [[N05AH03]] (5×), [[L01EG02]] (5×), [[N04BC04]] (4×), [[V03AC03]] (4×), [[L02BG04]] (3×), [[N02BF01]] (3×), [[L02BG06]] (3×), [[N05AX08]] (3×), [[L01EX01]] (3×), [[A10BH02]] (3×), [[A10BH01]] (3×), [[L01EB02]] (2×), [[L02BG03]] (2×), [[L02BB03]] (2×), [[L01XX35]] (2×), [[N04BA03]] (2×), [[M05BA08]] (2×), [[L02BA03]] (1×)

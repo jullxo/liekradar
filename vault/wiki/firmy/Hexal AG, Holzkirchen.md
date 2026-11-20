@@ -5,7 +5,7 @@ aliases: ["Hexal AG", "Hexal AG, Holzkirchen"]
 vypadky_cz_od_2019: 174
 vypadky_sk_od_2019: 0
 zdroje: ["E001", "E002", "E004", "E005"]
-generovane_utc: "2026-11-13T10:06:19Z"
+generovane_utc: "2026-11-20T05:17:23Z"
 verified: false
 ---
 # Hexal AG, Holzkirchen
@@ -17,7 +17,7 @@ verified: false
 - Registrované balenia: ČR 233 [E002, A1], SR 89 [E004, A1]
 
 ## Facts (with sources)
-- ČR: od 15. 4. 2019 174 výpadkov balení, za posledných 12 mesiacov 34 (to je 14.6% registrovaných balení), teraz trvá 15 [E001, A2]
+- ČR: od 15. 4. 2019 174 výpadkov balení, za posledných 12 mesiacov 33 (to je 14.2% registrovaných balení), teraz trvá 15 [E001, A2]
 - SR: od 15. 4. 2019 0 výpadkov balení, za posledných 12 mesiacov 0 (to je 0.0% registrovaných balení), teraz trvá 0 [E005, A2]
 
 ## Relations

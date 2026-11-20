@@ -5,7 +5,7 @@ aliases: ["CURIUM PET FRANCE, Saint-Beauzire", "CURIUM PET France", "Curium Aust
 vypadky_cz_od_2019: 119
 vypadky_sk_od_2019: 6
 zdroje: ["E001", "E002", "E004", "E005"]
-generovane_utc: "2026-11-18T02:18:53Z"
+generovane_utc: "2026-11-20T05:17:23Z"
 verified: false
 ---
 # Curium Netherlands B.V., Petten
@@ -17,7 +17,7 @@ verified: false
 - Registrované balenia: ČR 100 [E002, A1], SR 65 [E004, A1]
 
 ## Facts (with sources)
-- ČR: od 15. 4. 2019 119 výpadkov balení, za posledných 12 mesiacov 16 (to je 16.0% registrovaných balení), teraz trvá 6 [E001, A2]
+- ČR: od 15. 4. 2019 119 výpadkov balení, za posledných 12 mesiacov 16 (to je 16.0% registrovaných balení), teraz trvá 0 [E001, A2]
 - SR: od 15. 4. 2019 6 výpadkov balení, za posledných 12 mesiacov 0 (to je 0.0% registrovaných balení), teraz trvá 5 [E005, A2]
 
 ## Relations

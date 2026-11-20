@@ -5,7 +5,7 @@ aliases: ["Fresenius Kabi AB", "Fresenius Kabi AB, Uppsala", "Fresenius Kabi Aus
 vypadky_cz_od_2019: 757
 vypadky_sk_od_2019: 175
 zdroje: ["E001", "E002", "E004", "E005"]
-generovane_utc: "2026-11-18T02:18:53Z"
+generovane_utc: "2026-11-20T05:17:23Z"
 verified: false
 ---
 # Fresenius Kabi s.r.o
@@ -17,7 +17,7 @@ verified: false
 - Registrované balenia: ČR 935 [E002, A1], SR 915 [E004, A1]
 
 ## Facts (with sources)
-- ČR: od 15. 4. 2019 757 výpadkov balení, za posledných 12 mesiacov 135 (to je 14.4% registrovaných balení), teraz trvá 22 [E001, A2]
+- ČR: od 15. 4. 2019 757 výpadkov balení, za posledných 12 mesiacov 135 (to je 14.4% registrovaných balení), teraz trvá 20 [E001, A2]
 - SR: od 15. 4. 2019 175 výpadkov balení, za posledných 12 mesiacov 44 (to je 4.8% registrovaných balení), teraz trvá 8 [E005, A2]
 
 ## Relations

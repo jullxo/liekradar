@@ -2,10 +2,10 @@
 typ: "firma"
 firma: "zentiva"
 aliases: ["Zentiva Pharma GmbH, Frankfurt nad Mohanem", "Zentiva a.s.", "Zentiva a.s., Bratislava", "Zentiva k.s.", "Zentiva, k.s.", "Zentiva, k.s., Praha"]
-vypadky_cz_od_2019: 1154
+vypadky_cz_od_2019: 1155
 vypadky_sk_od_2019: 818
 zdroje: ["E001", "E002", "E004", "E005"]
-generovane_utc: "2026-11-19T05:22:20Z"
+generovane_utc: "2026-11-20T05:17:23Z"
 verified: false
 ---
 # Zentiva, k.s., Praha
@@ -17,7 +17,7 @@ verified: false
 - Registrované balenia: ČR 3018 [E002, A1], SR 1995 [E004, A1]
 
 ## Facts (with sources)
-- ČR: od 15. 4. 2019 1154 výpadkov balení, za posledných 12 mesiacov 143 (to je 4.7% registrovaných balení), teraz trvá 55 [E001, A2]
+- ČR: od 15. 4. 2019 1155 výpadkov balení, za posledných 12 mesiacov 144 (to je 4.8% registrovaných balení), teraz trvá 56 [E001, A2]
 - SR: od 15. 4. 2019 818 výpadkov balení, za posledných 12 mesiacov 157 (to je 7.9% registrovaných balení), teraz trvá 32 [E005, A2]
 
 ## Relations
@@ -26,10 +26,11 @@ verified: false
 ## Timeline
 | Dátum | Krajina | Udalosť | Zdroj |
 |---|---|---|---|
-| 2026-11-18 | CZ | začiatok výpadku: PALGOTAL (0260627, [[N02AJ13]]) | [E001, A2] |
-| 2026-11-18 | CZ | začiatok výpadku: KAPIDIN (0200154, [[C08CA13]]) | [E001, A2] |
+| 2026-11-20 | CZ | začiatok výpadku: RISPEN (0042525, [[N05AX08]]) | [E001, A2] |
 | 2026-11-18 | CZ | začiatok výpadku: CARZAP HCT (0171563, [[C09DA06]]) | [E001, A2] |
+| 2026-11-18 | CZ | začiatok výpadku: PALGOTAL (0260627, [[N02AJ13]]) | [E001, A2] |
 | 2026-11-18 | CZ | začiatok výpadku: MULADO PROLONG (0258706, [[A10BA02]]) | [E001, A2] |
+| 2026-11-18 | CZ | začiatok výpadku: KAPIDIN (0200154, [[C08CA13]]) | [E001, A2] |
 | 2026-11-13 | CZ | začiatok výpadku: TEZEFORT (0206205, [[C09DB04]]) | [E001, A2] |
 | 2026-11-11 | CZ | začiatok výpadku: BATRAFEN (0272915, [[D01AE14]]) | [E001, A2] |
 | 2026-11-10 | CZ | začiatok výpadku: GUAJACURAN (0094234, [[R05CA03]]) | [E001, A2] |
@@ -37,10 +38,9 @@ verified: false
 | 2026-11-09 | CZ | začiatok výpadku: ACIDUM FOLICUM LÉČIVA (0243014, [[B03BB01]]) | [E001, A2] |
 | 2026-11-09 | CZ | začiatok výpadku: TEZEFORT (0206208, [[C09DB04]]) | [E001, A2] |
 | 2026-11-09 | CZ | začiatok výpadku: CELASKON (0272941, [[A11GA01]]) | [E001, A2] |
+| 2026-11-06 | CZ | začiatok výpadku: MOPETIA (0270631, [[N05AX13]]) | [E001, A2] |
 | 2026-11-06 | CZ | začiatok výpadku: CARAMLO (0203395, [[C09DB07]]) | [E001, A2] |
 | 2026-11-06 | CZ | začiatok výpadku: HYPABLO (0274185, [[C07AB02]]) | [E001, A2] |
-| 2026-11-06 | CZ | začiatok výpadku: MOPETIA (0270631, [[N05AX13]]) | [E001, A2] |
-| 2026-11-05 | SK | začiatok výpadku: Xanirva 2,5 mg filmom obalené tablety (tbl flm 56x2,5 mg (blis.PVC/Al)) (4676D, [[B01AF01]]) | [E005, A2] |
 
 ## Analyst notes (inference, clearly marked)
 <!-- Sem píšu agenti a analytik. Generátor túto sekciu nikdy neprepíše.
