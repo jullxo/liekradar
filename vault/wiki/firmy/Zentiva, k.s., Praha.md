@@ -5,7 +5,7 @@ aliases: ["Zentiva Pharma GmbH, Frankfurt nad Mohanem", "Zentiva a.s.", "Zentiva
 vypadky_cz_od_2019: 1155
 vypadky_sk_od_2019: 818
 zdroje: ["E001", "E002", "E004", "E005"]
-generovane_utc: "2026-11-20T05:17:23Z"
+generovane_utc: "2026-11-21T05:10:05Z"
 verified: false
 ---
 # Zentiva, k.s., Praha
@@ -17,7 +17,7 @@ verified: false
 - Registrované balenia: ČR 3018 [E002, A1], SR 1995 [E004, A1]
 
 ## Facts (with sources)
-- ČR: od 15. 4. 2019 1155 výpadkov balení, za posledných 12 mesiacov 144 (to je 4.8% registrovaných balení), teraz trvá 56 [E001, A2]
+- ČR: od 15. 4. 2019 1155 výpadkov balení, za posledných 12 mesiacov 139 (to je 4.6% registrovaných balení), teraz trvá 56 [E001, A2]
 - SR: od 15. 4. 2019 818 výpadkov balení, za posledných 12 mesiacov 157 (to je 7.9% registrovaných balení), teraz trvá 32 [E005, A2]
 
 ## Relations

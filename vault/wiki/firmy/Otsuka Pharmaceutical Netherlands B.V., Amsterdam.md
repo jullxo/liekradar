@@ -5,7 +5,7 @@ aliases: ["Otsuka Novel Products GmbH", "Otsuka Pharmaceutical Netherlands B.V."
 vypadky_cz_od_2019: 5
 vypadky_sk_od_2019: 7
 zdroje: ["E001", "E002", "E004", "E005"]
-generovane_utc: "2026-11-20T05:17:23Z"
+generovane_utc: "2026-11-21T05:10:05Z"
 verified: false
 ---
 # Otsuka Pharmaceutical Netherlands B.V., Amsterdam
@@ -18,7 +18,7 @@ verified: false
 
 ## Facts (with sources)
 - ČR: od 15. 4. 2019 5 výpadkov balení, za posledných 12 mesiacov 1 (to je 1.0% registrovaných balení), teraz trvá 0 [E001, A2]
-- SR: od 15. 4. 2019 7 výpadkov balení, za posledných 12 mesiacov 5 (to je 5.5% registrovaných balení), teraz trvá 3 [E005, A2]
+- SR: od 15. 4. 2019 7 výpadkov balení, za posledných 12 mesiacov 3 (to je 3.3% registrovaných balení), teraz trvá 3 [E005, A2]
 
 ## Relations
 - drží registráciu látok s výpadkami: [[N05AX12]] (9×), [[C03XA01]] (2×), [[N05AX16]] (1×)

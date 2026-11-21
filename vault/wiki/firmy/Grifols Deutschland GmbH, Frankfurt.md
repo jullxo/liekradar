@@ -5,7 +5,7 @@ aliases: ["Grifols Deutschland GmbH", "Grifols Deutschland GmbH, Frankfurt"]
 vypadky_cz_od_2019: 12
 vypadky_sk_od_2019: 16
 zdroje: ["E001", "E002", "E004", "E005"]
-generovane_utc: "2026-11-13T10:06:19Z"
+generovane_utc: "2026-11-21T05:10:05Z"
 verified: false
 ---
 # Grifols Deutschland GmbH, Frankfurt
@@ -18,7 +18,7 @@ verified: false
 
 ## Facts (with sources)
 - ČR: od 15. 4. 2019 12 výpadkov balení, za posledných 12 mesiacov 7 (to je 29.2% registrovaných balení), teraz trvá 1 [E001, A2]
-- SR: od 15. 4. 2019 16 výpadkov balení, za posledných 12 mesiacov 5 (to je 55.6% registrovaných balení), teraz trvá 0 [E005, A2]
+- SR: od 15. 4. 2019 16 výpadkov balení, za posledných 12 mesiacov 4 (to je 44.4% registrovaných balení), teraz trvá 0 [E005, A2]
 
 ## Relations
 - drží registráciu látok s výpadkami: [[J06BA02]] (28×)

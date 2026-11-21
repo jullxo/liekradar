@@ -5,7 +5,7 @@ aliases: ["TS Pharma s.r.o."]
 vypadky_cz_od_2019: 0
 vypadky_sk_od_2019: 33
 zdroje: ["E001", "E002", "E004", "E005"]
-generovane_utc: "2026-11-13T10:06:19Z"
+generovane_utc: "2026-11-21T05:10:05Z"
 verified: false
 ---
 # TS Pharma s.r.o
@@ -18,7 +18,7 @@ verified: false
 
 ## Facts (with sources)
 - ČR: od 15. 4. 2019 0 výpadkov balení, za posledných 12 mesiacov 0 (to je 0.0% registrovaných balení), teraz trvá 0 [E001, A2]
-- SR: od 15. 4. 2019 33 výpadkov balení, za posledných 12 mesiacov 5 (to je 10.2% registrovaných balení), teraz trvá 2 [E005, A2]
+- SR: od 15. 4. 2019 33 výpadkov balení, za posledných 12 mesiacov 4 (to je 8.2% registrovaných balení), teraz trvá 2 [E005, A2]
 
 ## Relations
 - drží registráciu látok s výpadkami: [[C09BB10]] (22×), [[N07CA01]] (9×), [[C01BC03]] (2×)

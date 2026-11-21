@@ -5,7 +5,7 @@ aliases: ["Glaxo Group Limited, Brentford"]
 vypadky_cz_od_2019: 39
 vypadky_sk_od_2019: 0
 zdroje: ["E001", "E002", "E004", "E005"]
-generovane_utc: "2026-11-13T10:06:19Z"
+generovane_utc: "2026-11-21T05:10:05Z"
 verified: false
 ---
 # Glaxo Group Limited, Brentford
@@ -17,7 +17,7 @@ verified: false
 - Registrované balenia: ČR 122 [E002, A1], SR 0 [E004, A1]
 
 ## Facts (with sources)
-- ČR: od 15. 4. 2019 39 výpadkov balení, za posledných 12 mesiacov 7 (to je 5.7% registrovaných balení), teraz trvá 2 [E001, A2]
+- ČR: od 15. 4. 2019 39 výpadkov balení, za posledných 12 mesiacov 7 (to je 5.7% registrovaných balení), teraz trvá 1 [E001, A2]
 - SR: od 15. 4. 2019 0 výpadkov balení, za posledných 12 mesiacov 0 (to je 0.0% registrovaných balení), teraz trvá 0 [E005, A2]
 
 ## Relations

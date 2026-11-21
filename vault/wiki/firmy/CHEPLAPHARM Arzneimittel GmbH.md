@@ -2,10 +2,10 @@
 typ: "firma"
 firma: "cheplapharm"
 aliases: ["CHEPLAPHARM Arzneimittel GmbH", "CHEPLAPHARM Arzneimittel GmbH, Greifswald", "CHEPLAPHARM Registration GmbH", "CHEPLAPHARM Registration GmbH, Lörrach"]
-vypadky_cz_od_2019: 66
+vypadky_cz_od_2019: 67
 vypadky_sk_od_2019: 57
 zdroje: ["E001", "E002", "E004", "E005"]
-generovane_utc: "2026-11-13T10:06:19Z"
+generovane_utc: "2026-11-21T05:10:05Z"
 verified: false
 ---
 # CHEPLAPHARM Arzneimittel GmbH
@@ -17,15 +17,16 @@ verified: false
 - Registrované balenia: ČR 156 [E002, A1], SR 255 [E004, A1]
 
 ## Facts (with sources)
-- ČR: od 15. 4. 2019 66 výpadkov balení, za posledných 12 mesiacov 8 (to je 5.1% registrovaných balení), teraz trvá 5 [E001, A2]
-- SR: od 15. 4. 2019 57 výpadkov balení, za posledných 12 mesiacov 7 (to je 2.7% registrovaných balení), teraz trvá 3 [E005, A2]
+- ČR: od 15. 4. 2019 67 výpadkov balení, za posledných 12 mesiacov 9 (to je 5.8% registrovaných balení), teraz trvá 6 [E001, A2]
+- SR: od 15. 4. 2019 57 výpadkov balení, za posledných 12 mesiacov 7 (to je 2.7% registrovaných balení), teraz trvá 2 [E005, A2]
 
 ## Relations
-- drží registráciu látok s výpadkami: [[N05AH03]] (46×), [[C02CA06]] (22×), [[N05AH04]] (8×), [[J01CA04]] (7×), [[B02AA02]] (6×), [[D10AF52]] (6×), [[D07AB02]] (5×), [[L01DB01]] (5×), [[C07AB05]] (3×), [[L01XX05]] (2×), [[N03AE01]] (2×), [[J05AB06]] (2×), [[A05BA03]] (1×), [[C01DX12]] (1×), [[G01AA02]] (1×), [[C09BA08]] (1×), [[C09DA06]] (1×), [[C07AB08]] (1×), [[C09AA08]] (1×), [[N07AA03]] (1×), [[S01LA01]] (1×)
+- drží registráciu látok s výpadkami: [[N05AH03]] (47×), [[C02CA06]] (22×), [[N05AH04]] (8×), [[J01CA04]] (7×), [[B02AA02]] (6×), [[D10AF52]] (6×), [[D07AB02]] (5×), [[L01DB01]] (5×), [[C07AB05]] (3×), [[L01XX05]] (2×), [[N03AE01]] (2×), [[J05AB06]] (2×), [[A05BA03]] (1×), [[C01DX12]] (1×), [[G01AA02]] (1×), [[C09BA08]] (1×), [[C09DA06]] (1×), [[C07AB08]] (1×), [[C09AA08]] (1×), [[N07AA03]] (1×), [[S01LA01]] (1×)
 
 ## Timeline
 | Dátum | Krajina | Udalosť | Zdroj |
 |---|---|---|---|
+| 2026-11-21 | CZ | začiatok výpadku: ZYPADHERA (0500872, [[N05AH03]]) | [E001, A2] |
 | 2026-09-30 | SK | začiatok výpadku: ZYPADHERA 210 mg prášok a rozpúšťadlo na injekčnú suspenziu s predĺženým uvoľňovaním (plu igf 1x210 mg (liek.inj.skl.) +1x3 ml solv.(liek.inj.skl.)) (64306, [[N05AH03]]) | [E005, A2] |
 | 2026-09-24 | SK | začiatok výpadku: Myocet liposomal 50 mg prášok, disperzia a rozpúšťadlo na koncentrát pre infúznu disperziu (plv dct 2xset (50 mg prášok+1,9 ml lip.+3 ml tlm.roztoku) (liek.inj.skl.)) (42120, [[L01DB01]]) | [E005, A2] |
 | 2026-09-20 | SK | začiatok výpadku: ZYPADHERA 300 mg prášok a rozpúšťadlo na injekčnú suspenziu s predĺženým uvoľňovaním (plu igf 1x300 mg (liek.inj.skl.) +1x3 ml solv.(liek.inj.skl.)) (64307, [[N05AH03]]) | [E005, A2] |
@@ -40,7 +41,6 @@ verified: false
 | 2025-12-16 | CZ | začiatok výpadku: LITALIR (0266572, [[L01XX05]]) | [E001, A2] |
 | 2025-12-15 | CZ | začiatok výpadku: EXACYL (0252395, [[B02AA02]]) | [E001, A2] |
 | 2025-12-10 | CZ | začiatok výpadku: PIMAFUCIN (0259424, [[G01AA02]]) | [E001, A2] |
-| 2025-12-09 | SK | začiatok výpadku: Seroquel XR 200 mg (tbl plg 60(6x10)x200 mg (blis.PCTFE/PVC/Al)) (43540, [[N05AH04]]) | [E005, A2] |
 
 ## Analyst notes (inference, clearly marked)
 <!-- Sem píšu agenti a analytik. Generátor túto sekciu nikdy neprepíše.

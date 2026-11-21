@@ -5,7 +5,7 @@ aliases: ["VIATRIS HEALTHCARE LIMITED, Dublin", "VIATRIS LIMITED, Dublin", "Viat
 vypadky_cz_od_2019: 275
 vypadky_sk_od_2019: 393
 zdroje: ["E001", "E002", "E004", "E005"]
-generovane_utc: "2026-11-20T05:17:23Z"
+generovane_utc: "2026-11-21T05:10:05Z"
 verified: false
 ---
 # VIATRIS LIMITED, Dublin
@@ -17,8 +17,8 @@ verified: false
 - Registrované balenia: ČR 3970 [E002, A1], SR 2767 [E004, A1]
 
 ## Facts (with sources)
-- ČR: od 15. 4. 2019 275 výpadkov balení, za posledných 12 mesiacov 99 (to je 2.5% registrovaných balení), teraz trvá 56 [E001, A2]
-- SR: od 15. 4. 2019 393 výpadkov balení, za posledných 12 mesiacov 53 (to je 1.9% registrovaných balení), teraz trvá 24 [E005, A2]
+- ČR: od 15. 4. 2019 275 výpadkov balení, za posledných 12 mesiacov 99 (to je 2.5% registrovaných balení), teraz trvá 55 [E001, A2]
+- SR: od 15. 4. 2019 393 výpadkov balení, za posledných 12 mesiacov 52 (to je 1.9% registrovaných balení), teraz trvá 21 [E005, A2]
 
 ## Relations
 - drží registráciu látok s výpadkami: [[N05AH04]] (33×), [[C10BA04]] (23×), [[N05AH03]] (23×), [[A09AA02]] (22×), [[J01FA09]] (22×), [[B01AB06]] (22×), [[C09AA10]] (20×), [[N07CA01]] (20×), [[N02BF02]] (17×), [[N06AB08]] (16×), [[N05BA12]] (15×), [[N06DA02]] (13×), [[G04BE03]] (13×), [[C10BA06]] (12×), [[C08CA01]] (10×), [[C01CA24]] (10×), [[C10AB05]] (10×), [[C10AA05]] (9×), [[B01AF01]] (9×), [[A16AX01]] (9×), [[C02AC05]] (9×), [[L04AD01]] (8×), [[N04BC04]] (8×), [[N06AX16]] (8×), [[N03AX18]] (8×)

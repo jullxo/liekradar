@@ -492,7 +492,7 @@ Rozcestník všetkých látok s výpadkom od 15. 4. 2019. Generované z dát, ne
 - [[G03DA02]] MEDROXYPROGESTERON – výpadky ČR 3, SR 0
 - [[G03DA04]] PROGESTERON – výpadky ČR 10, SR 4
 - [[G03DB01]] DYDROGESTERON – výpadky ČR 1, SR 0
-- [[G03DB08]] DIENOGEST – výpadky ČR 3, SR 2
+- [[G03DB08]] DIENOGEST – výpadky ČR 3, SR 3
 - [[G03DC02]] NORETHISTERON – výpadky ČR 2, SR 1
 - [[G03DC03]] LYNESTRENOL – výpadky ČR 1, SR 0
 - [[G03EA02]] TESTOSTERON A ESTROGEN – výpadky ČR 2, SR 0
@@ -535,7 +535,7 @@ Rozcestník všetkých látok s výpadkom od 15. 4. 2019. Generované z dát, ne
 - [[G04CA02]] TAMSULOSIN – výpadky ČR 40, SR 6
 - [[G04CA03]] TERAZOSIN – výpadky ČR 3, SR 4
 - [[G04CA04]] SILODOSIN – výpadky ČR 2, SR 5
-- [[G04CA52]] TAMSULOSIN A DUTASTERID – výpadky ČR 52, SR 14
+- [[G04CA52]] TAMSULOSIN A DUTASTERID – výpadky ČR 52, SR 15
 - [[G04CA53]] TAMSULOSIN A SOLIFENACIN – výpadky ČR 8, SR 0
 - [[G04CB01]] FINASTERID – výpadky ČR 16, SR 3
 - [[G04CB02]] DUTASTERID – výpadky ČR 9, SR 7
@@ -938,7 +938,7 @@ Rozcestník všetkých látok s výpadkom od 15. 4. 2019. Generované z dát, ne
 - [[M05BA06]] KYSELINA IBANDRONOVÁ – výpadky ČR 26, SR 22
 - [[M05BA07]] KYSELINA RISEDRONOVÁ – výpadky ČR 7, SR 10
 - [[M05BA08]] KYSELINA ZOLEDRONOVÁ – výpadky ČR 15, SR 11
-- [[M05BB03]] KYSELINA ALENDRONOVÁ A CHOLEKALCIFEROL – výpadky ČR 11, SR 0
+- [[M05BB03]] KYSELINA ALENDRONOVÁ A CHOLEKALCIFEROL – výpadky ČR 12, SR 0
 - [[M05BX04]] DENOSUMAB – výpadky ČR 1, SR 4
 - [[M09AB52]] TRYPSIN, KOMBINACE – výpadky ČR 16, SR 9
 - [[M09AX01]] KYSELINA HYALURONOVÁ – výpadky ČR 3, SR 1
@@ -1021,7 +1021,7 @@ Rozcestník všetkých látok s výpadkom od 15. 4. 2019. Generované z dát, ne
 - [[N04BA02]] LEVODOPA A INHIBITOR DEKARBOXYLASY – výpadky ČR 28, SR 5
 - [[N04BA03]] LEVODOPA, INHIBITOR DEKARBOXYLASY A INHIBITOR COMT – výpadky ČR 28, SR 4
 - [[N04BB01]] AMANTADIN – výpadky ČR 8, SR 1
-- [[N04BC04]] ROPINIROL – výpadky ČR 28, SR 29
+- [[N04BC04]] ROPINIROL – výpadky ČR 28, SR 30
 - [[N04BC05]] PRAMIPEXOL – výpadky ČR 40, SR 31
 - [[N04BC07]] APOMORFIN – výpadky ČR 0, SR 1
 - [[N04BD01]] SELEGILIN – výpadky ČR 1, SR 0
@@ -1036,7 +1036,7 @@ Rozcestník všetkých látok s výpadkom od 15. 4. 2019. Generované z dát, ne
 - [[N05AF03]] CHLORPROTHIXEN – výpadky ČR 4, SR 5
 - [[N05AF05]] ZUKLOPENTHIXOL – výpadky ČR 0, SR 2
 - [[N05AH02]] KLOZAPIN – výpadky ČR 4, SR 5
-- [[N05AH03]] OLANZAPIN – výpadky ČR 158, SR 61
+- [[N05AH03]] OLANZAPIN – výpadky ČR 159, SR 61
 - [[N05AH04]] KVETIAPIN – výpadky ČR 139, SR 101
 - [[N05AL01]] SULPIRID – výpadky ČR 11, SR 3
 - [[N05AL03]] TIAPRID – výpadky ČR 19, SR 4

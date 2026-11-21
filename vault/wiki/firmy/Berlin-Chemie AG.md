@@ -5,7 +5,7 @@ aliases: ["BERLIN-CHEMIE AG, Berlín", "Berlin-Chemie AG"]
 vypadky_cz_od_2019: 86
 vypadky_sk_od_2019: 52
 zdroje: ["E001", "E002", "E004", "E005"]
-generovane_utc: "2026-11-13T10:06:19Z"
+generovane_utc: "2026-11-21T05:10:05Z"
 verified: false
 ---
 # Berlin-Chemie AG
@@ -17,7 +17,7 @@ verified: false
 - Registrované balenia: ČR 144 [E002, A1], SR 154 [E004, A1]
 
 ## Facts (with sources)
-- ČR: od 15. 4. 2019 86 výpadkov balení, za posledných 12 mesiacov 6 (to je 4.2% registrovaných balení), teraz trvá 4 [E001, A2]
+- ČR: od 15. 4. 2019 86 výpadkov balení, za posledných 12 mesiacov 6 (to je 4.2% registrovaných balení), teraz trvá 3 [E001, A2]
 - SR: od 15. 4. 2019 52 výpadkov balení, za posledných 12 mesiacov 1 (to je 0.6% registrovaných balení), teraz trvá 0 [E005, A2]
 
 ## Relations

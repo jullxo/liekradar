@@ -17,7 +17,7 @@ Držitelia registrácie s aspoň 3 výpadkami od 15. 4. 2019, zoradení podľa p
 - [[STADA Arzneimittel AG]] – 369 výpadkov
 - [[GlaxoSmithKline Trading Services Limited, Dublin]] – 346 výpadkov
 - [[Accord Healthcare S.L.U., Barcelona]] – 339 výpadkov
-- [[BAYER CORPORATION, MYERSTOWN, PENNSYLVANIA]] – 332 výpadkov
+- [[BAYER CORPORATION, MYERSTOWN, PENNSYLVANIA]] – 333 výpadkov
 - [[Actavis Group PTC ehf., Hafnarfjördur]] – 328 výpadkov
 - [[Pfizer Europe MA EEIG]] – 293 výpadkov
 - [[Glenmark Pharmaceuticals s.r.o]] – 270 výpadkov
@@ -31,16 +31,16 @@ Držitelia registrácie s aspoň 3 výpadkami od 15. 4. 2019, zoradení podľa p
 - [[Hexal AG, Holzkirchen]] – 174 výpadkov
 - [[Opella Healthcare Czech s.r.o., Praha]] – 156 výpadkov
 - [[CSL Behring GmbH]] – 143 výpadkov
+- [[Vipharm S.A., Ożarów Mazowiecki]] – 140 výpadkov
 - [[Berlin-Chemie AG]] – 138 výpadkov
-- [[Vipharm S.A., Ożarów Mazowiecki]] – 138 výpadkov
-- [[N.V. Organon, Oss]] – 136 výpadkov
+- [[N.V. Organon, Oss]] – 137 výpadkov
 - [[PIERRE FABRE MEDICAMENT, Lavaur]] – 136 výpadkov
 - [[Takeda Pharma AS, Vallensbaek Strand]] – 131 výpadkov
 - [[BAXTER HEALTHCARE CORP., HYLAND DIV., GLENDALE, CA]] – 129 výpadkov
 - [[PRO.MED.CS Praha a.s]] – 126 výpadkov
 - [[Neuraxpharm Bohemia s.r.o., Praha]] – 126 výpadkov
 - [[Curium Netherlands B.V., Petten]] – 125 výpadkov
-- [[CHEPLAPHARM Arzneimittel GmbH]] – 123 výpadkov
+- [[CHEPLAPHARM Arzneimittel GmbH]] – 124 výpadkov
 - [[BB Pharma a.s]] – 108 výpadkov
 - [[Laboratoires Thea, Clermont-Ferrand]] – 104 výpadkov
 - [[Les Laboratoires Servier, Suresnes cedex]] – 100 výpadkov
