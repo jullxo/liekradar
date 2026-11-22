@@ -159,7 +159,7 @@ Rozcestník všetkých látok s výpadkom od 15. 4. 2019. Generované z dát, ne
 - [[B01AC30]] ANTIAGREGANCIA KROMĚ HEPARINU, KOMBINACE – výpadky ČR 5, SR 0
 - [[B01AD12]] PROTEIN C – výpadky ČR 2, SR 0
 - [[B01AE07]] DABIGATRAN-ETEXILÁT – výpadky ČR 21, SR 5
-- [[B01AF01]] RIVAROXABAN – výpadky ČR 48, SR 77
+- [[B01AF01]] RIVAROXABAN – výpadky ČR 49, SR 77
 - [[B01AF02]] APIXABAN – výpadky ČR 8, SR 7
 - [[B01AF03]] EDOXABAN – výpadky ČR 12, SR 16
 - [[B01AX05]] FONDAPARINUX – výpadky ČR 5, SR 0
@@ -986,7 +986,7 @@ Rozcestník všetkých látok s výpadkom od 15. 4. 2019. Generované z dát, ne
 - [[N02BE51]] PARACETAMOL, KOMBINACE KROMĚ PSYCHOLEPTIK – výpadky ČR 96, SR 48
 - [[N02BE71]] PARACETAMOL, KOMBINACE S PSYCHOLEPTIKY – výpadky ČR 0, SR 4
 - [[N02BF01]] GABAPENTIN – výpadky ČR 121, SR 36
-- [[N02BF02]] PREGABALIN – výpadky ČR 230, SR 37
+- [[N02BF02]] PREGABALIN – výpadky ČR 231, SR 37
 - [[N02CC01]] SUMATRIPTAN – výpadky ČR 44, SR 18
 - [[N02CC03]] ZOLMITRIPTAN – výpadky ČR 1, SR 0
 - [[N02CC04]] RIZATRIPTAN – výpadky ČR 0, SR 11
@@ -1083,7 +1083,7 @@ Rozcestník všetkých látok s výpadkom od 15. 4. 2019. Generované z dát, ne
 - [[N06AX14]] TIANEPTIN – výpadky ČR 5, SR 7
 - [[N06AX16]] VENLAFAXIN – výpadky ČR 58, SR 16
 - [[N06AX21]] DULOXETIN – výpadky ČR 17, SR 21
-- [[N06AX22]] AGOMELATIN – výpadky ČR 24, SR 5
+- [[N06AX22]] AGOMELATIN – výpadky ČR 25, SR 5
 - [[N06AX25]] TŘEZALKOVÁ NAŤ – výpadky ČR 1, SR 0
 - [[N06AX26]] VORTIOXETIN – výpadky ČR 4, SR 1
 - [[N06BA04]] METHYLFENIDÁT – výpadky ČR 22, SR 20

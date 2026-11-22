@@ -3,7 +3,7 @@
 Držitelia registrácie s aspoň 3 výpadkami od 15. 4. 2019, zoradení podľa počtu výpadkov. Generované z dát, neupravovať ručne.
 
 - [[Zentiva, k.s., Praha]] – 1973 výpadkov
-- [[Teva B.V]] – 1690 výpadkov
+- [[Teva B.V]] – 1691 výpadkov
 - [[Sandoz s.r.o., Praha]] – 1582 výpadkov
 - [[KRKA, d.d., Novo mesto]] – 982 výpadkov
 - [[Fresenius Kabi s.r.o]] – 932 výpadkov
@@ -17,10 +17,10 @@ Držitelia registrácie s aspoň 3 výpadkami od 15. 4. 2019, zoradení podľa p
 - [[STADA Arzneimittel AG]] – 369 výpadkov
 - [[GlaxoSmithKline Trading Services Limited, Dublin]] – 346 výpadkov
 - [[Accord Healthcare S.L.U., Barcelona]] – 339 výpadkov
-- [[BAYER CORPORATION, MYERSTOWN, PENNSYLVANIA]] – 333 výpadkov
+- [[BAYER CORPORATION, MYERSTOWN, PENNSYLVANIA]] – 334 výpadkov
 - [[Actavis Group PTC ehf., Hafnarfjördur]] – 328 výpadkov
 - [[Pfizer Europe MA EEIG]] – 293 výpadkov
-- [[Glenmark Pharmaceuticals s.r.o]] – 270 výpadkov
+- [[Glenmark Pharmaceuticals s.r.o]] – 271 výpadkov
 - [[MERCK SHARP & DOHME LTD., NEW JERSEY]] – 238 výpadkov
 - [[Lek Pharmaceuticals d.d., Ljubljana]] – 232 výpadkov
 - [[Gedeon Richter Plc., Budapešť]] – 205 výpadkov
