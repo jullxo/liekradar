@@ -2,18 +2,18 @@
 
 Držitelia registrácie s aspoň 3 výpadkami od 15. 4. 2019, zoradení podľa počtu výpadkov. Generované z dát, neupravovať ručne.
 
-- [[Zentiva, k.s., Praha]] – 1973 výpadkov
-- [[Teva B.V]] – 1691 výpadkov
+- [[Zentiva, k.s., Praha]] – 1976 výpadkov
+- [[Teva B.V]] – 1693 výpadkov
 - [[Sandoz s.r.o., Praha]] – 1582 výpadkov
-- [[KRKA, d.d., Novo mesto]] – 982 výpadkov
+- [[KRKA, d.d., Novo mesto]] – 984 výpadkov
 - [[Fresenius Kabi s.r.o]] – 932 výpadkov
 - [[B.Braun Melsungen AG]] – 786 výpadkov
-- [[MEDOCHEMIE IBERIA, S.A., Lisabon]] – 759 výpadkov
+- [[MEDOCHEMIE IBERIA, S.A., Lisabon]] – 760 výpadkov
 - [[VIATRIS LIMITED, Dublin]] – 668 výpadkov
 - [[ratiopharm GmbH]] – 547 výpadkov
 - [[Egis Pharmaceuticals PLC, Budapešť]] – 394 výpadkov
 - [[Mylan Ireland Limited, Dublin]] – 382 výpadkov
-- [[Sanofi Winthrop Industrie]] – 373 výpadkov
+- [[Sanofi Winthrop Industrie]] – 374 výpadkov
 - [[STADA Arzneimittel AG]] – 369 výpadkov
 - [[GlaxoSmithKline Trading Services Limited, Dublin]] – 346 výpadkov
 - [[Accord Healthcare S.L.U., Barcelona]] – 339 výpadkov
@@ -42,7 +42,7 @@ Držitelia registrácie s aspoň 3 výpadkami od 15. 4. 2019, zoradení podľa p
 - [[Curium Netherlands B.V., Petten]] – 125 výpadkov
 - [[CHEPLAPHARM Arzneimittel GmbH]] – 124 výpadkov
 - [[BB Pharma a.s]] – 108 výpadkov
-- [[Laboratoires Thea, Clermont-Ferrand]] – 104 výpadkov
+- [[Laboratoires Thea, Clermont-Ferrand]] – 105 výpadkov
 - [[Les Laboratoires Servier, Suresnes cedex]] – 100 výpadkov
 - [[EBEWE Pharma Ges.m.b.H Nfg.KG, Unterach]] – 99 výpadkov
 - [[Desitin Arzneimittel GmbH, Hamburg]] – 96 výpadkov

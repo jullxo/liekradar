@@ -5,7 +5,7 @@ aliases: ["ratiopharm GmbH", "ratiopharm GmbH, Ulm"]
 vypadky_cz_od_2019: 395
 vypadky_sk_od_2019: 152
 zdroje: ["E001", "E002", "E004", "E005"]
-generovane_utc: "2026-11-20T05:17:23Z"
+generovane_utc: "2026-11-23T05:34:53Z"
 verified: false
 ---
 # ratiopharm GmbH
@@ -17,7 +17,7 @@ verified: false
 - Registrované balenia: ČR 521 [E002, A1], SR 561 [E004, A1]
 
 ## Facts (with sources)
-- ČR: od 15. 4. 2019 395 výpadkov balení, za posledných 12 mesiacov 72 (to je 13.8% registrovaných balení), teraz trvá 34 [E001, A2]
+- ČR: od 15. 4. 2019 395 výpadkov balení, za posledných 12 mesiacov 71 (to je 13.6% registrovaných balení), teraz trvá 34 [E001, A2]
 - SR: od 15. 4. 2019 152 výpadkov balení, za posledných 12 mesiacov 36 (to je 6.4% registrovaných balení), teraz trvá 9 [E005, A2]
 
 ## Relations

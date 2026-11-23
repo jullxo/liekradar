@@ -5,7 +5,7 @@ aliases: ["Otsuka Novel Products GmbH", "Otsuka Pharmaceutical Netherlands B.V."
 vypadky_cz_od_2019: 5
 vypadky_sk_od_2019: 7
 zdroje: ["E001", "E002", "E004", "E005"]
-generovane_utc: "2026-11-22T05:14:02Z"
+generovane_utc: "2026-11-23T05:34:53Z"
 verified: false
 ---
 # Otsuka Pharmaceutical Netherlands B.V., Amsterdam
