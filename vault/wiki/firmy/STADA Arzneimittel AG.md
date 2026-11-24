@@ -5,7 +5,7 @@ aliases: ["STADA Arzneimittel AG", "STADA Arzneimittel AG, Bad Vilbel"]
 vypadky_cz_od_2019: 295
 vypadky_sk_od_2019: 74
 zdroje: ["E001", "E002", "E004", "E005"]
-generovane_utc: "2026-11-19T05:22:20Z"
+generovane_utc: "2026-11-24T05:25:43Z"
 verified: false
 ---
 # STADA Arzneimittel AG
@@ -14,10 +14,10 @@ verified: false
 
 ## Identifiers
 - Názvy v registroch: STADA Arzneimittel AG, STADA Arzneimittel AG, Bad Vilbel
-- Registrované balenia: ČR 2629 [E002, A1], SR 3005 [E004, A1]
+- Registrované balenia: ČR 2629 [E002, A1], SR 3004 [E004, A1]
 
 ## Facts (with sources)
-- ČR: od 15. 4. 2019 295 výpadkov balení, za posledných 12 mesiacov 57 (to je 2.2% registrovaných balení), teraz trvá 21 [E001, A2]
+- ČR: od 15. 4. 2019 295 výpadkov balení, za posledných 12 mesiacov 57 (to je 2.2% registrovaných balení), teraz trvá 18 [E001, A2]
 - SR: od 15. 4. 2019 74 výpadkov balení, za posledných 12 mesiacov 14 (to je 0.5% registrovaných balení), teraz trvá 35 [E005, A2]
 
 ## Relations

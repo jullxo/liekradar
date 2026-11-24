@@ -5,7 +5,7 @@ aliases: ["Chiesi Farmaceutici S.p.A.", "Chiesi Farmaceutici S.p.A., Parma", "Ch
 vypadky_cz_od_2019: 8
 vypadky_sk_od_2019: 30
 zdroje: ["E001", "E002", "E004", "E005"]
-generovane_utc: "2026-11-13T10:06:19Z"
+generovane_utc: "2026-11-24T05:25:43Z"
 verified: false
 ---
 # Chiesi Farmaceutici S.p.A
@@ -18,7 +18,7 @@ verified: false
 
 ## Facts (with sources)
 - ČR: od 15. 4. 2019 8 výpadkov balení, za posledných 12 mesiacov 3 (to je 2.7% registrovaných balení), teraz trvá 0 [E001, A2]
-- SR: od 15. 4. 2019 30 výpadkov balení, za posledných 12 mesiacov 11 (to je 10.1% registrovaných balení), teraz trvá 2 [E005, A2]
+- SR: od 15. 4. 2019 30 výpadkov balení, za posledných 12 mesiacov 11 (to je 10.1% registrovaných balení), teraz trvá 1 [E005, A2]
 
 ## Relations
 - drží registráciu látok s výpadkami: [[R03AK08]] (13×), [[R03AL09]] (9×), [[R03AC13]] (4×), [[N01AH03]] (4×), [[A16AB15]] (2×), [[R03BA02]] (2×), [[M01AC01]] (2×), [[N01AH01]] (1×), [[V03AC02]] (1×)

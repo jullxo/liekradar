@@ -2,10 +2,10 @@
 typ: "firma"
 firma: "pharmagen"
 aliases: ["PHARMAGEN CZ s.r.o.", "PHARMAGEN CZ s.r.o., Praha"]
-vypadky_cz_od_2019: 12
+vypadky_cz_od_2019: 13
 vypadky_sk_od_2019: 2
 zdroje: ["E001", "E002", "E004", "E005"]
-generovane_utc: "2026-11-13T10:06:19Z"
+generovane_utc: "2026-11-24T05:25:43Z"
 verified: false
 ---
 # PHARMAGEN CZ s.r.o., Praha
@@ -17,15 +17,16 @@ verified: false
 - Registrované balenia: ČR 67 [E002, A1], SR 45 [E004, A1]
 
 ## Facts (with sources)
-- ČR: od 15. 4. 2019 12 výpadkov balení, za posledných 12 mesiacov 6 (to je 9.0% registrovaných balení), teraz trvá 7 [E001, A2]
+- ČR: od 15. 4. 2019 13 výpadkov balení, za posledných 12 mesiacov 7 (to je 10.4% registrovaných balení), teraz trvá 8 [E001, A2]
 - SR: od 15. 4. 2019 2 výpadkov balení, za posledných 12 mesiacov 0 (to je 0.0% registrovaných balení), teraz trvá 2 [E005, A2]
 
 ## Relations
-- drží registráciu látok s výpadkami: [[L01DB01]] (5×), [[L02BG03]] (3×), [[A04AA01]] (2×), [[L01CE02]] (1×), [[L01EX01]] (1×), [[L02BG04]] (1×), [[M05BA06]] (1×)
+- drží registráciu látok s výpadkami: [[L01DB01]] (5×), [[L02BG03]] (3×), [[A04AA01]] (2×), [[L01EX01]] (2×), [[L01CE02]] (1×), [[L02BG04]] (1×), [[M05BA06]] (1×)
 
 ## Timeline
 | Dátum | Krajina | Udalosť | Zdroj |
 |---|---|---|---|
+| 2026-11-23 | CZ | začiatok výpadku: SUNITINIB PHARMAGEN (0251863, [[L01EX01]]) | [E001, A2] |
 | 2026-11-02 | CZ | začiatok výpadku: ANAPREX (0191689, [[L02BG03]]) | [E001, A2] |
 | 2026-11-02 | CZ | začiatok výpadku: ANAPREX (0191694, [[L02BG03]]) | [E001, A2] |
 | 2026-08-05 | CZ | začiatok výpadku: SUNITINIB PHARMAGEN (0251865, [[L01EX01]]) | [E001, A2] |

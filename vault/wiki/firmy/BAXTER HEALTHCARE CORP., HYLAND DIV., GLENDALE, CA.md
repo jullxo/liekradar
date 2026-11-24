@@ -5,7 +5,7 @@ aliases: ["BAXTER CZECH, spol. s r.o.", "BAXTER HEALTHCARE CORP., HYLAND DIV., G
 vypadky_cz_od_2019: 110
 vypadky_sk_od_2019: 19
 zdroje: ["E001", "E002", "E004", "E005"]
-generovane_utc: "2026-11-20T05:17:23Z"
+generovane_utc: "2026-11-24T05:25:43Z"
 verified: false
 ---
 # BAXTER HEALTHCARE CORP., HYLAND DIV., GLENDALE, CA
@@ -17,7 +17,7 @@ verified: false
 - Registrované balenia: ČR 456 [E002, A1], SR 203 [E004, A1]
 
 ## Facts (with sources)
-- ČR: od 15. 4. 2019 110 výpadkov balení, za posledných 12 mesiacov 31 (to je 6.8% registrovaných balení), teraz trvá 7 [E001, A2]
+- ČR: od 15. 4. 2019 110 výpadkov balení, za posledných 12 mesiacov 31 (to je 6.8% registrovaných balení), teraz trvá 6 [E001, A2]
 - SR: od 15. 4. 2019 19 výpadkov balení, za posledných 12 mesiacov 7 (to je 3.4% registrovaných balení), teraz trvá 10 [E005, A2]
 
 ## Relations

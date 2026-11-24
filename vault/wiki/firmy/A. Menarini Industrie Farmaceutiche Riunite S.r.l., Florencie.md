@@ -5,7 +5,7 @@ aliases: ["A. Menarini Industrie Farmaceutiche Riunite S.r.l., Florencie", "A. M
 vypadky_cz_od_2019: 4
 vypadky_sk_od_2019: 2
 zdroje: ["E001", "E002", "E004", "E005"]
-generovane_utc: "2026-11-13T10:06:19Z"
+generovane_utc: "2026-11-24T05:25:43Z"
 verified: false
 ---
 # A. Menarini Industrie Farmaceutiche Riunite S.r.l., Florencie
@@ -17,7 +17,7 @@ verified: false
 - Registrované balenia: ČR 29 [E002, A1], SR 25 [E004, A1]
 
 ## Facts (with sources)
-- ČR: od 15. 4. 2019 4 výpadkov balení, za posledných 12 mesiacov 1 (to je 3.4% registrovaných balení), teraz trvá 1 [E001, A2]
+- ČR: od 15. 4. 2019 4 výpadkov balení, za posledných 12 mesiacov 1 (to je 3.4% registrovaných balení), teraz trvá 0 [E001, A2]
 - SR: od 15. 4. 2019 2 výpadkov balení, za posledných 12 mesiacov 0 (to je 0.0% registrovaných balení), teraz trvá 0 [E005, A2]
 
 ## Relations

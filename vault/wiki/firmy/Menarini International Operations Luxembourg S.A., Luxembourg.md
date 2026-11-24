@@ -5,7 +5,7 @@ aliases: ["Menarini International Operations Luxembourg S.A.", "Menarini Interna
 vypadky_cz_od_2019: 58
 vypadky_sk_od_2019: 31
 zdroje: ["E001", "E002", "E004", "E005"]
-generovane_utc: "2026-11-21T05:10:05Z"
+generovane_utc: "2026-11-24T05:25:43Z"
 verified: false
 ---
 # Menarini International Operations Luxembourg S.A., Luxembourg
@@ -17,7 +17,7 @@ verified: false
 - Registrované balenia: ČR 343 [E002, A1], SR 318 [E004, A1]
 
 ## Facts (with sources)
-- ČR: od 15. 4. 2019 58 výpadkov balení, za posledných 12 mesiacov 8 (to je 2.3% registrovaných balení), teraz trvá 3 [E001, A2]
+- ČR: od 15. 4. 2019 58 výpadkov balení, za posledných 12 mesiacov 8 (to je 2.3% registrovaných balení), teraz trvá 2 [E001, A2]
 - SR: od 15. 4. 2019 31 výpadkov balení, za posledných 12 mesiacov 2 (to je 0.6% registrovaných balení), teraz trvá 4 [E005, A2]
 
 ## Relations

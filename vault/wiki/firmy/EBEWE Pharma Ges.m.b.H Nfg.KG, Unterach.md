@@ -5,7 +5,7 @@ aliases: ["EBEWE Pharma Ges.m.b.H Nfg.KG, Unterach"]
 vypadky_cz_od_2019: 99
 vypadky_sk_od_2019: 0
 zdroje: ["E001", "E002", "E004", "E005"]
-generovane_utc: "2026-11-20T05:17:23Z"
+generovane_utc: "2026-11-24T05:25:43Z"
 verified: false
 ---
 # EBEWE Pharma Ges.m.b.H Nfg.KG, Unterach
@@ -17,7 +17,7 @@ verified: false
 - Registrované balenia: ČR 108 [E002, A1], SR 0 [E004, A1]
 
 ## Facts (with sources)
-- ČR: od 15. 4. 2019 99 výpadkov balení, za posledných 12 mesiacov 20 (to je 18.5% registrovaných balení), teraz trvá 7 [E001, A2]
+- ČR: od 15. 4. 2019 99 výpadkov balení, za posledných 12 mesiacov 19 (to je 17.6% registrovaných balení), teraz trvá 7 [E001, A2]
 - SR: od 15. 4. 2019 0 výpadkov balení, za posledných 12 mesiacov 0 (to je 0.0% registrovaných balení), teraz trvá 0 [E005, A2]
 
 ## Relations

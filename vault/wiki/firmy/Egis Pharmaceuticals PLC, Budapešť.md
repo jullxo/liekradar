@@ -5,7 +5,7 @@ aliases: ["Egis Pharmaceuticals PLC", "Egis Pharmaceuticals PLC, Budapešť"]
 vypadky_cz_od_2019: 293
 vypadky_sk_od_2019: 101
 zdroje: ["E001", "E002", "E004", "E005"]
-generovane_utc: "2026-11-19T05:22:20Z"
+generovane_utc: "2026-11-24T05:25:43Z"
 verified: false
 ---
 # Egis Pharmaceuticals PLC, Budapešť
@@ -18,7 +18,7 @@ verified: false
 
 ## Facts (with sources)
 - ČR: od 15. 4. 2019 293 výpadkov balení, za posledných 12 mesiacov 54 (to je 4.0% registrovaných balení), teraz trvá 15 [E001, A2]
-- SR: od 15. 4. 2019 101 výpadkov balení, za posledných 12 mesiacov 19 (to je 1.6% registrovaných balení), teraz trvá 18 [E005, A2]
+- SR: od 15. 4. 2019 101 výpadkov balení, za posledných 12 mesiacov 19 (to je 1.6% registrovaných balení), teraz trvá 17 [E005, A2]
 
 ## Relations
 - drží registráciu látok s výpadkami: [[C10BA06]] (47×), [[N06BA09]] (35×), [[N03AX14]] (24×), [[N05AH04]] (24×), [[M04AA01]] (23×), [[C09BB07]] (21×), [[B01AF01]] (20×), [[N05AX13]] (15×), [[B03AE10]] (14×), [[N05BA12]] (13×), [[N06AX16]] (12×), [[C09CA07]] (10×), [[C10BX17]] (9×), [[C07FB07]] (8×), [[J01EE01]] (7×), [[A10BD08]] (7×), [[B01AC23]] (7×), [[C07AG02]] (6×), [[L02BA01]] (6×), [[C09DA03]] (5×), [[N02BF01]] (4×), [[C10AX09]] (4×), [[A04AA02]] (4×), [[D08AG02]] (3×), [[C08CA01]] (3×)

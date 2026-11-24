@@ -5,7 +5,7 @@ aliases: ["Actavis Group PTC ehf.", "Actavis Group PTC ehf., Hafnarfjördur"]
 vypadky_cz_od_2019: 284
 vypadky_sk_od_2019: 44
 zdroje: ["E001", "E002", "E004", "E005"]
-generovane_utc: "2026-11-18T02:18:53Z"
+generovane_utc: "2026-11-24T05:25:43Z"
 verified: false
 ---
 # Actavis Group PTC ehf., Hafnarfjördur
@@ -17,7 +17,7 @@ verified: false
 - Registrované balenia: ČR 647 [E002, A1], SR 227 [E004, A1]
 
 ## Facts (with sources)
-- ČR: od 15. 4. 2019 284 výpadkov balení, za posledných 12 mesiacov 47 (to je 7.3% registrovaných balení), teraz trvá 21 [E001, A2]
+- ČR: od 15. 4. 2019 284 výpadkov balení, za posledných 12 mesiacov 47 (to je 7.3% registrovaných balení), teraz trvá 20 [E001, A2]
 - SR: od 15. 4. 2019 44 výpadkov balení, za posledných 12 mesiacov 12 (to je 5.3% registrovaných balení), teraz trvá 6 [E005, A2]
 
 ## Relations
