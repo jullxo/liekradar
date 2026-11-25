@@ -3,9 +3,9 @@ typ: "firma"
 firma: "medochemie"
 aliases: ["MEDOCHEMIE IBERIA, S.A., Lisabon", "MEDOCHEMIE Ltd.", "Medochemie Bohemia, spol. s r.o., Praha"]
 vypadky_cz_od_2019: 414
-vypadky_sk_od_2019: 349
+vypadky_sk_od_2019: 346
 zdroje: ["E001", "E002", "E004", "E005"]
-generovane_utc: "2026-11-24T05:25:43Z"
+generovane_utc: "2026-11-25T05:25:07Z"
 verified: false
 ---
 # MEDOCHEMIE IBERIA, S.A., Lisabon
@@ -14,11 +14,11 @@ verified: false
 
 ## Identifiers
 - Názvy v registroch: MEDOCHEMIE IBERIA, S.A., Lisabon, MEDOCHEMIE Ltd., Medochemie Bohemia, spol. s r.o., Praha
-- Registrované balenia: ČR 1130 [E002, A1], SR 1027 [E004, A1]
+- Registrované balenia: ČR 1130 [E002, A1], SR 1014 [E004, A1]
 
 ## Facts (with sources)
 - ČR: od 15. 4. 2019 414 výpadkov balení, za posledných 12 mesiacov 68 (to je 6.0% registrovaných balení), teraz trvá 50 [E001, A2]
-- SR: od 15. 4. 2019 349 výpadkov balení, za posledných 12 mesiacov 33 (to je 3.2% registrovaných balení), teraz trvá 45 [E005, A2]
+- SR: od 15. 4. 2019 346 výpadkov balení, za posledných 12 mesiacov 32 (to je 3.2% registrovaných balení), teraz trvá 43 [E005, A2]
 
 ## Relations
 - drží registráciu látok s výpadkami: [[J01CR02]] (54×), [[J01DC02]] (49×), [[N03AX09]] (36×), [[C10AA07]] (33×), [[J01DD01]] (26×), [[N02BF02]] (25×), [[N03AX18]] (25×), [[N02AX02]] (24×), [[N06DX01]] (24×), [[N06AB05]] (23×), [[M02AA15]] (21×), [[N05AL05]] (20×), [[G04BD08]] (19×), [[C09CA04]] (19×), [[C10AA05]] (17×), [[J01DB04]] (16×), [[N05AX12]] (16×), [[C09AA03]] (15×), [[N01AH03]] (15×), [[C09DA04]] (14×), [[C07AB05]] (13×), [[N07CA01]] (13×), [[J01DH02]] (13×), [[N05AX08]] (12×), [[M01AB05]] (12×)

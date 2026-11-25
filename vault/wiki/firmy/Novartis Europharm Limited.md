@@ -5,7 +5,7 @@ aliases: ["Novartis Europharm Limited", "Novartis Europharm Limited, Dublin", "N
 vypadky_cz_od_2019: 120
 vypadky_sk_od_2019: 70
 zdroje: ["E001", "E002", "E004", "E005"]
-generovane_utc: "2026-11-13T10:06:19Z"
+generovane_utc: "2026-11-25T05:25:07Z"
 verified: false
 ---
 # Novartis Europharm Limited
@@ -17,7 +17,7 @@ verified: false
 - Registrované balenia: ČR 1023 [E002, A1], SR 1064 [E004, A1]
 
 ## Facts (with sources)
-- ČR: od 15. 4. 2019 120 výpadkov balení, za posledných 12 mesiacov 14 (to je 1.4% registrovaných balení), teraz trvá 2 [E001, A2]
+- ČR: od 15. 4. 2019 120 výpadkov balení, za posledných 12 mesiacov 14 (to je 1.4% registrovaných balení), teraz trvá 1 [E001, A2]
 - SR: od 15. 4. 2019 70 výpadkov balení, za posledných 12 mesiacov 10 (to je 0.9% registrovaných balení), teraz trvá 2 [E005, A2]
 
 ## Relations

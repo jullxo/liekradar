@@ -159,7 +159,7 @@ Rozcestník všetkých látok s výpadkom od 15. 4. 2019. Generované z dát, ne
 - [[B01AC30]] ANTIAGREGANCIA KROMĚ HEPARINU, KOMBINACE – výpadky ČR 5, SR 0
 - [[B01AD12]] PROTEIN C – výpadky ČR 2, SR 0
 - [[B01AE07]] DABIGATRAN-ETEXILÁT – výpadky ČR 21, SR 5
-- [[B01AF01]] RIVAROXABAN – výpadky ČR 49, SR 77
+- [[B01AF01]] RIVAROXABAN – výpadky ČR 50, SR 77
 - [[B01AF02]] APIXABAN – výpadky ČR 8, SR 7
 - [[B01AF03]] EDOXABAN – výpadky ČR 12, SR 16
 - [[B01AX05]] FONDAPARINUX – výpadky ČR 5, SR 0
@@ -168,7 +168,7 @@ Rozcestník všetkých látok s výpadkom od 15. 4. 2019. Generované z dát, ne
 - [[B02BA01]] FYTOMENADION – výpadky ČR 4, SR 2
 - [[B02BB01]] LIDSKÝ FIBRINOGEN – výpadky ČR 5, SR 0
 - [[B02BC30]] LOKÁLNÍ HEMOSTATIKA, KOMBINACE – výpadky ČR 14, SR 6
-- [[B02BD01]] KOMBINACE KOAGULAČNÍCH FAKTORŮ IX, II, VII A X – výpadky ČR 2, SR 2
+- [[B02BD01]] KOMBINACE KOAGULAČNÍCH FAKTORŮ IX, II, VII A X – výpadky ČR 2, SR 3
 - [[B02BD02]] KOAGULAČNÍ FAKTOR VIII – výpadky ČR 20, SR 16
 - [[B02BD03]] ANTIINHIBIČNÍ KOMPLEX KOAGULAČNÍCH FAKTORŮ (FEIBA) – výpadky ČR 1, SR 0
 - [[B02BD04]] KOAGULAČNÍ FAKTOR IX – výpadky ČR 11, SR 10
@@ -195,7 +195,7 @@ Rozcestník všetkých látok s výpadkom od 15. 4. 2019. Generované z dát, ne
 - [[B05BA02]] TUKOVÉ EMULZE – výpadky ČR 25, SR 9
 - [[B05BA03]] CUKRY – výpadky ČR 129, SR 38
 - [[B05BA10]] ROZTOKY PRO PARENTERÁLNÍ VÝŽIVU, KOMBINACE – výpadky ČR 199, SR 52
-- [[B05BB01]] ELEKTROLYTY – výpadky ČR 261, SR 133
+- [[B05BB01]] ELEKTROLYTY – výpadky ČR 262, SR 133
 - [[B05BB02]] ELEKTROLYTY SE SACHARIDY – výpadky ČR 37, SR 13
 - [[B05BC01]] MANNITOL – výpadky ČR 1, SR 4
 - [[B05XA01]] CHLORID DRASELNÝ – výpadky ČR 16, SR 14
@@ -572,7 +572,7 @@ Rozcestník všetkých látok s výpadkom od 15. 4. 2019. Generované z dát, ne
 - [[H04AA01]] GLUKAGON – výpadky ČR 3, SR 0
 - [[H05AA02]] TERIPARATID – výpadky ČR 3, SR 2
 - [[H05AA03]] PARATHORMON – výpadky ČR 1, SR 0
-- [[H05BX01]] CINAKALCET – výpadky ČR 35, SR 17
+- [[H05BX01]] CINAKALCET – výpadky ČR 35, SR 18
 - [[H05BX02]] PARIKALCITOL – výpadky ČR 7, SR 1
 
 ## J – Antiinfektíva (antibiotiká, vakcíny…)
@@ -937,7 +937,7 @@ Rozcestník všetkých látok s výpadkom od 15. 4. 2019. Generované z dát, ne
 - [[M05BA04]] KYSELINA ALENDRONOVÁ – výpadky ČR 12, SR 0
 - [[M05BA06]] KYSELINA IBANDRONOVÁ – výpadky ČR 26, SR 22
 - [[M05BA07]] KYSELINA RISEDRONOVÁ – výpadky ČR 7, SR 10
-- [[M05BA08]] KYSELINA ZOLEDRONOVÁ – výpadky ČR 15, SR 11
+- [[M05BA08]] KYSELINA ZOLEDRONOVÁ – výpadky ČR 16, SR 11
 - [[M05BB03]] KYSELINA ALENDRONOVÁ A CHOLEKALCIFEROL – výpadky ČR 12, SR 0
 - [[M05BX04]] DENOSUMAB – výpadky ČR 1, SR 4
 - [[M09AB52]] TRYPSIN, KOMBINACE – výpadky ČR 16, SR 9
@@ -1072,7 +1072,7 @@ Rozcestník všetkých látok s výpadkom od 15. 4. 2019. Generované z dát, ne
 - [[N06AB03]] FLUOXETIN – výpadky ČR 12, SR 5
 - [[N06AB04]] CITALOPRAM – výpadky ČR 31, SR 11
 - [[N06AB05]] PAROXETIN – výpadky ČR 40, SR 19
-- [[N06AB06]] SERTRALIN – výpadky ČR 81, SR 11
+- [[N06AB06]] SERTRALIN – výpadky ČR 82, SR 11
 - [[N06AB08]] FLUVOXAMIN – výpadky ČR 13, SR 8
 - [[N06AB10]] ESCITALOPRAM – výpadky ČR 89, SR 26
 - [[N06AG02]] MOKLOBEMID – výpadky ČR 3, SR 0
@@ -1208,7 +1208,7 @@ Rozcestník všetkých látok s výpadkom od 15. 4. 2019. Generované z dát, ne
 - [[R06AX13]] LORATADIN – výpadky ČR 32, SR 16
 - [[R06AX17]] KETOTIFEN – výpadky ČR 9, SR 1
 - [[R06AX26]] FEXOFENADIN – výpadky ČR 13, SR 2
-- [[R06AX27]] DESLORATADIN – výpadky ČR 84, SR 63
+- [[R06AX27]] DESLORATADIN – výpadky ČR 85, SR 63
 - [[R06AX28]] RUPATADIN – výpadky ČR 5, SR 5
 - [[R06AX29]] BILASTIN – výpadky ČR 33, SR 16
 

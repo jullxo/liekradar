@@ -3,9 +3,9 @@ typ: "firma"
 firma: "octapharma"
 aliases: ["Octapharma (IP)  SPRL, Anderlecht", "Octapharma (IP)  SPRL, Brusel", "Octapharma (IP) SPRL", "Octapharma AB", "Octapharma AB, Stockholm"]
 vypadky_cz_od_2019: 17
-vypadky_sk_od_2019: 21
+vypadky_sk_od_2019: 22
 zdroje: ["E001", "E002", "E004", "E005"]
-generovane_utc: "2026-11-19T05:22:20Z"
+generovane_utc: "2026-11-25T05:25:07Z"
 verified: false
 ---
 # Octapharma (IP) SPRL
@@ -18,14 +18,15 @@ verified: false
 
 ## Facts (with sources)
 - ČR: od 15. 4. 2019 17 výpadkov balení, za posledných 12 mesiacov 3 (to je 3.1% registrovaných balení), teraz trvá 7 [E001, A2]
-- SR: od 15. 4. 2019 21 výpadkov balení, za posledných 12 mesiacov 3 (to je 3.1% registrovaných balení), teraz trvá 8 [E005, A2]
+- SR: od 15. 4. 2019 22 výpadkov balení, za posledných 12 mesiacov 4 (to je 4.2% registrovaných balení), teraz trvá 9 [E005, A2]
 
 ## Relations
-- drží registráciu látok s výpadkami: [[J06BA02]] (12×), [[J06BA01]] (9×), [[B05AA01]] (6×), [[B02BD02]] (3×), [[B02BD01]] (3×), [[J06BB01]] (2×), [[B01AB02]] (1×), [[B02BD06]] (1×), [[B02BB01]] (1×)
+- drží registráciu látok s výpadkami: [[J06BA02]] (12×), [[J06BA01]] (9×), [[B05AA01]] (6×), [[B02BD01]] (4×), [[B02BD02]] (3×), [[J06BB01]] (2×), [[B01AB02]] (1×), [[B02BD06]] (1×), [[B02BB01]] (1×)
 
 ## Timeline
 | Dátum | Krajina | Udalosť | Zdroj |
 |---|---|---|---|
+| 2026-11-24 | SK | začiatok výpadku: Octaplex (plv fol 1x500 IU+solv.(liek.inj.skl.)) (36360, [[B02BD01]]) | [E005, A2] |
 | 2026-11-19 | CZ | začiatok výpadku: OCPLEX (0230687, [[B02BD01]]) | [E001, A2] |
 | 2026-11-19 | CZ | začiatok výpadku: OCPLEX (0230686, [[B02BD01]]) | [E001, A2] |
 | 2026-09-03 | CZ | začiatok výpadku: FIBRYGA (0232889, [[B02BB01]]) | [E001, A2] |
@@ -40,7 +41,6 @@ verified: false
 | 2023-01-02 | CZ | začiatok výpadku: ALBUNORM (0230451, [[B05AA01]]) | [E001, A2] |
 | 2023-01-02 | CZ | začiatok výpadku: ALBUNORM (0230449, [[B05AA01]]) | [E001, A2] |
 | 2022-12-07 | SK | začiatok výpadku: Albunorm 20 % (sol inf 1x50 ml (fľ. skl.)) (71799, [[B05AA01]]) | [E005, A2] |
-| 2022-10-01 | SK | začiatok výpadku: Nuwiq 250 IU prášok a rozpúšťadlo na injekčný roztok (plv iol 1x250 IU+1x2,5 ml solv.+adapter inj.liek. (liek.inj.skl.+striek.inj.skl.napl.)) (3428B, [[B02BD02]]) | [E005, A2] |
 
 ## Analyst notes (inference, clearly marked)
 <!-- Sem píšu agenti a analytik. Generátor túto sekciu nikdy neprepíše.

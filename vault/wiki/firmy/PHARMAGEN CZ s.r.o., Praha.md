@@ -5,7 +5,7 @@ aliases: ["PHARMAGEN CZ s.r.o.", "PHARMAGEN CZ s.r.o., Praha"]
 vypadky_cz_od_2019: 13
 vypadky_sk_od_2019: 2
 zdroje: ["E001", "E002", "E004", "E005"]
-generovane_utc: "2026-11-24T05:25:43Z"
+generovane_utc: "2026-11-25T05:25:07Z"
 verified: false
 ---
 # PHARMAGEN CZ s.r.o., Praha
@@ -17,7 +17,7 @@ verified: false
 - Registrované balenia: ČR 67 [E002, A1], SR 45 [E004, A1]
 
 ## Facts (with sources)
-- ČR: od 15. 4. 2019 13 výpadkov balení, za posledných 12 mesiacov 7 (to je 10.4% registrovaných balení), teraz trvá 8 [E001, A2]
+- ČR: od 15. 4. 2019 13 výpadkov balení, za posledných 12 mesiacov 7 (to je 10.4% registrovaných balení), teraz trvá 6 [E001, A2]
 - SR: od 15. 4. 2019 2 výpadkov balení, za posledných 12 mesiacov 0 (to je 0.0% registrovaných balení), teraz trvá 2 [E005, A2]
 
 ## Relations
