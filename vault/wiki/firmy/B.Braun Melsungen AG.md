@@ -5,7 +5,7 @@ aliases: ["B. Braun Melsungen AG, Melsungen", "B.Braun Avitum AG, Melsungen", "B
 vypadky_cz_od_2019: 471
 vypadky_sk_od_2019: 316
 zdroje: ["E001", "E002", "E004", "E005"]
-generovane_utc: "2026-11-25T05:25:07Z"
+generovane_utc: "2026-11-26T05:28:18Z"
 verified: false
 ---
 # B.Braun Melsungen AG
@@ -17,8 +17,8 @@ verified: false
 - Registrované balenia: ČR 241 [E002, A1], SR 243 [E004, A1]
 
 ## Facts (with sources)
-- ČR: od 15. 4. 2019 471 výpadkov balení, za posledných 12 mesiacov 75 (to je 31.1% registrovaných balení), teraz trvá 2 [E001, A2]
-- SR: od 15. 4. 2019 316 výpadkov balení, za posledných 12 mesiacov 38 (to je 15.6% registrovaných balení), teraz trvá 1 [E005, A2]
+- ČR: od 15. 4. 2019 471 výpadkov balení, za posledných 12 mesiacov 73 (to je 30.3% registrovaných balení), teraz trvá 2 [E001, A2]
+- SR: od 15. 4. 2019 316 výpadkov balení, za posledných 12 mesiacov 38 (to je 15.6% registrovaných balení), teraz trvá 0 [E005, A2]
 
 ## Relations
 - drží registráciu látok s výpadkami: [[B05BB01]] (185×), [[B05BA10]] (128×), [[D08AG02]] (86×), [[B05BA03]] (76×), [[M01AE01]] (34×), [[N02BE01]] (33×), [[B05BA01]] (32×), [[N01AX10]] (31×), [[B05XA01]] (27×), [[N01AH06]] (23×), [[B05AA06]] (22×), [[J01XD01]] (21×), [[B05BA02]] (17×), [[J01GB06]] (16×), [[J01GB03]] (16×), [[B05XA02]] (11×), [[B05BB02]] (9×), [[B05XA30]] (6×), [[B05XA03]] (4×), [[A04AA01]] (3×), [[M03AC09]] (3×), [[B05XA19]] (2×), [[N05CM18]] (2×)

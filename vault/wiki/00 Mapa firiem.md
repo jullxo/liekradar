@@ -3,12 +3,12 @@
 Držitelia registrácie s aspoň 3 výpadkami od 15. 4. 2019, zoradení podľa počtu výpadkov. Generované z dát, neupravovať ručne.
 
 - [[Zentiva, k.s., Praha]] – 1976 výpadkov
-- [[Teva B.V]] – 1695 výpadkov
-- [[Sandoz s.r.o., Praha]] – 1583 výpadkov
+- [[Teva B.V]] – 1699 výpadkov
+- [[Sandoz s.r.o., Praha]] – 1590 výpadkov
 - [[KRKA, d.d., Novo mesto]] – 985 výpadkov
 - [[Fresenius Kabi s.r.o]] – 932 výpadkov
 - [[B.Braun Melsungen AG]] – 787 výpadkov
-- [[MEDOCHEMIE IBERIA, S.A., Lisabon]] – 760 výpadkov
+- [[MEDOCHEMIE Ltd]] – 761 výpadkov
 - [[VIATRIS LIMITED, Dublin]] – 669 výpadkov
 - [[ratiopharm GmbH]] – 547 výpadkov
 - [[Egis Pharmaceuticals PLC, Budapešť]] – 394 výpadkov
@@ -16,7 +16,7 @@ Držitelia registrácie s aspoň 3 výpadkami od 15. 4. 2019, zoradení podľa p
 - [[Sanofi Winthrop Industrie]] – 374 výpadkov
 - [[STADA Arzneimittel AG]] – 369 výpadkov
 - [[GlaxoSmithKline Trading Services Limited, Dublin]] – 346 výpadkov
-- [[Accord Healthcare S.L.U., Barcelona]] – 339 výpadkov
+- [[Accord Healthcare S.L.U., Barcelona]] – 340 výpadkov
 - [[BAYER CORPORATION, MYERSTOWN, PENNSYLVANIA]] – 335 výpadkov
 - [[Actavis Group PTC ehf., Hafnarfjördur]] – 329 výpadkov
 - [[Pfizer Europe MA EEIG]] – 293 výpadkov
@@ -28,7 +28,7 @@ Držitelia registrácie s aspoň 3 výpadkami od 15. 4. 2019, zoradení podľa p
 - [[G.L. Pharma GmbH]] – 190 výpadkov
 - [[Novartis Europharm Limited]] – 190 výpadkov
 - [[Haleon Czech Republic s.r.o]] – 182 výpadkov
-- [[Hexal AG, Holzkirchen]] – 174 výpadkov
+- [[Hexal AG, Holzkirchen]] – 175 výpadkov
 - [[Opella Healthcare Czech s.r.o., Praha]] – 156 výpadkov
 - [[CSL Behring GmbH]] – 143 výpadkov
 - [[Vipharm S.A., Ożarów Mazowiecki]] – 140 výpadkov
@@ -36,15 +36,15 @@ Držitelia registrácie s aspoň 3 výpadkami od 15. 4. 2019, zoradení podľa p
 - [[N.V. Organon, Oss]] – 137 výpadkov
 - [[PIERRE FABRE MEDICAMENT, Lavaur]] – 136 výpadkov
 - [[Takeda Pharma AS, Vallensbaek Strand]] – 131 výpadkov
-- [[BAXTER HEALTHCARE CORP., HYLAND DIV., GLENDALE, CA]] – 129 výpadkov
+- [[BAXTER HEALTHCARE CORP., HYLAND DIV., GLENDALE, CA]] – 130 výpadkov
 - [[Neuraxpharm Bohemia s.r.o., Praha]] – 126 výpadkov
 - [[PRO.MED.CS Praha a.s]] – 126 výpadkov
 - [[Curium Netherlands B.V., Petten]] – 126 výpadkov
 - [[CHEPLAPHARM Arzneimittel GmbH]] – 124 výpadkov
 - [[BB Pharma a.s]] – 108 výpadkov
 - [[Laboratoires Thea, Clermont-Ferrand]] – 105 výpadkov
+- [[EBEWE Pharma Ges.m.b.H Nfg.KG, Unterach]] – 100 výpadkov
 - [[Les Laboratoires Servier, Suresnes cedex]] – 100 výpadkov
-- [[EBEWE Pharma Ges.m.b.H Nfg.KG, Unterach]] – 99 výpadkov
 - [[Desitin Arzneimittel GmbH, Hamburg]] – 98 výpadkov
 - [[Instituto Grifols, S.A]] – 91 výpadkov
 - [[Menarini International Operations Luxembourg S.A., Luxembourg]] – 89 výpadkov
@@ -67,7 +67,7 @@ Držitelia registrácie s aspoň 3 výpadkami od 15. 4. 2019, zoradení podľa p
 - [[+pharma arzneimittel gmbh, Graz]] – 59 výpadkov
 - [[Guerbet,  Roissy CdG Cedex]] – 58 výpadkov
 - [[Novo Nordisk AS]] – 56 výpadkov
-- [[Heaton k.s., Praha]] – 50 výpadkov
+- [[Heaton k.s., Praha]] – 49 výpadkov
 - [[Herbacos Recordati s.r.o., Pardubice]] – 48 výpadkov
 - [[BELUPO lijekovi i kozmetika, d.d., Koprivnica]] – 48 výpadkov
 - [[Pharmaselect International Beteiligungs GmbH]] – 44 výpadkov

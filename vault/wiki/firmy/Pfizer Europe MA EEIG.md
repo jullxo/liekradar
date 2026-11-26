@@ -5,7 +5,7 @@ aliases: ["PFIZER INC., NEW YORK", "Pfizer Europe MA EEIG", "Pfizer Europe MA EE
 vypadky_cz_od_2019: 191
 vypadky_sk_od_2019: 102
 zdroje: ["E001", "E002", "E004", "E005"]
-generovane_utc: "2026-11-18T02:18:53Z"
+generovane_utc: "2026-11-26T05:28:18Z"
 verified: false
 ---
 # Pfizer Europe MA EEIG
@@ -17,7 +17,7 @@ verified: false
 - Registrované balenia: ČR 652 [E002, A1], SR 565 [E004, A1]
 
 ## Facts (with sources)
-- ČR: od 15. 4. 2019 191 výpadkov balení, za posledných 12 mesiacov 14 (to je 2.1% registrovaných balení), teraz trvá 6 [E001, A2]
+- ČR: od 15. 4. 2019 191 výpadkov balení, za posledných 12 mesiacov 14 (to je 2.1% registrovaných balení), teraz trvá 5 [E001, A2]
 - SR: od 15. 4. 2019 102 výpadkov balení, za posledných 12 mesiacov 10 (to je 1.8% registrovaných balení), teraz trvá 8 [E005, A2]
 
 ## Relations

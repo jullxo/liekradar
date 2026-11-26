@@ -5,7 +5,7 @@ aliases: ["AS KALCEKS", "AS Kalceks, Riga"]
 vypadky_cz_od_2019: 38
 vypadky_sk_od_2019: 27
 zdroje: ["E001", "E002", "E004", "E005"]
-generovane_utc: "2026-11-18T02:18:53Z"
+generovane_utc: "2026-11-26T05:28:18Z"
 verified: false
 ---
 # AS Kalceks, Riga
@@ -18,7 +18,7 @@ verified: false
 
 ## Facts (with sources)
 - ČR: od 15. 4. 2019 38 výpadkov balení, za posledných 12 mesiacov 11 (to je 9.8% registrovaných balení), teraz trvá 9 [E001, A2]
-- SR: od 15. 4. 2019 27 výpadkov balení, za posledných 12 mesiacov 9 (to je 11.8% registrovaných balení), teraz trvá 7 [E005, A2]
+- SR: od 15. 4. 2019 27 výpadkov balení, za posledných 12 mesiacov 9 (to je 11.8% registrovaných balení), teraz trvá 6 [E005, A2]
 
 ## Relations
 - drží registráciu látok s výpadkami: [[N05CD08]] (14×), [[N05CM18]] (7×), [[C01CA03]] (6×), [[N02BB02]] (5×), [[M03AC04]] (4×), [[C03CA01]] (3×), [[B05XA05]] (3×), [[A02BC02]] (2×), [[M03AC11]] (2×), [[A04AA05]] (2×), [[A04AA01]] (2×), [[C02CA06]] (2×), [[N01AH01]] (2×), [[J01DD04]] (2×), [[C01CX08]] (2×), [[N02AA01]] (2×), [[N07XX04]] (2×), [[A12CC02]] (1×), [[V03AB35]] (1×), [[V03AF03]] (1×)

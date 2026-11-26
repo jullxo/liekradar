@@ -5,7 +5,7 @@ aliases: ["AstraZeneca AB", "AstraZeneca AB, Södertälje"]
 vypadky_cz_od_2019: 17
 vypadky_sk_od_2019: 7
 zdroje: ["E001", "E002", "E004", "E005"]
-generovane_utc: "2026-11-18T02:18:53Z"
+generovane_utc: "2026-11-26T05:28:18Z"
 verified: false
 ---
 # AstraZeneca AB, Södertälje
@@ -18,7 +18,7 @@ verified: false
 
 ## Facts (with sources)
 - ČR: od 15. 4. 2019 17 výpadkov balení, za posledných 12 mesiacov 4 (to je 1.9% registrovaných balení), teraz trvá 0 [E001, A2]
-- SR: od 15. 4. 2019 7 výpadkov balení, za posledných 12 mesiacov 4 (to je 2.0% registrovaných balení), teraz trvá 2 [E005, A2]
+- SR: od 15. 4. 2019 7 výpadkov balení, za posledných 12 mesiacov 4 (to je 2.0% registrovaných balení), teraz trvá 1 [E005, A2]
 
 ## Relations
 - drží registráciu látok s výpadkami: [[J07BB03]] (7×), [[L02AE03]] (3×), [[R03DA04]] (3×), [[R03BA02]] (3×), [[R03CC03]] (3×), [[A10BK01]] (1×), [[R03AK07]] (1×), [[L01XK01]] (1×), [[R03DX07]] (1×), [[R03DX11]] (1×)

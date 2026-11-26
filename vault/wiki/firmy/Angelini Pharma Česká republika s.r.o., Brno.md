@@ -5,7 +5,7 @@ aliases: ["ANGELINI PHARMA ESPANA S.L., Barcelona", "Angelini Pharma S.p.A", "An
 vypadky_cz_od_2019: 167
 vypadky_sk_od_2019: 31
 zdroje: ["E001", "E002", "E004", "E005"]
-generovane_utc: "2026-11-18T02:18:53Z"
+generovane_utc: "2026-11-26T05:28:18Z"
 verified: false
 ---
 # Angelini Pharma Česká republika s.r.o., Brno
@@ -17,7 +17,7 @@ verified: false
 - Registrované balenia: ČR 142 [E002, A1], SR 84 [E004, A1]
 
 ## Facts (with sources)
-- ČR: od 15. 4. 2019 167 výpadkov balení, za posledných 12 mesiacov 11 (to je 7.7% registrovaných balení), teraz trvá 2 [E001, A2]
+- ČR: od 15. 4. 2019 167 výpadkov balení, za posledných 12 mesiacov 10 (to je 7.0% registrovaných balení), teraz trvá 2 [E001, A2]
 - SR: od 15. 4. 2019 31 výpadkov balení, za posledných 12 mesiacov 2 (to je 2.4% registrovaných balení), teraz trvá 1 [E005, A2]
 
 ## Relations

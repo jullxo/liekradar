@@ -5,7 +5,7 @@ aliases: ["ANPHARM Przedsiebiorstwo Farmaceutyczne S.A.", "ANPHARM Przedsiebiors
 vypadky_cz_od_2019: 0
 vypadky_sk_od_2019: 13
 zdroje: ["E001", "E002", "E004", "E005"]
-generovane_utc: "2026-11-13T10:06:19Z"
+generovane_utc: "2026-11-26T05:28:18Z"
 verified: false
 ---
 # ANPHARM Przedsiebiorstwo Farmaceutyczne S.A
@@ -18,7 +18,7 @@ verified: false
 
 ## Facts (with sources)
 - ČR: od 15. 4. 2019 0 výpadkov balení, za posledných 12 mesiacov 0 (to je 0.0% registrovaných balení), teraz trvá 0 [E001, A2]
-- SR: od 15. 4. 2019 13 výpadkov balení, za posledných 12 mesiacov 3 (to je 0.9% registrovaných balení), teraz trvá 13 [E005, A2]
+- SR: od 15. 4. 2019 13 výpadkov balení, za posledných 12 mesiacov 3 (to je 0.9% registrovaných balení), teraz trvá 12 [E005, A2]
 
 ## Relations
 - drží registráciu látok s výpadkami: [[C09BX01]] (5×), [[C09BB04]] (3×), [[C09BA04]] (2×), [[C09BX02]] (2×), [[C10BX11]] (1×)

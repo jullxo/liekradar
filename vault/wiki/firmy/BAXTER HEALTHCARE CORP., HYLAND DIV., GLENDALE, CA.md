@@ -2,10 +2,10 @@
 typ: "firma"
 firma: "baxter"
 aliases: ["BAXTER CZECH, spol. s r.o.", "BAXTER HEALTHCARE CORP., HYLAND DIV., GLENDALE, CA", "Baxter Healthcare S.A. , Castlebar", "Baxter Holding B.V.", "Baxter Holding B.V., Utrecht", "Baxter Oncology GmbH, Halle", "Baxter Slovakia s.r.o."]
-vypadky_cz_od_2019: 110
+vypadky_cz_od_2019: 111
 vypadky_sk_od_2019: 19
 zdroje: ["E001", "E002", "E004", "E005"]
-generovane_utc: "2026-11-25T05:25:07Z"
+generovane_utc: "2026-11-26T05:28:18Z"
 verified: false
 ---
 # BAXTER HEALTHCARE CORP., HYLAND DIV., GLENDALE, CA
@@ -17,15 +17,16 @@ verified: false
 - Registrované balenia: ČR 456 [E002, A1], SR 203 [E004, A1]
 
 ## Facts (with sources)
-- ČR: od 15. 4. 2019 110 výpadkov balení, za posledných 12 mesiacov 31 (to je 6.8% registrovaných balení), teraz trvá 4 [E001, A2]
+- ČR: od 15. 4. 2019 111 výpadkov balení, za posledných 12 mesiacov 32 (to je 7.0% registrovaných balení), teraz trvá 5 [E001, A2]
 - SR: od 15. 4. 2019 19 výpadkov balení, za posledných 12 mesiacov 7 (to je 3.4% registrovaných balení), teraz trvá 10 [E005, A2]
 
 ## Relations
-- drží registráciu látok s výpadkami: [[B05XA03]] (26×), [[B05BA10]] (22×), [[B05BB01]] (20×), [[B05BA03]] (14×), [[B02BC30]] (13×), [[L01AA01]] (9×), [[L01AA06]] (8×), [[L01DB01]] (5×), [[N01AB06]] (5×), [[B05BB02]] (4×), [[V03AF01]] (2×), [[N01AB08]] (1×)
+- drží registráciu látok s výpadkami: [[B05XA03]] (26×), [[B05BA10]] (22×), [[B05BB01]] (21×), [[B05BA03]] (14×), [[B02BC30]] (13×), [[L01AA01]] (9×), [[L01AA06]] (8×), [[L01DB01]] (5×), [[N01AB06]] (5×), [[B05BB02]] (4×), [[V03AF01]] (2×), [[N01AB08]] (1×)
 
 ## Timeline
 | Dátum | Krajina | Udalosť | Zdroj |
 |---|---|---|---|
+| 2026-11-25 | CZ | začiatok výpadku: PLASMALYTE (0011670, [[B05BB01]]) | [E001, A2] |
 | 2026-11-16 | CZ | začiatok výpadku: GLUKÓZA 10% VIAFLO (0158805, [[B05BA03]]) | [E001, A2] |
 | 2026-11-11 | CZ | začiatok výpadku: FYZIOLOGICKÝ ROZTOK VIAFLO (0276184, [[B05XA03]]) | [E001, A2] |
 | 2026-11-03 | CZ | začiatok výpadku: PLASMALYTE (0278279, [[B05BB01]]) | [E001, A2] |
@@ -40,7 +41,6 @@ verified: false
 | 2026-08-14 | CZ | začiatok výpadku: CAELYX PEGYLATED LIPOSOMAL (0027432, [[L01DB01]]) | [E001, A2] |
 | 2026-08-05 | CZ | začiatok výpadku: TISSEEL LYO (0153350, [[B02BC30]]) | [E001, A2] |
 | 2026-07-30 | CZ | začiatok výpadku: UROMITEXAN (0273493, [[V03AF01]]) | [E001, A2] |
-| 2026-07-09 | CZ | začiatok výpadku: HOLOXAN (0273419, [[L01AA06]]) | [E001, A2] |
 
 ## Analyst notes (inference, clearly marked)
 <!-- Sem píšu agenti a analytik. Generátor túto sekciu nikdy neprepíše.

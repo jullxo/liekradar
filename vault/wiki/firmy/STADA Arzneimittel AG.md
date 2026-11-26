@@ -5,7 +5,7 @@ aliases: ["STADA Arzneimittel AG", "STADA Arzneimittel AG, Bad Vilbel"]
 vypadky_cz_od_2019: 295
 vypadky_sk_od_2019: 74
 zdroje: ["E001", "E002", "E004", "E005"]
-generovane_utc: "2026-11-24T05:25:43Z"
+generovane_utc: "2026-11-26T05:28:18Z"
 verified: false
 ---
 # STADA Arzneimittel AG
@@ -18,7 +18,7 @@ verified: false
 
 ## Facts (with sources)
 - ČR: od 15. 4. 2019 295 výpadkov balení, za posledných 12 mesiacov 57 (to je 2.2% registrovaných balení), teraz trvá 18 [E001, A2]
-- SR: od 15. 4. 2019 74 výpadkov balení, za posledných 12 mesiacov 14 (to je 0.5% registrovaných balení), teraz trvá 35 [E005, A2]
+- SR: od 15. 4. 2019 74 výpadkov balení, za posledných 12 mesiacov 14 (to je 0.5% registrovaných balení), teraz trvá 32 [E005, A2]
 
 ## Relations
 - drží registráciu látok s výpadkami: [[A10BA02]] (22×), [[N03AX14]] (20×), [[C09BB04]] (19×), [[N02AB03]] (19×), [[N02BB02]] (17×), [[N02AE01]] (16×), [[N02BF02]] (14×), [[A10BD08]] (10×), [[N02AX02]] (10×), [[N04BC04]] (9×), [[S01EC04]] (8×), [[H05BX01]] (8×), [[M01AB05]] (8×), [[N02AA05]] (8×), [[B01AC06]] (6×), [[A02BC01]] (6×), [[J01EE01]] (6×), [[C02CA06]] (6×), [[R01AA07]] (6×), [[C03BA11]] (6×), [[R02AA20]] (5×), [[B01AF01]] (5×), [[C02AC05]] (5×), [[C10AX09]] (5×), [[S01EE01]] (5×)
