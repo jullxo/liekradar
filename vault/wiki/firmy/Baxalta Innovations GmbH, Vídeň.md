@@ -3,9 +3,9 @@ typ: "firma"
 firma: "baxalta"
 aliases: ["Baxalta Innovations GmbH", "Baxalta Innovations GmbH, Vídeň"]
 vypadky_cz_od_2019: 49
-vypadky_sk_od_2019: 15
+vypadky_sk_od_2019: 16
 zdroje: ["E001", "E002", "E004", "E005"]
-generovane_utc: "2026-11-18T02:18:53Z"
+generovane_utc: "2026-11-27T05:26:42Z"
 verified: false
 ---
 # Baxalta Innovations GmbH, Vídeň
@@ -18,14 +18,15 @@ verified: false
 
 ## Facts (with sources)
 - ČR: od 15. 4. 2019 49 výpadkov balení, za posledných 12 mesiacov 1 (to je 1.3% registrovaných balení), teraz trvá 0 [E001, A2]
-- SR: od 15. 4. 2019 15 výpadkov balení, za posledných 12 mesiacov 3 (to je 4.1% registrovaných balení), teraz trvá 2 [E005, A2]
+- SR: od 15. 4. 2019 16 výpadkov balení, za posledných 12 mesiacov 4 (to je 5.5% registrovaných balení), teraz trvá 3 [E005, A2]
 
 ## Relations
-- drží registráciu látok s výpadkami: [[J06BA01]] (34×), [[B02BD04]] (8×), [[B05AA01]] (8×), [[J06BA02]] (6×), [[B02BD02]] (3×), [[B01AB02]] (2×), [[B02BD05]] (2×), [[B02BD03]] (1×)
+- drží registráciu látok s výpadkami: [[J06BA01]] (35×), [[B02BD04]] (8×), [[B05AA01]] (8×), [[J06BA02]] (6×), [[B02BD02]] (3×), [[B01AB02]] (2×), [[B02BD05]] (2×), [[B02BD03]] (1×)
 
 ## Timeline
 | Dátum | Krajina | Udalosť | Zdroj |
 |---|---|---|---|
+| 2026-11-26 | SK | začiatok výpadku: HyQvia 100 mg/ml infúzny roztok na subkutánne použitie (sol inf 1x100 ml (10 % IG)+1x5 ml (rHuPH20) (liek.inj.skl.)) (5732A, [[J06BA01]]) | [E005, A2] |
 | 2026-11-17 | SK | začiatok výpadku: HyQvia 100 mg/ml infúzny roztok na subkutánne použitie (sol inf 1x300 ml (10 % IG)+1x15 ml (rHuPH20) (liek.inj.skl.)) (5734A, [[J06BA01]]) | [E005, A2] |
 | 2026-11-17 | SK | začiatok výpadku: HyQvia 100 mg/ml infúzny roztok na subkutánne použitie (sol inf 1x200 ml (10 % IG)+1x10 ml (rHuPH20) (liek.inj.skl.)) (5733A, [[J06BA01]]) | [E005, A2] |
 | 2026-09-21 | CZ | začiatok výpadku: ANTITHROMBIN III BAXALTA (0173173, [[B01AB02]]) | [E001, A2] |
@@ -40,7 +41,6 @@ verified: false
 | 2024-10-03 | CZ | začiatok výpadku: ANTITHROMBIN III BAXALTA (0173172, [[B01AB02]]) | [E001, A2] |
 | 2024-10-03 | CZ | začiatok výpadku: CUVITRU (0126807, [[J06BA01]]) | [E001, A2] |
 | 2024-10-03 | CZ | začiatok výpadku: HYQVIA (0194140, [[J06BA01]]) | [E001, A2] |
-| 2024-08-26 | CZ | začiatok výpadku: CUVITRU (0126808, [[J06BA01]]) | [E001, A2] |
 
 ## Analyst notes (inference, clearly marked)
 <!-- Sem píšu agenti a analytik. Generátor túto sekciu nikdy neprepíše.

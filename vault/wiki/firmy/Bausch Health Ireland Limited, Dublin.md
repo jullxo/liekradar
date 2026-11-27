@@ -5,7 +5,7 @@ aliases: ["BAUSCH + LOMB IRELAND LIMITED, Dublin", "BAUSCH HEALTH IRELAND LIMITE
 vypadky_cz_od_2019: 50
 vypadky_sk_od_2019: 29
 zdroje: ["E001", "E002", "E004", "E005"]
-generovane_utc: "2026-11-24T05:25:43Z"
+generovane_utc: "2026-11-27T05:26:42Z"
 verified: false
 ---
 # Bausch Health Ireland Limited, Dublin
@@ -18,7 +18,7 @@ verified: false
 
 ## Facts (with sources)
 - ČR: od 15. 4. 2019 50 výpadkov balení, za posledných 12 mesiacov 14 (to je 5.2% registrovaných balení), teraz trvá 7 [E001, A2]
-- SR: od 15. 4. 2019 29 výpadkov balení, za posledných 12 mesiacov 5 (to je 2.3% registrovaných balení), teraz trvá 3 [E005, A2]
+- SR: od 15. 4. 2019 29 výpadkov balení, za posledných 12 mesiacov 5 (to je 2.3% registrovaných balení), teraz trvá 2 [E005, A2]
 
 ## Relations
 - drží registráciu látok s výpadkami: [[J01DC10]] (12×), [[M01AC06]] (7×), [[N06DA03]] (7×), [[S01EC04]] (5×), [[J01DB05]] (5×), [[M01AE52]] (4×), [[S01BC01]] (4×), [[S01ED51]] (4×), [[S01BC11]] (4×), [[A06AH01]] (3×), [[S01XA20]] (3×), [[S01EC03]] (3×), [[S01EE03]] (3×), [[L02AB01]] (2×), [[C07AB07]] (2×), [[B01AC24]] (1×), [[C09BA09]] (1×), [[G03AA10]] (1×), [[J01DD01]] (1×), [[G04BE03]] (1×), [[C10AB05]] (1×), [[L04AK02]] (1×), [[L04AK01]] (1×), [[S01EA05]] (1×), [[S01ED05]] (1×)

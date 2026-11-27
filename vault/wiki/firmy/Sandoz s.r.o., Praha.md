@@ -5,7 +5,7 @@ aliases: ["SANDOZ FARMACEUTICA LDA, Paço de Arcos", "SANDOZ FARMACEUTICA LDA, P
 vypadky_cz_od_2019: 1216
 vypadky_sk_od_2019: 374
 zdroje: ["E001", "E002", "E004", "E005"]
-generovane_utc: "2026-11-26T05:28:18Z"
+generovane_utc: "2026-11-27T05:26:42Z"
 verified: false
 ---
 # Sandoz s.r.o., Praha
@@ -14,10 +14,10 @@ verified: false
 
 ## Identifiers
 - Názvy v registroch: SANDOZ FARMACEUTICA LDA, Paço de Arcos, SANDOZ FARMACEUTICA LDA, Porto Salvo, Sandoz GmbH, Sandoz GmbH, Kundl, Sandoz Pharmaceuticals d.d., Sandoz Pharmaceuticals d.d., Ljubljana, Sandoz d.d., Sandoz s.r.o., Praha
-- Registrované balenia: ČR 3770 [E002, A1], SR 3162 [E004, A1]
+- Registrované balenia: ČR 3770 [E002, A1], SR 3082 [E004, A1]
 
 ## Facts (with sources)
-- ČR: od 15. 4. 2019 1216 výpadkov balení, za posledných 12 mesiacov 215 (to je 5.7% registrovaných balení), teraz trvá 94 [E001, A2]
+- ČR: od 15. 4. 2019 1216 výpadkov balení, za posledných 12 mesiacov 214 (to je 5.7% registrovaných balení), teraz trvá 91 [E001, A2]
 - SR: od 15. 4. 2019 374 výpadkov balení, za posledných 12 mesiacov 72 (to je 2.3% registrovaných balení), teraz trvá 40 [E005, A2]
 
 ## Relations

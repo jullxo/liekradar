@@ -5,7 +5,7 @@ aliases: ["KRKA, d.d., Novo mesto", "Krka, d.d., Novo mesto, Novo mesto"]
 vypadky_cz_od_2019: 328
 vypadky_sk_od_2019: 657
 zdroje: ["E001", "E002", "E004", "E005"]
-generovane_utc: "2026-11-25T05:25:07Z"
+generovane_utc: "2026-11-27T05:26:42Z"
 verified: false
 ---
 # KRKA, d.d., Novo mesto
@@ -14,7 +14,7 @@ verified: false
 
 ## Identifiers
 - Názvy v registroch: KRKA, d.d., Novo mesto, Krka, d.d., Novo mesto, Novo mesto
-- Registrované balenia: ČR 4934 [E002, A1], SR 5106 [E004, A1]
+- Registrované balenia: ČR 4934 [E002, A1], SR 5110 [E004, A1]
 
 ## Facts (with sources)
 - ČR: od 15. 4. 2019 328 výpadkov balení, za posledných 12 mesiacov 89 (to je 1.8% registrovaných balení), teraz trvá 13 [E001, A2]

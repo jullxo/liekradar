@@ -2,8 +2,8 @@
 
 Držitelia registrácie s aspoň 3 výpadkami od 15. 4. 2019, zoradení podľa počtu výpadkov. Generované z dát, neupravovať ručne.
 
-- [[Zentiva, k.s., Praha]] – 1976 výpadkov
-- [[Teva B.V]] – 1699 výpadkov
+- [[Zentiva, k.s., Praha]] – 1978 výpadkov
+- [[Teva B.V]] – 1700 výpadkov
 - [[Sandoz s.r.o., Praha]] – 1590 výpadkov
 - [[KRKA, d.d., Novo mesto]] – 985 výpadkov
 - [[Fresenius Kabi s.r.o]] – 932 výpadkov
@@ -11,7 +11,7 @@ Držitelia registrácie s aspoň 3 výpadkami od 15. 4. 2019, zoradení podľa p
 - [[MEDOCHEMIE Ltd]] – 761 výpadkov
 - [[VIATRIS LIMITED, Dublin]] – 669 výpadkov
 - [[ratiopharm GmbH]] – 547 výpadkov
-- [[Egis Pharmaceuticals PLC, Budapešť]] – 394 výpadkov
+- [[Egis Pharmaceuticals PLC, Budapešť]] – 396 výpadkov
 - [[Mylan Ireland Limited, Dublin]] – 382 výpadkov
 - [[Sanofi Winthrop Industrie]] – 374 výpadkov
 - [[STADA Arzneimittel AG]] – 369 výpadkov
@@ -34,8 +34,8 @@ Držitelia registrácie s aspoň 3 výpadkami od 15. 4. 2019, zoradení podľa p
 - [[Vipharm S.A., Ożarów Mazowiecki]] – 140 výpadkov
 - [[Berlin-Chemie AG]] – 138 výpadkov
 - [[N.V. Organon, Oss]] – 137 výpadkov
-- [[PIERRE FABRE MEDICAMENT, Lavaur]] – 136 výpadkov
-- [[Takeda Pharma AS, Vallensbaek Strand]] – 131 výpadkov
+- [[PIERRE FABRE MEDICAMENT, Lavaur]] – 137 výpadkov
+- [[Takeda Pharma AS, Vallensbaek Strand]] – 132 výpadkov
 - [[BAXTER HEALTHCARE CORP., HYLAND DIV., GLENDALE, CA]] – 130 výpadkov
 - [[Neuraxpharm Bohemia s.r.o., Praha]] – 126 výpadkov
 - [[PRO.MED.CS Praha a.s]] – 126 výpadkov
@@ -55,10 +55,10 @@ Držitelia registrácie s aspoň 3 výpadkami od 15. 4. 2019, zoradení podľa p
 - [[OMEGA PHARMA a.s]] – 75 výpadkov
 - [[Olikla s.r.o., Kostelec nad Černými Lesy]] – 75 výpadkov
 - [[IMUNA PHARM, a.s]] – 66 výpadkov
+- [[Baxalta Innovations GmbH, Vídeň]] – 65 výpadkov
 - [[BOEHRINGER INGELHEIM ITALIA S.P.A,  REGGELLOFIRENZE]] – 65 výpadkov
-- [[MEDREG s.r.o., Praha]] – 65 výpadkov
 - [[AS Kalceks, Riga]] – 65 výpadkov
-- [[Baxalta Innovations GmbH, Vídeň]] – 64 výpadkov
+- [[MEDREG s.r.o., Praha]] – 65 výpadkov
 - [[Orion Corporation, Espoo]] – 63 výpadkov
 - [[Janssen-Cilag International NV]] – 62 výpadkov
 - [[Dr. Falk Pharma GmbH, Freiburg]] – 62 výpadkov
@@ -112,11 +112,11 @@ Držitelia registrácie s aspoň 3 výpadkami od 15. 4. 2019, zoradení podľa p
 - [[Adamed Pharma S.A., Czosnów]] – 21 výpadkov
 - [[Novatin Limited, Mgarr]] – 20 výpadkov
 - [[FARMAK INTERNATIONAL Sp.z.o.o., Varšava]] – 19 výpadkov
-- [[Cipla Europe NV, Antverpy]] – 18 výpadkov
 - [[Daiichi Sankyo Europe GmbH, Mnichov]] – 18 výpadkov
-- [[NOUCOR HEALTH, S.A]] – 17 výpadkov
 - [[Hikma Farmaceutica (Portugal) S.A]] – 17 výpadkov
+- [[NOUCOR HEALTH, S.A]] – 17 výpadkov
 - [[Atnahs Pharma Netherlands B.V., Amsterdam]] – 17 výpadkov
+- [[Cipla Europe NV, Antverpy]] – 16 výpadkov
 - [[RadioMedic s.r.o., Husinec-Řež]] – 16 výpadkov
 - [[Tillotts Pharma GmbH, Rheinfelden]] – 15 výpadkov
 - [[PHARMAGEN CZ s.r.o., Praha]] – 15 výpadkov

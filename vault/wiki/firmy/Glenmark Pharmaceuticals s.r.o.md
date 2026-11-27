@@ -5,7 +5,7 @@ aliases: ["Glenmark Arzneimittel GmbH", "Glenmark Arzneimittel GmbH, Gröbenzell
 vypadky_cz_od_2019: 205
 vypadky_sk_od_2019: 66
 zdroje: ["E001", "E002", "E004", "E005"]
-generovane_utc: "2026-11-22T05:14:02Z"
+generovane_utc: "2026-11-27T05:26:42Z"
 verified: false
 ---
 # Glenmark Pharmaceuticals s.r.o
@@ -14,7 +14,7 @@ verified: false
 
 ## Identifiers
 - Názvy v registroch: Glenmark Arzneimittel GmbH, Glenmark Arzneimittel GmbH, Gröbenzell, Glenmark Pharmaceuticals s.r.o., Glenmark Pharmaceuticals s.r.o., Praha
-- Registrované balenia: ČR 656 [E002, A1], SR 828 [E004, A1]
+- Registrované balenia: ČR 656 [E002, A1], SR 845 [E004, A1]
 
 ## Facts (with sources)
 - ČR: od 15. 4. 2019 205 výpadkov balení, za posledných 12 mesiacov 43 (to je 6.6% registrovaných balení), teraz trvá 36 [E001, A2]

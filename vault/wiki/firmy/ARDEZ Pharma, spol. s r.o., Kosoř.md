@@ -5,7 +5,7 @@ aliases: ["ARDEZ Pharma, spol. s r.o.", "ARDEZ Pharma, spol. s r.o., Kosoř"]
 vypadky_cz_od_2019: 32
 vypadky_sk_od_2019: 11
 zdroje: ["E001", "E002", "E004", "E005"]
-generovane_utc: "2026-11-13T10:06:19Z"
+generovane_utc: "2026-11-27T05:26:42Z"
 verified: false
 ---
 # ARDEZ Pharma, spol. s r.o., Kosoř
@@ -17,7 +17,7 @@ verified: false
 - Registrované balenia: ČR 172 [E002, A1], SR 79 [E004, A1]
 
 ## Facts (with sources)
-- ČR: od 15. 4. 2019 32 výpadkov balení, za posledných 12 mesiacov 6 (to je 3.5% registrovaných balení), teraz trvá 4 [E001, A2]
+- ČR: od 15. 4. 2019 32 výpadkov balení, za posledných 12 mesiacov 6 (to je 3.5% registrovaných balení), teraz trvá 3 [E001, A2]
 - SR: od 15. 4. 2019 11 výpadkov balení, za posledných 12 mesiacov 2 (to je 2.5% registrovaných balení), teraz trvá 0 [E005, A2]
 
 ## Relations

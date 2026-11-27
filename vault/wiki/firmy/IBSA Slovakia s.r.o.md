@@ -5,7 +5,7 @@ aliases: ["IBSA Farmaceutici Italia S.R.L., Lodi", "IBSA Slovakia s.r.o.", "IBSA
 vypadky_cz_od_2019: 77
 vypadky_sk_od_2019: 2
 zdroje: ["E001", "E002", "E004", "E005"]
-generovane_utc: "2026-11-21T05:10:05Z"
+generovane_utc: "2026-11-27T05:26:42Z"
 verified: false
 ---
 # IBSA Slovakia s.r.o
@@ -17,7 +17,7 @@ verified: false
 - Registrované balenia: ČR 116 [E002, A1], SR 142 [E004, A1]
 
 ## Facts (with sources)
-- ČR: od 15. 4. 2019 77 výpadkov balení, za posledných 12 mesiacov 8 (to je 6.9% registrovaných balení), teraz trvá 20 [E001, A2]
+- ČR: od 15. 4. 2019 77 výpadkov balení, za posledných 12 mesiacov 7 (to je 6.0% registrovaných balení), teraz trvá 20 [E001, A2]
 - SR: od 15. 4. 2019 2 výpadkov balení, za posledných 12 mesiacov 0 (to je 0.0% registrovaných balení), teraz trvá 1 [E005, A2]
 
 ## Relations
