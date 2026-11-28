@@ -2,10 +2,10 @@
 typ: "firma"
 firma: "teva"
 aliases: ["TEVA Czech Industries s.r.o., Opava-Komárov", "TEVA GmbH", "TEVA Pharmaceuticals Slovakia s.r.o.", "Teva B.V.", "Teva Pharma B.V.", "Teva Pharma B.V., Haarlem", "Teva Pharmaceuticals CR, s.r.o., Praha", "Teva Pharmaceuticals Slovakia, Bratislava"]
-vypadky_cz_od_2019: 1143
+vypadky_cz_od_2019: 1139
 vypadky_sk_od_2019: 557
 zdroje: ["E001", "E002", "E004", "E005"]
-generovane_utc: "2026-11-27T05:26:42Z"
+generovane_utc: "2026-11-28T05:18:06Z"
 verified: false
 ---
 # Teva B.V
@@ -14,10 +14,10 @@ verified: false
 
 ## Identifiers
 - Názvy v registroch: TEVA Czech Industries s.r.o., Opava-Komárov, TEVA GmbH, TEVA Pharmaceuticals Slovakia s.r.o., Teva B.V., Teva Pharma B.V., Teva Pharma B.V., Haarlem, Teva Pharmaceuticals CR, s.r.o., Praha, Teva Pharmaceuticals Slovakia, Bratislava
-- Registrované balenia: ČR 3514 [E002, A1], SR 3395 [E004, A1]
+- Registrované balenia: ČR 3513 [E002, A1], SR 3395 [E004, A1]
 
 ## Facts (with sources)
-- ČR: od 15. 4. 2019 1143 výpadkov balení, za posledných 12 mesiacov 211 (to je 6.0% registrovaných balení), teraz trvá 94 [E001, A2]
+- ČR: od 15. 4. 2019 1139 výpadkov balení, za posledných 12 mesiacov 211 (to je 6.0% registrovaných balení), teraz trvá 94 [E001, A2]
 - SR: od 15. 4. 2019 557 výpadkov balení, za posledných 12 mesiacov 112 (to je 3.3% registrovaných balení), teraz trvá 45 [E005, A2]
 
 ## Relations
@@ -29,12 +29,12 @@ verified: false
 | 2026-11-27 | CZ | začiatok výpadku: TACFORIUS (0222732, [[L04AD02]]) | [E001, A2] |
 | 2026-11-26 | CZ | začiatok výpadku: PERINDOPRIL TOSILATE/AMLODIPIN TEVA B.V. (0247603, [[C09BB04]]) | [E001, A2] |
 | 2026-11-25 | CZ | začiatok výpadku: OLANZAPIN TEVA (0500068, [[N05AH03]]) | [E001, A2] |
-| 2026-11-25 | CZ | začiatok výpadku: SORAFENIB TEVA (0252492, [[L01EX02]]) | [E001, A2] |
 | 2026-11-25 | CZ | začiatok výpadku: LENALIDOMID TEVA (0223993, [[L04AX04]]) | [E001, A2] |
+| 2026-11-25 | CZ | začiatok výpadku: SORAFENIB TEVA (0252492, [[L01EX02]]) | [E001, A2] |
 | 2026-11-24 | CZ | začiatok výpadku: ANASTROZOL TEVA (0106016, [[L02BG03]]) | [E001, A2] |
-| 2026-11-23 | SK | začiatok výpadku: Paliperidón Teva 75 mg injekčná suspenzia s predĺženým uvoľňovaním (sus ijp 1x75 mg (striek.inj.napln.+2x ihla)) (8596D, [[N05AX13]]) | [E005, A2] |
 | 2026-11-23 | CZ | začiatok výpadku: FENOFIX (0218875, [[C10AB05]]) | [E001, A2] |
 | 2026-11-23 | CZ | začiatok výpadku: PREGABALIN TEVA (0211468, [[N02BF02]]) | [E001, A2] |
+| 2026-11-23 | SK | začiatok výpadku: Paliperidón Teva 75 mg injekčná suspenzia s predĺženým uvoľňovaním (sus ijp 1x75 mg (striek.inj.napln.+2x ihla)) (8596D, [[N05AX13]]) | [E005, A2] |
 | 2026-11-22 | CZ | začiatok výpadku: PREGABALIN TEVA (0211467, [[N02BF02]]) | [E001, A2] |
 | 2026-11-18 | CZ | začiatok výpadku: PERINDOPRIL ARGININ/INDAPAMID/AMLODIPIN TEVA (0262618, [[C09BX01]]) | [E001, A2] |
 | 2026-11-16 | SK | začiatok výpadku: Pirabene 1200 mg (tbl flm 60x1200 mg (blis.PVC/Al)) (81600, [[N06BX03]]) | [E005, A2] |

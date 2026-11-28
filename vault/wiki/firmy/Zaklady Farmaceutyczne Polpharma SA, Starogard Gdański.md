@@ -5,7 +5,7 @@ aliases: ["Zaklady Farmaceutyczne POLPHARMA S.A.", "Zaklady Farmaceutyczne Polph
 vypadky_cz_od_2019: 19
 vypadky_sk_od_2019: 3
 zdroje: ["E001", "E002", "E004", "E005"]
-generovane_utc: "2026-11-18T02:18:53Z"
+generovane_utc: "2026-11-28T05:18:06Z"
 verified: false
 ---
 # Zaklady Farmaceutyczne Polpharma SA, Starogard Gdański
@@ -14,7 +14,7 @@ verified: false
 
 ## Identifiers
 - Názvy v registroch: Zaklady Farmaceutyczne POLPHARMA S.A., Zaklady Farmaceutyczne Polpharma SA, Starogard Gdański
-- Registrované balenia: ČR 368 [E002, A1], SR 116 [E004, A1]
+- Registrované balenia: ČR 361 [E002, A1], SR 116 [E004, A1]
 
 ## Facts (with sources)
 - ČR: od 15. 4. 2019 19 výpadkov balení, za posledných 12 mesiacov 4 (to je 1.1% registrovaných balení), teraz trvá 2 [E001, A2]

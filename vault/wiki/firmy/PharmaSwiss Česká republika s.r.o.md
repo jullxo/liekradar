@@ -5,7 +5,7 @@ aliases: ["PharmaSwiss Česká republika s.r.o.", "PharmaSwiss Česká republika
 vypadky_cz_od_2019: 0
 vypadky_sk_od_2019: 4
 zdroje: ["E001", "E002", "E004", "E005"]
-generovane_utc: "2026-11-13T10:06:19Z"
+generovane_utc: "2026-11-28T05:18:06Z"
 verified: false
 ---
 # PharmaSwiss Česká republika s.r.o
@@ -14,7 +14,7 @@ verified: false
 
 ## Identifiers
 - Názvy v registroch: PharmaSwiss Česká republika s.r.o., PharmaSwiss Česká republika s.r.o., Praha
-- Registrované balenia: ČR 9 [E002, A1], SR 35 [E004, A1]
+- Registrované balenia: ČR 2 [E002, A1], SR 35 [E004, A1]
 
 ## Facts (with sources)
 - ČR: od 15. 4. 2019 0 výpadkov balení, za posledných 12 mesiacov 0 (to je 0.0% registrovaných balení), teraz trvá 0 [E001, A2]

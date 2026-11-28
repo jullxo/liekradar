@@ -5,7 +5,7 @@ aliases: ["Incyte Biosciences Distribution B.V.", "Incyte Biosciences Distributi
 vypadky_cz_od_2019: 3
 vypadky_sk_od_2019: 3
 zdroje: ["E001", "E002", "E004", "E005"]
-generovane_utc: "2026-11-27T05:26:42Z"
+generovane_utc: "2026-11-28T05:18:06Z"
 verified: false
 ---
 # Incyte Biosciences Distribution B.V
@@ -14,10 +14,10 @@ verified: false
 
 ## Identifiers
 - Názvy v registroch: Incyte Biosciences Distribution B.V., Incyte Biosciences Distribution B.V., Amsterdam
-- Registrované balenia: ČR 17 [E002, A1], SR 22 [E004, A1]
+- Registrované balenia: ČR 21 [E002, A1], SR 22 [E004, A1]
 
 ## Facts (with sources)
-- ČR: od 15. 4. 2019 3 výpadkov balení, za posledných 12 mesiacov 1 (to je 5.9% registrovaných balení), teraz trvá 0 [E001, A2]
+- ČR: od 15. 4. 2019 3 výpadkov balení, za posledných 12 mesiacov 1 (to je 4.8% registrovaných balení), teraz trvá 0 [E001, A2]
 - SR: od 15. 4. 2019 3 výpadkov balení, za posledných 12 mesiacov 0 (to je 0.0% registrovaných balení), teraz trvá 1 [E005, A2]
 
 ## Relations

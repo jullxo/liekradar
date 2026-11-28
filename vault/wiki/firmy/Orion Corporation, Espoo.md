@@ -5,7 +5,7 @@ aliases: ["Orion Corporation", "Orion Corporation, Espoo"]
 vypadky_cz_od_2019: 49
 vypadky_sk_od_2019: 14
 zdroje: ["E001", "E002", "E004", "E005"]
-generovane_utc: "2026-11-13T10:06:19Z"
+generovane_utc: "2026-11-28T05:18:06Z"
 verified: false
 ---
 # Orion Corporation, Espoo
@@ -14,7 +14,7 @@ verified: false
 
 ## Identifiers
 - Názvy v registroch: Orion Corporation, Orion Corporation, Espoo
-- Registrované balenia: ČR 512 [E002, A1], SR 256 [E004, A1]
+- Registrované balenia: ČR 504 [E002, A1], SR 256 [E004, A1]
 
 ## Facts (with sources)
 - ČR: od 15. 4. 2019 49 výpadkov balení, za posledných 12 mesiacov 8 (to je 1.6% registrovaných balení), teraz trvá 6 [E001, A2]

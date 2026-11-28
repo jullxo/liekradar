@@ -5,7 +5,7 @@ aliases: ["HALEON FRANCE, Rueil-Malmaison", "HALEON IRELAND DUNGARVAN LIMITED, W
 vypadky_cz_od_2019: 131
 vypadky_sk_od_2019: 51
 zdroje: ["E001", "E002", "E004", "E005"]
-generovane_utc: "2026-11-13T10:06:19Z"
+generovane_utc: "2026-11-28T05:18:06Z"
 verified: false
 ---
 # Haleon Czech Republic s.r.o
@@ -14,7 +14,7 @@ verified: false
 
 ## Identifiers
 - Názvy v registroch: HALEON FRANCE, Rueil-Malmaison, HALEON IRELAND DUNGARVAN LIMITED, Waterford, HALEON ROMÂNIA S.R.L., Bucureşti, Haleon Belgium, Zaventem, Haleon Czech Republic s.r.o., Haleon Czech Republic s.r.o., Praha, Haleon Hellas, Marousi, Haleon Hungary Kft., Budapešť
-- Registrované balenia: ČR 249 [E002, A1], SR 287 [E004, A1]
+- Registrované balenia: ČR 251 [E002, A1], SR 287 [E004, A1]
 
 ## Facts (with sources)
 - ČR: od 15. 4. 2019 131 výpadkov balení, za posledných 12 mesiacov 6 (to je 2.4% registrovaných balení), teraz trvá 2 [E001, A2]

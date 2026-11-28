@@ -5,7 +5,7 @@ aliases: ["Guerbet", "Guerbet,  Roissy CdG Cedex"]
 vypadky_cz_od_2019: 49
 vypadky_sk_od_2019: 9
 zdroje: ["E001", "E002", "E004", "E005"]
-generovane_utc: "2026-11-13T10:06:19Z"
+generovane_utc: "2026-11-28T05:18:06Z"
 verified: false
 ---
 # Guerbet,  Roissy CdG Cedex
@@ -17,7 +17,7 @@ verified: false
 - Registrované balenia: ČR 100 [E002, A1], SR 78 [E004, A1]
 
 ## Facts (with sources)
-- ČR: od 15. 4. 2019 49 výpadkov balení, za posledných 12 mesiacov 11 (to je 11.0% registrovaných balení), teraz trvá 5 [E001, A2]
+- ČR: od 15. 4. 2019 49 výpadkov balení, za posledných 12 mesiacov 10 (to je 10.0% registrovaných balení), teraz trvá 5 [E001, A2]
 - SR: od 15. 4. 2019 9 výpadkov balení, za posledných 12 mesiacov 0 (to je 0.0% registrovaných balení), teraz trvá 8 [E005, A2]
 
 ## Relations

@@ -5,7 +5,7 @@ aliases: ["Pharmathen S.A.", "Pharmathen S.A., Pallini"]
 vypadky_cz_od_2019: 7
 vypadky_sk_od_2019: 2
 zdroje: ["E001", "E002", "E004", "E005"]
-generovane_utc: "2026-11-13T10:06:19Z"
+generovane_utc: "2026-11-28T05:18:06Z"
 verified: false
 ---
 # Pharmathen S.A
@@ -14,10 +14,10 @@ verified: false
 
 ## Identifiers
 - Názvy v registroch: Pharmathen S.A., Pharmathen S.A., Pallini
-- Registrované balenia: ČR 56 [E002, A1], SR 63 [E004, A1]
+- Registrované balenia: ČR 50 [E002, A1], SR 63 [E004, A1]
 
 ## Facts (with sources)
-- ČR: od 15. 4. 2019 7 výpadkov balení, za posledných 12 mesiacov 1 (to je 1.8% registrovaných balení), teraz trvá 0 [E001, A2]
+- ČR: od 15. 4. 2019 7 výpadkov balení, za posledných 12 mesiacov 1 (to je 2.0% registrovaných balení), teraz trvá 0 [E001, A2]
 - SR: od 15. 4. 2019 2 výpadkov balení, za posledných 12 mesiacov 1 (to je 1.6% registrovaných balení), teraz trvá 1 [E005, A2]
 
 ## Relations

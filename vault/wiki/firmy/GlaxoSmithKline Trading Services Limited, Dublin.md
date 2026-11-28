@@ -1,11 +1,11 @@
 ---
 typ: "firma"
 firma: "glaxosmithkline"
-aliases: ["GLAXOSMITHKLINE CONSUMER HEALTHCARE S.R.L., Bukurešť", "GlaxoSmithKline (Ireland) Limited", "GlaxoSmithKline (Ireland) Limited, Dublin", "GlaxoSmithKline Biologicals S.A.", "GlaxoSmithKline Consumer Healthcare Czech Republic s.r.o., Praha", "GlaxoSmithKline Consumer Healthcare Sp. z o.o., Poznaň", "GlaxoSmithKline Dungarvan Ltd.", "GlaxoSmithKline Santé Grand Public, RUEIL MALMAISON"]
+aliases: ["GLAXOSMITHKLINE CONSUMER HEALTHCARE S.R.L., Bukurešť", "GlaxoSmithKline (Ireland) Limited", "GlaxoSmithKline (Ireland) Limited, Dublin", "GlaxoSmithKline Biologicals S.A.", "GlaxoSmithKline Consumer Healthcare Czech Republic s.r.o., Praha", "GlaxoSmithKline Dungarvan Ltd.", "GlaxoSmithKline Santé Grand Public, RUEIL MALMAISON", "GlaxoSmithKline Trading Services Limited"]
 vypadky_cz_od_2019: 171
 vypadky_sk_od_2019: 175
 zdroje: ["E001", "E002", "E004", "E005"]
-generovane_utc: "2026-11-18T02:18:53Z"
+generovane_utc: "2026-11-28T05:18:06Z"
 verified: false
 ---
 # GlaxoSmithKline Trading Services Limited, Dublin
@@ -13,8 +13,8 @@ verified: false
 ⬆ [[00 Mapa firiem]]
 
 ## Identifiers
-- Názvy v registroch: GLAXOSMITHKLINE CONSUMER HEALTHCARE S.R.L., Bukurešť, GlaxoSmithKline (Ireland) Limited, GlaxoSmithKline (Ireland) Limited, Dublin, GlaxoSmithKline Biologicals S.A., GlaxoSmithKline Consumer Healthcare Czech Republic s.r.o., Praha, GlaxoSmithKline Consumer Healthcare Sp. z o.o., Poznaň, GlaxoSmithKline Dungarvan Ltd., GlaxoSmithKline Santé Grand Public, RUEIL MALMAISON
-- Registrované balenia: ČR 607 [E002, A1], SR 459 [E004, A1]
+- Názvy v registroch: GLAXOSMITHKLINE CONSUMER HEALTHCARE S.R.L., Bukurešť, GlaxoSmithKline (Ireland) Limited, GlaxoSmithKline (Ireland) Limited, Dublin, GlaxoSmithKline Biologicals S.A., GlaxoSmithKline Consumer Healthcare Czech Republic s.r.o., Praha, GlaxoSmithKline Dungarvan Ltd., GlaxoSmithKline Santé Grand Public, RUEIL MALMAISON, GlaxoSmithKline Trading Services Limited
+- Registrované balenia: ČR 608 [E002, A1], SR 459 [E004, A1]
 
 ## Facts (with sources)
 - ČR: od 15. 4. 2019 171 výpadkov balení, za posledných 12 mesiacov 20 (to je 3.3% registrovaných balení), teraz trvá 5 [E001, A2]

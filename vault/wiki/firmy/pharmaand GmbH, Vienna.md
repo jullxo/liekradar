@@ -5,7 +5,7 @@ aliases: ["Pharmaand GmbH", "pharmaand GmbH, Vienna"]
 vypadky_cz_od_2019: 10
 vypadky_sk_od_2019: 14
 zdroje: ["E001", "E002", "E004", "E005"]
-generovane_utc: "2026-11-13T10:06:19Z"
+generovane_utc: "2026-11-28T05:18:06Z"
 verified: false
 ---
 # pharmaand GmbH, Vienna
@@ -14,10 +14,10 @@ verified: false
 
 ## Identifiers
 - Názvy v registroch: Pharmaand GmbH, pharmaand GmbH, Vienna
-- Registrované balenia: ČR 62 [E002, A1], SR 58 [E004, A1]
+- Registrované balenia: ČR 65 [E002, A1], SR 58 [E004, A1]
 
 ## Facts (with sources)
-- ČR: od 15. 4. 2019 10 výpadkov balení, za posledných 12 mesiacov 1 (to je 1.6% registrovaných balení), teraz trvá 1 [E001, A2]
+- ČR: od 15. 4. 2019 10 výpadkov balení, za posledných 12 mesiacov 1 (to je 1.5% registrovaných balení), teraz trvá 1 [E001, A2]
 - SR: od 15. 4. 2019 14 výpadkov balení, za posledných 12 mesiacov 0 (to je 0.0% registrovaných balení), teraz trvá 1 [E005, A2]
 
 ## Relations

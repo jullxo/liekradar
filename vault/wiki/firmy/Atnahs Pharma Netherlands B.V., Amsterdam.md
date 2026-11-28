@@ -5,7 +5,7 @@ aliases: ["Atnahs Pharma Netherlands B.V.", "Atnahs Pharma Netherlands B.V., Ams
 vypadky_cz_od_2019: 17
 vypadky_sk_od_2019: 0
 zdroje: ["E001", "E002", "E004", "E005"]
-generovane_utc: "2026-11-18T02:18:53Z"
+generovane_utc: "2026-11-28T05:18:06Z"
 verified: false
 ---
 # Atnahs Pharma Netherlands B.V., Amsterdam
@@ -14,10 +14,10 @@ verified: false
 
 ## Identifiers
 - Názvy v registroch: Atnahs Pharma Netherlands B.V., Atnahs Pharma Netherlands B.V., Amsterdam
-- Registrované balenia: ČR 39 [E002, A1], SR 25 [E004, A1]
+- Registrované balenia: ČR 38 [E002, A1], SR 25 [E004, A1]
 
 ## Facts (with sources)
-- ČR: od 15. 4. 2019 17 výpadkov balení, za posledných 12 mesiacov 3 (to je 7.7% registrovaných balení), teraz trvá 1 [E001, A2]
+- ČR: od 15. 4. 2019 17 výpadkov balení, za posledných 12 mesiacov 3 (to je 7.9% registrovaných balení), teraz trvá 1 [E001, A2]
 - SR: od 15. 4. 2019 0 výpadkov balení, za posledných 12 mesiacov 0 (to je 0.0% registrovaných balení), teraz trvá 0 [E005, A2]
 
 ## Relations

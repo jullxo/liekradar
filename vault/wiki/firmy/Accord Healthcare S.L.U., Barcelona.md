@@ -5,7 +5,7 @@ aliases: ["ACCORD HEALTHCARE POLSKA Sp. z o.o., Varšava", "Accord Healthcare Po
 vypadky_cz_od_2019: 241
 vypadky_sk_od_2019: 99
 zdroje: ["E001", "E002", "E004", "E005"]
-generovane_utc: "2026-11-26T05:28:18Z"
+generovane_utc: "2026-11-28T05:18:06Z"
 verified: false
 ---
 # Accord Healthcare S.L.U., Barcelona
@@ -14,7 +14,7 @@ verified: false
 
 ## Identifiers
 - Názvy v registroch: ACCORD HEALTHCARE POLSKA Sp. z o.o., Varšava, Accord Healthcare Polska Sp. z o.o., Accord Healthcare S.L.U, Accord Healthcare S.L.U., Barcelona
-- Registrované balenia: ČR 1910 [E002, A1], SR 1479 [E004, A1]
+- Registrované balenia: ČR 1918 [E002, A1], SR 1479 [E004, A1]
 
 ## Facts (with sources)
 - ČR: od 15. 4. 2019 241 výpadkov balení, za posledných 12 mesiacov 59 (to je 3.1% registrovaných balení), teraz trvá 31 [E001, A2]

@@ -5,7 +5,7 @@ aliases: ["G.L. Pharma GmbH", "G.L. Pharma GmbH, Lannach"]
 vypadky_cz_od_2019: 122
 vypadky_sk_od_2019: 68
 zdroje: ["E001", "E002", "E004", "E005"]
-generovane_utc: "2026-11-13T10:06:19Z"
+generovane_utc: "2026-11-28T05:18:06Z"
 verified: false
 ---
 # G.L. Pharma GmbH
@@ -14,7 +14,7 @@ verified: false
 
 ## Identifiers
 - Názvy v registroch: G.L. Pharma GmbH, G.L. Pharma GmbH, Lannach
-- Registrované balenia: ČR 1217 [E002, A1], SR 1266 [E004, A1]
+- Registrované balenia: ČR 1237 [E002, A1], SR 1266 [E004, A1]
 
 ## Facts (with sources)
 - ČR: od 15. 4. 2019 122 výpadkov balení, za posledných 12 mesiacov 4 (to je 0.3% registrovaných balení), teraz trvá 3 [E001, A2]

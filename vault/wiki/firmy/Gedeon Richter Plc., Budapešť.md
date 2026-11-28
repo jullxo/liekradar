@@ -5,7 +5,7 @@ aliases: ["Gedeon Richter Plc.", "Gedeon Richter Plc., Budapešť", "Gedeon Rich
 vypadky_cz_od_2019: 139
 vypadky_sk_od_2019: 66
 zdroje: ["E001", "E002", "E004", "E005"]
-generovane_utc: "2026-11-26T05:28:18Z"
+generovane_utc: "2026-11-28T05:18:06Z"
 verified: false
 ---
 # Gedeon Richter Plc., Budapešť
@@ -14,7 +14,7 @@ verified: false
 
 ## Identifiers
 - Názvy v registroch: Gedeon Richter Plc., Gedeon Richter Plc., Budapešť, Gedeon Richter Romania S.A., Targu-Mures
-- Registrované balenia: ČR 489 [E002, A1], SR 408 [E004, A1]
+- Registrované balenia: ČR 491 [E002, A1], SR 408 [E004, A1]
 
 ## Facts (with sources)
 - ČR: od 15. 4. 2019 139 výpadkov balení, za posledných 12 mesiacov 14 (to je 2.9% registrovaných balení), teraz trvá 3 [E001, A2]

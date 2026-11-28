@@ -5,7 +5,7 @@ aliases: ["VIATRIS HEALTHCARE LIMITED, Dublin", "VIATRIS LIMITED, Dublin", "Viat
 vypadky_cz_od_2019: 275
 vypadky_sk_od_2019: 394
 zdroje: ["E001", "E002", "E004", "E005"]
-generovane_utc: "2026-11-25T05:25:07Z"
+generovane_utc: "2026-11-28T05:18:06Z"
 verified: false
 ---
 # VIATRIS LIMITED, Dublin
@@ -14,7 +14,7 @@ verified: false
 
 ## Identifiers
 - Názvy v registroch: VIATRIS HEALTHCARE LIMITED, Dublin, VIATRIS LIMITED, Dublin, Viatris EESV, Viatris Healthcare Limited, Viatris Limited
-- Registrované balenia: ČR 3970 [E002, A1], SR 2767 [E004, A1]
+- Registrované balenia: ČR 3954 [E002, A1], SR 2767 [E004, A1]
 
 ## Facts (with sources)
 - ČR: od 15. 4. 2019 275 výpadkov balení, za posledných 12 mesiacov 99 (to je 2.5% registrovaných balení), teraz trvá 55 [E001, A2]

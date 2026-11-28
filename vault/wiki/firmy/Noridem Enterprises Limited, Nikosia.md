@@ -5,7 +5,7 @@ aliases: ["Noridem Enterprises Limited, Nikosia", "Noridem Enterprises Ltd."]
 vypadky_cz_od_2019: 21
 vypadky_sk_od_2019: 7
 zdroje: ["E001", "E002", "E004", "E005"]
-generovane_utc: "2026-11-13T10:06:19Z"
+generovane_utc: "2026-11-28T05:18:06Z"
 verified: false
 ---
 # Noridem Enterprises Limited, Nikosia
@@ -14,10 +14,10 @@ verified: false
 
 ## Identifiers
 - Názvy v registroch: Noridem Enterprises Limited, Nikosia, Noridem Enterprises Ltd.
-- Registrované balenia: ČR 352 [E002, A1], SR 318 [E004, A1]
+- Registrované balenia: ČR 365 [E002, A1], SR 318 [E004, A1]
 
 ## Facts (with sources)
-- ČR: od 15. 4. 2019 21 výpadkov balení, za posledných 12 mesiacov 3 (to je 0.9% registrovaných balení), teraz trvá 1 [E001, A2]
+- ČR: od 15. 4. 2019 21 výpadkov balení, za posledných 12 mesiacov 3 (to je 0.8% registrovaných balení), teraz trvá 1 [E001, A2]
 - SR: od 15. 4. 2019 7 výpadkov balení, za posledných 12 mesiacov 2 (to je 0.6% registrovaných balení), teraz trvá 1 [E005, A2]
 
 ## Relations

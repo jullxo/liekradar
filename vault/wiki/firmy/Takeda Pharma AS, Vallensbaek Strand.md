@@ -5,7 +5,7 @@ aliases: ["Takeda GmbH", "Takeda GmbH, (HRB 701016)", "Takeda Manufacturing Aust
 vypadky_cz_od_2019: 68
 vypadky_sk_od_2019: 64
 zdroje: ["E001", "E002", "E004", "E005"]
-generovane_utc: "2026-11-27T05:26:42Z"
+generovane_utc: "2026-11-28T05:18:06Z"
 verified: false
 ---
 # Takeda Pharma AS, Vallensbaek Strand
@@ -14,7 +14,7 @@ verified: false
 
 ## Identifiers
 - Názvy v registroch: Takeda GmbH, Takeda GmbH, (HRB 701016), Takeda Manufacturing Austria AG, Takeda Manufacturing Austria AG, Vídeň, Takeda Pharma A/S, Takeda Pharma A/S, Vallensbaek Strand, Takeda Pharma sp. z o.o., Łyszkowice, Takeda Pharmaceuticals International AG Ireland Branch
-- Registrované balenia: ČR 507 [E002, A1], SR 440 [E004, A1]
+- Registrované balenia: ČR 503 [E002, A1], SR 440 [E004, A1]
 
 ## Facts (with sources)
 - ČR: od 15. 4. 2019 68 výpadkov balení, za posledných 12 mesiacov 1 (to je 0.2% registrovaných balení), teraz trvá 0 [E001, A2]

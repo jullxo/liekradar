@@ -5,7 +5,7 @@ aliases: ["Olikla s.r.o.", "Olikla s.r.o., Kostelec nad Černými Lesy"]
 vypadky_cz_od_2019: 51
 vypadky_sk_od_2019: 24
 zdroje: ["E001", "E002", "E004", "E005"]
-generovane_utc: "2026-11-18T02:18:53Z"
+generovane_utc: "2026-11-28T05:18:06Z"
 verified: false
 ---
 # Olikla s.r.o., Kostelec nad Černými Lesy
@@ -14,10 +14,10 @@ verified: false
 
 ## Identifiers
 - Názvy v registroch: Olikla s.r.o., Olikla s.r.o., Kostelec nad Černými Lesy
-- Registrované balenia: ČR 189 [E002, A1], SR 160 [E004, A1]
+- Registrované balenia: ČR 188 [E002, A1], SR 160 [E004, A1]
 
 ## Facts (with sources)
-- ČR: od 15. 4. 2019 51 výpadkov balení, za posledných 12 mesiacov 11 (to je 5.8% registrovaných balení), teraz trvá 4 [E001, A2]
+- ČR: od 15. 4. 2019 51 výpadkov balení, za posledných 12 mesiacov 11 (to je 5.9% registrovaných balení), teraz trvá 4 [E001, A2]
 - SR: od 15. 4. 2019 24 výpadkov balení, za posledných 12 mesiacov 5 (to je 3.1% registrovaných balení), teraz trvá 2 [E005, A2]
 
 ## Relations

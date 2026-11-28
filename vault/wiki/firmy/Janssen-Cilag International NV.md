@@ -1,11 +1,11 @@
 ---
 typ: "firma"
 firma: "janssen"
-aliases: ["JANSSEN-CILAG, ISSY LES MOULINEAUX CEDEX 9", "Janssen-Cilag International N.V.", "Janssen-Cilag International N.V., Beerse", "Janssen-Cilag International NV", "Janssen-Cilag s.r.o., Praha"]
+aliases: ["Janssen-Cilag International N.V.", "Janssen-Cilag International N.V., Beerse", "Janssen-Cilag International NV", "Janssen-Cilag s.r.o., Praha"]
 vypadky_cz_od_2019: 43
 vypadky_sk_od_2019: 19
 zdroje: ["E001", "E002", "E004", "E005"]
-generovane_utc: "2026-11-19T05:22:20Z"
+generovane_utc: "2026-11-28T05:18:06Z"
 verified: false
 ---
 # Janssen-Cilag International NV
@@ -13,8 +13,8 @@ verified: false
 ⬆ [[00 Mapa firiem]]
 
 ## Identifiers
-- Názvy v registroch: JANSSEN-CILAG, ISSY LES MOULINEAUX CEDEX 9, Janssen-Cilag International N.V., Janssen-Cilag International N.V., Beerse, Janssen-Cilag International NV, Janssen-Cilag s.r.o., Praha
-- Registrované balenia: ČR 404 [E002, A1], SR 247 [E004, A1]
+- Názvy v registroch: Janssen-Cilag International N.V., Janssen-Cilag International N.V., Beerse, Janssen-Cilag International NV, Janssen-Cilag s.r.o., Praha
+- Registrované balenia: ČR 403 [E002, A1], SR 247 [E004, A1]
 
 ## Facts (with sources)
 - ČR: od 15. 4. 2019 43 výpadkov balení, za posledných 12 mesiacov 5 (to je 1.2% registrovaných balení), teraz trvá 0 [E001, A2]

@@ -5,7 +5,7 @@ aliases: ["Dr. Max Pharma s.r.o.", "Dr. Max Pharma s.r.o., Praha"]
 vypadky_cz_od_2019: 7
 vypadky_sk_od_2019: 1
 zdroje: ["E001", "E002", "E004", "E005"]
-generovane_utc: "2026-11-13T10:06:19Z"
+generovane_utc: "2026-11-28T05:18:06Z"
 verified: false
 ---
 # Dr. Max Pharma s.r.o., Praha
@@ -14,7 +14,7 @@ verified: false
 
 ## Identifiers
 - Názvy v registroch: Dr. Max Pharma s.r.o., Dr. Max Pharma s.r.o., Praha
-- Registrované balenia: ČR 353 [E002, A1], SR 301 [E004, A1]
+- Registrované balenia: ČR 372 [E002, A1], SR 301 [E004, A1]
 
 ## Facts (with sources)
 - ČR: od 15. 4. 2019 7 výpadkov balení, za posledných 12 mesiacov 0 (to je 0.0% registrovaných balení), teraz trvá 0 [E001, A2]

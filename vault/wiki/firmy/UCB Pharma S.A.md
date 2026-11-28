@@ -1,11 +1,11 @@
 ---
 typ: "firma"
 firma: "ucbpharma"
-aliases: ["UCB PHARMA S.A., Madrid", "UCB Pharma S.A."]
+aliases: ["UCB PHARMA S.A., Madrid", "UCB Pharma GmbH, Monheim am Rhein", "UCB Pharma S.A."]
 vypadky_cz_od_2019: 0
 vypadky_sk_od_2019: 3
 zdroje: ["E001", "E002", "E004", "E005"]
-generovane_utc: "2026-11-13T10:06:19Z"
+generovane_utc: "2026-11-28T05:18:06Z"
 verified: false
 ---
 # UCB Pharma S.A
@@ -13,8 +13,8 @@ verified: false
 ⬆ [[00 Mapa firiem]]
 
 ## Identifiers
-- Názvy v registroch: UCB PHARMA S.A., Madrid, UCB Pharma S.A.
-- Registrované balenia: ČR 1 [E002, A1], SR 202 [E004, A1]
+- Názvy v registroch: UCB PHARMA S.A., Madrid, UCB Pharma GmbH, Monheim am Rhein, UCB Pharma S.A.
+- Registrované balenia: ČR 2 [E002, A1], SR 202 [E004, A1]
 
 ## Facts (with sources)
 - ČR: od 15. 4. 2019 0 výpadkov balení, za posledných 12 mesiacov 0 (to je 0.0% registrovaných balení), teraz trvá 0 [E001, A2]

@@ -5,7 +5,7 @@ aliases: ["McNeil AB", "McNeil AB, Helsingborg", "McNeil Healthcare (Ireland) Li
 vypadky_cz_od_2019: 6
 vypadky_sk_od_2019: 9
 zdroje: ["E001", "E002", "E004", "E005"]
-generovane_utc: "2026-11-13T10:06:19Z"
+generovane_utc: "2026-11-28T05:18:06Z"
 verified: false
 ---
 # McNeil AB
@@ -14,7 +14,7 @@ verified: false
 
 ## Identifiers
 - Názvy v registroch: McNeil AB, McNeil AB, Helsingborg, McNeil Healthcare (Ireland) Limited, McNeil Healthcare (Ireland) Limited, Dublin
-- Registrované balenia: ČR 119 [E002, A1], SR 121 [E004, A1]
+- Registrované balenia: ČR 120 [E002, A1], SR 121 [E004, A1]
 
 ## Facts (with sources)
 - ČR: od 15. 4. 2019 6 výpadkov balení, za posledných 12 mesiacov 1 (to je 0.8% registrovaných balení), teraz trvá 0 [E001, A2]

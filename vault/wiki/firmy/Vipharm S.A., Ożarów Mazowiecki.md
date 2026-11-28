@@ -5,7 +5,7 @@ aliases: ["Vipharm S.A.", "Vipharm S.A., Ożarów Mazowiecki"]
 vypadky_cz_od_2019: 59
 vypadky_sk_od_2019: 81
 zdroje: ["E001", "E002", "E004", "E005"]
-generovane_utc: "2026-11-21T05:10:05Z"
+generovane_utc: "2026-11-28T05:18:06Z"
 verified: false
 ---
 # Vipharm S.A., Ożarów Mazowiecki
@@ -14,10 +14,10 @@ verified: false
 
 ## Identifiers
 - Názvy v registroch: Vipharm S.A., Vipharm S.A., Ożarów Mazowiecki
-- Registrované balenia: ČR 534 [E002, A1], SR 519 [E004, A1]
+- Registrované balenia: ČR 552 [E002, A1], SR 519 [E004, A1]
 
 ## Facts (with sources)
-- ČR: od 15. 4. 2019 59 výpadkov balení, za posledných 12 mesiacov 16 (to je 3.0% registrovaných balení), teraz trvá 8 [E001, A2]
+- ČR: od 15. 4. 2019 59 výpadkov balení, za posledných 12 mesiacov 16 (to je 2.9% registrovaných balení), teraz trvá 8 [E001, A2]
 - SR: od 15. 4. 2019 81 výpadkov balení, za posledných 12 mesiacov 17 (to je 3.3% registrovaných balení), teraz trvá 7 [E005, A2]
 
 ## Relations

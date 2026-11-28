@@ -5,7 +5,7 @@ aliases: ["Sanofi  România S.R.L., Bukurešť", "Sanofi B.V.", "Sanofi B.V., Am
 vypadky_cz_od_2019: 310
 vypadky_sk_od_2019: 64
 zdroje: ["E001", "E002", "E004", "E005"]
-generovane_utc: "2026-11-23T05:34:53Z"
+generovane_utc: "2026-11-28T05:18:06Z"
 verified: false
 ---
 # Sanofi Winthrop Industrie
@@ -14,7 +14,7 @@ verified: false
 
 ## Identifiers
 - Názvy v registroch: Sanofi  România S.R.L., Bukurešť, Sanofi B.V., Sanofi B.V., Amsterdam, Sanofi Belgium, Sanofi Belgium, Belgie, Sanofi Pasteur, Lyon, Sanofi Winthrop Industrie, Sanofi Winthrop Industrie, Gentilly
-- Registrované balenia: ČR 1166 [E002, A1], SR 1071 [E004, A1]
+- Registrované balenia: ČR 1169 [E002, A1], SR 1071 [E004, A1]
 
 ## Facts (with sources)
 - ČR: od 15. 4. 2019 310 výpadkov balení, za posledných 12 mesiacov 33 (to je 2.8% registrovaných balení), teraz trvá 6 [E001, A2]
